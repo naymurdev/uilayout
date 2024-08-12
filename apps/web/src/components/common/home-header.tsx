@@ -10,7 +10,14 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 
-import { MonitorSmartphone, Moon, MoonIcon, Sun, SunIcon } from 'lucide-react'
+import {
+  Github,
+  MonitorSmartphone,
+  Moon,
+  MoonIcon,
+  Sun,
+  SunIcon,
+} from 'lucide-react'
 import { Button } from '../ui/button'
 import {
   NavigationMenu,
@@ -118,7 +125,13 @@ function HomeHeader() {
             </div>
 
             <SearchDialog />
-
+            <a
+              target="_blank"
+              href="https://github.com/naymurdev/uilayout"
+              className="border w-10 grid place-content-center rounded-md"
+            >
+              <Github />
+            </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">

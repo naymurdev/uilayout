@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import {
+  Github,
   MonitorSmartphone,
   Moon,
   MoonIcon,
@@ -34,14 +35,20 @@ function Header() {
           <MobileHeader />
           <div className="flex gap-2 ">
             <SearchDialog />
-
+            <a
+              target="_blank"
+              href="https://github.com/naymurdev/uilayout"
+              className="border w-10 grid place-content-center rounded-md"
+            >
+              <Github />
+            </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <button className="border w-10 grid place-content-center rounded-md relative">
+                  <SunIcon className="h-[1.2rem] w-[1.2rem] transition-all dark:hidden block" />
+                  <MoonIcon className="h-[1.2rem] w-[1.2rem]   transition-all  dark:block hidden" />
                   <span className="sr-only">Toggle theme</span>
-                </Button>
+                </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem onClick={() => setTheme('light')}>
