@@ -1,0 +1,171 @@
+---
+title: Magnified Docs
+description: You'll find all types of Accordion which is both use for HTML, REACTJS and NEXTJS
+component: true
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/accordion
+  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
+---
+
+<Tabs defaultValue="preview" className="w-full  relative ">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <ComponentPreview name="tab3" category="component" />
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodeWrapper noExpand={true}>
+      <CodePreview name="tab3" category="component" />
+    </CodeWrapper>
+  </TabsContent>
+</Tabs>
+
+#### Installation
+
+```bash
+npm install framer-motion
+```
+
+Data of this Magnified Doc Component
+
+```tsx
+const apps = [
+  {
+    id: 'carousel',
+    icon: Icons.doc_icon5,
+    name: 'Carousel',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/embla-carousel',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/carousel_ymyqq4.svg',
+  },
+  {
+    id: 'tabs',
+    icon: Icons.doc_icon4,
+    name: 'Tabs',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/tabs',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/tabs_hgujxo.svg',
+  },
+  {
+    id: 'faqs',
+    icon: Icons.doc_star,
+    name: 'Faqs',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/faqs',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/faqs_qubbig.svg',
+  },
+  {
+    id: 'grid',
+    icon: Icons.doc_icon3,
+    name: 'Grid',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/grid',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/grid_rbis5c.svg',
+  },
+  {
+    id: 'masking',
+    icon: Icons.doc_circle,
+    name: 'Masking',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/image-masking',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/image_masking_kbdo7a.svg',
+  },
+  {
+    id: 'mouseTrail',
+    icon: Icons.doc_rectangle,
+    name: 'MouseTrail',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/image-mousetrail',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/image_mousetrail_jt45al.svg',
+  },
+  {
+    id: 'sticky',
+    icon: Icons.doc_icon2,
+    name: 'Sticky',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/sticky-scroll',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/sticky_xao8zr.svg',
+  },
+  {
+    id: 'accordion',
+    icon: Icons.doc_triangle,
+    name: 'Accordion',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/image-accordions',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/gallerynew_x3apwx.svg',
+  },
+]
+```
+
+```js title="tooltip.tsx"
+'use client'
+
+import { cn } from '@/lib/utils'
+import * as TooltipPrimitive from '@radix-ui/react-tooltip'
+import * as React from 'react'
+
+const TooltipProvider = TooltipPrimitive.Provider
+
+const Tooltip = TooltipPrimitive.Root
+
+const TooltipTrigger = TooltipPrimitive.Trigger
+
+const TooltipContent = React.forwardRef<
+  React.ElementRef<typeof TooltipPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+>(({ className, sideOffset = 4, ...props }, ref) => (
+  <TooltipPrimitive.Portal>
+    <TooltipPrimitive.Content
+      ref={ref}
+      sideOffset={sideOffset}
+      className={cn(
+        'z-50 overflow-hidden rounded-lg border bg-background backdrop-filter dark:border-[#2C2C2C] backdrop-blur-lg dark:bg-[#1A1A1A]/95 px-4 py-3 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+        className
+      )}
+      {...props}
+    />
+  </TooltipPrimitive.Portal>
+))
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+```

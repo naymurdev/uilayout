@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --text-mouse-x: '0px';
+  --text-mouse-y: '0px';
+  --gradient-text-center: 'rgb(226,226,226)';
+  --gradient-text-edge: 'rgba(0,9,12,0.1)';
+}
+
+@layer utilities {
+  .animated-text {
+    background: radial-gradient(
+      circle at var(--text-mouse-x) var(--text-mouse-y),
+      var(--gradient-text-center) 0%,
+      var(--gradient-text-edge) 40%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+footer p {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+footer a {
+  color: var(--color);
+}
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  flex: 0 0 auto;
+}

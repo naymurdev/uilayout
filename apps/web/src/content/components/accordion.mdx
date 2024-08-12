@@ -1,0 +1,462 @@
+---
+title: Accordion
+description: You'll find all types of Accordion which is both use for HTML, REACTJS and NEXTJS
+component: true
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/accordion
+  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
+---
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList >
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent
+    value="preview"
+  >
+    <ComponentPreview name="accordion1" category="component">
+      <div className="text-center pb-3">
+        ## Framer Motion Accordion
+      </div>
+    </ComponentPreview>
+
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodeWrapper noExpand={true}>
+     <CodePreview name="accordion1" category="component" />
+    </CodeWrapper>
+  </TabsContent>
+</Tabs>
+
+## Installation
+
+```bash
+npm install framer-motion
+```
+
+```ts title="accordion.tsx" {7-8,26-28,131,134-138}
+// @ts-nocheck
+import React, { ReactNode } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
+import { cn } from '@/lib/utils'
+
+const AccordionContext = React.createContext({})
+const useAccordion = () => React.useContext(AccordionContext)
+
+export function AccordionContainer({
+  children,
+  className,
+}: {
+  children: ReactNode
+  className?: string
+}) {
+  return (
+    <div className={cn('grid grid-cols-2 gap-1', className)}>{children}</div>
+  )
+}
+export function AccordionWrapper({ children }) {
+  return <div>{children}</div>
+}
+
+export function Accordion({
+  children,
+  multiple,
+  defaultValue,
+}: {
+  children: ReactNode
+  multiple?: boolean
+  defaultValue?: string | undefined | string[]
+}) {
+  const [activeIndex, setActiveIndex] = React.useState(
+    multiple ? (defaultValue ? [defaultValue] : []) : [defaultValue]
+  )
+
+  function onChangeIndex(value) {
+    setActiveIndex((currentActiveIndex) => {
+      if (!multiple) {
+        return value === currentActiveIndex ? null : value
+      }
+
+      if (currentActiveIndex.includes(value)) {
+        return currentActiveIndex.filter((i) => i !== value)
+      }
+
+      return [...currentActiveIndex, value]
+    })
+  }
+
+  return React.Children.map(children, (child) => {
+    const value = child.props.value
+    const isActive = multiple
+      ? Array.isArray(activeIndex) && activeIndex.includes(value)
+      : Array.isArray(activeIndex)
+        ? activeIndex[0].includes(value)
+        : activeIndex === value
+
+    return (
+      <AccordionContext.Provider value={{ isActive, value, onChangeIndex }}>
+        <>{child}</>
+      </AccordionContext.Provider>
+    )
+  })
+}
+
+export function AccordionItem({ children, value }) {
+  const { isActive } = useAccordion()
+
+  return (
+    <div
+      className={`rounded-lg overflow-hidden mb-2  ${
+        isActive
+          ? 'active border-2 dark:border-[#656fe2]  border-[#F2F2F2] dark:bg-[#E0ECFB] bg-[#F2F2F2]'
+          : 'bg-transparent border-2 dark:hover:border-[#656fe2]'
+      }
+    `}
+      value={value}
+    >
+      {children}
+    </div>
+  )
+}
+
+export function AccordionHeader({
+  children,
+  icon,
+}: {
+  children: ReactNode
+  icon?: any
+}) {
+  const { isActive, value, onChangeIndex } = useAccordion()
+
+  return (
+    <motion.div
+      className={`p-4 cursor-pointer transition-all font-semibold    dark:text-white text-black dark:hover:bg-[#1e2a78] hover:bg-[#F2F2F2] dark:hover:text-white hover:text-black flex justify-between items-center ${
+        isActive
+          ? 'active  dark:bg-[#1e2a78] bg-[#F2F2F2] '
+          : 'dark:bg-[#11112b] bg-white'
+      }
+      `}
+      onClick={() => onChangeIndex(value)}
+    >
+      {children}
+      {icon ? (
+        <div
+          className={`${
+            isActive ? 'rotate-45 ' : 'rotate-0 '
+          } transition-transform`}
+        >
+          {icon}
+        </div>
+      ) : (
+        <>
+          <ChevronDown
+            className={`${
+              isActive ? 'rotate-180 ' : 'rotate-0 '
+            } transition-transform`}
+          />
+        </>
+      )}
+    </motion.div>
+  )
+}
+
+export function AccordionPanel({ children }) {
+  const { isActive } = useAccordion()
+
+  return (
+    <AnimatePresence initial={true}>
+      {isActive && (
+        <motion.div
+          initial={{ height: 0, overflow: 'hidden' }}
+          animate={{ height: 'auto', overflow: 'hidden' }}
+          exit={{ height: 0 }}
+          transition={{ type: 'spring', duration: 0.3, bounce: 0 }}
+          className={`dark:bg-white bg-[#F2F2F2]
+          `}
+        >
+          <motion.article
+            initial={{ clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' }}
+            animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
+            exit={{
+              clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+            }}
+            transition={{
+              type: 'spring',
+              duration: 0.4,
+              bounce: 0,
+            }}
+            className={`p-3 bg-transparent text-black `}
+          >
+            {children}
+          </motion.article>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
+
+```
+
+```ts title="props/apis" {1,2,3,8,9,14,15}
+    <Accordion defaultValue={['item-1']} multiple>
+        <AccordionItem value="item-1">
+          <AccordionHeader icon={<Plus />}>
+          </AccordionHeader>
+          <AccordionPanel>
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionHeader icon={<Plus />}>
+          </AccordionHeader>
+          <AccordionPanel>
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionHeader icon={<Plus />}>
+          </AccordionHeader>
+          <AccordionPanel>
+          </AccordionPanel>
+        </AccordionItem>
+    </Accordion>
+```
+
+#### More Examples
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <ComponentPreview name="accordion2" category="component" />
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodePreview name="accordion2" category="component" />
+  </TabsContent>
+</Tabs>
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <ComponentPreview name="accordion3" category="component" />
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodePreview name="accordion3" category="component" />
+  </TabsContent>
+</Tabs>
+
+#### Radix Accordion
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList >
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+ 
+    <ComponentPreview name="accordion5" category="component">
+ 
+      <div className="text-center pb-3">
+        ## Radix Accordion
+      </div>
+    </ComponentPreview>
+  </TabsContent>
+  <TabsContent value="codesnippet" >
+  <CodeWrapper>
+    <CodePreview name="accordion5" category="component" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-accordion
+```
+
+```js title="@/lib/utils"
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+```js title="tailwind.config.js"
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
+  },
+}
+```
+
+```js title="accordion.tsx" {1-10}#a {15-20}#b
+const AccordionWrapper = React.forwardRef(
+  ({ children, className, ...props }: any, forwardedRef) => (
+    <div
+      className={cn('grid gap-2 h-fit', className)}
+      {...props}
+      ref={forwardedRef}
+    >
+      {children}
+    </div>
+  )
+)
+const AccordionItem = React.forwardRef(
+  ({ children, className, ...props }: any, forwardedRef) => (
+    <Accordion.Item
+      className={cn('mb-0  first:mt-0 ', className)}
+      {...props}
+      ref={forwardedRef}
+    >
+      {children}
+    </Accordion.Item>
+  )
+)
+// const AccordionContainer =
+const AccordionTrigger = React.forwardRef(
+  ({ children, className, ...props }: any, forwardedRef) => (
+    <Accordion.Header className="flex">
+      <Accordion.Trigger
+        className={cn(
+          'dark:bg-blue-600 dark:text-white bg-black text-white  group flex  flex-1 cursor-default items-center justify-between  px-4 text-lg leading-none outline-none h-14 rounded-md data-[state=open]:rounded-b-none',
+          className
+        )}
+        {...props}
+        ref={forwardedRef}
+      >
+        {children}
+        <Plus
+          className="text-violet10 ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-300 group-data-[state=open]:rotate-45"
+          aria-hidden
+        />
+      </Accordion.Trigger>
+    </Accordion.Header>
+  )
+)
+
+const AccordionContent = React.forwardRef(
+  ({ children, className, ...props }: any, forwardedRef) => (
+    <Accordion.Content
+      className={cn(
+        'bg-mauve2 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px] bg-white text-black rounded-b-md',
+        className
+      )}
+      {...props}
+      ref={forwardedRef}
+    >
+      <div className="py-[15px] px-5">{children}</div>
+    </Accordion.Content>
+  )
+)
+export {AccordionWrapper,AccordionItem,AccordionTrigger,AccordionContent}
+```
+
+```js title="single-accordion.tsx"
+<Accordion.Root
+  className="bg-transparent  w-full  rounded-md shadow-[0_2px_10px] shadow-black/5 space-y-2"
+  type="single"
+  defaultValue="item-1"
+  collapsible
+>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Is it unstyled?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It's unstyled by default, giving you freedom over the look and feel.
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Can it be animated?</AccordionTrigger>
+    <AccordionContent>
+      Yes! You can animate the Accordion with CSS or JavaScript.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion.Root>
+```
+
+```js title="multilayout-accordion.tsx"
+<Accordion.Root
+  className="bg-transparent grid grid-cols-2 gap-2  w-full  rounded-md shadow-[0_2px_10px] shadow-black/5 "
+  type="single"
+  defaultValue="double-1"
+  collapsible
+>
+  <AccordionWrapper>
+    <AccordionItem value="double-1">
+      <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It adheres to the WAI-ARIA design pattern.
+      </AccordionContent>
+    </AccordionItem>
+
+    <AccordionItem value="double-2">
+      <AccordionTrigger>Is it unstyled?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It's unstyled by default, giving you freedom over the look and
+        feel.
+      </AccordionContent>
+    </AccordionItem>
+
+    <AccordionItem value="double-3">
+      <AccordionTrigger>Can it be animated?</AccordionTrigger>
+      <AccordionContent>
+        Yes! You can animate the Accordion with CSS or JavaScript.
+      </AccordionContent>
+    </AccordionItem>
+  </AccordionWrapper>
+  <AccordionWrapper>
+    <AccordionItem value="double-4">
+      <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It adheres to the WAI-ARIA design pattern.
+      </AccordionContent>
+    </AccordionItem>
+
+    <AccordionItem value="double-5">
+      <AccordionTrigger>Is it unstyled?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It's unstyled by default, giving you freedom over the look and
+        feel.
+      </AccordionContent>
+    </AccordionItem>
+
+    <AccordionItem value="double-6">
+      <AccordionTrigger>Can it be animated?</AccordionTrigger>
+      <AccordionContent>
+        Yes! You can animate the Accordion with CSS or JavaScript.
+      </AccordionContent>
+    </AccordionItem>
+  </AccordionWrapper>
+</Accordion.Root>
+```
+
+</CodeWrapper>
+  </TabsContent>
+</Tabs>

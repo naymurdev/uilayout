@@ -1,0 +1,341 @@
+---
+title: Animated Globe
+description: You'll find all types of Accordion which is both use for HTML, REACTJS and NEXTJS
+component: true
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/accordion
+  api: https://lunarui.dev/components/react/feature-blocks/sparkles
+---
+
+> To Get the sparkle code Please Click That Link [here](https://www.ui-layout.com/components/sparkles)
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <IframeLinkPreviewComponent weblink="card-globe" category="carousel" />
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodeWrapper noExpand={true}>
+
+```tsx
+//
+
+import React from 'react'
+import Earth from '@/globe'
+
+function index() {
+  return (
+    <>
+      <div className="min-h-screen overflow-hidden bg-black   text-white">
+        <article className="max-w-[500px] mx-auto mt-12 p-5 text-center  border-gray-900 border rounded-lg relative">
+          <div className="absolute top-0 left-0 z-[1] h-full w-full  bg-[radial-gradient(#5875d653_1px,#06080e_1px)] bg-[size:20px_20px]"></div>
+          <div className="relative z-10">
+            <h1 className="text-7xl font-semibold bg-gradient-to-b from-[#edeffd] to-[#06152e] bg-clip-text text-transparent leading-[100%] tracking-tighter">
+              DESIGN A MASTERPIECE
+            </h1>
+            <Earth />
+          </div>
+        </article>
+      </div>
+    </>
+  )
+}
+
+export default index
+```
+
+  </CodeWrapper>
+  </TabsContent>
+</Tabs>
+
+#### Installation
+
+```bash
+npm install cobe
+```
+
+```tsx title="globe.tsx"
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
+import createGlobe from 'cobe'
+import { cn } from '@/lib/utils'
+interface EarthProps {
+  className?: string
+  theta?: number
+  dark?: number
+  scale?: number
+  diffuse?: number
+  mapSamples?: number
+  mapBrightness?: number
+  baseColor?: [number, number, number]
+  markerColor?: [number, number, number]
+  glowColor?: [number, number, number]
+}
+const Earth: React.FC<EarthProps> = ({
+  className,
+  theta = 0.25,
+  dark = 1,
+  scale = 1.1,
+  diffuse = 1.2,
+  mapSamples = 40000,
+  mapBrightness = 6,
+  baseColor = [0.4, 0.6509, 1],
+  markerColor = [1, 0, 0],
+  glowColor = [0.2745, 0.5765, 0.898],
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    let width = 0
+    const onResize = () =>
+      canvasRef.current && (width = canvasRef.current.offsetWidth)
+    window.addEventListener('resize', onResize)
+    onResize()
+    let phi = 0
+
+    onResize()
+    const globe = createGlobe(canvasRef.current!, {
+      devicePixelRatio: 2,
+      width: width * 2,
+      height: width * 2,
+      phi: 0,
+      theta: theta,
+      dark: dark,
+      scale: scale,
+      diffuse: diffuse,
+      mapSamples: mapSamples,
+      mapBrightness: mapBrightness,
+      baseColor: baseColor,
+      markerColor: markerColor,
+      glowColor: glowColor,
+      opacity: 1,
+      offset: [0, 0],
+      markers: [
+        // longitude latitude
+      ],
+      onRender: (state: Record<string, any>) => {
+        // Called on every animation frame.
+        // `state` will be an empty object, return updated params.\
+        state.phi = phi
+        phi += 0.003
+      },
+    })
+
+    return () => {
+      globe.destroy()
+    }
+  }, [])
+
+  return (
+    <div
+      className={cn(
+        'flex items-center justify-center z-[10] w-full max-w-[350px] mx-auto',
+        className
+      )}
+    >
+      <canvas
+        ref={canvasRef}
+        style={{
+          width: '100%',
+          height: '100%',
+          maxWidth: '100%',
+          aspectRatio: '1',
+        }}
+      />
+    </div>
+  )
+}
+
+export default Earth
+;('use client')
+import React, { useEffect, useRef, useState } from 'react'
+import createGlobe from 'cobe'
+import { cn } from '@/lib/utils'
+interface EarthProps {
+  className?: string
+  theta?: number
+  dark?: number
+  scale?: number
+  diffuse?: number
+  mapSamples?: number
+  mapBrightness?: number
+  baseColor?: [number, number, number]
+  markerColor?: [number, number, number]
+  glowColor?: [number, number, number]
+}
+const Earth: React.FC<EarthProps> = ({
+  className,
+  theta = 0.25,
+  dark = 1,
+  scale = 1.1,
+  diffuse = 1.2,
+  mapSamples = 40000,
+  mapBrightness = 6,
+  baseColor = [0.4, 0.6509, 1],
+  markerColor = [1, 0, 0],
+  glowColor = [0.2745, 0.5765, 0.898],
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    let width = 0
+    const onResize = () =>
+      canvasRef.current && (width = canvasRef.current.offsetWidth)
+    window.addEventListener('resize', onResize)
+    onResize()
+    let phi = 0
+
+    onResize()
+    const globe = createGlobe(canvasRef.current!, {
+      devicePixelRatio: 2,
+      width: width * 2,
+      height: width * 2,
+      phi: 0,
+      theta: theta,
+      dark: dark,
+      scale: scale,
+      diffuse: diffuse,
+      mapSamples: mapSamples,
+      mapBrightness: mapBrightness,
+      baseColor: baseColor,
+      markerColor: markerColor,
+      glowColor: glowColor,
+      opacity: 1,
+      offset: [0, 0],
+      markers: [
+        // longitude latitude
+      ],
+      onRender: (state: Record<string, any>) => {
+        // Called on every animation frame.
+        // `state` will be an empty object, return updated params.\
+        state.phi = phi
+        phi += 0.003
+      },
+    })
+
+    return () => {
+      globe.destroy()
+    }
+  }, [])
+
+  return (
+    <div
+      className={cn(
+        'flex items-center justify-center z-[10] w-full max-w-[350px] mx-auto',
+        className
+      )}
+    >
+      <canvas
+        ref={canvasRef}
+        style={{
+          width: '100%',
+          height: '100%',
+          maxWidth: '100%',
+          aspectRatio: '1',
+        }}
+      />
+    </div>
+  )
+}
+
+export default Earth
+```
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <IframeLinkPreviewComponent weblink="card-globe2" category="carousel" />
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodeWrapper noExpand={true}>
+
+```tsx
+//
+
+import React from 'react'
+import Earth from '@/globe'
+
+function index() {
+  return (
+    <>
+      <div className="min-h-screen overflow-hidden bg-black   text-white">
+        <article className="max-w-[500px] mx-auto mt-12 p-5 text-center  border-gray-900 border rounded-lg relative">
+          <div className="absolute top-0 left-0 z-[1] h-full w-full  bg-[radial-gradient(#5875d653_1px,#06080e_1px)] bg-[size:20px_20px]"></div>
+          <div className="relative z-10">
+            <h1 className="text-7xl font-semibold bg-gradient-to-b from-[#edeffd] to-[#06152e] bg-clip-text text-transparent leading-[100%] tracking-tighter">
+              DESIGN A MASTERPIECE
+            </h1>
+            <Earth />
+          </div>
+        </article>
+      </div>
+    </>
+  )
+}
+
+export default index
+```
+
+  </CodeWrapper>
+  </TabsContent>
+</Tabs>
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <IframeLinkPreviewComponent weblink="sparkles-globe" category="globe" />
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodeWrapper noExpand={true}>
+
+```tsx
+//
+
+import React from 'react'
+import { SparklesGblobe } from '../../sparkles/sparkles-globe'
+import Earth from '../../globe'
+
+function index() {
+  return (
+    <>
+      <div className="h-screen overflow-hidden bg-black text-white">
+        <article className="grid gap-4 text-center relative z-10 pt-10">
+          <span className="inline-block text-sm border p-1 px-3 w-fit mx-auto rounded-full border-[#3273ff] bg-[#0f1c35]">
+            Get Access
+          </span>
+          <h1 className="text-4xl  font-semibold bg-gradient-to-b from-[#edeffd] to-[#7b9cda] bg-clip-text text-transparent leading-[100%] tracking-tighter">
+            Design with a Global
+            <br />
+            Perspective, Innovate with Ease.
+          </h1>
+          <Earth />
+        </article>
+
+        <div className="relative -mt-32 h-80 w-screen overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#3273ff,transparent_90%)] before:opacity-40 after:absolute after:-left-1/2 after:top-1/2 after:aspect-[1/0.7] after:w-[200%] after:rounded-[10%] after:border-t after:border-[#163474] after:bg-[#08132b]">
+          <SparklesGblobe
+            density={1200}
+            className="absolute inset-x-0 bottom-0 h-full w-full "
+          />
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default index
+```
+
+> To Get the sparkle code Please Click That Link [here](https://www.ui-layout.com/components/sparkles)
+
+  </CodeWrapper>
+  </TabsContent>
+</Tabs>
