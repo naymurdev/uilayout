@@ -7,6 +7,7 @@ import React, {
 } from 'react'
 import { X } from 'lucide-react'
 import { Drawer as VaulSidebar } from 'vaul'
+import { cn } from '@/lib/utils'
 
 interface DrawerContextProps {
   open: boolean
@@ -29,6 +30,7 @@ interface DrawerSidebarProps {
   setOpen?: (open: boolean) => void
   direction?: string
   outsideClose?: boolean
+  className?: string
 }
 
 export function SidebarDrawer({
@@ -37,6 +39,7 @@ export function SidebarDrawer({
   setOpen: controlledSetOpen,
   direction,
   outsideClose,
+  className,
 }: DrawerSidebarProps) {
   const [internalOpen, setInternalOpen] = useState(false)
   const open = controlledOpen !== undefined ? controlledOpen : internalOpen
@@ -71,13 +74,16 @@ export function SidebarDrawer({
           <VaulSidebar.Portal>
             <VaulSidebar.Overlay className="fixed inset-0 dark:bg-black/40 bg-white/50 backdrop-blur-sm z-50  " />
             <VaulSidebar.Content
-              className={` border-l z-50  ${
-                outsideClose
-                  ? 'sm:w-[450px] w-[90%] h-[100%] dark:bg-gray-900'
-                  : `w-full h-[100%]  `
-              } fixed bottom-0  ${
-                direction === 'right' ? 'right-0' : 'left-0'
-              }`}
+              className={cn(
+                ` border-l z-50  ${
+                  outsideClose
+                    ? 'sm:w-[450px] w-[90%] h-[100%] dark:bg-gray-900'
+                    : `w-full h-[100%]  `
+                } fixed bottom-0  ${
+                  direction === 'right' ? 'right-0' : 'left-0'
+                }`,
+                className
+              )}
             >
               <div
                 className={`${

@@ -5,7 +5,6 @@ import React, { useState } from 'react'
 import { ScrollArea } from '../ui/scroll-area'
 import { basePath, components, specialComponents } from './docs-sidebar'
 import { usePathname, useRouter } from 'next/navigation'
-import { useTheme } from 'next-themes'
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import Link from 'next/link'
 
