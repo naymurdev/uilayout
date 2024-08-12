@@ -43,6 +43,11 @@ export const docsConfig: TDocsConfig = {
       items: [
         { href: '/components/accordion', title: 'Accordion', items: [] },
         {
+          href: '/components/responsive-header',
+          title: 'Responsive Header',
+          items: [],
+        },
+        {
           href: '/components/magnified-doc',
           title: 'Magnified-Doc',
           items: [],

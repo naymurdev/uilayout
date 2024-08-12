@@ -929,6 +929,12 @@ export const COMPONENTS = [
     name: 'Masonary',
     componentArray: [
       {
+        componentName: 'boxgrid',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/grid/box-grid')
+        ),
+      },
+      {
         componentName: 'conditionGrid',
         componentSrc: React.lazy(
           () => import('@/registry/components/grid/condition-grid')
@@ -948,6 +954,10 @@ export const COMPONENTS = [
       },
     ],
     filesArray: [
+      {
+        fileName: 'boxgrid',
+        fileSrc: './src/registry/components/grid/box-grid.tsx',
+      },
       {
         fileName: 'conditionGrid',
         fileSrc: './src/registry/components/grid/condition-grid.tsx',

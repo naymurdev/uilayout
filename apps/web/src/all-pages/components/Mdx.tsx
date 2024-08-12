@@ -22,7 +22,6 @@ import ScreenComponentPreview from '@/components/common/screen-component--previe
 import ScreenCodePreview from '@/components/common/screen-code-preview'
 import BasicComponentPreview from '@/components/common/BasicComponentPreview'
 import ProductsCardComponent from '@/components/common/ProductsCardComponent'
-import IframePreviewComponent from '@/components/common/IframeComponentPreview'
 import IframeLinkPreviewComponent from '@/components/common/IframeLinkComponentPreview'
 const components = {
   Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
@@ -62,7 +61,6 @@ const components = {
     />
   ),
   IframeLinkPreviewComponent,
-  IframePreviewComponent,
   ProductsCardComponent,
   ComponentPreview,
   CodePreview,

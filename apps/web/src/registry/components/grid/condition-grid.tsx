@@ -40,17 +40,17 @@ const projects: ProjectsTypes[] = [
 export default function index() {
   return (
     <>
-      <div className="grid grid-cols-12  gap-4 overflow-hidden px-5 pb-5">
+      <div className="grid grid-cols-12  gap-4 overflow-hidden px-5 lg:pb-5 pb-2">
         {projects.map((project, index) => {
-          let colSpanClass = 'col-span-6'
+          let colSpanClass = 'sm:col-span-6 col-span-12 '
           if (index === 0) {
-            colSpanClass = 'col-span-5'
+            colSpanClass = ' sm:col-span-5 col-span-12 '
           } else if (index === 1) {
-            colSpanClass = 'col-span-7'
+            colSpanClass = 'sm:col-span-7 col-span-12 '
           } else if (index === projects.length - 2) {
-            colSpanClass = 'col-span-7'
+            colSpanClass = 'sm:col-span-7 col-span-12 '
           } else if (index === projects.length - 1) {
-            colSpanClass = 'col-span-5'
+            colSpanClass = 'sm:col-span-5 col-span-12 '
           }
           return (
             <>
@@ -71,11 +71,11 @@ export default function index() {
                     className="h-full w-full object-cover rounded-xl"
                   />
                 </div>
-                <div className="absolute bottom-2 text-black w-full p-4 flex justify-between items-center">
-                  <h3 className="sm:text-xl text-sm bg-black text-white rounded-xl p-2 px-4">
+                <div className="absolute lg:bottom-2 bottom-0 text-black w-full p-4 flex justify-between items-center">
+                  <h3 className="lg:text-xl text-sm bg-black text-white rounded-xl p-2 px-4">
                     {project.title}
                   </h3>
-                  <div className="w-12 h-12 text-white grid place-content-center rounded-full bg-black">
+                  <div className="lg:w-12 w-10 lg:h-12 h-10 text-white grid place-content-center rounded-full bg-black">
                     <MoveUpRight />
                   </div>
                 </div>

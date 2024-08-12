@@ -62,6 +62,7 @@ export const specialComponents = [
   { id: '/components/buttons', name: 'Buttons', new: true },
 
   { id: '/components/noise', name: 'Noise' },
+  { id: '/components/responsive-header', name: 'Responsive-Header' },
   { id: '/components/footers', name: 'Footers' },
   {
     id: '/components/animated-beam',
@@ -100,16 +101,32 @@ export const components = [
     component: 'card',
   },
 
-  { id: '/components/dialog', name: 'Dialog', component: 'modal' },
-  { id: '/components/media-modal', name: 'Media Modal', component: 'modal' },
-  { id: '/components/linear-modal', name: 'Linear Modal', component: 'modal' },
+  { id: '/components/dialog', name: 'Dialog', component: 'modal/drawer' },
+  {
+    id: '/components/media-modal',
+    name: 'Media Modal',
+    component: 'modal/drawer',
+  },
+  {
+    id: '/components/linear-modal',
+    name: 'Linear Modal',
+    component: 'modal/drawer',
+  },
   {
     id: '/components/gallery-model',
     name: 'Gallery Model',
-    component: 'modal',
+    component: 'modal/drawer',
   },
-  { id: '/components/drawer', name: 'Responsive Drawer', component: 'modal' },
-  { id: '/components/sidebar', name: 'Responsive Sidebar', component: 'modal' },
+  {
+    id: '/components/drawer',
+    name: 'Responsive Drawer',
+    component: 'modal/drawer',
+  },
+  {
+    id: '/components/sidebar',
+    name: 'Responsive Sidebar',
+    component: 'modal/drawer',
+  },
 
   {
     id: '/components/stacking-card',

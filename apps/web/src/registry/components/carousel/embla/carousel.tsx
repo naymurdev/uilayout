@@ -563,7 +563,7 @@ export const ThumsSlider: React.FC<any> = () => {
             className={`min-w-0 w-full xl:h-24 aspect-auto border-2  rounded-md ${
               index === selectedIndex
                 ? '  opacity-100'
-                : 'border-transparent opacity-30 blur-sm'
+                : 'border-transparent opacity-30 '
             }`}
             style={{ flex: `0 0 15%` }}
             onClick={() => onThumbClick(index)}
