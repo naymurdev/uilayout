@@ -128,7 +128,7 @@ function HomeHeader() {
             <a
               target="_blank"
               href="https://github.com/naymurdev/uilayout"
-              className="border w-10 grid place-content-center rounded-md"
+              className="border w-10 grid place-content-center rounded-md dark:bg-black bg-white"
             >
               <Github />
             </a>

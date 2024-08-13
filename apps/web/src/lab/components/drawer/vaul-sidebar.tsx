@@ -77,7 +77,7 @@ export function SidebarDrawer({
               className={cn(
                 ` border-l z-50  ${
                   outsideClose
-                    ? 'sm:w-[450px] w-[90%] h-[100%] dark:bg-gray-900'
+                    ? 'sm:w-[450px] w-[90%] h-[100%] dark:bg-gray-900 bg-white'
                     : `w-full h-[100%]  `
                 } fixed bottom-0  ${
                   direction === 'right' ? 'right-0' : 'left-0'
