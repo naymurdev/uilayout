@@ -37,6 +37,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useId,
   useRef,
   useState,
 } from 'react'
@@ -82,6 +83,7 @@ interface CarouselContextType {
   setSlidesArr: any
   emblaThumbsRef: any
   onThumbClick: any
+  carouselId: string
 }
 
 const CarouselContext = createContext<CarouselContextType | undefined>(
@@ -107,6 +109,7 @@ const Carousel: React.FC<CarouselProps> = ({
   isScale = false,
   isAutoPlay = false,
 }) => {
+  const carouselId = useId()
   const [slidesrArr, setSlidesArr] = useState<Element[]>([])
   const plugins = []
 
@@ -276,6 +279,7 @@ const Carousel: React.FC<CarouselProps> = ({
         scrollProgress,
         selectedSnap,
         snapCount,
+        carouselId,
         isScale,
         emblaThumbsRef,
         onThumbClick,
@@ -431,7 +435,7 @@ export const SliderSnapDisplay = ({ className }: { className?: string }) => {
   )
 }
 export const SliderDotButton = ({ className }: { className?: string }) => {
-  const { selectedIndex, scrollSnaps, onDotButtonClick }: any =
+  const { selectedIndex, scrollSnaps, onDotButtonClick, carouselId }: any =
     useCarouselContext()
   return (
     <div className={cn('flex', className)}>
@@ -441,10 +445,23 @@ export const SliderDotButton = ({ className }: { className?: string }) => {
             type="button"
             key={index}
             onClick={() => onDotButtonClick(index)}
-            className={`relative inline-flex cursor-pointer  border-2 dark:border-white border-black p-0 m-0 w-4 h-4 z-[1] rounded-full`}
+            className={`relative inline-flex  p-0 m-0 w-10 h-2 `}
           >
+            <div className=" bg-gray-500/40  h-2 rounded-sm w-10 "></div>
             {index === selectedIndex && (
-              <div className="absolute w-full h-full left-0 top-0 dark:bg-white bg-black rounded-full  z-[1]"></div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  transition={{
+                    layout: {
+                      duration: 0.4,
+                      ease: 'easeInOut',
+                      delay: 0.04,
+                    },
+                  }}
+                  layoutId={`hover-${carouselId}`}
+                  className="absolute z-[3] w-full h-full left-0 top-0 dark:bg-white bg-black rounded-full"
+                />
+              </AnimatePresence>
             )}
           </button>
         ))}
@@ -571,13 +588,13 @@ export const ThumsSlider: React.FC<any> = () => {
 
   return (
     <div className=" overflow-hidden mt-2" ref={emblaThumbsRef}>
-      <div className="flex flex-row ">
+      <div className="flex flex-row gap-2">
         {slidesrArr?.map((slide: any, index: any) => (
           <div
-            className={`min-w-0 w-full h-24 border-4 rounded-md ${
+            className={`min-w-0 w-full xl:h-24 aspect-auto border-2  rounded-md ${
               index === selectedIndex
-                ? 'dark:border-white border-black'
-                : 'border-transparent'
+                ? '  opacity-100'
+                : 'border-transparent opacity-30 '
             }`}
             style={{ flex: `0 0 15%` }}
             onClick={() => onThumbClick(index)}
