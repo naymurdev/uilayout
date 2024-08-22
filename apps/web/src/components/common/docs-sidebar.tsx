@@ -108,8 +108,8 @@ export const components = [
     component: 'modal/drawer',
   },
   {
-    id: '/components/linear-modal',
-    name: 'Linear Modal',
+    id: '/components/dialog-card',
+    name: 'Dialog Card',
     component: 'modal/drawer',
   },
   {

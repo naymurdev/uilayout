@@ -4,6 +4,7 @@ import components__accordionMdx from './components__accordion.mdx.json' assert {
 import components__animatedBeamMdx from './components__animated-beam.mdx.json' assert { type: 'json' }
 import components__buttonsMdx from './components__buttons.mdx.json' assert { type: 'json' }
 import components__clipPathImageMdx from './components__clip-path-image.mdx.json' assert { type: 'json' }
+import components__dialogCardMdx from './components__dialog-card.mdx.json' assert { type: 'json' }
 import components__dialogMdx from './components__dialog.mdx.json' assert { type: 'json' }
 import components__drawerMdx from './components__drawer.mdx.json' assert { type: 'json' }
 import components__emblaCarouselMdx from './components__embla-carousel.mdx.json' assert { type: 'json' }
@@ -23,7 +24,6 @@ import components__imageMousetrailMdx from './components__image-mousetrail.mdx.j
 import components__imageRevealMdx from './components__image-reveal.mdx.json' assert { type: 'json' }
 import components__imageTabsMdx from './components__image-tabs.mdx.json' assert { type: 'json' }
 import components__infinityBrandMdx from './components__infinity-brand.mdx.json' assert { type: 'json' }
-import components__linearModalMdx from './components__linear-modal.mdx.json' assert { type: 'json' }
 import components__magnifiedDocMdx from './components__magnified-doc.mdx.json' assert { type: 'json' }
 import components__marqueeMdx from './components__marquee.mdx.json' assert { type: 'json' }
 import components__masonaryGridMdx from './components__masonary-grid.mdx.json' assert { type: 'json' }
@@ -43,4 +43,4 @@ import components__stickyScrollMdx from './components__sticky-scroll.mdx.json' a
 import components__tabsMdx from './components__tabs.mdx.json' assert { type: 'json' }
 import components__videoMaskingMdx from './components__video-masking.mdx.json' assert { type: 'json' }
 
-export const allComponents = [components__accordionMdx, components__animatedBeamMdx, components__buttonsMdx, components__clipPathImageMdx, components__dialogMdx, components__drawerMdx, components__emblaCarouselMdx, components__faqsMdx, components__footersMdx, components__framerCarouselMdx, components__galleryModelMdx, components__globeMdx, components__gradientBorderMdx, components__gridMdx, components__headersMdx, components__horizontalScrollMdx, components__hoverCardsMdx, components__imageAccordionsMdx, components__imageMaskingMdx, components__imageMousetrailMdx, components__imageRevealMdx, components__imageTabsMdx, components__infinityBrandMdx, components__linearModalMdx, components__magnifiedDocMdx, components__marqueeMdx, components__masonaryGridMdx, components__mediaModalMdx, components__noiseMdx, components__productsCardsMdx, components__progressiveCarouselMdx, components__responsiveHeaderMdx, components__scrollMdx, components__sidebarMdx, components__smoothScrollMdx, components__sparklesTitleMdx, components__sparklesMdx, components__spotlightCardsMdx, components__stackingCardMdx, components__stickyScrollMdx, components__tabsMdx, components__videoMaskingMdx]
+export const allComponents = [components__accordionMdx, components__animatedBeamMdx, components__buttonsMdx, components__clipPathImageMdx, components__dialogCardMdx, components__dialogMdx, components__drawerMdx, components__emblaCarouselMdx, components__faqsMdx, components__footersMdx, components__framerCarouselMdx, components__galleryModelMdx, components__globeMdx, components__gradientBorderMdx, components__gridMdx, components__headersMdx, components__horizontalScrollMdx, components__hoverCardsMdx, components__imageAccordionsMdx, components__imageMaskingMdx, components__imageMousetrailMdx, components__imageRevealMdx, components__imageTabsMdx, components__infinityBrandMdx, components__magnifiedDocMdx, components__marqueeMdx, components__masonaryGridMdx, components__mediaModalMdx, components__noiseMdx, components__productsCardsMdx, components__progressiveCarouselMdx, components__responsiveHeaderMdx, components__scrollMdx, components__sidebarMdx, components__smoothScrollMdx, components__sparklesTitleMdx, components__sparklesMdx, components__spotlightCardsMdx, components__stackingCardMdx, components__stickyScrollMdx, components__tabsMdx, components__videoMaskingMdx]

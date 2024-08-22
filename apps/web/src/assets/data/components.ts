@@ -859,6 +859,12 @@ export const COMPONENTS = [
     name: 'Modal',
     componentArray: [
       {
+        componentName: 'linearDialogCard',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/modal/dialog-card/linear-card')
+        ),
+      },
+      {
         componentName: 'dialog',
         componentSrc: React.lazy(
           () => import('@/registry/components/modal/dialog')
@@ -896,6 +902,10 @@ export const COMPONENTS = [
       },
     ],
     filesArray: [
+      {
+        fileName: 'linearDialogCard',
+        fileSrc: './src/registry/components/modal/dialog-card/linear-card.tsx',
+      },
       {
         fileName: 'dialog',
         fileSrc: './src/registry/components/modal/dialog/index.tsx',
