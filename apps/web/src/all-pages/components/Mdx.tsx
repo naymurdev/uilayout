@@ -20,7 +20,6 @@ import DrawerCodePreview from '@/components/common/drawer-code-preview'
 import DrawerCodeWrapper from '@/components/common/drawer-code-wrapper'
 import ScreenComponentPreview from '@/components/common/screen-component--preview'
 import ScreenCodePreview from '@/components/common/screen-code-preview'
-import BasicComponentPreview from '@/components/common/BasicComponentPreview'
 import ProductsCardComponent from '@/components/common/ProductsCardComponent'
 import IframeLinkPreviewComponent from '@/components/common/IframeLinkComponentPreview'
 const components = {
@@ -69,7 +68,6 @@ const components = {
   DrawerCodePreview,
   ComponentsIndex,
   DrawerCodeWrapper,
-  BasicComponentPreview,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(

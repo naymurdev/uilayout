@@ -13,7 +13,7 @@ links:
     <TabsTrigger value="codesnippet">Code</TabsTrigger>
   </TabsList>
   <TabsContent value="preview">
-    <BasicComponentPreview name="imageMousetrail1" category="carousel" />
+    <ComponentPreview basicPadding={true}  name="imageMousetrail1" category="carousel" />
   </TabsContent>
   <TabsContent value="codesnippet">
     <CodeWrapper noExpand={true}>
@@ -28,11 +28,10 @@ links:
 ```tsx title="mousetrail.tsx"
 //@ts-nocheck
 'use client'
-import { items } from '@/components/common/constant'
 import { cn } from '@/lib/utils'
 import { createRef, useRef } from 'react'
 interface ImageMouseTrailProps {
-  items: ImageItem[]
+  items: any[]
   children?: ReactNode
   className?: string
   imgClass?: string
@@ -185,7 +184,7 @@ const activate = (image, x, y) => {
     <TabsTrigger value="codesnippet">Code</TabsTrigger>
   </TabsList>
   <TabsContent value="preview">
-    <BasicComponentPreview name="imageMousetrail2" category="carousel" />
+    <ComponentPreview basicPadding={true}  name="imageMousetrail2" category="carousel" />
   </TabsContent>
   <TabsContent value="codesnippet">
     <CodeWrapper noExpand={true}>
@@ -199,7 +198,7 @@ const activate = (image, x, y) => {
     <TabsTrigger value="codesnippet">Code</TabsTrigger>
   </TabsList>
   <TabsContent value="preview">
-    <BasicComponentPreview name="imageMousetrail3" category="carousel" />
+    <ComponentPreview basicPadding={true}  name="imageMousetrail3" category="carousel" />
   </TabsContent>
   <TabsContent value="codesnippet">
       <CodeWrapper noExpand={true}>
@@ -217,7 +216,7 @@ const activate = (image, x, y) => {
     <TabsTrigger value="codesnippet">Code</TabsTrigger>
   </TabsList>
   <TabsContent value="preview">
-    <BasicComponentPreview
+    <ComponentPreview basicPadding={true} 
       name="withoutComponentMousetrail"
       category="carousel"
     />

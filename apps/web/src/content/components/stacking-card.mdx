@@ -354,7 +354,6 @@ export default function HorizontalScroll(): JSX.Element {
     <CodeWrapper>
 
 ```tsx
-//
 'use client'
 import { ReactLenis } from 'lenis/react'
 export default function index(): JSX.Element {
@@ -372,62 +371,88 @@ export default function index(): JSX.Element {
         </div>
 
         <section className="text-white   w-full bg-slate-950  ">
-          <>
-            <div className="sm:sticky sm:top-0  w-full ">
-              <figure className="w-full h-screen flex items-center justify-center ">
-                <img
-                  src="https://images.unsplash.com/photo-1718969604981-de826f44ce15?w=1200&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-[80%] w-[55%]  align-bottom object-cover rounded-md "
-                />
+          <div className="flex justify-between px-16">
+            <div className="grid gap-2">
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <article className="bg-green-500 h-72 w-[30rem] rounded-lg rotate-6 p-4 grid place-content-center gap-4">
+                  <h1 className="text-2xl font-semibold">Image MouseTrail</h1>
+                  <p>
+                    An Mouse who is running with couple of images and the best
+                    part is you can hide all the images when you don't move your
+                    mouse. I hope you'll love it
+                  </p>
+                  <a
+                    href="https://ui-layout.com/components/image-mousetrail"
+                    target="_blank"
+                    className="w-fit bg-black p-3 rounded-md cursor-pointer"
+                  >
+                    Click to View
+                  </a>
+                </article>
+              </figure>
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <article className="bg-red-400 h-72 w-[30rem] rounded-lg p-4 grid place-content-center gap-4">
+                  <h1 className="text-2xl font-semibold">
+                    Progressive Carousel
+                  </h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eius consequatur explicabo assumenda odit necessitatibus
+                    possimus ducimus aliquam. Ullam dignissimos animi officiis,
+                    in sequi et inventore harum ipsam sed.
+                  </p>
+                  <a
+                    href="https://ui-layout.com/components/progressive-carousel"
+                    target="_blank"
+                    className="w-fit bg-black p-3 rounded-md cursor-pointer"
+                  >
+                    Click to View
+                  </a>
+                </article>
+              </figure>
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <article className="bg-orange-400 h-72 w-[30rem] p-4 rounded-lg -rotate-6 grid place-content-center gap-4">
+                  <h1 className="text-2xl font-semibold">Responsive Drawer</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eius consequatur explicabo assumenda odit necessitatibus
+                    possimus ducimus aliquam. Ullam dignissimos animi officiis,
+                    in sequi et inventore harum ipsam sed.
+                  </p>
+                  <a
+                    href="https://ui-layout.com/components/drawer"
+                    target="_blank"
+                    className="w-fit bg-black p-3 rounded-md cursor-pointer"
+                  >
+                    Click to View
+                  </a>
+                </article>
+              </figure>
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <article className="bg-blue-400 h-72 w-[30rem] p-4 rounded-lg grid place-content-center gap-4">
+                  <h1 className="text-2xl font-semibold">Animated Globe</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eius consequatur explicabo assumenda odit necessitatibus
+                    possimus ducimus aliquam. Ullam dignissimos animi officiis,
+                    in sequi et inventore harum ipsam sed.
+                  </p>
+                  <a
+                    href="https://ui-layout.com/components/globe"
+                    target="_blank"
+                    className="w-fit bg-black p-3 rounded-md cursor-pointer"
+                  >
+                    Click to View
+                  </a>
+                </article>
               </figure>
             </div>
-            <div className="sm:sticky sm:top-2  w-full ">
-              <figure className="w-full h-screen flex items-center justify-center ">
-                <img
-                  src="https://images.unsplash.com/photo-1476180814856-a36609db0493?w=1200&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-[80%] w-[60%]  align-bottom object-cover rounded-md [box-shadow:0_-5px_16px_4px_rgba(0,0,0,0.8),0_2px_4px_-1px_rgba(0,0,0,0.06)]"
-                />
-              </figure>
+            <div className="sticky top-0 h-screen grid place-content-center">
+              <h1 className="text-4xl px-8 font-medium text-center tracking-tight leading-[120%]">
+                What We <br /> Have Now😎
+              </h1>
             </div>
-            <div className="sm:sticky sm:top-4  w-full ">
-              <figure className="w-full h-screen flex items-center justify-center ">
-                <img
-                  src="https://images.unsplash.com/photo-1595407660626-db35dcd16609?w=1200&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-[80%] w-[65%]  align-bottom object-cover rounded-md "
-                />
-              </figure>
-            </div>
-            <div className="sm:sticky sm:top-6  w-full ">
-              <figure className="w-full h-screen flex items-center justify-center ">
-                <img
-                  src="https://images.unsplash.com/photo-1599054799131-4b09c73a63cf?w=1200&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-[80%] w-[70%]  align-bottom object-cover rounded-md "
-                />
-              </figure>
-            </div>
-            <div className="sm:sticky sm:top-8  w-full ">
-              <figure className="w-full h-screen flex items-center justify-center ">
-                <img
-                  src="https://images.unsplash.com/photo-1719963532023-01b573d1d584?w=1200&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-[80%] w-[75%]  align-bottom object-cover rounded-md "
-                />
-              </figure>
-            </div>
-            <div className="sm:sticky sm:top-12  w-full ">
-              <figure className="w-full h-screen flex items-center justify-center ">
-                <img
-                  src="https://images.unsplash.com/photo-1714328101501-3594de6cb80f?w=1200&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-[80%] w-[80%]  align-bottom object-cover rounded-md "
-                />
-              </figure>
-            </div>
-          </>
+          </div>
         </section>
 
         <footer className="group bg-slate-950 ">

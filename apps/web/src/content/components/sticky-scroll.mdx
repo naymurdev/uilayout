@@ -344,6 +344,8 @@ export default function HorizontalScroll(): JSX.Element {
     />
   </TabsContent>
   <TabsContent value="codesnippet">
-    <CodePreview name="stickyHero" category="beam" />
+    <CodeWrapper noExpand={true}>
+      <CodePreview name="stickyHero" category="beam" />
+    </CodeWrapper>
   </TabsContent>
 </Tabs>

@@ -1,12 +1,16 @@
-// @ts-nocheck
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { AnimatePresence, motion } from 'framer-motion'
 import {
+  ArrowBigDown,
   Baby,
   BookOpen,
+  ChevronDown,
+  ChevronsDown,
+  ChevronsRight,
   Component,
   Grid2X2,
   Layout,
@@ -44,63 +48,52 @@ export const basePath = [
   // },
 ]
 export const specialComponents = [
-  { id: '/components/image-mousetrail', name: 'Image Mousetrail', new: true },
-  { id: '/components/spotlight-cards', name: 'Spotlight cards', new: true },
-  { id: '/components/image-reveal', name: 'Image Reveal', new: true },
-  { id: '/components/globe', name: 'Globe', new: true },
-  {
-    id: '/components/progressive-carousel',
-    name: 'Progressive Carousel',
-    new: true,
-  },
-
   { id: '/components/magnified-doc', name: 'Magnified-Doc' },
   {
     id: '/components/gradient-border',
     name: 'gradient-border',
   },
-  { id: '/components/buttons', name: 'Buttons', new: true },
+  { id: '/components/buttons', name: 'Buttons' },
 
   { id: '/components/noise', name: 'Noise' },
   { id: '/components/responsive-header', name: 'Responsive-Header' },
   { id: '/components/footers', name: 'Footers' },
+]
+export const components = [
+  {
+    id: '/components/image-mousetrail',
+    name: 'Image Mousetrail',
+    component: 'creative-effect',
+    new: true,
+  },
+  {
+    id: '/components/spotlight-cards',
+    name: 'Spotlight cards',
+    component: 'creative-effect',
+  },
+  {
+    id: '/components/image-reveal',
+    name: 'Image Reveal',
+    new: true,
+    component: 'creative-effect',
+  },
+  {
+    id: '/components/progressive-carousel',
+    name: 'Progressive Carousel',
+    new: true,
+    component: 'creative-effect',
+  },
+  {
+    id: '/components/globe',
+    name: 'Globe',
+    component: 'creative-effect',
+    // new: true
+  },
   {
     id: '/components/animated-beam',
     name: 'Animated Beam',
+    component: 'creative-effect',
   },
-]
-export const components = [
-  { id: '/components/tabs', name: 'Tabs', component: 'tabs', new: true },
-  {
-    id: '/components/image-tabs',
-    name: 'Image Tabs',
-    component: 'tabs',
-    new: true,
-  },
-  {
-    id: '/components/sparkles',
-    name: 'Sparkles',
-    component: 'sparkles',
-    new: true,
-  },
-  {
-    id: '/components/sparkles-title',
-    name: 'Sparkles Title',
-    component: 'sparkles',
-    new: true,
-  },
-  { id: '/components/accordion', name: 'Accordion', component: 'accordion' },
-
-  { id: '/components/faqs', name: 'FAQs', component: 'accordion' },
-  { id: '/components/grid', name: 'Grid', component: 'grid' },
-  { id: '/components/masonary-grid', name: 'Masonary', component: 'grid' },
-  { id: '/components/hover-cards', name: 'Hover cards', component: 'card' },
-  {
-    id: '/components/products-cards',
-    name: 'Products-Cards',
-    component: 'card',
-  },
-
   { id: '/components/dialog', name: 'Dialog', component: 'modal/drawer' },
   {
     id: '/components/media-modal',
@@ -127,18 +120,41 @@ export const components = [
     name: 'Responsive Sidebar',
     component: 'modal/drawer',
   },
+  {
+    id: '/components/scroll-element',
+    name: 'Scroll Element',
+    component: 'scroll',
+    // new: true,
+  },
+  {
+    id: '/components/horizontal-scroll',
+    name: 'Horizontal Scroll',
+    component: 'scroll',
+    // new: true,
+  },
+  {
+    id: '/components/smooth-scroll',
+    name: 'Smooth-Scroll',
+    component: 'scroll',
+    // new: true,
+  },
+  { id: '/components/tabs', name: 'Tabs', component: 'tabs' },
+  {
+    id: '/components/image-tabs',
+    name: 'Image Tabs',
+    component: 'tabs',
+  },
+  {
+    id: '/components/sparkles',
+    name: 'Sparkles',
+    component: 'sparkles',
+  },
+  {
+    id: '/components/sparkles-title',
+    name: 'Sparkles Title',
+    component: 'sparkles',
+  },
 
-  {
-    id: '/components/stacking-card',
-    name: 'Stacking Card',
-    component: 'sticky-scroll',
-  },
-  {
-    id: '/components/embla-carousel',
-    name: 'Carousel',
-    new: true,
-    component: 'carousel',
-  },
   {
     id: '/components/clip-path-image',
     name: 'Clip-Path Image',
@@ -161,10 +177,35 @@ export const components = [
   },
 
   {
+    id: '/components/embla-carousel',
+    name: 'Carousel',
+    new: true,
+    component: 'carousel',
+  },
+
+  {
     id: '/components/framer-carousel',
     name: 'Framer Carousel',
     component: 'carousel',
   },
+  { id: '/components/accordion', name: 'Accordion', component: 'accordion' },
+
+  { id: '/components/faqs', name: 'FAQs', component: 'accordion' },
+  { id: '/components/grid', name: 'Grid', component: 'grid' },
+  { id: '/components/masonary-grid', name: 'Masonary', component: 'grid' },
+  { id: '/components/hover-cards', name: 'Hover cards', component: 'card' },
+  {
+    id: '/components/products-cards',
+    name: 'Products-Cards',
+    component: 'card',
+  },
+
+  {
+    id: '/components/stacking-card',
+    name: 'Stacking Card',
+    component: 'sticky-scroll',
+  },
+
   {
     id: '/components/sticky-scroll',
     name: 'Sticky Scroll',
@@ -178,24 +219,10 @@ export const components = [
     component: 'accordion',
   },
 
-  // { id: '/components/scroll', name: 'Scroll' },
   {
     id: '/components/infinity-brand',
     name: 'Infinity Brand',
     component: 'marquee',
-  },
-  {
-    id: '/components/horizontal-scroll',
-    name: 'Horizontal Scroll',
-    component: 'scroll',
-    new: true,
-  },
-  // { id: '/components/footers', name: 'Footers' },
-  {
-    id: '/components/smooth-scroll',
-    name: 'Smooth-Scroll',
-    component: 'scroll',
-    new: true,
   },
 ]
 export const layouts = [
@@ -207,9 +234,12 @@ function DocsSidebar() {
   const pathname = usePathname()
   const groupedComponents = components.reduce((acc, component) => {
     const group = component.component || null
+    //@ts-ignore
     if (!acc[group]) {
+      //@ts-ignore
       acc[group] = []
     }
+    //@ts-ignore
     acc[group].push(component)
     return acc
   }, {})
@@ -249,7 +279,7 @@ function DocsSidebar() {
           </ul>
           <h1 className="text-lg font-semibold pb-1">Components</h1>
           <ul>
-            {specialComponents?.map((link) => {
+            {specialComponents?.map((link: any) => {
               return (
                 <>
                   <li
@@ -273,54 +303,60 @@ function DocsSidebar() {
             })}
           </ul>
           {Object.entries(groupedComponents).map(([group, items]) => (
-            <div key={group}>
-              <h2 className="text-[1rem] dark:font-normal dark:text-gray-100 font-normal capitalize my-1">
-                {group}
-              </h2>
-              <ul>
-                {items.map((link) => (
-                  <li
-                    key={link.id}
-                    className={`font-normal text-sm flex items-center gap-1 dark:hover:text-white py-1 pl-2 border-l transition-all ${
-                      link.id === pathname
-                        ? 'dark:border-white border-black text-black dark:text-white font-semibold'
-                        : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
-                    }`}
-                  >
-                    <Link href={link.id}>{link.name}</Link>
-                    {link?.new && (
-                      <span className="bg-blue-400 text-white rounded-full px-2 h-4 text-xs items-center flex">
-                        new
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ItemsWithName group={group} items={items} pathname={pathname} />
           ))}
-          {/* <h1 className="text-sm font-semibold pb-1 pt-2">Layouts</h1>
-          <ul>
-            {layouts?.map((link) => {
-              return (
-                <>
-                  <li
-                    className={`font-normal    dark:hover:text-white  py-1 pl-2  border-l transition-all   ${
-                      link.id === pathname
-                        ? 'dark:border-white border-black text-black dark:text-white font-medium'
-                        : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
-                    }`}
-                    // data-active={link.id === pathname}
-                    key={link.id}
-                  >
-                    <Link href={link.id}>{link.name}</Link>
-                  </li>
-                </>
-              )
-            })}
-          </ul> */}
         </ScrollArea>
       </div>
     </div>
+  )
+}
+
+export const ItemsWithName = ({ group, items, pathname }: any) => {
+  const [expandedItems, setExpandedItems] = useState<boolean>(false)
+  const showExpandButton = items.length > 3
+  const itemsToShow =
+    expandedItems || !showExpandButton ? items : items.slice(0, 3)
+  return (
+    <>
+      <div
+        key={group}
+        onMouseEnter={(e) => setExpandedItems(true)}
+        onMouseLeave={(e) => setExpandedItems(false)}
+      >
+        <button className="text-[1rem] relative flex w-full items-center justify-between pr-4  cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1">
+          {group}{' '}
+          <div className="h-7 w-7 rounded-md  bg-gray-900 grid place-content-center  absolute top-0 right-3">
+            <ChevronsDown
+              className={` h-5 w-5  ${
+                expandedItems ? ' rotate-180' : ' rotate-0'
+              }`}
+            />
+          </div>
+        </button>
+        <ul className="relative transition-all duration-300 ">
+          {!expandedItems && showExpandButton && (
+            <div className="absolute w-full bottom-0 left-0 h-7 bg-gradient-to-t from-base-dark from-20%" />
+          )}
+          {itemsToShow.map((link: any) => (
+            <li
+              key={link.id}
+              className={`font-normal text-sm flex items-center gap-1 dark:hover:text-white py-1 pl-2 border-l transition-all ${
+                link.id === pathname
+                  ? 'dark:border-white border-black text-black dark:text-white font-semibold'
+                  : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
+              }`}
+            >
+              <Link href={link.id}>{link.name}</Link>
+              {link?.new && (
+                <span className="bg-blue-400 text-white rounded-full px-2 h-4 text-xs items-center flex">
+                  new
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   )
 }
 

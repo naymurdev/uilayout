@@ -718,7 +718,6 @@ export const COMPONENTS = [
     slug: 'sticky-scroll',
     type: 'scroll',
   },
-
   {
     name: 'Tabs',
     componentArray: [
@@ -1484,6 +1483,45 @@ export const COMPONENTS = [
       },
     ],
     slug: 'sticky-scroll',
+    type: 'scroll',
+  },
+  {
+    name: 'scroll-animation',
+    componentArray: [
+      {
+        componentName: 'scroll-element',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/scroll-element/example-one')
+        ),
+      },
+      {
+        componentName: 'scroll-element2',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/scroll-element/example-two')
+        ),
+      },
+      {
+        componentName: 'scroll-element3',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/scroll-element/example-three')
+        ),
+      },
+    ],
+    filesArray: [
+      {
+        fileName: 'scroll-element',
+        fileSrc: './src/registry/components/scroll-element/example-one.tsx',
+      },
+      {
+        fileName: 'scroll-element2',
+        fileSrc: './src/registry/components/scroll-element/example-two.tsx',
+      },
+      {
+        fileName: 'scroll-element3',
+        fileSrc: './src/registry/components/scroll-element/example-three.tsx',
+      },
+    ],
+    slug: 'scroll-scroll',
     type: 'scroll',
   },
   {

@@ -4,11 +4,9 @@ import { Button } from '../ui/button'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { SpotLightItem, Spotlight } from '@/lab/components/main-spotlight'
-import Image from 'next/image'
 import HomeProgressSlider from './progress-carousel'
 import HomeMouseTrail from './home-mousetrail'
 import HomeBtn from './home-btn'
-import HomeHoverCard from './home-hover-card'
 import HomeImageAccordion from './home-image-accordion'
 import HomeMagnifiedDocOneFile from './home-magnified-doc'
 import HomeAnimatedBeam from './home-animated-beam'
@@ -17,40 +15,47 @@ import HomeModal from './home-image-modal'
 import HomeProductCard from './home-product-card'
 import HomeTab from './home-tab'
 import HomeImageMasking from './home-image-masking'
-import SparklesText from '../ui/sparkles-text'
-import GlowButton from './hero-animated-btn'
+
 import HomeSlider from './home-carousel'
 const homeComponents = [
   {
     id: 0,
+    link: '/components/sparkles',
     iframeSrc: 'home-sparkles-globe',
     className: 'md:col-span-7 col-span-12',
   },
   {
     id: 1,
+    link: '/components/sparkles-title',
+
     iframeSrc: 'home-sparkles',
     className: 'md:col-span-5 sm:col-span-6  col-span-12',
   },
   {
     id: 2,
+    link: '/components/progressive-carousel',
+
     componentSrc: <HomeProgressSlider />,
 
     className: 'md:col-span-5 sm:col-span-6 col-span-12',
   },
   {
     id: 4,
+    link: '/components/image-mousetrail',
 
     componentSrc: <HomeMouseTrail />,
     className: 'md:col-span-7 sm:col-span-6 col-span-12',
   },
   {
     id: 5,
+    link: '/components/tabs',
 
     componentSrc: <HomeTab />,
     className: 'sm:col-span-6 col-span-12',
   },
   {
     id: 6,
+    link: '/components/magnified-doc',
 
     componentSrc: <HomeMagnifiedDocOneFile />,
     className: 'sm:col-span-6 col-span-12 ',
@@ -59,12 +64,14 @@ const homeComponents = [
   {
     id: 7,
     componentSrc: <HomeBtn />,
+    link: '/components/buttons',
 
     className: 'lg:col-span-2 col-span-0',
   },
 
   {
     id: 8,
+    link: '/components/media-modal',
     componentSrc: <HomeModal />,
     className: 'lg:col-span-4 sm:col-span-6 col-span-12',
   },
@@ -72,33 +79,41 @@ const homeComponents = [
     id: 9,
     componentSrc: <HomeImageAccordion />,
     className: 'sm:col-span-6 col-span-12',
+    link: '/components/image-accordions',
   },
   {
     id: 10,
+    link: '/components/animated-beam',
 
     componentSrc: <HomeAnimatedBeam />,
     className: 'md:col-span-5 sm:col-span-6 col-span-12',
   },
   {
     id: 11,
+    link: '/components/video-masking',
 
     componentSrc: <HomeImageMasking />,
     className: 'md:col-span-7 col-span-12',
   },
   {
     id: 12,
+    link: '/components/dialog-card',
+
     componentSrc: <HomeAccordionModal />,
 
     className: 'lg:col-span-8  md:col-span-7 sm:col-span-6 col-span-12',
   },
   {
     id: 13,
+    link: '/components/products-cards',
 
     componentSrc: <HomeProductCard />,
     className: 'lg:col-span-4 md:col-span-5 sm:col-span-6 col-span-12',
   },
   {
     id: 14,
+    link: '/components/embla-carousel',
+
     componentSrc: <HomeSlider />,
     className: ' col-span-12',
   },
@@ -225,6 +240,27 @@ function HeroSec() {
                   <div
                     className={`relative rounded-lg  dark:bg-home-dark bg-gray-100 dark:border-none border w-full lg:h-[400px] md:h-[350px] h-[300px] mx-auto`}
                   >
+                    <a
+                      href={component.link}
+                      className="absolute h-10 w-10 bg-gray-800 top-2 right-2 z-10 rounded-md grid place-content-center cursor-pointer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="stroke-gray-300 hover:stroke-gray-100"
+                      >
+                        <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                        <path d="m21 3-9 9" />
+                        <path d="M15 3h6v6" />
+                      </svg>
+                    </a>
                     {component?.componentSrc && component.componentSrc}
                     {component?.iframeSrc && (
                       <iframe
