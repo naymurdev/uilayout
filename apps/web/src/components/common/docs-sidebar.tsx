@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -56,8 +56,13 @@ export const specialComponents = [
   { id: '/components/buttons', name: 'Buttons' },
 
   { id: '/components/noise', name: 'Noise' },
-  { id: '/components/responsive-header', name: 'Responsive-Header' },
+  {
+    id: '/components/globe',
+    name: 'Globe',
+    // new: true
+  },
   { id: '/components/footers', name: 'Footers' },
+  { id: '/components/responsive-header', name: 'Responsive-Header' },
 ]
 export const components = [
   {
@@ -84,8 +89,8 @@ export const components = [
     component: 'creative-effect',
   },
   {
-    id: '/components/globe',
-    name: 'Globe',
+    id: '/components/blocks',
+    name: 'Blocks',
     component: 'creative-effect',
     // new: true
   },
@@ -316,47 +321,80 @@ export const ItemsWithName = ({ group, items, pathname }: any) => {
   const showExpandButton = items.length > 3
   const itemsToShow =
     expandedItems || !showExpandButton ? items : items.slice(0, 3)
+
+  const groupRef = useRef<HTMLDivElement>(null)
+  const itemRefs = useRef<(HTMLLIElement | null)[]>([])
+
+  useEffect(() => {
+    const activeItemIndex = items.findIndex((item: any) => item.id === pathname)
+    if (activeItemIndex !== -1) {
+      itemRefs.current[activeItemIndex]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      })
+    }
+
+    const groupElement = groupRef.current
+
+    if (!groupElement) return
+
+    const match = items.some((item: any) => item.id === pathname)
+
+    const handleMouseEnter = () => setExpandedItems(true)
+    const handleMouseLeave = () => setExpandedItems(false)
+
+    if (match) {
+      setExpandedItems(true)
+      groupElement.removeEventListener('mouseenter', handleMouseEnter)
+      groupElement.removeEventListener('mouseleave', handleMouseLeave)
+    } else {
+      setExpandedItems(false)
+      groupElement.addEventListener('mouseenter', handleMouseEnter)
+      groupElement.addEventListener('mouseleave', handleMouseLeave)
+    }
+
+    return () => {
+      groupElement.removeEventListener('mouseenter', handleMouseEnter)
+      groupElement.removeEventListener('mouseleave', handleMouseLeave)
+    }
+  }, [items, pathname])
+
   return (
-    <>
-      <div
-        key={group}
-        onMouseEnter={(e) => setExpandedItems(true)}
-        onMouseLeave={(e) => setExpandedItems(false)}
-      >
-        <button className="text-[1rem] relative flex w-full items-center justify-between pr-4  cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1">
-          {group}{' '}
-          <div className="h-7 w-7 rounded-md  bg-gray-900 grid place-content-center  absolute top-0 right-3">
-            <ChevronsDown
-              className={` h-5 w-5  ${
-                expandedItems ? ' rotate-180' : ' rotate-0'
-              }`}
-            />
-          </div>
-        </button>
-        <ul className="relative transition-all duration-300 ">
-          {!expandedItems && showExpandButton && (
-            <div className="absolute w-full bottom-0 left-0 h-7 bg-gradient-to-t from-base-dark from-20%" />
-          )}
-          {itemsToShow.map((link: any) => (
-            <li
-              key={link.id}
-              className={`font-normal text-sm flex items-center gap-1 dark:hover:text-white py-1 pl-2 border-l transition-all ${
-                link.id === pathname
-                  ? 'dark:border-white border-black text-black dark:text-white font-semibold'
-                  : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
-              }`}
-            >
-              <Link href={link.id}>{link.name}</Link>
-              {link?.new && (
-                <span className="bg-blue-400 text-white rounded-full px-2 h-4 text-xs items-center flex">
-                  new
-                </span>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <div ref={groupRef} key={group}>
+      <button className="text-[1rem] relative flex w-full items-center justify-between pr-4 cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1">
+        {group}
+        <div className="h-7 w-7 rounded-md dark:bg-gray-900 bg-gray-100 grid place-content-center absolute top-0 right-3">
+          <ChevronsDown
+            className={`h-5 w-5 transition-all ${
+              expandedItems ? 'rotate-180' : 'rotate-0'
+            }`}
+          />
+        </div>
+      </button>
+      <ul className="relative ">
+        {!expandedItems && showExpandButton && (
+          <div className="absolute w-full bottom-0 left-0 h-7 bg-gradient-to-t dark:from-base-dark from-white from-20%" />
+        )}
+        {itemsToShow.map((link: any, index: number) => (
+          <li
+            key={link.id}
+            ref={(el) => (itemRefs.current[index] = el)}
+            className={`font-normal text-sm flex items-center gap-1 dark:hover:text-white py-1 pl-2 border-l transition-all ${
+              link.id === pathname
+                ? 'dark:border-white border-black text-black dark:text-white font-semibold'
+                : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
+            }`}
+          >
+            <Link href={link.id}>{link.name}</Link>
+            {link?.new && (
+              <span className="bg-blue-400 text-white rounded-full px-2 h-4 text-xs items-center flex">
+                new
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 

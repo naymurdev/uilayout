@@ -170,14 +170,14 @@ function HeroSec() {
         <div className="absolute inset-0 top-0 left-0  h-screen w-full items-center px-5 py-24 dark:[background:radial-gradient(87.03%_87.03%_at_50.05%_12.97%,rgba(217,217,217,0)_40%,#010716_100%)] [background:radial-gradient(87.03%_87.03%_at_50.05%_12.97%,rgba(217,217,217,0)_40%,#ffffff_100%)]"></div>
         <article className="grid gap-4 py-20 relative z-10 sm:px-0 px-4">
           <Link
-            href="/components/image-mousetrail"
+            href="/components/scroll-element"
             className="inline-flex w-fit mx-auto items-center gap-1 rounded-full  bg-[#334cec] border-4  shadow-[#6175f8]  py-0.5 pl-0.5 pr-3 text-xs "
           >
             <div className="rounded-full bg-[#fcfdff] px-2 py-1 text-xs text-black ">
               Update
             </div>
             <span className="text-white sm:text-base text-xs inline-block">
-              ✨ Introducing MOUSETRAIL
+              ✨ Introducing Scroll Element
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +242,7 @@ function HeroSec() {
                   >
                     <a
                       href={component.link}
-                      className="absolute h-10 w-10 bg-gray-800 top-2 right-2 z-10 rounded-md grid place-content-center cursor-pointer"
+                      className="absolute h-10 w-10 dark:bg-gray-900 top-2 bg-gray-200 right-2 z-10 rounded-md grid place-content-center cursor-pointer"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -254,7 +254,7 @@ function HeroSec() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="stroke-gray-300 hover:stroke-gray-100"
+                        className="dark:stroke-gray-300 dark:hover:stroke-gray-100 stroke-gray-700 hover:stroke-gray-900"
                       >
                         <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
                         <path d="m21 3-9 9" />

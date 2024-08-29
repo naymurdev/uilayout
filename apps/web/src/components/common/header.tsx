@@ -20,6 +20,7 @@ import {
 import { Button } from '../ui/button'
 import { SearchDialog } from './search-bar'
 import MobileHeader from './moibile-header'
+import GitHubButton from '@/registry/components/github-repo-btn'
 
 function Header() {
   const { setTheme } = useTheme()
@@ -38,10 +39,15 @@ function Header() {
             <a
               target="_blank"
               href="https://github.com/naymurdev/uilayout"
-              className="border w-10 grid place-content-center rounded-md"
+              className="border w-10 grid place-content-center sm:hidden  rounded-md"
             >
               <Github />
             </a>
+            <GitHubButton
+              username="naymurdev"
+              repo="uilayout"
+              classname="sm:flex hidden"
+            />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="border w-10 grid place-content-center rounded-md relative">

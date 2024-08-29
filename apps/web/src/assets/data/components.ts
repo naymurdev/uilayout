@@ -1543,4 +1543,23 @@ export const COMPONENTS = [
     slug: 'random',
     type: 'random',
   },
+  {
+    name: 'block',
+    componentArray: [
+      {
+        componentName: 'blocksone',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/bg-blocks/blocksone')
+        ),
+      },
+    ],
+    filesArray: [
+      {
+        fileName: 'blocksone',
+        fileSrc: './src/registry/components/bg-blocks/blocksone.tsx',
+      },
+    ],
+    slug: 'bg-blocks',
+    type: 'blocks',
+  },
 ]

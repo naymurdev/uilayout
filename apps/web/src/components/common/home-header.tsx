@@ -31,6 +31,7 @@ import {
 import { techIcons } from '@/assets/icons'
 import MobileHeader from './moibile-header'
 import { SearchDialog } from './search-bar'
+import GitHubButton from '@/registry/components/github-repo-btn'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -76,7 +77,7 @@ function HomeHeader() {
   return (
     <>
       <header className=" dark:bg-base-dark/20 bg-white/40 w-full fixed z-20 top-0 left-0 border-b-[1px] border-border py-3 backdrop-blur-lg">
-        <div className=" max-w-6xl px-4 sm:px-6 lg:px-8 relative mx-auto flex justify-between items-center">
+        <div className=" container px-4 sm:px-6 lg:px-8 relative mx-auto flex justify-between items-center">
           <MobileHeader />
           <Link href="/">
             {/* <Image src="/logo.png" alt="logo" width={35} height={35} /> */}
@@ -88,9 +89,8 @@ function HomeHeader() {
               </span>
             </div>
           </Link>
-
           <div className="flex gap-2">
-            <div className="md:block hidden">
+            <div className="lg:block hidden">
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -128,10 +128,16 @@ function HomeHeader() {
             <a
               target="_blank"
               href="https://github.com/naymurdev/uilayout"
-              className="border w-10 grid place-content-center rounded-md dark:bg-black bg-white"
+              className="border w-10  place-content-center rounded-md sm:hidden grid dark:bg-black bg-white"
             >
               <Github />
             </a>
+            <GitHubButton
+              username="naymurdev"
+              repo="uilayout"
+              classname="sm:flex hidden "
+            />
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
