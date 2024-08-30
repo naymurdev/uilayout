@@ -126,82 +126,82 @@ export default function Dialog() {
             )
           })}
         </motion.div>
-
-        {createPortal(
-          <AnimatePresence initial={false} mode="sync">
-            {isOpen && (
-              <>
+        {/* {createPortal( */}
+        <AnimatePresence initial={false} mode="sync">
+          {isOpen && (
+            <>
+              <motion.div
+                key={`backdrop-${items[index].id}`}
+                className="fixed inset-0 h-full w-full dark:bg-black/25 bg-white/95 backdrop-blur-sm "
+                variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                onClick={() => {
+                  setIsOpen(false)
+                }}
+              />
+              <motion.div
+                key="dialog"
+                className="pointer-events-none fixed inset-0 flex items-center justify-center z-50"
+              >
                 <motion.div
-                  key={`backdrop-${items[index].id}`}
-                  className="fixed inset-0 h-full w-full dark:bg-black/25 bg-white/95 backdrop-blur-sm "
-                  variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  onClick={() => {
-                    setIsOpen(false)
+                  className="pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden   dark:bg-gray-950 bg-gray-200 border sm:w-[500px] ]"
+                  layoutId={`dialog-${items[index].id}`}
+                  tabIndex={-1}
+                  style={{
+                    borderRadius: '24px',
                   }}
-                />
-                <motion.div
-                  key="dialog"
-                  className="pointer-events-none fixed inset-0 flex items-center justify-center z-50"
                 >
-                  <motion.div
-                    className="pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden   dark:bg-gray-950 bg-gray-200 border sm:w-[500px] ]"
-                    layoutId={`dialog-${items[index].id}`}
-                    tabIndex={-1}
-                    style={{
-                      borderRadius: '24px',
-                    }}
-                  >
-                    <motion.div layoutId={`dialog-img-${items[index].id}`}>
-                      <img
-                        src={items[index].url}
-                        alt="A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood."
-                        className="h-full w-full"
-                      />
+                  <motion.div layoutId={`dialog-img-${items[index].id}`}>
+                    <img
+                      src={items[index].url}
+                      alt="A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood."
+                      className="h-full w-full"
+                    />
+                  </motion.div>
+                  <div className="p-6">
+                    <motion.div
+                      layoutId={`dialog-title-${items[index].id}`}
+                      className="text-2xl text-zinc-950 dark:text-zinc-50"
+                    >
+                      {items[index].title}
                     </motion.div>
-                    <div className="p-6">
-                      <motion.div
-                        layoutId={`dialog-title-${items[index].id}`}
-                        className="text-2xl text-zinc-950 dark:text-zinc-50"
-                      >
-                        {items[index].title}
-                      </motion.div>
-                      {/* <motion.div
+                    {/* <motion.div
                       layoutId={`dialog-subtitle-${uniqueId}`}
                       layout="position"
                       className="text-zinc-700 dark:text-zinc-400"
                     >
                       Edouard Wilfrid Buquet
                     </motion.div> */}
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
-                        className="origin-bottom"
-                        layoutId={`dialog-des-${items[index].id}`}
-                      >
-                        <p className="mt-2 text-zinc-500 dark:text-zinc-500">
-                          {items[index].description}
-                        </p>
-                      </motion.div>
-                    </div>
-                    <button
-                      onClick={() => setIsOpen(false)}
-                      className="absolute right-6 top-6 text-zinc-50 cursor-pointer"
-                      type="button"
-                      aria-label="Close dialog"
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      className="origin-bottom"
+                      layoutId={`dialog-des-${items[index].id}`}
                     >
-                      <XIcon size={24} />
-                    </button>
-                  </motion.div>
+                      <p className="mt-2 text-zinc-500 dark:text-zinc-500">
+                        {items[index].description}
+                      </p>
+                    </motion.div>
+                  </div>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="absolute right-6 top-6 text-zinc-50 cursor-pointer"
+                    type="button"
+                    aria-label="Close dialog"
+                  >
+                    <XIcon size={24} />
+                  </button>
                 </motion.div>
-              </>
-            )}
-          </AnimatePresence>,
-          document.body
-        )}
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+        ,
+        {/* document.body
+        )} */}
       </MotionConfig>
     </div>
   )

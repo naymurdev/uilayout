@@ -223,8 +223,8 @@ function DialogContainer({ children, className }: DialogContainerProps) {
   }, [])
 
   if (!mounted) return null
-
-  return createPortal(
+  // createPortal(
+  return (
     <AnimatePresence initial={false} mode="sync">
       {isOpen && (
         <>
@@ -241,9 +241,10 @@ function DialogContainer({ children, className }: DialogContainerProps) {
           </div>
         </>
       )}
-    </AnimatePresence>,
-    document.body
+    </AnimatePresence>
   )
+  //   document.body
+  // )
 }
 
 type DialogTitleProps = {

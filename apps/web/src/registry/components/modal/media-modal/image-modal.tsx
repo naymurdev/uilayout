@@ -81,77 +81,78 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
             )}
           </motion.div>
         </>
-        {createPortal(
-          <AnimatePresence initial={false} mode="sync">
-            {isMediaModalOpen && (
-              <>
+        {/* {createPortal( */}
+        <AnimatePresence initial={false} mode="sync">
+          {isMediaModalOpen && (
+            <>
+              <motion.div
+                key={`backdrop-${uniqueId}`}
+                className="fixed inset-0 h-full w-full dark:bg-black/25 bg-white/95 backdrop-blur-sm "
+                variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                onClick={() => {
+                  setIsMediaModalOpen(false)
+                }}
+              />
+              <motion.div
+                key="dialog"
+                className="pointer-events-none fixed inset-0 flex items-center justify-center z-50"
+              >
                 <motion.div
-                  key={`backdrop-${uniqueId}`}
-                  className="fixed inset-0 h-full w-full dark:bg-black/25 bg-white/95 backdrop-blur-sm "
-                  variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  onClick={() => {
-                    setIsMediaModalOpen(false)
+                  className="pointer-events-auto relative flex flex-col overflow-hidden   dark:bg-gray-950 bg-gray-200 border w-[80%] h-[90%] "
+                  layoutId={`dialog-${uniqueId}`}
+                  tabIndex={-1}
+                  style={{
+                    borderRadius: '24px',
                   }}
-                />
-                <motion.div
-                  key="dialog"
-                  className="pointer-events-none fixed inset-0 flex items-center justify-center z-50"
                 >
-                  <motion.div
-                    className="pointer-events-auto relative flex flex-col overflow-hidden   dark:bg-gray-950 bg-gray-200 border w-[80%] h-[90%] "
-                    layoutId={`dialog-${uniqueId}`}
-                    tabIndex={-1}
-                    style={{
-                      borderRadius: '24px',
-                    }}
-                  >
-                    {imgSrc && (
-                      <motion.div
-                        layoutId={`dialog-img-${uniqueId}`}
-                        className="w-full h-full"
-                      >
-                        <img
-                          src={imgSrc}
-                          alt=""
-                          className="h-full w-full object-cover"
-                        />
-                      </motion.div>
-                    )}
-                    {videoSrc && (
-                      <motion.div
-                        layoutId={`dialog-video-${uniqueId}`}
-                        className="w-full h-full"
-                      >
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          controls
-                          className="h-full w-full object-cover  rounded-sm"
-                        >
-                          <source src={videoSrc!} type="video/mp4" />
-                        </video>
-                      </motion.div>
-                    )}
-
-                    <button
-                      onClick={() => setIsMediaModalOpen(false)}
-                      className="absolute right-6 top-6 p-3 text-zinc-50 cursor-pointer dark:bg-gray-900 bg-gray-400 hover:bg-gray-500 rounded-full dark:hover:bg-gray-800"
-                      type="button"
-                      aria-label="Close dialog"
+                  {imgSrc && (
+                    <motion.div
+                      layoutId={`dialog-img-${uniqueId}`}
+                      className="w-full h-full"
                     >
-                      <XIcon size={24} />
-                    </button>
-                  </motion.div>
+                      <img
+                        src={imgSrc}
+                        alt=""
+                        className="h-full w-full object-cover"
+                      />
+                    </motion.div>
+                  )}
+                  {videoSrc && (
+                    <motion.div
+                      layoutId={`dialog-video-${uniqueId}`}
+                      className="w-full h-full"
+                    >
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        controls
+                        className="h-full w-full object-cover  rounded-sm"
+                      >
+                        <source src={videoSrc!} type="video/mp4" />
+                      </video>
+                    </motion.div>
+                  )}
+
+                  <button
+                    onClick={() => setIsMediaModalOpen(false)}
+                    className="absolute right-6 top-6 p-3 text-zinc-50 cursor-pointer dark:bg-gray-900 bg-gray-400 hover:bg-gray-500 rounded-full dark:hover:bg-gray-800"
+                    type="button"
+                    aria-label="Close dialog"
+                  >
+                    <XIcon size={24} />
+                  </button>
                 </motion.div>
-              </>
-            )}
-          </AnimatePresence>,
-          document.body
-        )}
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+        ,
+        {/*    document.body
+       )} */}
       </MotionConfig>
     </>
   )
