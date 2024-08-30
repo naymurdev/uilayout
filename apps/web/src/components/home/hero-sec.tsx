@@ -1,5 +1,5 @@
 'use client'
-import { ChevronRight, Github, MoveRight } from 'lucide-react'
+import { ChevronRight, ChevronsRight, Github, MoveRight } from 'lucide-react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -170,14 +170,14 @@ function HeroSec() {
         <div className="absolute inset-0 top-0 left-0  h-screen w-full items-center px-5 py-24 dark:[background:radial-gradient(87.03%_87.03%_at_50.05%_12.97%,rgba(217,217,217,0)_40%,#010716_100%)] [background:radial-gradient(87.03%_87.03%_at_50.05%_12.97%,rgba(217,217,217,0)_40%,#ffffff_100%)]"></div>
         <article className="grid gap-4 py-20 relative z-10 sm:px-0 px-4">
           <Link
-            href="/components/scroll-element"
+            href="/components/scroll-animation"
             className="inline-flex w-fit mx-auto items-center gap-1 rounded-full  bg-[#334cec] border-4  shadow-[#6175f8]  py-0.5 pl-0.5 pr-3 text-xs "
           >
             <div className="rounded-full bg-[#fcfdff] px-2 py-1 text-xs text-black ">
               Update
             </div>
             <span className="text-white sm:text-base text-xs inline-block">
-              ✨ Introducing Scroll Element
+              ✨ Introducing scroll-animation
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -194,10 +194,10 @@ function HeroSec() {
               ></path>
             </svg>
           </Link>
-          <h1 className="  sm:text-6xl text-3xl text-center font-semibold leading-[110%]">
+          <h1 className="  xl:text-7xl md:text-6xl sm:text-5xl text-3xl text-center font-semibold leading-[110%]">
             Design That Really <br />
             Need In{' '}
-            <span className="bg-gradient-to-t from-[#a2b6fa] to-[#334cec] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-t sm:w-ful w-4/5 from-[#a2b6fa] to-[#334cec] bg-clip-text text-transparent">
               Your Website
             </span>
           </h1>
@@ -208,15 +208,15 @@ function HeroSec() {
           <div className="flex gap-2 justify-center items-center">
             <Link
               href="/components"
-              className="flex items-center gap-2  text-white bg-gradient-to-l from-[#6175f8]  to-[#334cec] border sm:px-4 px-2 rounded-sm py-2 "
+              className="flex items-center gap-2 w-fit  text-white bg-gradient-to-l from-[#6175f8]  to-[#334cec] border sm:px-4 px-2 rounded-sm py-2 "
             >
               Browse Component
               <MoveRight />
             </Link>
             <Link href="/docs" className="sm:inline-block hidden">
-              <Button className=" rounded-full px-8">
+              <Button className=" rounded-full px-4">
                 Get Started
-                <ChevronRight />
+                <ChevronsRight />
               </Button>
             </Link>
           </div>
@@ -242,7 +242,7 @@ function HeroSec() {
                   >
                     <a
                       href={component.link}
-                      className="absolute h-10 w-10 dark:bg-gray-900 top-2 bg-gray-200 right-2 z-10 rounded-md grid place-content-center cursor-pointer"
+                      className="absolute h-10 w-10 dark:bg-gray-800 top-2 bg-gray-200 right-2 z-10 rounded-md grid place-content-center cursor-pointer"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

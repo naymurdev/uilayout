@@ -2,6 +2,7 @@
 import { useTheme } from 'next-themes'
 import React from 'react'
 import Link from 'next/link'
+import { FaXTwitter } from 'react-icons/fa6'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,7 +21,7 @@ import {
 import { Button } from '../ui/button'
 import { SearchDialog } from './search-bar'
 import MobileHeader from './moibile-header'
-import GitHubButton from '@/registry/components/github-repo-btn'
+import GitHubButton from '@/registry/components/github-repo-btn/github-repo-btn'
 
 function Header() {
   const { setTheme } = useTheme()
@@ -36,10 +37,11 @@ function Header() {
           <MobileHeader />
           <div className="flex gap-2 ">
             <SearchDialog />
+
             <a
               target="_blank"
               href="https://github.com/naymurdev/uilayout"
-              className="border w-10 grid place-content-center sm:hidden  rounded-md"
+              className="border w-10  place-content-center rounded-md sm:hidden grid bg-primary text-primary-foreground"
             >
               <Github />
             </a>
@@ -48,9 +50,16 @@ function Header() {
               repo="uilayout"
               classname="sm:flex hidden"
             />
+            <a
+              target="_blank"
+              href="https://x.com/naymur_dev"
+              className="border bg-primary  text-primary-foreground text-2xl w-10   sm:grid hidden place-content-center    rounded-md"
+            >
+              <FaXTwitter />
+            </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="border w-10 grid place-content-center rounded-md relative">
+                <button className="border w-10 bg-primary-foreground grid place-content-center rounded-md relative">
                   <SunIcon className="h-[1.2rem] w-[1.2rem] transition-all dark:hidden block" />
                   <MoonIcon className="h-[1.2rem] w-[1.2rem]   transition-all  dark:block hidden" />
                   <span className="sr-only">Toggle theme</span>

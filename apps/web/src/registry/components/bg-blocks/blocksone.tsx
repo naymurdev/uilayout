@@ -5,12 +5,12 @@ function BlockOne() {
   const containerRef = useRef<HTMLDivElement>(null)
   return (
     <div
-      className="h-[550px] overflow-hidden w-full dark:bg-[radial-gradient(89.48%_89.48%_at_51.74%_10.52%,#171718_0%,#0e0d0d_100%)] bg-[radial-gradient(89.48%_89.48%_at_51.74%_10.52%,#E3E2E7_0%,#9BA1A1_100%)]  relative"
+      className="h-[550px] overflow-hidden w-full dark:bg-[radial-gradient(89.48%_89.48%_at_51.74%_10.52%,#0c0c0c_0%,#0c0c0c_100%)] bg-[radial-gradient(89.48%_89.48%_at_51.74%_10.52%,#E3E2E7_0%,#9BA1A1_100%)]  relative"
       ref={containerRef}
     >
       <Blocks
-        activeDivsClass="dark:bg-[#0e0d0db9]/50  bg-[#9ba1a131]  "
-        divClass="dark:border-[#0e0d0d88]/50 border-[#9ba1a131] "
+        activeDivsClass="dark:bg-[#1b1b1b]  bg-[#9ba1a131]  "
+        divClass="dark:border-[#161616] border-[#9ba1a131] "
         classname="w-full"
         containerRef={containerRef}
         activeDivs={{

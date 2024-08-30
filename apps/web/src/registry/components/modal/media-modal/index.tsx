@@ -3,7 +3,7 @@ import { MediaModal } from './image-modal'
 export default function Dialog() {
   return (
     <div className="relative h-full">
-      <div className="flex gap-2">
+      <div className="grid grid-cols-2 gap-2 h-full">
         <MediaModal
           imgSrc={
             'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714558602/two_cosolk.jpg'

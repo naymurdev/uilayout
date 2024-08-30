@@ -40,10 +40,10 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
   return (
     <>
       <MotionConfig transition={transition}>
-        <motion.div className="flex w-full  gap-4   py-10">
+        <>
           <motion.div
             // @ts-ignore
-            className="w-full flex relative  flex-col overflow-hidden border    dark:bg-black bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-950"
+            className="w-full h-full flex relative  flex-col overflow-hidden border    dark:bg-black bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-950"
             layoutId={`dialog-${uniqueId}`}
             style={{
               borderRadius: '12px',
@@ -60,7 +60,7 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
                 <img
                   src={imgSrc}
                   alt="A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood."
-                  className=" w-full object-cover"
+                  className=" w-full object-cover h-full"
                 />
               </motion.div>
             )}
@@ -80,8 +80,7 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
               </motion.div>
             )}
           </motion.div>
-        </motion.div>
-
+        </>
         {createPortal(
           <AnimatePresence initial={false} mode="sync">
             {isMediaModalOpen && (
@@ -154,92 +153,6 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
           document.body
         )}
       </MotionConfig>
-      {/* <AnimatePresence>
-        {isMediaModalOpen !== false && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 top-0 left-0 right-0 bottom-0 flex flex-col items-center w-full h-screen justify-center dark:bg-black/90 bg-white/90 backdrop-blur-sm cursor-zoom-out"
-            onClick={() => {
-              setIsMediaModalOpen(false)
-            }}
-          >
-            {imgSrc! && (
-              <motion.div
-                onClick={(e) => isDesktop && e.stopPropagation()}
-                layoutId={`img-${imgSrc}`}
-                className={`" w-fit h-[80%] mx-auto  ${
-                  isDesktop ? ' cursor-default' : '  cursor-zoom-out'
-                }`}
-              >
-                <img
-                  src={imgSrc}
-                  width={800}
-                  height={800}
-                  alt="single-image"
-                  className="rounded-md w-full h-full object-contain"
-                />
-              </motion.div>
-            )}
-            {videoSrc! && (
-              <motion.div
-                onClick={(e) => isDesktop && e.stopPropagation()}
-                layoutId={`video-${videoSrc}`}
-                className={`" w-fit h-[80%] mx-auto  ${
-                  isDesktop ? ' cursor-default' : '  cursor-zoom-out'
-                }`}
-              >
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  controls
-                  className="h-full w-full object-cover  rounded-sm"
-                >
-                  <source src={videoSrc!} type="video/mp4" />
-                </video>
-              </motion.div>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {imgSrc! && (
-        <motion.div
-          onClick={() => {
-            setIsMediaModalOpen(true)
-          }}
-          layoutId={`img-${imgSrc}`}
-          className={cn('overflow-hidden  w-full', className)}
-        >
-          <img
-            width={400}
-            height={400}
-            src={imgSrc}
-            className="bg-white text-black rounded-md w-full cursor-zoom-in"
-            alt="img"
-          />
-        </motion.div>
-      )}
-
-      {videoSrc! && (
-        <motion.div
-          onClick={() => {
-            setIsMediaModalOpen(true)
-          }}
-          layoutId={`video-${videoSrc}`}
-          className={cn('overflow-hidden  w-full h-full', className)}
-        >
-          <video
-            autoPlay
-            muted
-            loop
-            className="h-full w-full object-cover cursor-zoom-in rounded-sm"
-          >
-            <source src={videoSrc!} type="video/mp4" />
-          </video>
-        </motion.div>
-      )} */}
     </>
   )
 }

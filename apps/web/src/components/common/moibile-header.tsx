@@ -7,7 +7,7 @@ import { basePath, components, specialComponents } from './docs-sidebar'
 import { usePathname, useRouter } from 'next/navigation'
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import Link from 'next/link'
-import GitHubButton from '@/registry/components/github-repo-btn'
+import GitHubButton from '@/registry/components/github-repo-btn/github-repo-btn'
 
 function MobileHeader() {
   const pathname = usePathname()
@@ -44,7 +44,7 @@ function MobileHeader() {
               <X />
             </button>
           </figure>
-          <GitHubButton username="naymurdev" repo="uilayout" />
+          <GitHubButton username="naymurdev" repo="uilayout" classname="py-2" />
 
           <ScrollArea className="h-[95%] py-4">
             <ul className="pb-3">

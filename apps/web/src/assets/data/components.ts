@@ -1491,34 +1491,42 @@ export const COMPONENTS = [
       {
         componentName: 'scroll-element',
         componentSrc: React.lazy(
-          () => import('@/registry/components/scroll-element/example-one')
+          () =>
+            import('@/registry/components/scroll-element-animation/example-one')
         ),
       },
       {
         componentName: 'scroll-element2',
         componentSrc: React.lazy(
-          () => import('@/registry/components/scroll-element/example-two')
+          () =>
+            import('@/registry/components/scroll-element-animation/example-two')
         ),
       },
       {
         componentName: 'scroll-element3',
         componentSrc: React.lazy(
-          () => import('@/registry/components/scroll-element/example-three')
+          () =>
+            import(
+              '@/registry/components/scroll-element-animation/example-three'
+            )
         ),
       },
     ],
     filesArray: [
       {
         fileName: 'scroll-element',
-        fileSrc: './src/registry/components/scroll-element/example-one.tsx',
+        fileSrc:
+          './src/registry/components/scroll-element-animation/example-one.tsx',
       },
       {
         fileName: 'scroll-element2',
-        fileSrc: './src/registry/components/scroll-element/example-two.tsx',
+        fileSrc:
+          './src/registry/components/scroll-element-animation/example-two.tsx',
       },
       {
         fileName: 'scroll-element3',
-        fileSrc: './src/registry/components/scroll-element/example-three.tsx',
+        fileSrc:
+          './src/registry/components/scroll-element-animation/example-three.tsx',
       },
     ],
     slug: 'scroll-scroll',
@@ -1561,5 +1569,76 @@ export const COMPONENTS = [
     ],
     slug: 'bg-blocks',
     type: 'blocks',
+  },
+  {
+    name: 'animation',
+    componentArray: [
+      {
+        componentName: 'textAnimation1',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/text-animation/animationone')
+        ),
+      },
+
+      {
+        componentName: 'scrollbasedmaquee',
+        componentSrc: React.lazy(
+          () =>
+            import(
+              '@/registry/components/text-animation/text-marque/animationone'
+            )
+        ),
+      },
+      {
+        componentName: 'scrollbasedmaquee2',
+        componentSrc: React.lazy(
+          () =>
+            import(
+              '@/registry/components/text-animation/text-marque/animationtwo'
+            )
+        ),
+      },
+    ],
+    filesArray: [
+      {
+        fileName: 'textAnimation1',
+        fileSrc: './src/registry/components/text-animation/animationone.tsx',
+      },
+      {
+        fileName: 'scrollbasedmaquee',
+        fileSrc:
+          './src/registry/components/text-animation/text-marque/animationone.tsx',
+      },
+      {
+        fileName: 'scrollbasedmaquee2',
+        fileSrc:
+          './src/registry/components/text-animation/text-marque/animationtwo.tsx',
+      },
+    ],
+    slug: 'text-animation',
+    type: 'animation',
+  },
+  {
+    name: 'timeline-animation',
+    componentArray: [
+      {
+        componentName: 'timelineAnimation',
+        componentSrc: React.lazy(
+          () =>
+            import(
+              '@/registry/components/text-animation/timeline/timeline-animation'
+            )
+        ),
+      },
+    ],
+    filesArray: [
+      {
+        fileName: 'timelineAnimation',
+        fileSrc:
+          './src/registry/components/text-animation/timeline/timeline-animation.tsx',
+      },
+    ],
+    slug: 'timeline-animation',
+    type: 'animation',
   },
 ]

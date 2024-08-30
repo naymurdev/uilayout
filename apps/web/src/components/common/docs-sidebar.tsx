@@ -66,6 +66,28 @@ export const specialComponents = [
 ]
 export const components = [
   {
+    id: '/components/timeline-animation',
+    name: 'Timeline Animation',
+    component: 'Animation',
+    new: true,
+  },
+  {
+    id: '/components/scroll-animation',
+    name: 'Scroll Animation',
+    component: 'Animation',
+    new: true,
+  },
+  {
+    id: '/components/text-animation',
+    name: 'Scroll Text',
+    component: 'Text animation',
+  },
+  {
+    id: '/components/text-marquee',
+    name: 'Text Maruqee',
+    component: 'Text animation',
+  },
+  {
     id: '/components/image-mousetrail',
     name: 'Image Mousetrail',
     component: 'creative-effect',
@@ -125,12 +147,7 @@ export const components = [
     name: 'Responsive Sidebar',
     component: 'modal/drawer',
   },
-  {
-    id: '/components/scroll-element',
-    name: 'Scroll Element',
-    component: 'scroll',
-    // new: true,
-  },
+
   {
     id: '/components/horizontal-scroll',
     name: 'Horizontal Scroll',
@@ -138,11 +155,23 @@ export const components = [
     // new: true,
   },
   {
+    id: '/components/stacking-card',
+    name: 'Stacking Card',
+    component: 'scroll',
+  },
+  {
     id: '/components/smooth-scroll',
     name: 'Smooth-Scroll',
     component: 'scroll',
     // new: true,
   },
+  {
+    id: '/components/sticky-scroll',
+    name: 'Sticky Scroll',
+    component: 'scroll',
+    new: true,
+  },
+
   { id: '/components/tabs', name: 'Tabs', component: 'tabs' },
   {
     id: '/components/image-tabs',
@@ -203,19 +232,6 @@ export const components = [
     id: '/components/products-cards',
     name: 'Products-Cards',
     component: 'card',
-  },
-
-  {
-    id: '/components/stacking-card',
-    name: 'Stacking Card',
-    component: 'sticky-scroll',
-  },
-
-  {
-    id: '/components/sticky-scroll',
-    name: 'Sticky Scroll',
-    component: 'sticky-scroll',
-    new: true,
   },
 
   {
@@ -363,13 +379,15 @@ export const ItemsWithName = ({ group, items, pathname }: any) => {
     <div ref={groupRef} key={group}>
       <button className="text-[1rem] relative flex w-full items-center justify-between pr-4 cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1">
         {group}
-        <div className="h-7 w-7 rounded-md dark:bg-gray-900 bg-gray-100 grid place-content-center absolute top-0 right-3">
-          <ChevronsDown
-            className={`h-5 w-5 transition-all ${
-              expandedItems ? 'rotate-180' : 'rotate-0'
-            }`}
-          />
-        </div>
+        {showExpandButton && (
+          <div className="h-7 w-7 rounded-md dark:bg-gray-900 bg-gray-100 grid place-content-center absolute top-0 right-3">
+            <ChevronsDown
+              className={`h-5 w-5 transition-all ${
+                !expandedItems && showExpandButton ? 'rotate-180' : 'rotate-0'
+              }`}
+            />
+          </div>
+        )}
       </button>
       <ul className="relative ">
         {!expandedItems && showExpandButton && (
