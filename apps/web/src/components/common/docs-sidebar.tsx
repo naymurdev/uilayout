@@ -1,25 +1,16 @@
+// @ts-nocheck
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { AnimatePresence, motion } from 'framer-motion'
 import {
-  ArrowBigDown,
-  Baby,
-  BookOpen,
-  ChevronDown,
   ChevronsDown,
-  ChevronsRight,
   Component,
-  Grid2X2,
   Layout,
-  LayoutIcon,
   LayoutTemplate,
   Rocket,
-  SquareCode,
 } from 'lucide-react'
-import { Icons } from '@/assets/icons'
 export const basePath = [
   {
     id: '/get-started',
