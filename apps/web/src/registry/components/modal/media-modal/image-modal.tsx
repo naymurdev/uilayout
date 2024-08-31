@@ -150,7 +150,7 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
             </>
           )}
         </AnimatePresence>
-        ,
+        {/* , */}
         {/*    document.body
        )} */}
       </MotionConfig>

@@ -6,6 +6,9 @@ import { absoluteUrl, cn, siteConfig } from '@/lib/utils'
 import '@/styles/mdx.css'
 import { ChevronRightIcon } from 'lucide-react'
 import { Metadata } from 'next'
+import { getTableOfContents } from '@/lib/toc'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { TableOfContents } from '@/components/toc'
 
 interface PageProps {
   params: {
@@ -73,32 +76,58 @@ const page = async ({ params }: PageProps) => {
   if (!doc) {
     notFound()
   }
-  console.log(doc?.title)
+  const toc = await getTableOfContents(doc.body.raw)
+  // console.log('checking', toc, typeof toc, Object.keys(toc).length === 0)
+  const isTocValid = Object.keys(toc).length !== 0
+  console.log(isTocValid)
 
   return (
     <>
       <>
-        <div className="pt-20 pb-10">
-          {doc.title !== 'Components' && (
-            <>
-              <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-                <div className="truncate">components</div>
-                <ChevronRightIcon className="size-4" />
-                <div className="font-medium text-foreground">{doc.title}</div>
-              </div>
-            </>
-          )}
-          <div className="space-y-2">
-            <h1 className={cn('scroll-m-20 text-4xl font-bold tracking-tight')}>
-              {doc.title}
-            </h1>
-            {/* {doc.description && (
-              <p className="text-balance text-lg text-muted-foreground">
-                {doc.description}
-              </p>
-            )} */}
+        <div
+          className={`${
+            isTocValid
+              ? ' lg:gap-5 lg:py-8 xl:grid xl:grid-cols-[1fr_180px] w-full'
+              : ' w-full'
+          }`}
+        >
+          <div
+            className={` ${
+              isTocValid
+                ? 'pt-14 pb-10 overflow-hidden'
+                : ' pt-20 pb-10 overflow-hidden'
+            } `}
+          >
+            {doc.title !== 'Components' && (
+              <>
+                <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+                  <div className="truncate">components</div>
+                  <ChevronRightIcon className="size-4" />
+                  <div className="font-medium text-foreground">{doc.title}</div>
+                </div>
+              </>
+            )}
+            <div className="space-y-2">
+              <h1
+                className={cn('scroll-m-20 text-4xl font-bold tracking-tight')}
+              >
+                {doc.title}
+              </h1>
+            </div>
+            <Mdx code={doc.body.code} />
           </div>
-          <Mdx code={doc.body.code} />
+          {isTocValid && (
+            <div className="relative">
+              <div className="sticky top-20 text-sm text-white">
+                <ScrollArea className="pb-10">
+                  <div className="space-y-4 sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
+                    <TableOfContents toc={toc} />
+                    {/* <Contribute doc={doc} /> */}
+                  </div>
+                </ScrollArea>
+              </div>
+            </div>
+          )}
         </div>
       </>
     </>

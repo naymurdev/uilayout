@@ -12,6 +12,7 @@ import {
 import { Maximize2 } from 'lucide-react'
 import { useMediaQuery } from '@/hooks/use-media-query'
 import { CopyButton } from './copy-button'
+import { ScrollArea } from '../ui/scroll-area'
 export default function DrawerCodeWrapper({
   children,
   isCard,
@@ -44,7 +45,7 @@ export default function DrawerCodeWrapper({
             isCard ? 'p-10' : '2xl:p-20 py-16 px-2 '
           } my-2 w-full border-2 rounded-lg overflow-hidden  dark:bg-[#080b11] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:20px_20px] h-full relative grid place-content-center`}
         >
-          <div className="block">
+          <div className="block w-full [&_pre]:my-0 [&_pre]:max-h-[450px] [&_pre]:overflow-auto sm:[&_pre]:whitespace-break-spaces">
             <currentComponentData.componentSrc />
           </div>
           <div className="absolute top-2 right-2 p-2 flex justify-center items-center gap-4 dark:bg-white bg-base-dark rounded-lg border">
@@ -63,12 +64,15 @@ export default function DrawerCodeWrapper({
                   <Maximize2 className="dark:text-black text-white" />
                 </button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[900px]">
-                {mainChildren?.props?.children}
-                {Array.isArray(FigureChildren) &&
-                  FigureChildren?.map((child: any, index: any) => {
-                    return <div key={index}>{child.props.children}</div>
-                  })}
+
+              <DialogContent className="sm:max-w-[900px] h-[80vh] ">
+                <ScrollArea>
+                  {mainChildren?.props?.children}
+                  {Array.isArray(FigureChildren) &&
+                    FigureChildren?.map((child: any, index: any) => {
+                      return <div key={index}>{child.props.children}</div>
+                    })}
+                </ScrollArea>
               </DialogContent>
             </Dialog>
           </div>
@@ -80,7 +84,7 @@ export default function DrawerCodeWrapper({
   return (
     <>
       <div className="my-2 w-full border-2 rounded-lg overflow-hidden 2xl:p-20 py-16 px-2 dark:bg-[#080b11] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:20px_20px] h-full relative">
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <currentComponentData.componentSrc />
         </div>
 
@@ -91,11 +95,15 @@ export default function DrawerCodeWrapper({
             </button>
           </DrawerTrigger>
           <DrawerContent>
-            <DrawerHeader className="text-left">
+            <DrawerHeader className="text-left w-full overflow-scroll">
               {mainChildren?.props?.children}
               {Array.isArray(FigureChildren) &&
                 FigureChildren?.map((child: any, index: any) => {
-                  return <div key={index}>{child.props.children}</div>
+                  return (
+                    <div key={index} className=" w-full">
+                      {child.props.children}
+                    </div>
+                  )
                 })}
             </DrawerHeader>
             <DrawerFooter className="pt-2">

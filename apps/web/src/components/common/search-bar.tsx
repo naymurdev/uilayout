@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { DialogProps } from '@radix-ui/react-dialog'
 import { docsConfig } from '@/configs/docs'
+import { FaXTwitter } from 'react-icons/fa6'
 import {
   CircleIcon,
   LaptopIcon,
@@ -88,8 +89,19 @@ export function SearchDialog({ ...props }: DialogProps) {
                 <Command.Empty>No results found.</Command.Empty>
                 <Command.Group className="py-2">
                   <span className="p-2 text-xs block font-semibold">
+                    Follow for more updates
+                  </span>
+                  <a
+                    href="https://x.com/naymur_dev"
+                    target="_blank"
+                    className="p-3 flex gap-2 items-center  bg-blue-500/20 w-full rounded-md"
+                  >
+                    <FaXTwitter /> @naymur_dev
+                  </a>
+                  <span className="p-2 text-xs block font-semibold">
                     Getting Started
                   </span>
+
                   {docsConfig.mainNav
                     .filter((navitem) => !navitem.external)
                     .map((navItem) => {
@@ -98,7 +110,7 @@ export function SearchDialog({ ...props }: DialogProps) {
                         : null
                       return (
                         <Command.Item
-                          className="relative flex cursor-default select-none items-center  px-2 py-1 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground dark:font-normal font-semibold rounded-md data-[disabled]:opacity-75 gap-2"
+                          className="relative flex cursor-pointer select-none items-center  px-2 py-1 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground dark:font-normal font-semibold rounded-md data-[disabled]:opacity-75 gap-2"
                           key={navItem.href}
                           value={navItem.title}
                           onSelect={() => {

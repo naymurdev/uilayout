@@ -138,7 +138,10 @@
     content: '';
   }
 }
-
+html,
+body {
+  scroll-behavior: smooth;
+}
 @keyframes marquee {
   0% {
     transform: translateX(0%);

@@ -36,10 +36,10 @@ import { FaXTwitter } from 'react-icons/fa6'
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: 'Accordion',
-    href: 'components/accordion',
+    title: 'Timeline Animation',
+    href: 'components/timeline-animation',
     description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
+      'When you scroll down to that specific section, all the animations will slowly play one after another.',
   },
   {
     title: 'Hover Card',
@@ -48,14 +48,14 @@ const components: { title: string; href: string; description: string }[] = [
       'For sighted users to preview content available behind a link.',
   },
   {
-    title: 'Modal',
-    href: 'components/modal',
+    title: 'Dialog',
+    href: 'components/dialog',
     description:
       'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
   },
   {
-    title: 'Buttons',
-    href: 'components/buttons',
+    title: 'Text Scroll Animation ',
+    href: 'components/text-animation',
     description: 'Visually or semantically separates content.',
   },
   {

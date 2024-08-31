@@ -29,7 +29,7 @@ function Header() {
   return (
     <>
       <header className=" dark:bg-base-dark/20 bg-white/40 w-full fixed z-50 top-0 left-0 border-b-[1px] border-border py-2 backdrop-blur-lg">
-        <div className="sm:container px-2 mx-auto flex gap-2 justify-between items-center">
+        <div className="2xl:container px-2 mx-auto flex gap-2 justify-between items-center">
           <Link href="/" className="lg:block hidden">
             <div className="w-8 h-8 mx-auto dark:bg-white bg-black rounded-sm before:absolute relative before:w-full before:h-full dark:before:bg-white/50 before:bg-black/50 before:rounded-sm before:-top-1.5 before:-left-1.5"></div>
           </Link>

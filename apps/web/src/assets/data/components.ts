@@ -1641,4 +1641,23 @@ export const COMPONENTS = [
     slug: 'timeline-animation',
     type: 'animation',
   },
+  {
+    name: 'drag',
+    componentArray: [
+      {
+        componentName: 'dragList1',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/drag/drag-items')
+        ),
+      },
+    ],
+    filesArray: [
+      {
+        fileName: 'dragList1',
+        fileSrc: './src/registry/components/drag/drag-items.tsx',
+      },
+    ],
+    slug: 'drag-animation',
+    type: 'drag',
+  },
 ]

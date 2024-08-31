@@ -2,13 +2,14 @@ import React, { useRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { ChevronsRight, Github } from 'lucide-react'
 import { FaTwitter } from 'react-icons/fa6'
+import { TimelineContent } from './framer-timeline'
 
 function TimelineAnimation() {
   const aboutRef = useRef(null)
   const heroRef = useRef(null)
   return (
     <>
-      <section className="sm:grid grid-cols-2 gap-10 h-screen" ref={heroRef}>
+      <section className="sm:grid grid-cols-2 gap-10 h-[650px]" ref={heroRef}>
         <TimelineContent animationNum={0} timelineRef={heroRef}>
           <img
             src="https://images.unsplash.com/photo-1724690416947-3cdc197ffab1?q=80&w=600&auto=format&fit=crop"
@@ -75,49 +76,4 @@ function TimelineAnimation() {
   )
 }
 
-export const TimelineContent = ({
-  children,
-  animationNum,
-  timelineRef,
-}: {
-  children: React.ReactNode
-  animationNum: number
-  timelineRef: React.RefObject<HTMLDivElement>
-}) => {
-  const sequenceVariants = {
-    visible: (i: number) => ({
-      filter: 'blur(0px)',
-
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.3, // Delay each item by 0.5s multiplied by its index
-        duration: 0.5, // Duration of the blur removal
-      },
-    }),
-    hidden: {
-      filter: 'blur(20px)',
-      y: 0,
-      opacity: 0,
-    },
-  }
-  const isInView = useInView(timelineRef, {
-    once: false,
-    // margin: '0px 0px 400px 0px',
-  })
-  return (
-    <>
-      <>
-        <motion.div
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={animationNum}
-          variants={sequenceVariants}
-        >
-          {children}
-        </motion.div>
-      </>
-    </>
-  )
-}
 export default TimelineAnimation

@@ -17,6 +17,8 @@ import HomeTab from './home-tab'
 import HomeImageMasking from './home-image-masking'
 
 import HomeSlider from './home-carousel'
+import { AnimatePresence } from 'framer-motion'
+import NewItemsLoading from './new-items-loading'
 const homeComponents = [
   {
     id: 0,
@@ -118,6 +120,7 @@ const homeComponents = [
     className: ' col-span-12',
   },
 ]
+
 function HeroSec() {
   const [blocks, setBlocks] = useState([])
 
@@ -164,36 +167,13 @@ function HeroSec() {
 
     return () => window.removeEventListener('resize', updateBlocks)
   }, [])
+
   return (
     <>
       <section className="min-h-screen py-24 overflow-hidden  relative  ">
         <div className="absolute inset-0 top-0 left-0  h-screen w-full items-center px-5 py-24 dark:[background:radial-gradient(87.03%_87.03%_at_50.05%_12.97%,rgba(217,217,217,0)_40%,#010716_100%)] [background:radial-gradient(87.03%_87.03%_at_50.05%_12.97%,rgba(217,217,217,0)_40%,#ffffff_100%)]"></div>
         <article className="grid gap-4 py-20 relative z-10 sm:px-0 px-4">
-          <Link
-            href="/components/scroll-animation"
-            className="inline-flex w-fit mx-auto items-center gap-1 rounded-full  bg-[#334cec] border-4  shadow-[#6175f8]  py-0.5 pl-0.5 pr-3 text-xs "
-          >
-            <div className="rounded-full bg-[#fcfdff] px-2 py-1 text-xs text-black ">
-              Update
-            </div>
-            <span className="text-white sm:text-base text-xs inline-block">
-              ✨ Introducing scroll-animation
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-              data-slot="icon"
-              className="h-3 w-3 text-white"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </Link>
+          <NewItemsLoading />
           <h1 className="  xl:text-7xl md:text-6xl sm:text-5xl text-3xl text-center font-semibold leading-[110%]">
             Design That Really <br />
             Need In{' '}

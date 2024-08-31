@@ -1,0 +1,36 @@
+---
+title: Drag Items
+description: You'll find all types of Accordion which is both use for HTML, REACTJS and NEXTJS
+component: true
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/accordion
+  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
+---
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList >
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent
+    value="preview"
+  >
+    <ComponentPreview  name="dragList1" category="component">
+      <div className="text-center pb-3">
+        ## Framer Motion Drag Items
+      </div>
+    </ComponentPreview>
+
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodeWrapper noExpand={true}>
+     <CodePreview name="dragList1" category="component" />
+    </CodeWrapper>
+  </TabsContent>
+</Tabs>
+
+#### Installation
+
+```bash
+npm install framer-motion
+```

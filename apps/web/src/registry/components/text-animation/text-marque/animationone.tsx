@@ -10,14 +10,14 @@ function index() {
           baseVelocity={-3}
           clasname="font-bold tracking-[-0.07em] leading-[90%]"
         >
-          Creative Web Developer
+          Star the repo if you like it
         </ScrollBaseAnimation>
         <ScrollBaseAnimation
           delay={500}
           baseVelocity={3}
           clasname="font-bold tracking-[-0.07em] leading-[90%]"
         >
-          Creative Web Developer
+          Share it if you like it
         </ScrollBaseAnimation>
       </div>
     </>

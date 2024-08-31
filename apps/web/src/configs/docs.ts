@@ -41,6 +41,37 @@ export const docsConfig: TDocsConfig = {
     {
       title: 'Components',
       items: [
+        {
+          href: '/components/timeline-animation',
+          title: 'Timeline Animation',
+          items: [],
+        },
+
+        {
+          href: '/components/scroll-animation',
+          title: 'Scroll Animation',
+          items: [],
+        },
+        {
+          href: '/components/text-animation',
+          title: 'Scroll Text Animation',
+          items: [],
+        },
+        {
+          href: '/components/text-marquee',
+          title: 'Text Marquee',
+          items: [],
+        },
+        {
+          href: '/components/blocks',
+          title: 'Blocks',
+          items: [],
+        },
+        {
+          href: '/components/drag-items',
+          title: 'Drag Items',
+          items: [],
+        },
         { href: '/components/accordion', title: 'Accordion', items: [] },
         {
           href: '/components/responsive-header',

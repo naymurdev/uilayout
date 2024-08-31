@@ -48,6 +48,7 @@ export const basePath = [
   // },
 ]
 export const specialComponents = [
+  { id: '/components/drag-items', name: 'Drag Items' },
   { id: '/components/magnified-doc', name: 'Magnified-Doc' },
   {
     id: '/components/gradient-border',
@@ -343,11 +344,23 @@ export const ItemsWithName = ({ group, items, pathname }: any) => {
 
   useEffect(() => {
     const activeItemIndex = items.findIndex((item: any) => item.id === pathname)
+
     if (activeItemIndex !== -1) {
-      itemRefs.current[activeItemIndex]?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      })
+      if (activeItemIndex !== -1 && itemRefs.current[activeItemIndex]) {
+        groupRef.current?.scrollTo({
+          top:
+            itemRefs.current[activeItemIndex]?.offsetTop -
+            groupRef.current.clientHeight / 2,
+          behavior: 'smooth',
+        })
+        itemRefs.current[activeItemIndex]?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'nearest',
+        })
+
+        // Ensure the body scroll is not affected
+      }
     }
 
     const groupElement = groupRef.current

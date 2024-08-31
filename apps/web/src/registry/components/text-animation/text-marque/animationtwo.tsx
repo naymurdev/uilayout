@@ -11,7 +11,7 @@ function index() {
           scrollDependent={true}
           clasname="font-bold tracking-[-0.07em] leading-[90%]"
         >
-          Creative Web Developer
+          Best Component library For Developer
         </ScrollBaseAnimation>
       </div>
     </>
