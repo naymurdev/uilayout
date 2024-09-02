@@ -78,6 +78,7 @@ function HomeHeader() {
   const { addVisitedPage, getRecentPages } = useRecentPagesStore()
 
   const recentPages = getRecentPages()
+  console.log(recentPages)
 
   return (
     <>
@@ -125,22 +126,26 @@ function HomeHeader() {
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>Recent Visit</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {recentPages.map((component) => (
-                          <ListItem
-                            key={component.id}
-                            title={component.name}
-                            href={component.name}
-                          >
-                            {component.name}
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
+                  {recentPages.length !== 0 && (
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger>
+                        Recent Visit
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                          {recentPages.map((component) => (
+                            <ListItem
+                              key={component.id}
+                              title={component.name}
+                              href={component.name}
+                            >
+                              {component.name}
+                            </ListItem>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  )}
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
