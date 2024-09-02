@@ -132,12 +132,12 @@ function HomeHeader() {
                         Recent Visit
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        <ul className="flex w-[400px] flex-wrap justify-between gap-3 p-4 md:w-[500px]  lg:w-[600px] ">
                           {recentPages.map((component) => (
                             <ListItem
                               key={component.id}
                               title={component.name}
-                              href={component.name}
+                              href={component.id}
                             >
                               {component.name}
                             </ListItem>
