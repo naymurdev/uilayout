@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes'
 
 const Progressbar = ({ children }: { children: React.ReactNode }) => {
   const { theme, setTheme } = useTheme()
-  console.log(theme)
+  // console.log(theme)
 
   return (
     <>

@@ -7,7 +7,7 @@ links:
   api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
 ---
 
-#### Footer1
+## Animated Logo
 
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList >
@@ -21,7 +21,7 @@ links:
   <CodeWrapper noExpand={true}>
     <ScreenCodePreview name="footer1" category="footer" />
 
-## Installation
+Install the following dependencies
 
 ```bash
 npm install framer-motion
@@ -31,7 +31,7 @@ npm install framer-motion
   </TabsContent>
 </Tabs>
 
-#### Footer2
+## Hover Footer
 
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList >
@@ -43,7 +43,7 @@ npm install framer-motion
   </TabsContent>
   <TabsContent value="codesnippet" >
  
-    <CodeWrapper noExpand={true}>
+<CodeWrapper noExpand={false}>
 
 ```tsx
 'use client'
@@ -174,13 +174,15 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({
 export default index
 ```
 
-  </CodeWrapper>
+<Steps>
 
-## Installation
+<Step>Install the following dependencies:</Step>
 
 ```bash
 npm install framer-motion
 ```
+
+<Step>Here's Hover Animation file:</Step>
 
 ```tsx title="animate-text.tsx"
 interface AnimatedTextProps {
@@ -218,8 +220,8 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({
       ref={textRef}
       className={cn(
         `animated-text  text-center tracking-[-0.06em] w-full font-bold left-0 -bottom-4 absolute leading-[80%]
-                 [--gradient-text-center:#3a7eee] [--gradient-text-edge:#f3f4f6]
-                 dark:[--gradient-text-center:rgb(226,226,226)] dark:[--gradient-text-edge:rgba(0,9,12,0.1)]`,
+                    [--gradient-text-center:#3a7eee] [--gradient-text-edge:#f3f4f6]
+                    dark:[--gradient-text-center:rgb(226,226,226)] dark:[--gradient-text-edge:rgba(0,9,12,0.1)]`,
         className
       )}
       style={
@@ -235,5 +237,7 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({
 }
 ```
 
+</Steps>
+  </CodeWrapper>
   </TabsContent>
 </Tabs>

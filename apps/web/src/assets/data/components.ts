@@ -1,47 +1,53 @@
+import { components } from '@/components/common/docs-sidebar'
 import * as React from 'react'
 export const COMPONENTS = [
   {
     name: 'Accordion',
     componentArray: [
       {
-        componentName: 'accordion1',
+        pagelink: 'components/accordion',
+        componentName: 'grid-layout-accordion',
         componentSrc: React.lazy(
           () => import('@/registry/components/accordion/framer/gridlayout')
         ),
       },
       {
-        componentName: 'accordion2',
+        componentName: 'single-layout-accordion',
+        pagelink: 'components/accordion#single-layout',
         componentSrc: React.lazy(
           () => import('@/registry/components/accordion/framer/singlelayout')
         ),
       },
       {
-        componentName: 'accordion3',
+        componentName: 'multi-layout-accordion',
+        pagelink: 'components/accordion#multi-layout',
         componentSrc: React.lazy(
           () => import('@/registry/components/accordion/framer/multilayout')
         ),
       },
 
       {
-        componentName: 'accordionfaq',
+        componentName: 'faq',
+        pagelink: 'components/faqs',
         componentSrc: React.lazy(
           () => import('@/registry/components/accordion/framer/faq')
         ),
       },
       {
-        componentName: 'accordionHover',
+        componentName: 'hover-accordion',
         componentSrc: React.lazy(
           () => import('@/registry/components/accordion/framer/image-hover')
         ),
       },
       {
-        componentName: 'accordion5',
+        componentName: 'radix-accordion',
+        pagelink: 'components/accordion#radix-accordion',
         componentSrc: React.lazy(
           () => import('@/registry/components/accordion-radix')
         ),
       },
       {
-        componentName: 'accordionImageHover',
+        componentName: 'tailwind-hover-accordion',
         componentSrc: React.lazy(
           () =>
             import('@/registry/components/accordion/tailwind-image-accordion')
@@ -50,32 +56,32 @@ export const COMPONENTS = [
     ],
     filesArray: [
       {
-        fileName: 'accordion1',
+        fileName: 'grid-layout-accordion',
         fileSrc: './src/registry/components/accordion/framer/gridlayout.tsx',
       },
       {
-        fileName: 'accordion2',
+        fileName: 'single-layout-accordion',
         fileSrc: './src/registry/components/accordion/framer/singlelayout.tsx',
       },
       {
-        fileName: 'accordion3',
+        fileName: 'multi-layout-accordion',
         fileSrc: './src/registry/components/accordion/framer/multilayout.tsx',
       },
 
       {
-        fileName: 'accordionfaq',
+        fileName: 'faq',
         fileSrc: './src/registry/components/accordion/framer/faq.tsx',
       },
       {
-        fileName: 'accordionHover',
+        fileName: 'hover-accordion',
         fileSrc: './src/registry/components/accordion/framer/image-hover.tsx',
       },
       {
-        fileName: 'accordion5',
+        fileName: 'radix-accordion',
         fileSrc: './src/registry/components/accordion-radix.tsx',
       },
       {
-        fileName: 'accordionImageHover',
+        fileName: 'tailwind-hover-accordion',
         fileSrc:
           './src/registry/components/accordion/tailwind-image-accordion.tsx',
       },
@@ -87,207 +93,243 @@ export const COMPONENTS = [
     name: 'Button',
     componentArray: [
       {
-        componentName: 'bg-shine',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-bg-shine')
-        ),
-      },
-      {
-        componentName: 'bg-spotlight',
+        componentName: 'spotlight-btn',
+        pagelink: '/components/buttons',
         componentSrc: React.lazy(
           () => import('@/registry/components/button/btn-bg-spotlight')
         ),
       },
-
       {
-        componentName: 'rotating-gradient',
+        componentName: 'btn-gradient-rotating',
+        pagelink: '/components/buttons',
         componentSrc: React.lazy(
           () => import('@/registry/components/button/btn-rotating-bgGradient')
         ),
       },
       {
-        componentName: 'hover1',
+        componentName: 'shiny-btn',
+        pagelink: '/components/buttons',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-bg-shine')
+        ),
+      },
+
+      {
+        componentName: 'btn-hover-cover-arrow',
+        pagelink: '/components/buttons',
+
         componentSrc: React.lazy(
           () => import('@/registry/components/button/btn-hover1')
         ),
       },
       {
-        componentName: 'hover2',
+        componentName: 'btn-expanding-arrow',
+        pagelink: '/components/buttons',
+
         componentSrc: React.lazy(
           () => import('@/registry/components/button/btn-hover2')
         ),
       },
       {
-        componentName: 'hover3',
+        componentName: 'btn-click-liftshadow',
+        pagelink: '/components/buttons',
+
         componentSrc: React.lazy(
           () => import('@/registry/components/button/btn-hover3')
         ),
       },
       {
-        componentName: 'hover4',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover4')
-        ),
-      },
-      {
-        componentName: 'hover5',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover5')
-        ),
-      },
-      {
-        componentName: 'hover6',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover6')
-        ),
-      },
-      {
-        componentName: 'hover7',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover7')
-        ),
-      },
-      {
-        componentName: 'hover8',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover8')
-        ),
-      },
-      {
-        componentName: 'hover9',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover9')
-        ),
-      },
-      {
-        componentName: 'hover10',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover10')
-        ),
-      },
-      {
-        componentName: 'hover11',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover11')
-        ),
-      },
-      {
-        componentName: 'hover12',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover12')
-        ),
-      },
-      {
-        componentName: 'hover13',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover13')
-        ),
-      },
-      {
-        componentName: 'hover14',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover14')
-        ),
-      },
-      {
-        componentName: 'hoverActive',
-        componentSrc: React.lazy(
-          () => import('@/registry/components/button/btn-hover-active')
-        ),
-      },
-      {
-        componentName: 'creativeBtn1',
+        componentName: 'creative-btn1',
+        pagelink: '/components/buttons',
+
         componentSrc: React.lazy(
           () => import('@/registry/components/button/creative-btn1')
         ),
       },
       {
-        componentName: 'creativeBtn2',
+        componentName: 'creative-btn2',
+        pagelink: '/components/buttons',
         componentSrc: React.lazy(
           () => import('@/registry/components/button/creative-btn2')
+        ),
+      },
+      {
+        componentName: 'btn-hover-liftshadow',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover4')
+        ),
+      },
+      {
+        componentName: 'btn-expanding',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover5')
+        ),
+      },
+      {
+        componentName: 'btn-linesweep',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover6')
+        ),
+      },
+      {
+        componentName: 'btn-bottomswap',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover7')
+        ),
+      },
+      {
+        componentName: 'btn-rightslide',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover8')
+        ),
+      },
+      {
+        componentName: 'btn-bottom-slideswap',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover9')
+        ),
+      },
+      {
+        componentName: 'btn-skew-textswap',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover10')
+        ),
+      },
+      {
+        componentName: 'btn-crossshift-hover',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover11')
+        ),
+      },
+      {
+        componentName: 'link-btn',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover12')
+        ),
+      },
+      {
+        componentName: 'btn-bg-hover',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover13')
+        ),
+      },
+      {
+        componentName: 'btn-arrow-right',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover14')
+        ),
+      },
+      {
+        componentName: 'btn-liftshadow',
+        pagelink: '/components/buttons',
+
+        componentSrc: React.lazy(
+          () => import('@/registry/components/button/btn-hover-active')
         ),
       },
     ],
     filesArray: [
       {
-        fileName: 'bg-shine',
+        fileName: 'shiny-btn',
         fileSrc: './src/registry/components/button/btn-bg-shine.tsx',
       },
       {
-        fileName: 'bg-spotlight',
+        fileName: 'spotlight-btn',
         fileSrc: './src/registry/components/button/btn-bg-spotlight.tsx',
       },
       {
-        fileName: 'rotating-gradient',
+        fileName: 'btn-gradient-rotating',
         fileSrc: './src/registry/components/button/btn-rotating-bgGradient.tsx',
       },
       {
-        fileName: 'hover1',
+        fileName: 'btn-hover-cover-arrow',
         fileSrc: '/src/registry/components/button/btn-hover1.tsx',
       },
       {
-        fileName: 'hover2',
+        fileName: 'btn-expanding-arrow',
         fileSrc: '/src/registry/components/button/btn-hover2.tsx',
       },
       {
-        fileName: 'hover3',
+        fileName: 'btn-click-liftshadow',
         fileSrc: '/src/registry/components/button/btn-hover3.tsx',
       },
       {
-        fileName: 'hover4',
-        fileSrc: '/src/registry/components/button/btn-hover4.tsx',
-      },
-      {
-        fileName: 'hover5',
-        fileSrc: '/src/registry/components/button/btn-hover5.tsx',
-      },
-      {
-        fileName: 'hover6',
-        fileSrc: '/src/registry/components/button/btn-hover6.tsx',
-      },
-      {
-        fileName: 'hover7',
-        fileSrc: '/src/registry/components/button/btn-hover7.tsx',
-      },
-      {
-        fileName: 'hover8',
-        fileSrc: '/src/registry/components/button/btn-hover8.tsx',
-      },
-      {
-        fileName: 'hover9',
-        fileSrc: '/src/registry/components/button/btn-hover9.tsx',
-      },
-      {
-        fileName: 'hover10',
-        fileSrc: '/src/registry/components/button/btn-hover10.tsx',
-      },
-      {
-        fileName: 'hover11',
-        fileSrc: '/src/registry/components/button/btn-hover11.tsx',
-      },
-      {
-        fileName: 'hover12',
-        fileSrc: '/src/registry/components/button/btn-hover12.tsx',
-      },
-      {
-        fileName: 'hover13',
-        fileSrc: '/src/registry/components/button/btn-hover13.tsx',
-      },
-      {
-        fileName: 'hover14',
-        fileSrc: '/src/registry/components/button/btn-hover14.tsx',
-      },
-      {
-        fileName: 'hoverActive',
-        fileSrc: '/src/registry/components/button/btn-hover-active.tsx',
-      },
-      {
-        fileName: 'creativeBtn1',
+        fileName: 'creative-btn1',
         fileSrc: '/src/registry/components/button/creative-btn1.tsx',
       },
       {
-        fileName: 'creativeBtn2',
+        fileName: 'creative-btn2',
         fileSrc: '/src/registry/components/button/creative-btn2.tsx',
+      },
+      {
+        fileName: 'btn-hover-liftshadow',
+        fileSrc: '/src/registry/components/button/btn-hover4.tsx',
+      },
+      {
+        fileName: 'btn-expanding',
+        fileSrc: '/src/registry/components/button/btn-hover5.tsx',
+      },
+      {
+        fileName: 'btn-linesweep',
+        fileSrc: '/src/registry/components/button/btn-hover6.tsx',
+      },
+      {
+        fileName: 'btn-bottomswap',
+        fileSrc: '/src/registry/components/button/btn-hover7.tsx',
+      },
+      {
+        fileName: 'btn-rightslide',
+        fileSrc: '/src/registry/components/button/btn-hover8.tsx',
+      },
+      {
+        fileName: 'btn-bottom-slideswap',
+        fileSrc: '/src/registry/components/button/btn-hover9.tsx',
+      },
+      {
+        fileName: 'btn-skew-textswap',
+        fileSrc: '/src/registry/components/button/btn-hover10.tsx',
+      },
+      {
+        fileName: 'btn-crossshift-hover',
+        fileSrc: '/src/registry/components/button/btn-hover11.tsx',
+      },
+      {
+        fileName: 'link-btn',
+        fileSrc: '/src/registry/components/button/btn-hover12.tsx',
+      },
+      {
+        fileName: 'btn-bg-hover',
+        fileSrc: '/src/registry/components/button/btn-hover13.tsx',
+      },
+      {
+        fileName: 'btn-arrow-right',
+        fileSrc: '/src/registry/components/button/btn-hover14.tsx',
+      },
+      {
+        fileName: 'btn-liftshadow',
+        fileSrc: '/src/registry/components/button/btn-hover-active.tsx',
       },
     ],
     slug: 'button',
@@ -659,6 +701,7 @@ export const COMPONENTS = [
     name: 'infinity-scroll',
     componentArray: [
       {
+        components: 'scroll',
         componentName: 'infinityScroll',
         componentSrc: React.lazy(
           () => import('@/registry/components/infinity-scroll/infinity-scroll')
@@ -667,13 +710,14 @@ export const COMPONENTS = [
     ],
     filesArray: [
       {
+        components: 'scroll',
         fileName: 'infinityScroll',
         fileSrc:
           './src/registry/components/infinity-scroll/infinity-scroll.tsx',
       },
     ],
-    slug: 'scroll',
-    type: 'infinity-scroll',
+    slug: 'infinity-scroll',
+    type: 'scroll',
   },
   {
     name: 'horizontal-scroll',
@@ -980,7 +1024,7 @@ export const COMPONENTS = [
         fileSrc: './src/registry/components/grid/unsplash-grid.tsx',
       },
     ],
-    slug: 'grid',
+    slug: 'masonary grid',
     type: 'grid',
   },
   {
@@ -1529,11 +1573,11 @@ export const COMPONENTS = [
           './src/registry/components/scroll-element-animation/example-three.tsx',
       },
     ],
-    slug: 'scroll-scroll',
-    type: 'scroll',
+    slug: 'scroll-animation',
+    type: 'animation',
   },
   {
-    name: 'random',
+    name: 'noise',
     componentArray: [
       {
         componentName: 'sectionNoise',
@@ -1548,8 +1592,8 @@ export const COMPONENTS = [
         fileSrc: './src/registry/components/noise-effect/section-noise.tsx',
       },
     ],
-    slug: 'random',
-    type: 'random',
+    slug: 'noise-effect',
+    type: 'noise',
   },
   {
     name: 'block',
@@ -1567,11 +1611,11 @@ export const COMPONENTS = [
         fileSrc: './src/registry/components/bg-blocks/blocksone.tsx',
       },
     ],
-    slug: 'bg-blocks',
+    slug: 'background-blocks',
     type: 'blocks',
   },
   {
-    name: 'animation',
+    name: 'text-animation',
     componentArray: [
       {
         componentName: 'textAnimation1',
@@ -1616,7 +1660,7 @@ export const COMPONENTS = [
       },
     ],
     slug: 'text-animation',
-    type: 'animation',
+    type: 'text-animation',
   },
   {
     name: 'timeline-animation',

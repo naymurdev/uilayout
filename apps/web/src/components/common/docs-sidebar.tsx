@@ -9,8 +9,18 @@ import {
   Component,
   Layout,
   LayoutTemplate,
+  Microscope,
   Rocket,
+  X,
 } from 'lucide-react'
+import { IRecentPage, useRecentPagesStore } from '@/hooks/use-zust-store'
+import RecentVisitList from './recent-visit-list'
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipContent,
+  TooltipTrigger,
+} from '@radix-ui/react-tooltip'
 export const basePath = [
   {
     id: '/get-started',
@@ -32,14 +42,14 @@ export const basePath = [
     name: 'Templates',
     icon: <LayoutTemplate />,
   },
-  // {
-  //   id: '/open-source',
-  //   name: 'Open Source',
-  //   icon: <SquareCode />,
-  // },
+  {
+    id: '/labs',
+    name: 'Labs',
+    icon: <Microscope />,
+  },
 ]
 export const specialComponents = [
-  { id: '/components/drag-items', name: 'Drag Items' },
+  { id: '/components/drag-items', name: 'Drag Items', new: true },
   { id: '/components/magnified-doc', name: 'Magnified-Doc' },
   {
     id: '/components/gradient-border',
@@ -245,6 +255,8 @@ export const layouts = [
 
 function DocsSidebar() {
   const pathname = usePathname()
+  const { addVisitedPage, getRecentPages, removeAllRecentPages } =
+    useRecentPagesStore()
   const groupedComponents = components.reduce((acc, component) => {
     const group = component.component || null
     //@ts-ignore
@@ -256,8 +268,19 @@ function DocsSidebar() {
     acc[group].push(component)
     return acc
   }, {})
-  // console.log(groupedComponents)
+  // const [hideRecentpages, setHideRecentPages] = useState<IRecentPage[]>([])
 
+  const handleRemoveAllRecentData = () => {
+    // removeAllRecentPages()
+    setRecentPages([])
+  }
+  // console.log(groupedComponents)
+  const [recentPages, setRecentPages] = useState<IRecentPage[]>([])
+
+  useEffect(() => {
+    const recentPage = getRecentPages()
+    setRecentPages(recentPage)
+  }, [getRecentPages])
   return (
     <div className="h-full border-r ">
       <div className="sticky top-0 h-screen rounded-md   pt-14 ">
@@ -269,6 +292,7 @@ function DocsSidebar() {
                   <li key={`id-${index}`}>
                     <Link
                       href={link.id}
+                      onClick={() => addVisitedPage(link.id, link.name)}
                       className={`flex gap-2 group font-medium items-center py-1  transition-all ${
                         link.id === pathname
                           ? 'active-nav'
@@ -290,21 +314,69 @@ function DocsSidebar() {
               )
             })}
           </ul>
+
+          <>
+            {recentPages.length > 0 && (
+              <div className="relative">
+                <h1 className="text-lg font-semibold pb-1">Recent Visited</h1>
+                {/* <div className="absolute w-full bottom-0 left-0 h-7 bg-gradient-to-t dark:from-base-dark from-white from-20%" /> */}
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger
+                      onClick={handleRemoveAllRecentData}
+                      className="h-7 w-7 rounded-md dark:bg-gray-900 bg-gray-100 grid place-content-center absolute top-0 right-3"
+                    >
+                      <X className={`h-5 w-5 transition-all`} />
+                    </TooltipTrigger>
+                    <TooltipContent className="border px-1 z-10 bg-primary-foreground">
+                      <p>Remove</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+
+                <ul>
+                  {recentPages.map((page) => (
+                    <li
+                      key={page.id}
+                      className={`font-normal text-sm  flex items-center gap-1 dark:hover:text-white  py-1 pl-2  border-l transition-all  ${
+                        page.id === pathname
+                          ? 'dark:border-white border-black text-black dark:text-white font-semibold'
+                          : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
+                      }`}
+                    >
+                      <Link
+                        href={page.id}
+                        onClick={() => addVisitedPage(page.id, page.name)}
+                      >
+                        {page.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </>
+
           <h1 className="text-lg font-semibold pb-1">Components</h1>
           <ul>
             {specialComponents?.map((link: any) => {
               return (
                 <>
                   <li
+                    key={link.id}
                     className={`font-normal text-sm  flex items-center gap-1 dark:hover:text-white  py-1 pl-2  border-l transition-all  ${
                       link.id === pathname
                         ? 'dark:border-white border-black text-black dark:text-white font-semibold'
                         : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
                     }`}
                     // data-active={link.id === pathname}
-                    key={link.id}
                   >
-                    <Link href={link.id}>{link.name}</Link>
+                    <Link
+                      href={link.id}
+                      onClick={() => addVisitedPage(link.id, link.name)}
+                    >
+                      {link.name}
+                    </Link>
                     {link?.new && (
                       <span className="bg-blue-400 text-white  rounded-full px-2 h-4 text-xs items-center flex">
                         new
@@ -316,7 +388,12 @@ function DocsSidebar() {
             })}
           </ul>
           {Object.entries(groupedComponents).map(([group, items]) => (
-            <ItemsWithName group={group} items={items} pathname={pathname} />
+            <ItemsWithName
+              group={group}
+              items={items}
+              pathname={pathname}
+              addVisitedPage={addVisitedPage}
+            />
           ))}
         </ScrollArea>
       </div>
@@ -324,7 +401,12 @@ function DocsSidebar() {
   )
 }
 
-export const ItemsWithName = ({ group, items, pathname }: any) => {
+export const ItemsWithName = ({
+  group,
+  items,
+  pathname,
+  addVisitedPage,
+}: any) => {
   const [expandedItems, setExpandedItems] = useState<boolean>(false)
   const showExpandButton = items.length > 3
   const itemsToShow =
@@ -378,7 +460,6 @@ export const ItemsWithName = ({ group, items, pathname }: any) => {
       groupElement.removeEventListener('mouseleave', handleMouseLeave)
     }
   }, [items, pathname])
-
   return (
     <div ref={groupRef} key={group}>
       <button className="text-[1rem] relative flex w-full items-center justify-between pr-4 cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1">
@@ -407,7 +488,12 @@ export const ItemsWithName = ({ group, items, pathname }: any) => {
                 : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
             }`}
           >
-            <Link href={link.id}>{link.name}</Link>
+            <Link
+              href={link.id}
+              onClick={() => addVisitedPage(link.id, link.name)}
+            >
+              {link.name}
+            </Link>
             {link?.new && (
               <span className="bg-blue-400 text-white rounded-full px-2 h-4 text-xs items-center flex">
                 new

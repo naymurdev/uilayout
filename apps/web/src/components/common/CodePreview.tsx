@@ -1,5 +1,4 @@
 import React from 'react'
-import { COMPONENTS } from '@/assets/data/components'
 
 export default function CodePreview({
   children,

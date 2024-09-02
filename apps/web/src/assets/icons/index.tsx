@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { cn } from '@/lib/utils'
 export type IconProps = React.HTMLAttributes<SVGElement>
 import doc_circle from '@/assets/icons/circle.png'
@@ -8,6 +10,8 @@ import doc_icon5 from '@/assets/icons/doc_icon5.png'
 import doc_star from '@/assets/icons/doc_star.png'
 import doc_rectangle from '@/assets/icons/Rectangle.png'
 import doc_triangle from '@/assets/icons/triangle.png'
+import componentsIcons from '@/assets/icons/component.svg'
+import homeIcons from '@/assets/icons/home.svg'
 
 export const techIcons = {
   logo: (props: IconProps) => (
@@ -305,7 +309,6 @@ const homebg = ({ className }: { className: string }) => {
     </>
   )
 }
-import React from 'react'
 
 function TemplateIcons({ className }: { className: string }) {
   return (
@@ -337,6 +340,31 @@ function ComponentsIcons({ className }: { className: string }) {
     </svg>
   )
 }
+export function HomeIcons({ className }: { className: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="101"
+      height="89"
+      fill="none"
+      className={className}
+      viewBox="0 0 101 89"
+    >
+      <path
+        fill="#000"
+        d="M10.626 40.483l7.99-6.672L47.943 9.36a3.984 3.984 0 015.114 0l29.326 24.45 7.99 6.673 5.514 4.595L101 38.925 58.17 3.207a11.951 11.951 0 00-15.34 0L0 38.925l5.114 6.153 5.512-4.595z"
+      ></path>
+      <path
+        fill="#000"
+        d="M78.39 88.385c6.592 0 11.985-5.394 11.985-11.986V50.87L50.502 17.63 10.63 50.869V76.4c0 6.593 5.394 11.986 11.986 11.986H34.16V59.62c0-6.592 5.353-11.985 11.986-11.985h8.71c6.631 0 11.985 5.393 11.985 11.985v28.766H78.39z"
+      ></path>
+      <path
+        fill="#000"
+        d="M46.144 55.625a3.981 3.981 0 00-3.996 3.995v28.766h16.7V59.62a3.981 3.981 0 00-3.995-3.995h-8.71z"
+      ></path>
+    </svg>
+  )
+}
 
 export const Icons = {
   doc_circle,
@@ -350,5 +378,6 @@ export const Icons = {
   logo,
   homebg,
   TemplateIcons,
-  ComponentsIcons,
+  componentsIcons,
+  homeIcons,
 }

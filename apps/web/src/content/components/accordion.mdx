@@ -15,7 +15,7 @@ links:
   <TabsContent
     value="preview"
   >
-    <ComponentPreview  name="accordion1" category="component">
+    <ComponentPreview  name="grid-layout-accordion" category="component">
       <div className="text-center pb-3">
         ## Framer Motion Accordion
       </div>
@@ -24,7 +24,7 @@ links:
   </TabsContent>
   <TabsContent value="codesnippet">
     <CodeWrapper noExpand={true}>
-     <CodePreview name="accordion1" category="component" />
+     <CodePreview name="grid-layout-accordion" category="component" />
     </CodeWrapper>
   </TabsContent>
 </Tabs>
@@ -199,6 +199,8 @@ export function AccordionPanel({ children }) {
 
 ```
 
+#### Structure
+
 ```ts title="props/apis" {1,2,3,8,9,14,15}
     <Accordion defaultValue={['item-1']} multiple>
         <AccordionItem value="item-1">
@@ -222,7 +224,7 @@ export function AccordionPanel({ children }) {
     </Accordion>
 ```
 
-#### More Examples
+### Single Layout
 
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
@@ -230,23 +232,25 @@ export function AccordionPanel({ children }) {
     <TabsTrigger value="codesnippet">Code</TabsTrigger>
   </TabsList>
   <TabsContent value="preview">
-    <ComponentPreview name="accordion2" category="component" />
+    <ComponentPreview name="single-layout-accordion" category="component" />
   </TabsContent>
   <TabsContent value="codesnippet">
-    <CodePreview name="accordion2" category="component" />
+    <CodePreview name="single-layout-accordion" category="component" />
   </TabsContent>
 </Tabs>
 
+### Multi Layout
+
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
     <TabsTrigger value="preview">Preview</TabsTrigger>
     <TabsTrigger value="codesnippet">Code</TabsTrigger>
   </TabsList>
   <TabsContent value="preview">
-    <ComponentPreview name="accordion3" category="component" />
+    <ComponentPreview name="multi-layout-accordion" category="component" />
   </TabsContent>
   <TabsContent value="codesnippet">
-    <CodePreview name="accordion3" category="component" />
+    <CodePreview name="multi-layout-accordion" category="component" />
   </TabsContent>
 </Tabs>
 
@@ -259,7 +263,7 @@ export function AccordionPanel({ children }) {
   </TabsList>
   <TabsContent value="preview">
  
-    <ComponentPreview name="accordion5" category="component">
+    <ComponentPreview name="radix-accordion" category="component">
  
       <div className="text-center pb-3">
         ## Radix Accordion
@@ -268,14 +272,17 @@ export function AccordionPanel({ children }) {
   </TabsContent>
   <TabsContent value="codesnippet" >
   <CodeWrapper>
-    <CodePreview name="accordion5" category="component" />
+    <CodePreview name="radix-accordion" category="component" />
 
-## Installation
+<Steps>
+
+<Step>Install the following dependencies:</Step>
 
 ```bash
 npm install @radix-ui/react-accordion
 ```
 
+<Step> copy and paste this code in utils.tsx file</Step>
 ```js title="@/lib/utils"
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
@@ -284,7 +291,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 ```
-
+<Step> copy and paste this code in tailwind.config.js file</Step>
 ```js title="tailwind.config.js"
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -308,6 +315,8 @@ module.exports = {
   },
 }
 ```
+
+<Step> This is the main accordion file</Step>
 
 ```js title="accordion.tsx" {1-10}#a {15-20}#b
 const AccordionWrapper = React.forwardRef(
@@ -371,6 +380,8 @@ const AccordionContent = React.forwardRef(
 export {AccordionWrapper,AccordionItem,AccordionTrigger,AccordionContent}
 ```
 
+<Step>This is the Single accordion file</Step>
+
 ```js title="single-accordion.tsx"
 <Accordion.Root
   className="bg-transparent  w-full  rounded-md shadow-[0_2px_10px] shadow-black/5 space-y-2"
@@ -401,6 +412,7 @@ export {AccordionWrapper,AccordionItem,AccordionTrigger,AccordionContent}
 </Accordion.Root>
 ```
 
+<Step>This is the multilayout accordion file</Step>
 ```js title="multilayout-accordion.tsx"
 <Accordion.Root
   className="bg-transparent grid grid-cols-2 gap-2  w-full  rounded-md shadow-[0_2px_10px] shadow-black/5 "
@@ -430,6 +442,7 @@ export {AccordionWrapper,AccordionItem,AccordionTrigger,AccordionContent}
         Yes! You can animate the Accordion with CSS or JavaScript.
       </AccordionContent>
     </AccordionItem>
+
   </AccordionWrapper>
   <AccordionWrapper>
     <AccordionItem value="double-4">
@@ -453,10 +466,11 @@ export {AccordionWrapper,AccordionItem,AccordionTrigger,AccordionContent}
         Yes! You can animate the Accordion with CSS or JavaScript.
       </AccordionContent>
     </AccordionItem>
+
   </AccordionWrapper>
 </Accordion.Root>
 ```
-
+</Steps>
 </CodeWrapper>
   </TabsContent>
 </Tabs>

@@ -33,6 +33,7 @@ import MobileHeader from './moibile-header'
 import { SearchDialog } from './search-bar'
 import GitHubButton from '@/registry/components/github-repo-btn/github-repo-btn'
 import { FaXTwitter } from 'react-icons/fa6'
+import { useRecentPagesStore } from '@/hooks/use-zust-store'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -74,6 +75,9 @@ const components: { title: string; href: string; description: string }[] = [
 
 function HomeHeader() {
   const { setTheme } = useTheme()
+  const { addVisitedPage, getRecentPages } = useRecentPagesStore()
+
+  const recentPages = getRecentPages()
 
   return (
     <>
@@ -116,6 +120,22 @@ function HomeHeader() {
                             href={component.href}
                           >
                             {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Recent Visit</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {recentPages.map((component) => (
+                          <ListItem
+                            key={component.id}
+                            title={component.name}
+                            href={component.name}
+                          >
+                            {component.name}
                           </ListItem>
                         ))}
                       </ul>
