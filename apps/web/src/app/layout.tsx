@@ -6,7 +6,10 @@ import Header from '@/components/common/home-header'
 import Progressbar from '@/lib/progressbar'
 import { siteConfig } from '@/lib/utils'
 
-const poppins = Plus_Jakarta_Sans({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+})
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,

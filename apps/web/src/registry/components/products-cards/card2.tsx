@@ -12,7 +12,6 @@ import * as Select from '@radix-ui/react-select'
 import { cn } from '@/lib/utils'
 import { CardArr } from '@/components/common/constant'
 import { motion } from 'framer-motion'
-import { FaRegHeart, FaHeart } from 'react-icons/fa6'
 
 function Card2() {
   const [selectedImage, setSelectedImage] = useState(CardArr[1].img)
@@ -39,11 +38,11 @@ function Card2() {
           >
             {isActive ? (
               <>
-                <FaHeart />
+                <Heart className=" fill-white" />
               </>
             ) : (
               <>
-                <FaRegHeart />
+                <Heart />
               </>
             )}
           </motion.button>

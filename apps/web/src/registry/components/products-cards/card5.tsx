@@ -3,7 +3,6 @@ import React, { ReactNode, useState } from 'react'
 import Image from 'next/image'
 import { Heart, ShoppingCart } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { FaRegHeart, FaHeart } from 'react-icons/fa6'
 const sizes = ['7', '7.5', '8', '8.5']
 function Card() {
   const [isActive, setIsActive] = useState(false)
@@ -30,11 +29,11 @@ function Card() {
           >
             {isActive ? (
               <>
-                <FaHeart />
+                <Heart className=" fill-white" />
               </>
             ) : (
               <>
-                <FaRegHeart />
+                <Heart />
               </>
             )}
           </motion.button>

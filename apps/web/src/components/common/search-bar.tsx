@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { DialogProps } from '@radix-ui/react-dialog'
 import { docsConfig } from '@/configs/docs'
-import { FaXTwitter } from 'react-icons/fa6'
 import {
   CircleIcon,
   LaptopIcon,
@@ -96,7 +95,17 @@ export function SearchDialog({ ...props }: DialogProps) {
                     target="_blank"
                     className="p-3 flex gap-2 items-center  bg-blue-500/20 w-full rounded-md"
                   >
-                    <FaXTwitter /> @naymur_dev
+                    <svg
+                      width="120"
+                      height="109"
+                      viewBox="0 0 120 109"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" fill-primary w-4 h-5"
+                    >
+                      <path d="M94.5068 0H112.907L72.7076 46.172L120 109H82.9692L53.9674 70.8942L20.7818 109H2.3693L45.3666 59.6147L0 0H37.9685L64.1848 34.8292L94.5068 0ZM88.0484 97.9318H98.2448L32.4288 10.4872H21.4882L88.0484 97.9318Z" />
+                    </svg>{' '}
+                    @naymur_dev
                   </a>
                   <span className="p-2 text-xs block font-semibold">
                     Getting Started

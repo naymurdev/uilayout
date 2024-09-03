@@ -1,17 +1,13 @@
 'use client'
 import React, { ReactNode, useState } from 'react'
 import Image from 'next/image'
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import * as Select from '@radix-ui/react-select'
-import { cn } from '@/lib/utils'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import Carousel, {
+  Slider,
+  SliderContainer,
+} from '@/registry/components/carousel/embla/carousel'
 import { motion } from 'framer-motion'
-import { FaRegHeart, FaHeart } from 'react-icons/fa6'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
-
 import { CheckIcon, Heart } from 'lucide-react'
+import { EmblaOptionsType } from 'embla-carousel'
 
 const arr = [
   {
@@ -28,16 +24,18 @@ const arr = [
   },
 ]
 
-function Card2() {
+function index() {
   const [isActive, setIsActive] = useState(false)
 
   const handleClick = () => {
     setIsActive((prevState) => !prevState)
   }
+  const OPTIONS: EmblaOptionsType = { loop: true }
+
   return (
     <div className="w-[350px] mx-auto ">
       <div className="dark:bg-white bg-gray-100 rounded-md p-2">
-        <div className="w-full h-72 relative">
+        <div className="w-full h-72  relative">
           <motion.button
             className="absolute top-2 right-2 z-20 text-2xl text-white"
             onClick={handleClick}
@@ -46,44 +44,29 @@ function Card2() {
           >
             {isActive ? (
               <>
-                <FaHeart />
+                <Heart className=" fill-white" />
               </>
             ) : (
               <>
-                <FaRegHeart />
+                <Heart />
               </>
             )}
           </motion.button>
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={false}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="h-full rounded-md  "
-          >
-            {arr.map((data, index) => (
-              <div key={index} className="h-full rounded-md  ">
-                <SwiperSlide>
-                  {' '}
+          <Carousel options={OPTIONS} isAutoPlay={true} className="h-full">
+            <SliderContainer className="gap-2 h-full">
+              {arr.map((data, index) => (
+                <Slider key={index} className="w-full h-full">
                   <Image
                     src={data?.img}
                     alt="shoes"
-                    width={1000}
-                    height={1000}
+                    width={400}
+                    height={400}
                     className={`w-full h-full rounded-md  object-cover  `}
                   />
-                </SwiperSlide>
-              </div>
-            ))}
-          </Swiper>
-          {/* <EmblaCarousel slides={arr} options={OPTIONS} /> */}
+                </Slider>
+              ))}
+            </SliderContainer>
+          </Carousel>
         </div>
         <article className="text-black pt-2 p-2">
           <div className="flex justify-between">
@@ -105,23 +88,5 @@ function Card2() {
     </div>
   )
 }
-const SelectItem = React.forwardRef(
-  ({ children, className, ...props }: any, forwardedRef) => {
-    return (
-      <Select.Item
-        className={cn(
-          'text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1',
-          className
-        )}
-        {...props}
-        ref={forwardedRef}
-      >
-        <Select.ItemText>{children}</Select.ItemText>
-        <Select.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
-          <CheckIcon />
-        </Select.ItemIndicator>
-      </Select.Item>
-    )
-  }
-)
-export default Card2
+
+export default index

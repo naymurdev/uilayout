@@ -1,11 +1,10 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { ShoppingCart } from 'lucide-react'
+import { Bookmark, ShoppingCart } from 'lucide-react'
 
 import { CardArr } from '@/components/common/constant'
 import { motion } from 'framer-motion'
-import { FaRegHeart, FaHeart, FaRegBookmark, FaBookmark } from 'react-icons/fa6'
 const arr = [
   {
     img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415908/usama-akram-s-gYAbQToXk-unsplash_zdsntx.jpg',
@@ -57,11 +56,11 @@ function Card() {
           >
             {isActive ? (
               <>
-                <FaBookmark />
+                <Bookmark className=" fill-white" />
               </>
             ) : (
               <>
-                <FaRegBookmark />
+                <Bookmark />
               </>
             )}
           </motion.button>

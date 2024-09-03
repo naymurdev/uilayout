@@ -15,7 +15,7 @@ export function ComponentPagination({ doc }: any) {
   // }
 
   return (
-    <div className="flex flex-row items-center justify-between my-3">
+    <div className="flex flex-row items-center justify-between mt-5 mb-2">
       {pager?.previous?.id && (
         <Link
           href={pager.previous.id}

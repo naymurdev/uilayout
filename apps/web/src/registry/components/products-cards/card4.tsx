@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { Heart } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { FaRegHeart, FaHeart } from 'react-icons/fa6'
 function Card2() {
   const [isActive, setIsActive] = useState(false)
 
@@ -23,11 +22,11 @@ function Card2() {
           >
             {isActive ? (
               <>
-                <FaHeart />
+                <Heart className=" fill-white" />
               </>
             ) : (
               <>
-                <FaRegHeart />
+                <Heart />
               </>
             )}
           </motion.button>

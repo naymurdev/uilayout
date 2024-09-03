@@ -5,7 +5,6 @@ import React, { useState } from 'react'
 import { ScrollArea } from '../ui/scroll-area'
 import { basePath, MainComponents, SpecialComponents } from './docs-sidebar'
 import { usePathname, useRouter } from 'next/navigation'
-import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import Link from 'next/link'
 import GitHubButton from '@/registry/components/github-repo-btn/github-repo-btn'
 
@@ -18,7 +17,31 @@ function MobileHeader() {
         className="lg:hidden block text-3xl"
         onClick={() => setSidebarOpen(true)}
       >
-        <HiOutlineMenuAlt2 />
+        {/* <HiOutlineMenuAlt2 /> */}
+        <svg
+          width="642"
+          height="421"
+          viewBox="0 0 642 421"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className=" stroke-primary w-9 h-9"
+        >
+          <path
+            d="M52.333 359H252.333"
+            strokeWidth="66.6667"
+            strokeLinecap="round"
+          />
+          <path
+            d="M52.333 212H452.333"
+            strokeWidth="66.6667"
+            strokeLinecap="round"
+          />
+          <path
+            d="M52.333 65H585.666"
+            strokeWidth="66.6667"
+            strokeLinecap="round"
+          />
+        </svg>
       </button>
       <SidebarDrawer
         open={sidebarOpen}
@@ -46,7 +69,7 @@ function MobileHeader() {
           </figure>
           <GitHubButton username="naymurdev" repo="uilayout" classname="py-2" />
 
-          <ScrollArea className="h-[95%] py-4">
+          <ScrollArea className="h-[95%] py-4 pb-12">
             <ul className="pb-3">
               {basePath?.map((link, index) => {
                 return (

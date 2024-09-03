@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Heart } from 'lucide-react'
 import { CardArr } from '@/components/common/constant'
 import { motion } from 'framer-motion'
-import { FaRegHeart, FaHeart } from 'react-icons/fa6'
 const arr = [
   {
     img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714374836/Group_1000002799_hsztyt.png',
@@ -63,11 +62,11 @@ function Card1() {
             >
               {isActive ? (
                 <>
-                  <FaHeart />
+                  <Heart className=" fill-red-400" />
                 </>
               ) : (
                 <>
-                  <FaRegHeart />
+                  <Heart />
                 </>
               )}
             </motion.button>

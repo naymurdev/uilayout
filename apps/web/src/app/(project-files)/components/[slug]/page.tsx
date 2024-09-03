@@ -115,7 +115,7 @@ const page = async ({ params }: PageProps) => {
           <ComponentPagination doc={doc} />
         </div>
         {isTocValid && (
-          <div className="relative  border-x">
+          <div className="relative  border-x xl:block hidden">
             <div className="sticky top-20 text-[0.8em] px-3 text-white">
               <ScrollArea className="pb-10">
                 <div className="space-y-4 sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">

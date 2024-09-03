@@ -1,5 +1,4 @@
 // thanks to maximeheckel
-import { FcGoogle } from 'react-icons/fc'
 import React, { useState } from 'react'
 
 import Image from 'next/image'

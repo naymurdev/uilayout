@@ -32,7 +32,6 @@ import { techIcons } from '@/assets/icons'
 import MobileHeader from './moibile-header'
 import { SearchDialog } from './search-bar'
 import GitHubButton from '@/registry/components/github-repo-btn/github-repo-btn'
-import { FaXTwitter } from 'react-icons/fa6'
 import { useRecentPagesStore } from '@/hooks/use-zust-store'
 
 const components: { title: string; href: string; description: string }[] = [
@@ -168,7 +167,16 @@ function HomeHeader() {
               href="https://x.com/naymur_dev"
               className="border bg-primary  text-primary-foreground text-2xl w-10   sm:grid hidden place-content-center    rounded-md"
             >
-              <FaXTwitter />
+              <svg
+                width="120"
+                height="109"
+                viewBox="0 0 120 109"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className=" fill-primary-foreground w-6 h-5"
+              >
+                <path d="M94.5068 0H112.907L72.7076 46.172L120 109H82.9692L53.9674 70.8942L20.7818 109H2.3693L45.3666 59.6147L0 0H37.9685L64.1848 34.8292L94.5068 0ZM88.0484 97.9318H98.2448L32.4288 10.4872H21.4882L88.0484 97.9318Z" />
+              </svg>
             </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
