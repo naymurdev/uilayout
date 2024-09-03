@@ -25,3 +25,39 @@ links:
     </CodeWrapper>
   </TabsContent>
 </Tabs>
+
+Controll the Speed of MouseMove
+
+```tsx
+const handleImageHover = useCallback(
+  (image: ImageData) => {
+    if (activeImage !== image) {
+      setActiveImage(image)
+      // setOpacity(0);
+      // setScale(0.5);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current)
+      timeoutRef.current = setTimeout(() => {
+        setOpacity(1)
+        setScale(1)
+      }, 50)
+    } else {
+      setOpacity(1)
+      setScale(1)
+    }
+  },
+  [activeImage]
+)
+```
+
+Controll the Speed of MouseLeave
+
+```tsx
+const handleMouseLeave = useCallback(() => {
+  setOpacity(0)
+  setScale(0.5)
+  if (timeoutRef.current) clearTimeout(timeoutRef.current)
+  timeoutRef.current = setTimeout(() => {
+    setActiveImage(null)
+  }, 300)
+}, [])
+```

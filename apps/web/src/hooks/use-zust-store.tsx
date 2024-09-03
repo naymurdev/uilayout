@@ -113,3 +113,14 @@ export const useSelectedComponentStore = create<SelectedComponentState>()(
     }
   )
 )
+interface State {
+  isSidebarOpen: boolean
+  toggleSidebar: () => void
+}
+export const useStateChange = create<State>((set) => ({
+  isSidebarOpen: false,
+  toggleSidebar: () =>
+    set((state) => ({
+      isSidebarOpen: !state.isSidebarOpen,
+    })),
+}))

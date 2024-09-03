@@ -1,0 +1,94 @@
+---
+title: Randomized Text Unveil
+description: You'll find all types of Accordion which is both use for HTML, REACTJS and NEXTJS
+component: true
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/accordion
+  api: https://lunarui.dev/components/react/feature-blocks/sparkles
+---
+
+<Tabs defaultValue="preview" className="w-full relative">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="codesnippet">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <ComponentPreview
+      heightFixed={true}
+      name="Randomized-text-unveil"
+      category="beam"
+    />
+  </TabsContent>
+  <TabsContent value="codesnippet">
+    <CodeWrapper noExpand={true}>
+      <CodePreview name="Randomized-text-unveil" category="beam" />
+    </CodeWrapper>
+  </TabsContent>
+</Tabs>
+
+## Installation
+
+```bash
+npm install framer-motion @motionone/utils
+```
+
+```tsx title="text-marquee.tsx"
+'use client'
+
+import React, { useEffect, useState, useCallback } from 'react'
+
+const lettersAndSymbols = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*-_+=;:<>,'
+
+interface AnimatedTextProps {
+  text: string
+}
+
+export function RandomizedTextEffect({ text }: AnimatedTextProps) {
+  const [animatedText, setAnimatedText] = useState('')
+
+  const getRandomChar = useCallback(
+    () =>
+      lettersAndSymbols[Math.floor(Math.random() * lettersAndSymbols.length)],
+    []
+  )
+
+  const animateText = useCallback(async () => {
+    const duration = 50
+    const revealDuration = 80
+    const initialRandomDuration = 300
+
+    const generateRandomText = () =>
+      text
+        .split('')
+        .map(() => getRandomChar())
+        .join('')
+
+    setAnimatedText(generateRandomText())
+
+    const endTime = Date.now() + initialRandomDuration
+    while (Date.now() < endTime) {
+      await new Promise((resolve) => setTimeout(resolve, duration))
+      setAnimatedText(generateRandomText())
+    }
+
+    for (let i = 0; i < text.length; i++) {
+      await new Promise((resolve) => setTimeout(resolve, revealDuration))
+      setAnimatedText(
+        (prevText) =>
+          text.slice(0, i + 1) +
+          prevText
+            .slice(i + 1)
+            .split('')
+            .map(() => getRandomChar())
+            .join('')
+      )
+    }
+  }, [text, getRandomChar])
+
+  useEffect(() => {
+    animateText()
+  }, [text, animateText])
+
+  return <div className="relative inline-block">{animatedText}</div>
+}
+```

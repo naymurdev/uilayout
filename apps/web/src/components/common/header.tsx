@@ -28,7 +28,7 @@ function Header() {
 
   return (
     <>
-      <header className=" dark:bg-base-dark/20 bg-white/40 w-full fixed z-50 top-0 left-0 border-b-[1px] border-border py-2 backdrop-blur-lg">
+      <header className=" dark:bg-base-dark/20 bg-white/40 w-full fixed z-50 top-0 left-0 border-b-[1px] border-border py-2 px-2 backdrop-blur-lg">
         <div className="2xl:container px-2 mx-auto flex gap-2 justify-between items-center">
           <Link href="/" className="lg:block hidden">
             <div className="w-8 h-8 mx-auto dark:bg-white bg-black rounded-sm before:absolute relative before:w-full before:h-full dark:before:bg-white/50 before:bg-black/50 before:rounded-sm before:-top-1.5 before:-left-1.5"></div>
@@ -55,7 +55,17 @@ function Header() {
               href="https://x.com/naymur_dev"
               className="border bg-primary  text-primary-foreground text-2xl w-10   sm:grid hidden place-content-center    rounded-md"
             >
-              <FaXTwitter />
+              {/* <FaXTwitter /> */}
+              <svg
+                width="120"
+                height="109"
+                viewBox="0 0 120 109"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className=" fill-primary-foreground w-6 h-5"
+              >
+                <path d="M94.5068 0H112.907L72.7076 46.172L120 109H82.9692L53.9674 70.8942L20.7818 109H2.3693L45.3666 59.6147L0 0H37.9685L64.1848 34.8292L94.5068 0ZM88.0484 97.9318H98.2448L32.4288 10.4872H21.4882L88.0484 97.9318Z" />
+              </svg>
             </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

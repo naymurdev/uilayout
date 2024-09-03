@@ -4,17 +4,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import {
-  ChevronsDown,
-  Component,
-  Layout,
-  LayoutTemplate,
-  Microscope,
-  Rocket,
-  X,
-} from 'lucide-react'
+import { ChevronsDown, Component, Microscope, Rocket, X } from 'lucide-react'
 import { IRecentPage, useRecentPagesStore } from '@/hooks/use-zust-store'
-import RecentVisitList from './recent-visit-list'
 import {
   Tooltip,
   TooltipProvider,
@@ -32,23 +23,23 @@ export const basePath = [
     name: 'Components',
     icon: <Component />,
   },
-  {
-    id: '/layouts',
-    name: 'Layouts',
-    icon: <Layout />,
-  },
-  {
-    id: '/templates',
-    name: 'Templates',
-    icon: <LayoutTemplate />,
-  },
+  // {
+  //   id: '/layouts',
+  //   name: 'Layouts',
+  //   icon: <Layout />,
+  // },
+  // {
+  //   id: '/templates',
+  //   name: 'Templates',
+  //   icon: <LayoutTemplate />,
+  // },
   {
     id: '/labs',
     name: 'Labs',
     icon: <Microscope />,
   },
 ]
-export const specialComponents = [
+export const SpecialComponents = [
   { id: '/components/drag-items', name: 'Drag Items', new: true },
   { id: '/components/magnified-doc', name: 'Magnified-Doc' },
   {
@@ -66,7 +57,27 @@ export const specialComponents = [
   { id: '/components/footers', name: 'Footers' },
   { id: '/components/responsive-header', name: 'Responsive-Header' },
 ]
-export const components = [
+export const MainComponents = [
+  {
+    id: '/components/clip-path-image',
+    name: 'Clip-Path Image',
+    new: true,
+    component: 'clip-path',
+  },
+
+  { id: '/components/marquee', name: 'Marquee', component: 'marquee' },
+  {
+    id: '/components/image-masking',
+    name: 'Image Masking',
+    new: true,
+    component: 'clip-path',
+  },
+  {
+    id: '/components/video-masking',
+    name: 'Video Masking',
+    new: true,
+    component: 'clip-path',
+  },
   {
     id: '/components/timeline-animation',
     name: 'Timeline Animation',
@@ -87,6 +98,11 @@ export const components = [
   {
     id: '/components/text-marquee',
     name: 'Text Maruqee',
+    component: 'Text animation',
+  },
+  {
+    id: '/components/randomized-text-effect',
+    name: 'Randomized Text',
     component: 'Text animation',
   },
   {
@@ -135,8 +151,8 @@ export const components = [
     component: 'modal/drawer',
   },
   {
-    id: '/components/gallery-model',
-    name: 'Gallery Model',
+    id: '/components/gallery-modal',
+    name: 'Gallery Modal',
     component: 'modal/drawer',
   },
   {
@@ -192,27 +208,6 @@ export const components = [
   },
 
   {
-    id: '/components/clip-path-image',
-    name: 'Clip-Path Image',
-    new: true,
-    component: 'clip-path',
-  },
-
-  { id: '/components/marquee', name: 'Marquee', component: 'marquee' },
-  {
-    id: '/components/image-masking',
-    name: 'Image Masking',
-    new: true,
-    component: 'clip-path',
-  },
-  {
-    id: '/components/video-masking',
-    name: 'Video Masking',
-    new: true,
-    component: 'clip-path',
-  },
-
-  {
     id: '/components/embla-carousel',
     name: 'Carousel',
     new: true,
@@ -257,7 +252,7 @@ function DocsSidebar() {
   const pathname = usePathname()
   const { addVisitedPage, getRecentPages, removeAllRecentPages } =
     useRecentPagesStore()
-  const groupedComponents = components.reduce((acc, component) => {
+  const groupedComponents = MainComponents.reduce((acc, component) => {
     const group = component.component || null
     //@ts-ignore
     if (!acc[group]) {
@@ -359,7 +354,7 @@ function DocsSidebar() {
 
           <h1 className="text-lg font-semibold pb-1">Components</h1>
           <ul>
-            {specialComponents?.map((link: any) => {
+            {SpecialComponents?.map((link: any) => {
               return (
                 <>
                   <li

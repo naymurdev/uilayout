@@ -3,7 +3,7 @@ import { SidebarDrawer } from '@/lab/components/drawer/vaul-sidebar'
 import { X } from 'lucide-react'
 import React, { useState } from 'react'
 import { ScrollArea } from '../ui/scroll-area'
-import { basePath, components, specialComponents } from './docs-sidebar'
+import { basePath, MainComponents, SpecialComponents } from './docs-sidebar'
 import { usePathname, useRouter } from 'next/navigation'
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import Link from 'next/link'
@@ -77,7 +77,7 @@ function MobileHeader() {
             </ul>
             <h1 className="text-sm font-semibold pb-1">Components</h1>
             <ul>
-              {[...components, ...specialComponents]?.map((link) => {
+              {[...MainComponents, ...SpecialComponents]?.map((link) => {
                 return (
                   <>
                     <li

@@ -19,8 +19,8 @@ function index() {
           </clipPath>
           <clipPath id="clip-goey3" clipPathUnits={'objectBoundingBox'}>
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M0.5 0.566745C0.5 0.25374 0.276142 0 0 0V0.433255C0 0.74626 0.223858 1 0.5 1C0.776142 1 1 0.74626 1 0.433255V0H0.5V0.566745Z"
               fill="#D9D9D9"
             />
@@ -28,8 +28,8 @@ function index() {
 
           <clipPath id="clip-goey4" clipPathUnits={'objectBoundingBox'}>
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M0.499366 0H0V1H0.5V0.55597H0.509506C0.780398 0.55597 1 0.307054 1 0H0.5H0.499366Z"
               fill="#D9D9D9"
             />
@@ -37,8 +37,8 @@ function index() {
 
           <clipPath id="clip-goey5" clipPathUnits={'objectBoundingBox'}>
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M0.0249688 0C0.0111789 0 0 0.0112775 0 0.0251889V0.851385C0 0.865297 0.0111789 0.876574 0.0249688 0.876574H0.179775V0.974811C0.179775 0.988723 0.190954 1 0.204744 1H0.975031C0.988821 1 1 0.988723 1 0.974811V0.157431C1 0.143519 0.988821 0.132242 0.975031 0.132242H0.810237V0.0251889C0.810237 0.0112775 0.799058 0 0.785268 0H0.0249688Z"
               fill="#D9D9D9"
             />
@@ -46,8 +46,8 @@ function index() {
 
           <clipPath id="clip-goey6" clipPathUnits={'objectBoundingBox'}>
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M1 0H0V0.5L3.31881e-08 1H0.489388C0.771391 1 1 0.776142 1 0.5H0.489388C0.771391 0.5 1 0.276142 1 0Z"
               fill="#D9D9D9"
             />

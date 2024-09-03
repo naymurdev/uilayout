@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sparkles } from '../../sparkles'
+import { Sparkles } from '@/components/sparkles'
 
 function index() {
   return (

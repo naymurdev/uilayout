@@ -7,6 +7,8 @@ links:
   api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
 ---
 
+### Animated
+
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
     <TabsTrigger value="preview">Preview</TabsTrigger>
@@ -150,10 +152,10 @@ export default function HorizontalScroll(): JSX.Element {
 }
 ```
 
-#### Installation
+Install all these dependencies
 
 ```bash
-npm install  motion lenis
+npm install motion lenis
 ```
 
 We use lenis for smooth scrolling:
@@ -175,6 +177,8 @@ export default function HorizontalScroll(): JSX.Element {
   </TabsContent>
 </Tabs>
 
+### Framer-Motion
+
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
     <TabsTrigger value="preview">Preview</TabsTrigger>
@@ -184,10 +188,10 @@ export default function HorizontalScroll(): JSX.Element {
     <IframeLinkPreviewComponent weblink="horizontal-card-scrolling" category="scrolling" />
   </TabsContent>
   <TabsContent value="codesnippet">
-    <CodeWrapper>
+    <CodeWrapper noExpand={true}>
       <CodePreview name="horizontalScroll" category="carousel" />
 
-#### Installation
+Install Framer Motion
 
 ```bash
 npm install framer-motion

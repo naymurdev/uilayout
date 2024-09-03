@@ -104,36 +104,78 @@ const StickyCardScroll = () => {
   ]
   return (
     <>
+      <main className="bg-black">
+        <section className="text-white   w-full bg-slate-950  ">
+          <div className="flex justify-between px-16">
+            <div className="grid gap-2">
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <article className="bg-green-500 h-72 w-[30rem] rounded-lg rotate-6 p-4 grid place-content-center gap-4">
+                  <h1 className="text-2xl font-semibold">Image MouseTrail</h1>
+                  <p>
+                    An Mouse who is running with couple of images and the best
+                    part is you can hide all the images when you don't move your
+                    mouse. I hope you'll love it
+                  </p>
+                  <a
+                    href="https://ui-layout.com/components/image-mousetrail"
+                    target="_blank"
+                    className="w-fit bg-black p-3 rounded-md cursor-pointer"
+                  >
+                    Click to View
+                  </a>
+                </article>
+              </figure>
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <article className="bg-red-400 h-72 w-[30rem] rounded-lg p-4 grid place-content-center gap-4">
+                  <h1 className="text-2xl font-semibold">
+                    Progressive Carousel
+                  </h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eius consequatur explicabo assumenda odit necessitatibus
+                    possimus ducimus aliquam. Ullam dignissimos animi officiis,
+                    in sequi et inventore harum ipsam sed.
+                  </p>
+                  <a
+                    href="https://ui-layout.com/components/progressive-carousel"
+                    target="_blank"
+                    className="w-fit bg-black p-3 rounded-md cursor-pointer"
+                  >
+                    Click to View
+                  </a>
+                </article>
+              </figure>
+            </div>
+            <div className="sticky top-0 h-screen grid place-content-center">
+              <h1 className="text-4xl px-8 font-medium text-center tracking-tight leading-[120%]">
+                What We <br /> Have Now😎
+              </h1>
+            </div>
+          </div>
+        </section>
+      </main>
       <motion.div
         animate={{
           backgroundColor:
             backgroundColors[activeCard % backgroundColors.length],
         }}
-        className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+        className="flex relative justify-center  space-x-10 rounded-md p-10"
         ref={ref}
       >
-        <div className="div relative flex items-start px-4">
+        <div className="relative flex items-start px-4">
           <div className="max-w-2xl">
             {content.map((item, index) => (
               <div key={item.title + index} className="my-20">
                 <motion.h2
-                  initial={{
-                    opacity: 0,
-                  }}
-                  animate={{
-                    opacity: activeCard === index ? 1 : 0.3,
-                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
                   className="text-2xl font-bold text-slate-100"
                 >
                   {item.title}
                 </motion.h2>
                 <motion.p
-                  initial={{
-                    opacity: 0,
-                  }}
-                  animate={{
-                    opacity: activeCard === index ? 1 : 0.3,
-                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: activeCard === index ? 1 : 0.3 }}
                   className="text-kg text-slate-300 max-w-sm mt-10"
                 >
                   {item.description}
@@ -143,17 +185,18 @@ const StickyCardScroll = () => {
             <div className="h-40" />
           </div>
         </div>
-        <motion.div
-          animate={{
-            background: linearGradients[activeCard % linearGradients.length],
-          }}
-          className={cn(
-            'hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden'
-          )}
-        >
-          {content[activeCard].content ?? null}
-        </motion.div>
+        <div className="wrapper  sticky top-0 h-screen">
+          <motion.div
+            animate={{
+              background: linearGradients[activeCard % linearGradients.length],
+            }}
+            className={cn('h-60 w-80  rounded-md bg-whit eoverflow-hidden')}
+          >
+            {content[activeCard].content ?? null}
+          </motion.div>
+        </div>
       </motion.div>
+      <div className="h-screen"></div>
     </>
   )
 }

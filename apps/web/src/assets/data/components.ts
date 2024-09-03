@@ -1,4 +1,3 @@
-import { components } from '@/components/common/docs-sidebar'
 import * as React from 'react'
 export const COMPONENTS = [
   {
@@ -1642,6 +1641,13 @@ export const COMPONENTS = [
             )
         ),
       },
+      {
+        componentName: 'Randomized-text-unveil',
+        componentSrc: React.lazy(
+          () =>
+            import('@/registry/components/text-animation/text-randomized/index')
+        ),
+      },
     ],
     filesArray: [
       {
@@ -1657,6 +1663,11 @@ export const COMPONENTS = [
         fileName: 'scrollbasedmaquee2',
         fileSrc:
           './src/registry/components/text-animation/text-marque/animationtwo.tsx',
+      },
+      {
+        fileName: 'Randomized-text-unveil',
+        fileSrc:
+          './src/registry/components/text-animation/text-randomized/index.tsx',
       },
     ],
     slug: 'text-animation',

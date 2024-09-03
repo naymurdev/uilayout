@@ -293,7 +293,7 @@ export const Slider: React.FC<SliderProps> = ({
   thumnailSrc,
 }) => {
   const { isScale, setSlidesArr } = useCarouselContext()
-  console.log(thumnailSrc)
+  // console.log(thumnailSrc)
 
   const addImgToSlider = useCallback(() => {
     setSlidesArr((prev: any) => [...prev, thumnailSrc])

@@ -1,16 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Plus_Jakarta_Sans, Poppins } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/provider/theme-provider'
 import Header from '@/components/common/home-header'
 import Progressbar from '@/lib/progressbar'
 import { siteConfig } from '@/lib/utils'
 
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-})
-
+const poppins = Plus_Jakarta_Sans({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,

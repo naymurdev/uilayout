@@ -7,6 +7,8 @@ links:
   api: https://lunarui.dev/components/react/feature-blocks/sparkles
 ---
 
+## Sticky Element
+
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
     <TabsTrigger value="preview">Preview</TabsTrigger>
@@ -16,7 +18,7 @@ links:
     <IframeLinkPreviewComponent weblink="sticky-scroll-section" category="carousel" />
   </TabsContent>
   <TabsContent value="codesnippet">
-    <CodeWrapper>
+    <CodeWrapper noExpand={true}>
 
 ```tsx
 //
@@ -145,13 +147,15 @@ export default function index(): JSX.Element {
 }
 ```
 
-#### Installation
+  </CodeWrapper>
+  </TabsContent>
+</Tabs>
+
+Install if you want smooth Scrolling
 
 ```bash
 npm install lenis/react
 ```
-
-We use lenis for smooth scrolling:
 
 ```tsx
 'use client'
@@ -161,9 +165,8 @@ export default function HorizontalScroll(): JSX.Element {
 }
 ```
 
-  </CodeWrapper>
-  </TabsContent>
-</Tabs>
+## Sticky Gallery
+
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
     <TabsTrigger value="preview">Preview</TabsTrigger>
@@ -173,7 +176,7 @@ export default function HorizontalScroll(): JSX.Element {
     <IframeLinkPreviewComponent weblink="sticky-gallery" category="carousel" />
   </TabsContent>
   <TabsContent value="codesnippet">
-    <CodeWrapper>
+    <CodeWrapper noExpand={true}>
 
 ```tsx
 //
@@ -313,25 +316,12 @@ export default function index(): JSX.Element {
 }
 ```
 
-#### Installation
-
-```bash
-npm install lenis/react
-```
-
-We use lenis for smooth scrolling:
-
-```tsx
-'use client'
-import { ReactLenis } from 'lenis/react'
-export default function HorizontalScroll(): JSX.Element {
-  return <ReactLenis root>{/* content */}</ReactLenis>
-}
-```
-
   </CodeWrapper>
   </TabsContent>
 </Tabs>
+
+## Sticky Hero-sec
+
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
     <TabsTrigger value="preview">Preview</TabsTrigger>
@@ -346,6 +336,14 @@ export default function HorizontalScroll(): JSX.Element {
   <TabsContent value="codesnippet">
     <CodeWrapper noExpand={true}>
       <CodePreview name="stickyHero" category="beam" />
+
+      Install All These Dependencies
+
+```bash
+npm install framer-motion
+```
+
     </CodeWrapper>
+
   </TabsContent>
 </Tabs>

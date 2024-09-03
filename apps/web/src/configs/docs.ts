@@ -54,7 +54,7 @@ export const docsConfig: TDocsConfig = {
         },
         {
           href: '/components/text-animation',
-          title: 'Scroll Text Animation',
+          title: 'Text Animation',
           items: [],
         },
         {
@@ -114,9 +114,15 @@ export const docsConfig: TDocsConfig = {
           title: 'Sparkles Title',
           items: [],
         },
-        { href: '/components/modal', title: 'Modal', items: [] },
+        { href: '/components/dialog', title: 'Dialog', items: [] },
+        { href: '/components/media-modal', title: 'Media Modal', items: [] },
         { href: '/components/drawer', title: 'Responsive Drawer', items: [] },
         { href: '/components/sidebar', title: 'Responsive Sidebar', items: [] },
+        {
+          href: '/components/gallery-modal',
+          title: 'Gallery modal',
+          items: [],
+        },
         // { href: '/components/headers', title: 'Headers', items: [] },
         {
           href: '/components/embla-carousel',
@@ -166,12 +172,18 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         { href: '/components/tabs', title: 'Tabs', items: [] },
+        { href: '/components/image-tabs', title: 'Image Tab', items: [] },
         {
           href: '/components/image-accordions',
           title: 'Image Accordion',
           items: [],
         },
         { href: '/components/globe', title: 'Globe', items: [] },
+        {
+          href: '/components/randomized-text-effect',
+          title: 'Randomized Text',
+          items: [],
+        },
         // { href: '/components/scroll', title: 'Scroll', items: [] },
         {
           href: '/components/image-mousetrail',

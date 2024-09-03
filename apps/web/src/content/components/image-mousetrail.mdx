@@ -23,7 +23,7 @@ links:
   </TabsContent>
 </Tabs>
 
-#### Usage
+## Usage
 
 ```tsx title="mousetrail.tsx"
 //@ts-nocheck
@@ -176,7 +176,9 @@ const activate = (image, x, y) => {
 }
 ```
 
-#### Example
+## Example
+
+### Small Images
 
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
@@ -184,7 +186,11 @@ const activate = (image, x, y) => {
     <TabsTrigger value="codesnippet">Code</TabsTrigger>
   </TabsList>
   <TabsContent value="preview">
-    <ComponentPreview basicPadding={true}  name="imageMousetrail2" category="carousel" />
+    <ComponentPreview
+      basicPadding={true}
+      name="imageMousetrail2"
+      category="carousel"
+    />
   </TabsContent>
   <TabsContent value="codesnippet">
     <CodeWrapper noExpand={true}>
@@ -192,6 +198,9 @@ const activate = (image, x, y) => {
     </CodeWrapper>
   </TabsContent>
 </Tabs>
+
+### Disappear Images
+
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
     <TabsTrigger value="preview">Preview</TabsTrigger>
@@ -208,7 +217,7 @@ const activate = (image, x, y) => {
   </TabsContent>
 </Tabs>
 
-#### Without Components
+### Without Components
 
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>
