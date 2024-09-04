@@ -64,7 +64,6 @@ interface ScrollElementProps extends Omit<MotionComponentProps, 'children'> {
 
 function ScrollElement({
   children,
-  as = 'h1',
   className,
   variants,
   viewport = defaultViewport,
@@ -72,10 +71,6 @@ function ScrollElement({
   direction = 'down',
   ...rest
 }: ScrollElementProps) {
-  const MotionComponent = motion[
-    as as keyof typeof motion
-  ] as ForwardRefComponent<HTMLElement, MotionComponentProps>
-
   const baseVariants = variants || generateVariants(direction)
   const modifiedVariants = {
     hidden: baseVariants.hidden,
@@ -88,22 +83,22 @@ function ScrollElement({
     },
   }
 
-  // Handle self-closing tags differently
-  if (['img', 'input', 'br', 'hr', 'meta', 'link', 'source'].includes(as)) {
-    return (
-      <MotionComponent
-        whileInView="visible"
-        initial="hidden"
-        variants={modifiedVariants}
-        viewport={viewport}
-        className={cn(className)}
-        {...rest}
-      />
-    )
-  }
+  // // Handle self-closing tags differently
+  // if (['img', 'input', 'br', 'hr', 'meta', 'link', 'source'].includes(as)) {
+  //   return (
+  //     <MotionComponent
+  //       whileInView="visible"
+  //       initial="hidden"
+  //       variants={modifiedVariants}
+  //       viewport={viewport}
+  //       className={cn(className)}
+  //       {...rest}
+  //     />
+  //   )
+  // }
 
   return (
-    <MotionComponent
+    <motion.div
       whileInView="visible"
       initial="hidden"
       variants={modifiedVariants}
@@ -112,7 +107,7 @@ function ScrollElement({
       {...rest}
     >
       {children}
-    </MotionComponent>
+    </motion.div>
   )
 }
 export default ScrollElement

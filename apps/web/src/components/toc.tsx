@@ -48,7 +48,7 @@ export function TableOfContents({ toc }: TocProps) {
 
   return (
     <div>
-      <p className="font-bold pb-0 mx-0 text-primary">On This Page</p>
+      <p className="font-medium text-md pb-0 mx-0 text-primary">On This Page</p>
       <Tree tree={refinedToc} activeItem={activeHeading} />
     </div>
   )
@@ -99,19 +99,23 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
   // console.log(tree)
 
   return tree?.items?.length && level < 3 ? (
-    <ul className={cn('m-0 list-none', { 'pl-4': level !== 1 })}>
+    <ul
+      className={cn('m-0 list-none xl:block flex gap-2', {
+        'pl-4': level !== 1,
+      })}
+    >
       {tree.items.map((item, index) => {
         // console.log(item)
 
         return (
-          <li key={index} className={cn('mt-0 pt-2')}>
+          <li key={index} className={cn('mt-0 pt-1')}>
             <a
               href={item.url}
               className={cn(
-                'inline-block no-underline transition-colors font-medium hover:text-foreground',
+                'inline-block no-underline transition-colors  hover:text-foreground',
                 item.url === `#${activeItem}`
-                  ? ' text-foreground'
-                  : 'text-muted-foreground'
+                  ? ' text-foreground font-medium'
+                  : 'text-muted-foreground font-normal'
               )}
             >
               {item.title}

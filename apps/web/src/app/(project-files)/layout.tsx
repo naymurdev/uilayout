@@ -10,15 +10,15 @@ export default function LayoutsLayout({
   return (
     <>
       <Header />
-      <div className="2xl:container mx-auto px-2 lg:grid  lg:grid-cols-[230px_minmax(0,1fr)] lg:gap-4">
+      <div className="2xl:container mx-auto pl-2 lg:grid  lg:grid-cols-[230px_minmax(0,1fr)] lg:gap-4">
         <aside className=" lg:block hidden  h-full ">
           <DocsSidebar />
         </aside>
-        <main className=" w-full px-2 dark:bg-base-dark  relative h-full  ">
+        <main className=" w-full pl-2 dark:bg-base-dark  relative h-full  ">
           {children}
         </main>
       </div>
-      <footer className=" border-t py-6">
+      <footer className=" border-t pt-4  xl:pb-4 pb-24">
         <div className="container mx-auto">
           <p className="text-balance  text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built by{' '}

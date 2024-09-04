@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
@@ -65,7 +64,6 @@ export const MainComponents = [
     component: 'clip-path',
   },
 
-  { id: '/components/marquee', name: 'Marquee', component: 'marquee' },
   {
     id: '/components/image-masking',
     name: 'Image Masking',
@@ -104,6 +102,7 @@ export const MainComponents = [
     id: '/components/randomized-text-effect',
     name: 'Randomized Text',
     component: 'Text animation',
+    new: true,
   },
   {
     id: '/components/image-mousetrail',
@@ -156,7 +155,7 @@ export const MainComponents = [
     component: 'modal/drawer',
   },
   {
-    id: '/components/drawer',
+    id: '/components/responsive-drawer',
     name: 'Responsive Drawer',
     component: 'modal/drawer',
   },
@@ -222,6 +221,11 @@ export const MainComponents = [
   { id: '/components/accordion', name: 'Accordion', component: 'accordion' },
 
   { id: '/components/faqs', name: 'FAQs', component: 'accordion' },
+  {
+    id: '/components/image-accordions',
+    name: 'Image Accordion',
+    component: 'accordion',
+  },
   { id: '/components/grid', name: 'Grid', component: 'grid' },
   { id: '/components/masonary-grid', name: 'Masonary', component: 'grid' },
   { id: '/components/hover-cards', name: 'Hover cards', component: 'card' },
@@ -231,12 +235,7 @@ export const MainComponents = [
     component: 'card',
   },
 
-  {
-    id: '/components/image-accordions',
-    name: 'Image Accordion',
-    component: 'accordion',
-  },
-
+  { id: '/components/marquee', name: 'Marquee', component: 'marquee' },
   {
     id: '/components/infinity-brand',
     name: 'Infinity Brand',
@@ -411,26 +410,6 @@ export const ItemsWithName = ({
   const itemRefs = useRef<(HTMLLIElement | null)[]>([])
 
   useEffect(() => {
-    const activeItemIndex = items.findIndex((item: any) => item.id === pathname)
-
-    if (activeItemIndex !== -1) {
-      if (activeItemIndex !== -1 && itemRefs.current[activeItemIndex]) {
-        groupRef.current?.scrollTo({
-          top:
-            itemRefs.current[activeItemIndex]?.offsetTop -
-            groupRef.current.clientHeight / 2,
-          behavior: 'smooth',
-        })
-        itemRefs.current[activeItemIndex]?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-          inline: 'nearest',
-        })
-
-        // Ensure the body scroll is not affected
-      }
-    }
-
     const groupElement = groupRef.current
 
     if (!groupElement) return

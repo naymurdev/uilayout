@@ -1,6 +1,6 @@
 ---
 title: FAQs
-description: You'll find all types of Accordion which is both use for HTML, REACTJS and NEXTJS
+description: Animated FAQs using Framer Motion, featuring smooth transitions and interactive effects for expanding and collapsing answers
 component: true
 links:
   doc: https://www.radix-ui.com/docs/primitives/components/accordion
@@ -31,4 +31,30 @@ links:
 
 ```bash
 npm install framer-motion
+```
+
+```tsx title="data"
+const tabs = [
+  {
+    title: 'How do UI components improve UX?',
+    description:
+      'UI components can improve UX by providing familiar, consistent interactions that make it easy for users to navigate and interact with an application.',
+    imageUrl:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/design_elbeas.png',
+  },
+  {
+    title: 'Common UI component design challenges?',
+    description:
+      'Some common challenges include maintaining consistency across different devices and screen sizes, ensuring compatibility with various browsers and assistive technologies, and balancing flexibility with ease of use.',
+    imageUrl:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/share_xxzjjp.png',
+  },
+  {
+    title: 'Ensuring UI component responsiveness?',
+    description:
+      '     Developers can ensure the responsiveness of UI components by using techniques such as fluid layouts, flexible grids, and media queries to adapt the components to different screen sizes and orientations.',
+    imageUrl:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/collboration_frpdk8.png',
+  },
+]
 ```

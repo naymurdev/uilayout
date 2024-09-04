@@ -4,12 +4,13 @@ import { notFound } from 'next/navigation'
 import { Mdx } from '@/all-pages/components/Mdx'
 import { absoluteUrl, cn, siteConfig } from '@/lib/utils'
 import '@/styles/mdx.css'
-import { ChevronRightIcon } from 'lucide-react'
+import { ChevronRightIcon, Component } from 'lucide-react'
 import { Metadata } from 'next'
 import { getTableOfContents } from '@/lib/toc'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { TableOfContents } from '@/components/toc'
 import { ComponentPagination } from '@/components/common/pagination'
+import { useMediaQuery } from '@/hooks/use-media-query'
 
 interface PageProps {
   params: {
@@ -56,12 +57,6 @@ export async function generateMetadata({
 async function getDocFromParams({ params }: PageProps) {
   // console.log(params)
 
-  // const slug = params.slug?.join('/') || ''
-  // const doc = allComponents.find((doc) => doc.slugAsParams === slug)
-  // if (!doc) {
-  //   return null
-  // }
-
   const slug = (params?.slug as unknown as string) || ''
   const doc = allComponents.find((doc) => doc.slugAsParams === slug)
   if (!doc) {
@@ -97,32 +92,34 @@ const page = async ({ params }: PageProps) => {
               : ' pt-20 pb-10 overflow-hidden'
           } `}
         >
-          {doc.title !== 'Components' && (
+          {/* {doc.title !== 'Components' && (
             <>
-              <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+              <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground ">
                 <div className="truncate">components</div>
                 <ChevronRightIcon className="size-4" />
                 <div className="font-medium text-foreground">{doc.title}</div>
               </div>
             </>
-          )}
-          <div className="space-y-2">
-            <h1 className={cn('scroll-m-20 text-4xl font-bold tracking-tight')}>
-              {doc.title}
+          )} */}
+          <div className="space-y-2  rounded-md">
+            <h1
+              className={cn(
+                'scroll-m-20 flex gap-2 items-center text-3xl font-medium tracking-tight'
+              )}
+            >
+              <Component /> {doc.title}
             </h1>
+            <p className="text-sm">{doc.description}</p>
           </div>
           <Mdx code={doc.body.code} />
           <ComponentPagination doc={doc} />
         </div>
         {isTocValid && (
-          <div className="relative  border-x xl:block hidden">
-            <div className="sticky top-20 text-[0.8em] px-3 text-white">
-              <ScrollArea className="pb-10">
-                <div className="space-y-4 sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-                  <TableOfContents toc={toc} />
-                  {/* <Contribute doc={doc} /> */}
-                </div>
-              </ScrollArea>
+          <div className="xl:bg-primary-foreground   xl:border-x xl:relative fixed bottom-0 left-0 w-full z-10 ">
+            <div className="xl:sticky xl:top-4 text-[0.8em] px-3 text-white bg-black/50 xl:border-none border-t border-x xl:w-full w-fit mx-auto xl:rounded-none  rounded-t-md rounded-l-md rounded-r-md  xl:backdrop-blur-none backdrop-blur-xl">
+              <div className="space-y-4 xl:sticky xl:top-0 xl:h-[calc(100vh-3.5rem)] h-fit  xl:py-12 py-2">
+                <TableOfContents toc={toc} />
+              </div>
             </div>
           </div>
         )}

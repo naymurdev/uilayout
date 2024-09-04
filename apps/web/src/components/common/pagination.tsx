@@ -6,13 +6,7 @@ import { ChevronsLeft, ChevronsRight } from 'lucide-react'
 export function ComponentPagination({ doc }: any) {
   const allComponents = [...SpecialComponents, ...MainComponents]
 
-  //   // Find the component that matches the doc.slug
-  //   const findComponent = allComponents.find((item) => item.id === doc.slug)
-
   const pager = findPrevNextComp(allComponents, doc.slug)
-  // if (!pager) {
-  //   return null
-  // }
 
   return (
     <div className="flex flex-row items-center justify-between mt-5 mb-2">
@@ -50,22 +44,3 @@ export const findPrevNextComp = (components: any, slug: any) => {
   const next = index < components.length - 1 ? components[index + 1] : null
   return { previous, next }
 }
-
-//   export function getPagerForDoc(doc: Doc) {
-//     const nav = doc.slug.startsWith("/docs/charts")
-//       ? docsConfig.chartsNav
-//       : docsConfig.sidebarNav
-//     const flattenedLinks = [null, ...flatten(nav), null]
-//     const activeIndex = flattenedLinks.findIndex(
-//       (link) => doc.slug === link?.href
-//     )
-//     const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null
-//     const next =
-//       activeIndex !== flattenedLinks.length - 1
-//         ? flattenedLinks[activeIndex + 1]
-//         : null
-//     return {
-//       prev,
-//       next,
-//     }
-//   }

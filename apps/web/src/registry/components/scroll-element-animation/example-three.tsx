@@ -17,7 +17,7 @@ function index() {
             // @ts-ignore
             className="text-5xl text-left py-44"
           >
-            Scroll Left
+            <p>Scroll Left</p>
           </ScrollElement>
           <ScrollElement
             direction="right"
@@ -25,14 +25,14 @@ function index() {
             // @ts-ignore
             className="text-5xl text-right py-44"
           >
-            Scroll Right
+            <p>Scroll Right</p>
           </ScrollElement>
           <ScrollElement
             viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
             // @ts-ignore
             className="text-5xl text-center py-44"
           >
-            Scroll bottom
+            <p>Scroll bottom</p>
           </ScrollElement>
         </div>
       </div>
