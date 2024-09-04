@@ -1,5 +1,5 @@
-<img alt="UI-Layout - Design That Really Makes Sense" src="https://res.cloudinary.com/dzl9yxixg/image/upload/b53d24f1-c0f2-4950-893e-0e05b4638ca9_llarez.gif" width="100%">
-<h3 align="center">UILayout</h3>
+<img alt="UI-Layout - Design That Really Makes Sense" src="uilayout.gif" width="100%">
+<h3 align="center">UI-Layout</h3>
 <p align="center">
     Design That Really Makes Sense
 </p>
