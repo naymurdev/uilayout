@@ -73,7 +73,6 @@ const page = async ({ params }: PageProps) => {
     notFound()
   }
   const toc = await getTableOfContents(doc.body.raw)
-  // console.log('checking', toc, typeof toc, Object.keys(toc).length === 0)
   const isTocValid = Object.keys(toc).length !== 0
 
   return (
@@ -92,15 +91,6 @@ const page = async ({ params }: PageProps) => {
               : ' pt-20 pb-10 overflow-hidden'
           } `}
         >
-          {/* {doc.title !== 'Components' && (
-            <>
-              <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground ">
-                <div className="truncate">components</div>
-                <ChevronRightIcon className="size-4" />
-                <div className="font-medium text-foreground">{doc.title}</div>
-              </div>
-            </>
-          )} */}
           <div className="space-y-2  rounded-md">
             <h1
               className={cn(

@@ -4,6 +4,8 @@ import './globals.css'
 import { ThemeProvider } from '@/components/provider/theme-provider'
 import Header from '@/components/common/home-header'
 import Progressbar from '@/lib/progressbar'
+import Script from 'next/script'
+
 import { siteConfig } from '@/lib/utils'
 
 const poppins = Poppins({
@@ -70,6 +72,7 @@ export const metadata: Metadata = {
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
+const isDev = process.env.NODE_ENV === 'development'
 
 export default function RootLayout({
   children,
@@ -78,6 +81,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {!isDev ? (
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="eb45dc48-3c35-4288-99ea-8577ee6cb842"
+        ></script>
+      ) : null}
       <body className={poppins.className}>
         <div vaul-drawer-wrapper="">
           <Progressbar>
