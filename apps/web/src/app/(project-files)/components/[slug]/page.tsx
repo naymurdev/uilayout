@@ -91,13 +91,16 @@ const page = async ({ params }: PageProps) => {
               : ' pt-20 pb-10 overflow-hidden'
           } `}
         >
-          <div className="space-y-2  rounded-md">
+          <div className="space-y-2  rounded-md bg-primary-foreground p-4">
             <h1
               className={cn(
                 'scroll-m-20 flex gap-2 items-center text-3xl font-medium tracking-tight'
               )}
             >
-              <Component /> {doc.title}
+              <div className="w-10 h-10 bg-primary grid place-content-center text-primary-foreground rounded-lg">
+                <Component />
+              </div>
+              {doc.title}
             </h1>
             <p className="text-sm">{doc.description}</p>
           </div>
@@ -106,8 +109,8 @@ const page = async ({ params }: PageProps) => {
         </div>
         {isTocValid && (
           <div className="xl:bg-primary-foreground   xl:border-x xl:relative fixed bottom-0 left-0 w-full z-10 ">
-            <div className="xl:sticky xl:top-4 text-[0.8em] px-3 text-white bg-black/50 xl:border-none border-t border-x xl:w-full w-fit mx-auto xl:rounded-none  rounded-t-md rounded-l-md rounded-r-md  xl:backdrop-blur-none backdrop-blur-xl">
-              <div className="space-y-4 xl:sticky xl:top-0 xl:h-[calc(100vh-3.5rem)] h-fit  xl:py-12 py-2">
+            <div className="xl:sticky xl:top-4 text-[0.8em] px-3 text-white  xl:border-none border-t border-x xl:w-full w-fit mx-auto xl:rounded-none  rounded-t-md rounded-l-md rounded-r-md  xl:backdrop-blur-none backdrop-blur-xl">
+              <div className="space-y-4 xl:sticky xl:top-4 xl:h-[calc(100vh-3.5rem)] h-fit  pt-16 ">
                 <TableOfContents toc={toc} />
               </div>
             </div>

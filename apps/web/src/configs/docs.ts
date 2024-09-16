@@ -104,6 +104,11 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         {
+          href: '/components/gradient-button',
+          title: 'gradient-button',
+          items: [],
+        },
+        {
           href: '/components/spotlight-cards',
           title: 'Spotlight cards',
           items: [],
@@ -115,6 +120,7 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         { href: '/components/dialog', title: 'Dialog', items: [] },
+        { href: '/components/dialog-card', title: 'Linear Card', items: [] },
         { href: '/components/media-modal', title: 'Media Modal', items: [] },
         { href: '/components/drawer', title: 'Responsive Drawer', items: [] },
         { href: '/components/sidebar', title: 'Responsive Sidebar', items: [] },

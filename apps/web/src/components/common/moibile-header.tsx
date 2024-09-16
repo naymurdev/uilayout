@@ -107,7 +107,7 @@ function MobileHeader() {
               <X />
             </button>
           </figure>
-          <GitHubButton username="naymurdev" repo="uilayout" classname="py-2" />
+          {/* <GitHubButton /> */}
 
           <ScrollArea className="h-[95%] py-4 pb-12">
             <ul className="pb-3">

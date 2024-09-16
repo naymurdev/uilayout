@@ -42,6 +42,11 @@ export const SpecialComponents = [
   { id: '/components/drag-items', name: 'Drag Items', new: true },
   { id: '/components/magnified-doc', name: 'Magnified-Doc' },
   {
+    id: '/components/gradient-button',
+    name: 'gradient-button',
+    new: true,
+  },
+  {
     id: '/components/gradient-border',
     name: 'gradient-border',
   },

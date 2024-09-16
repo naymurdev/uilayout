@@ -92,6 +92,13 @@ export const COMPONENTS = [
     name: 'Button',
     componentArray: [
       {
+        componentName: 'gradient-button',
+        pagelink: '/components/gradient-button',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/github-repo-btn')
+        ),
+      },
+      {
         componentName: 'spotlight-btn',
         pagelink: '/components/buttons',
         componentSrc: React.lazy(
@@ -250,6 +257,10 @@ export const COMPONENTS = [
       },
     ],
     filesArray: [
+      {
+        fileName: 'gradient-button',
+        fileSrc: './src/registry/components/github-repo-btn/index.tsx',
+      },
       {
         fileName: 'shiny-btn',
         fileSrc: './src/registry/components/button/btn-bg-shine.tsx',

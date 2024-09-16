@@ -65,7 +65,7 @@ export default function DrawerCodeWrapper({
                 </button>
               </DialogTrigger>
 
-              <DialogContent className="sm:max-w-[900px] h-[80vh] ">
+              <DialogContent className="sm:max-w-[900px] max-h-[80vh] ">
                 <ScrollArea>
                   {mainChildren?.props?.children}
                   {Array.isArray(FigureChildren) &&

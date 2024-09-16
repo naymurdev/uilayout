@@ -64,12 +64,12 @@ export function SearchDialog({ ...props }: DialogProps) {
   return (
     <>
       <button
-        className="bg-white dark:bg-black inline-flex items-center whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input hover:border-accent-foreground  hover:text-accent-foreground px-4 py-2 relative   justify-start rounded-[0.5rem]  text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-52 lg:w-64  w-52 gap-2"
+        className="bg-white dark:bg-black inline-flex items-center whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input hover:border-accent-foreground  hover:text-accent-foreground px-4 py-2 relative   justify-start rounded-[0.5rem]  text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-52 lg:w-64  sm:w-52 w-14 gap-2"
         onClick={() => setSearchOpen(true)}
       >
         <SearchIcon />
-        <span className="hidden lg:inline-flex">Search...</span>
-        <span className="inline-flex lg:hidden">Search...</span>
+        <span className="sm:hidden lg:inline-flex hidden">Search...</span>
+        <span className="sm:inline-flex lg:hidden hidden">Search...</span>
         <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-7 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
           <span className="text-xs">⌘</span>K
         </kbd>

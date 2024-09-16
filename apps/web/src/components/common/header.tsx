@@ -19,7 +19,7 @@ import {
 } from 'lucide-react'
 import { SearchDialog } from './search-bar'
 import MobileHeader from './moibile-header'
-import GitHubButton from '@/registry/components/github-repo-btn/github-repo-btn'
+import GitHubButton from '@/registry/components/github-repo-btn'
 
 function Header() {
   const { setTheme } = useTheme()
@@ -36,22 +36,22 @@ function Header() {
           <div className="flex gap-2 ">
             <SearchDialog />
 
-            <a
+            {/* <a
               target="_blank"
               href="https://github.com/naymurdev/uilayout"
               className="border w-10  place-content-center rounded-md sm:hidden grid bg-primary text-primary-foreground"
             >
               <Github />
-            </a>
+            </a> */}
             <GitHubButton
-              username="naymurdev"
-              repo="uilayout"
-              classname="sm:flex hidden"
+            // username="naymurdev"
+            // repo="uilayout"
+            // classname="sm:flex hidden"
             />
             <a
               target="_blank"
               href="https://x.com/naymur_dev"
-              className="border bg-primary  text-primary-foreground text-2xl w-10   sm:grid hidden place-content-center    rounded-md"
+              className="border bg-primary  text-primary-foreground text-2xl w-12   sm:grid hidden place-content-center    rounded-md"
             >
               <svg
                 width="120"
