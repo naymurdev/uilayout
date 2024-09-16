@@ -6,7 +6,6 @@ import { ScrollArea } from '../ui/scroll-area'
 import { basePath, MainComponents, SpecialComponents } from './docs-sidebar'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import GitHubButton from '@/registry/components/github-repo-btn/github-repo-btn'
 
 function MobileHeader() {
   const pathname = usePathname()
