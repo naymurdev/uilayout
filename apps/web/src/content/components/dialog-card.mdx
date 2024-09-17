@@ -23,7 +23,7 @@ links:
   </TabsContent>
 </Tabs>
 
-#### Installation
+## Installation
 
 ```bash
 npm install framer-motion
@@ -452,6 +452,22 @@ export {
   DialogImage,
 }
 ```
+
+## Props
+
+| Prop                   | Type                | Default   | Description                                                                 |
+| ---------------------- | ------------------- | --------- | --------------------------------------------------------------------------- |
+| children               | React.ReactNode     | -         | The content inside the Dialog component.                                    |
+| transition             | Transition          | -         | Configuration for the animation transition.                                 |
+| className              | string              | undefined | Additional CSS class for styling.                                           |
+| style                  | React.CSSProperties | undefined | Inline styles for the component.                                            |
+| triggerRef             | React.RefObject     | undefined | Ref object for the dialog trigger element.                                  |
+| disableLayoutAnimation | boolean             | false     | If true, disables the layout animation for the DialogDescription component. |
+| variants               | Object              | undefined | Animation variants for the DialogDescription component.                     |
+| src                    | string              | -         | The source URL for the image in DialogImage.                                |
+| alt                    | string              | -         | The alt text for the image in DialogImage.                                  |
+| children (DialogClose) | React.ReactNode     | -         | Optional children for the close button in DialogClose.                      |
+| onClick                | () => void          | -         | Function to call when the DialogClose button is clicked.                    |
 
 ## Without Examples
 

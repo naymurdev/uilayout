@@ -102,3 +102,13 @@ function Blocks({
 
 export default Blocks
 ```
+
+## Props
+
+| Prop            | Type                    | Default   | Description                                                                                          |
+| --------------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| activeDivsClass | string                  | undefined | The class name applied to active blocks.                                                             |
+| activeDivs      | Object with number keys | undefined | A mapping where each key is a column index and each value is a set of row indices for active blocks. |
+| divClass        | string                  | undefined | The class name applied to each block.                                                                |
+| classname       | string                  | undefined | Additional class name applied to the outer container.                                                |
+| containerRef    | React.RefObject         | undefined | A React ref object for the container element used to calculate dimensions.                           |

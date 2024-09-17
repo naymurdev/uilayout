@@ -23,7 +23,7 @@ links:
   </TabsContent>
 </Tabs>
 
-#### Installation
+## Installation
 
 ```bash
 npm install framer-motion
@@ -125,3 +125,19 @@ export function ModalContent({ children }: { children: ReactNode }) {
   return <>{children}</>
 }
 ```
+
+## Props
+
+`FramerModal` Props
+
+| Prop     | Type                    | Default   | Description                                   |
+| -------- | ----------------------- | --------- | --------------------------------------------- |
+| children | React.ReactNode         | -         | The content inside the modal.                 |
+| open     | boolean                 | undefined | Controls the visibility of the modal.         |
+| setOpen  | (open: boolean) => void | undefined | Function to set the modal's visibility state. |
+
+`ModalContent` Props
+
+| Prop     | Type            | Default | Description                                |
+| -------- | --------------- | ------- | ------------------------------------------ |
+| children | React.ReactNode | -       | The content inside the modal content area. |

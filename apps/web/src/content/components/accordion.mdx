@@ -254,6 +254,15 @@ export function AccordionPanel({ children }) {
   </TabsContent>
 </Tabs>
 
+### Props
+
+| Prop         | Type        | Default   | Description                                                               |
+| ------------ | ----------- | --------- | ------------------------------------------------------------------------- | ------------------------------------------ |
+| defaultValue | string      | string[]  | undefined                                                                 | The default values for the accordion items |
+| multiple     | boolean     | false     | Whether the accordion allows multiple items to be active at the same time |
+| children     | ReactNode[] | undefined | The accordion items, including their headers and panels                   |
+| className    | string      | ''        | Optional CSS class for styling the accordion wrapper                      |
+
 #### Radix Accordion
 
 <Tabs defaultValue="preview" className="w-full relative">

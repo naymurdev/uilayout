@@ -323,3 +323,27 @@ export const Circle = forwardRef<
 
   </TabsContent>
 </Tabs>
+
+## Props
+
+| Prop               | Type      | Description                                              | Default      |
+| ------------------ | --------- | -------------------------------------------------------- | ------------ |
+| className          | string    | The class name for the SVG element.                      | -            |
+| containerRef       | RefObject | The ref for the container element.                       | -            |
+| fromRef            | RefObject | The ref of the element from which the beam should start. | -            |
+| toRef              | RefObject | The ref of the element to which the beam should end.     | -            |
+| curvature          | number    | The curvature of the beam.                               | 0            |
+| reverse            | boolean   | Whether the beam should be reversed.                     | false        |
+| duration           | number    | The duration of the beam animation.                      | Random (4-7) |
+| delay              | number    | The delay before the beam animation starts.              | 0            |
+| pathColor          | string    | The color of the beam path.                              | "gray"       |
+| pathWidth          | number    | The width of the beam path.                              | 2            |
+| pathOpacity        | number    | The opacity of the beam path.                            | 0.2          |
+| gradientStartColor | string    | The start color of the gradient for the beam.            | "#4d40ff"    |
+| gradientStopColor  | string    | The stop color of the gradient for the beam.             | "#4043ff"    |
+| startXOffset       | number    | The x offset of the beam's start position.               | 0            |
+| startYOffset       | number    | The y offset of the beam's start position.               | 0            |
+| endXOffset         | number    | The x offset of the beam's end position.                 | 0            |
+| endYOffset         | number    | The y offset of the beam's end position.                 | 0            |
+| dotted             | boolean   | Whether the beam should be dotted.                       | false        |
+| dotSpacing         | number    | The spacing between dots if the beam is dotted.          | 6            |
