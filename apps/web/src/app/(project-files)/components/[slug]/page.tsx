@@ -11,6 +11,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { TableOfContents } from '@/components/toc'
 import { ComponentPagination } from '@/components/common/pagination'
 import { useMediaQuery } from '@/hooks/use-media-query'
+import SuportMe from '@/components/common/supportme'
 
 interface PageProps {
   params: {
@@ -112,6 +113,8 @@ const page = async ({ params }: PageProps) => {
             <div className="xl:sticky xl:top-4 text-[0.8em] px-3 text-white  xl:border-none border-t border-x xl:w-full w-fit mx-auto xl:rounded-none  rounded-t-md rounded-l-md rounded-r-md  xl:backdrop-blur-none backdrop-blur-xl">
               <div className="space-y-4 xl:sticky xl:top-4 xl:h-[calc(100vh-3.5rem)] h-fit  pt-16 ">
                 <TableOfContents toc={toc} />
+
+                {/* <SuportMe /> */}
               </div>
             </div>
           </div>

@@ -34,74 +34,145 @@ npm install framer-motion
 
 ```tsx title="text-animation.tsx"
 import React, { useRef } from 'react'
-import TextAnimation from './text-animation'
+import { ForwardRefComponent, motion, useInView, Variant } from 'framer-motion'
+import { cn } from '@/lib/utils'
+type Direction = 'up' | 'down' | 'left' | 'right'
 
-function index() {
-  const containerRef = useRef<HTMLDivElement>(null)
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
+const generateVariants = (
+  direction: Direction
+): { hidden: Variant; visible: Variant } => {
+  const axis = direction === 'left' || direction === 'right' ? 'x' : 'y'
+  const value = direction === 'right' || direction === 'down' ? 100 : -100
+
+  return {
+    hidden: { filter: 'blur(10px)', opacity: 0, [axis]: value },
+    visible: {
+      filter: 'blur(0px)',
+      opacity: 1,
+      [axis]: 0,
+      transition: {
+        duration: 0.4,
+        ease: 'easeOut',
+      },
+    },
+  }
+}
+
+const defaultViewport = { amount: 0.3, margin: '0px 0px 0px 0px' }
+
+const TextAnimation = ({
+  as = 'h1',
+  text,
+  classname = '',
+  viewport = defaultViewport,
+  variants,
+  direction = 'down',
+  letterAnime = false,
+  lineAnime = false,
+}: {
+  text: string
+  classname?: string
+  as?: keyof JSX.IntrinsicElements
+  viewport?: {
+    amount?: number
+    margin?: string
+    once?: boolean
+  }
+  variants?: {
+    hidden?: any
+    visible?: any
+  }
+  direction?: Direction
+  letterAnime?: boolean
+  lineAnime?: boolean
+}) => {
+  const baseVariants = variants || generateVariants(direction)
+  const modifiedVariants = {
+    hidden: baseVariants.hidden,
+    visible: {
+      ...baseVariants.visible,
+      //   transition: {
+      //     ...baseVariants.visible.transition,
+      //     delay, // Apply custom delay here
+      //   },
+    },
+  }
+  const MotionComponent = motion[as as keyof typeof motion]
   return (
-    <div>
-      {/* <div ref={containerRef} className="py-20 text-center"> */}
-      {/* <TextAnimation
-        text="hello world, hope all doing great"
-        // containerRef={containerRef}
-      /> */}
-      {/* </div> */}
-      <div className="h-[550px] grid place-content-center">
-        <h1 className="text-5xl font-semibold">Scroll Down👇</h1>
-      </div>
-
-      <div className="py-20 text-center  ">
-        <TextAnimation
-          text="hello world, hope all doing great "
-          variants={{
-            hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
-            visible: {
-              filter: 'blur(0px)',
-              opacity: 1,
-              y: 0,
-              transition: { ease: 'linear' },
-            },
-          }}
-          classname="text-4xl font-semibold capitalize "
-        />
-        <TextAnimation
-          as="p"
-          letterAnime={true}
-          text="do you know we're really open for work but now a days people really don't like what is it"
-          classname="text-xl w-3/5 mx-auto lowercase leading-5"
-          variants={{
-            hidden: { filter: 'blur(4px)', opacity: 0, y: 20 },
-            visible: {
-              filter: 'blur(0px)',
-              opacity: 1,
-              y: 0,
-              transition: {
-                duration: 0.2,
-              },
-            },
-          }}
-        />
-      </div>
-
-      <div className="py-20  ">
-        <TextAnimation
-          text="Heading Animation"
-          direction="left"
-          lineAnime={true}
-          classname="text-4xl font-semibold capitalize "
-        />
-      </div>
-      <div className="py-32  text-right">
-        <TextAnimation
-          text="Heading Animation"
-          direction="right"
-          lineAnime={true}
-          classname="text-4xl font-semibold capitalize "
-        />
-      </div>
-    </div>
+    <>
+      <>
+        <MotionComponent
+          whileInView="visible"
+          initial="hidden"
+          variants={containerVariants}
+          viewport={viewport}
+          className={cn(`inline-block text-white uppercase  `, classname)}
+        >
+          {lineAnime ? (
+            <>
+              {' '}
+              <motion.span
+                className={`inline-block `}
+                variants={modifiedVariants}
+              >
+                {text}
+              </motion.span>
+            </>
+          ) : (
+            <>
+              {text.split(' ').map((word: string, index: number) => (
+                <motion.span
+                  key={index}
+                  className={`inline-block `}
+                  variants={letterAnime === false ? modifiedVariants : {}}
+                >
+                  {letterAnime ? (
+                    <>
+                      {word.split('').map((letter: string, index: number) => (
+                        <>
+                          <motion.span
+                            className={`inline-block `}
+                            variants={modifiedVariants}
+                          >
+                            {letter}
+                          </motion.span>
+                        </>
+                      ))}
+                      &nbsp;
+                    </>
+                  ) : (
+                    <>{word}&nbsp;</>
+                  )}
+                </motion.span>
+              ))}
+            </>
+          )}
+        </MotionComponent>
+      </>
+    </>
   )
 }
 
-export default index
+export default TextAnimation
 ```
+
+#### Props
+
+| Prop        | Type    | Default                    | Description                                                                     |
+| ----------- | ------- | -------------------------- | ------------------------------------------------------------------------------- |
+| as          | string  | 'h1'                       | The HTML tag to render the text with, like h1, p, etc.                          |
+| text        | string  | undefined                  | The text to be animated.                                                        |
+| classname   | string  | ''                         | Optional CSS class for styling the text.                                        |
+| viewport    | object  | amount: 0.3, margin: '0px' | Options to control when the animation triggers based on the viewport.           |
+| variants    | object  | undefined                  | Variants for controlling the animation states (hidden/visible) and transitions. |
+| direction   | string  | 'down'                     | The direction of the animation (e.g., 'up', 'down', 'left', 'right').           |
+| letterAnime | boolean | false                      | Whether the animation should be applied to each letter individually.            |
+| lineAnime   | boolean | false                      | Whether the animation should be applied line by line.                           |
