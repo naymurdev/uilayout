@@ -166,10 +166,15 @@ const components = {
     </div>
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
-    <tr
-      className={cn('m-0 border-t p-0 even:bg-muted', className)}
-      {...props}
-    />
+    <tr className={cn('m-0 border-t p-0 text-sm', className)} {...props} />
+  ),
+  thead: ({
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <>
+      <thead className={cn('bg-muted', className)} {...props}></thead>
+    </>
   ),
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th

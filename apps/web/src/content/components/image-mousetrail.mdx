@@ -2,9 +2,6 @@
 title: Image Mousetrail
 description: An image with a mouse trail effect, where the image responds dynamically to cursor movement, creating a visually engaging interaction.
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
 ---
 
 <Tabs defaultValue="preview" className="w-full relative">
@@ -175,6 +172,18 @@ const activate = (image, x, y) => {
   }, 1000)
 }
 ```
+
+## Props
+
+| Prop              | Type      | Default     | Description                                                  |
+| ----------------- | --------- | ----------- | ------------------------------------------------------------ |
+| items             | any[]     | -           | Array of items to display in the mouse trail effect.         |
+| children          | ReactNode | undefined   | Optional child elements to render inside the component.      |
+| className         | string    | undefined   | Optional CSS class for styling the wrapper of the component. |
+| imgClass          | string    | 'w-40 h-48' | CSS class for styling the images in the mouse trail.         |
+| distance          | number    | 20          | Distance between each image in the mouse trail.              |
+| maxNumberOfImages | number    | 5           | Maximum number of images to display in the trail.            |
+| fadeAnimation     | boolean   | false       | Whether to apply fade animation to the images.               |
 
 ## Example
 

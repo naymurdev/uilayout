@@ -2,9 +2,6 @@
 title: Media Modals
 description: A media modal component that opens images or videos with a smooth animation
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
 ---
 
 <Tabs defaultValue="preview" className="w-full relative">
@@ -22,7 +19,7 @@ links:
   </TabsContent>
 </Tabs>
 
-#### Installation
+## Installation
 
 ```bash
 npm install framer-motion
@@ -188,6 +185,14 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
   )
 }
 ```
+
+## Props
+
+| Prop      | Type   | Default   | Description                                               |
+| --------- | ------ | --------- | --------------------------------------------------------- |
+| imgSrc    | string | undefined | Optional source URL for an image to display in the modal. |
+| videoSrc  | string | undefined | Optional source URL for a video to display in the modal.  |
+| className | string | undefined | Optional CSS class for styling the modal component.       |
 
 Sometimes, we don't need reusable components because they are most useful when a component is used 2-3 times or more. However, in a single-page application, reusable components aren't always necessary. In such cases, you can use this component instead, and it will give you the same effect.
 

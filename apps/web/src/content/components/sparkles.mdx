@@ -2,9 +2,6 @@
 title: Sparkles
 description: An Animated Sparkles Effect Around div/section
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://lunarui.dev/components/react/feature-blocks/sparkles
 ---
 
 > To Get the Globe/Earth code Please Click That Link [here](https://www.ui-layout.com/components/globe)
@@ -77,6 +74,24 @@ import { useEffect, useId, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 
+interface SparklesProps {
+  className?: string
+  size?: number
+  minSize?: number | null
+  density?: number
+  speed?: number
+  minSpeed?: number | null
+  opacity?: number
+  direction?: string
+  opacitySpeed?: number
+  minOpacity?: number | null
+  color?: string
+  mousemove?: boolean
+  hover?: boolean
+  background?: string
+  options?: Record<string, any> // Adjust type as needed based on `options` structure
+}
+
 export function Sparkles({
   className,
   size = 1.2,
@@ -93,7 +108,7 @@ export function Sparkles({
   hover = false,
   background = 'transparent',
   options = {},
-}) {
+}: SparklesProps) {
   const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
@@ -207,6 +222,26 @@ export function Sparkles({
   )
 }
 ```
+
+## Props
+
+| Prop         | Type                  | Default         | Description                                                              |
+| ------------ | --------------------- | --------------- | ------------------------------------------------------------------------ |
+| className    | string                |                 | Optional CSS class for styling the sparkles component.                   |
+| size         | number                | `1.2`           | Size of the sparkles.                                                    |
+| minSize      | number \| null        | `null`          | Minimum size of the sparkles, or `null` if no minimum size is set.       |
+| density      | number                | `800`           | Density of the sparkles.                                                 |
+| speed        | number                | `1.5`           | Speed of the sparkles' animation.                                        |
+| minSpeed     | number \| null        | `null`          | Minimum speed of the sparkles, or `null` if no minimum speed is set.     |
+| opacity      | number                | `1`             | Opacity of the sparkles.                                                 |
+| direction    | string                | `''`            | Direction of the sparkles' movement.                                     |
+| opacitySpeed | number                | `3`             | Speed at which the opacity of the sparkles changes.                      |
+| minOpacity   | number \| null        | `null`          | Minimum opacity of the sparkles, or `null` if no minimum opacity is set. |
+| color        | string                | `'#ffffff'`     | Color of the sparkles.                                                   |
+| mousemove    | boolean               | `false`         | Whether the sparkles should follow the mouse movement.                   |
+| hover        | boolean               | `false`         | Whether the sparkles should be active on hover.                          |
+| background   | string                | `'transparent'` | Background color of the component.                                       |
+| options      | `Record<string, any>` | `{}`            | Additional options for configuring the sparkles.                         |
 
 ## Example
 

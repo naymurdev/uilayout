@@ -47,7 +47,6 @@ type MotionComponentProps = HTMLMotionProps<any> & SVGMotionProps<any>
 
 interface ScrollElementProps extends Omit<MotionComponentProps, 'children'> {
   children: React.ReactNode
-  as?: keyof JSX.IntrinsicElements
   className?: string
   variants?: {
     hidden?: any
@@ -82,20 +81,6 @@ function ScrollElement({
       },
     },
   }
-
-  // // Handle self-closing tags differently
-  // if (['img', 'input', 'br', 'hr', 'meta', 'link', 'source'].includes(as)) {
-  //   return (
-  //     <MotionComponent
-  //       whileInView="visible"
-  //       initial="hidden"
-  //       variants={modifiedVariants}
-  //       viewport={viewport}
-  //       className={cn(className)}
-  //       {...rest}
-  //     />
-  //   )
-  // }
 
   return (
     <motion.div

@@ -42,8 +42,8 @@ const components: { title: string; href: string; description: string }[] = [
       'When you scroll down to that specific section, all the animations will slowly play one after another.',
   },
   {
-    title: 'Hover Card',
-    href: '/components/hover-cards',
+    title: 'Motion Number',
+    href: '/components/motion-number',
     description:
       'For sighted users to preview content available behind a link.',
   },

@@ -2,9 +2,6 @@
 title: Text Animatinon
 description: A timeline animation using Framer Motion that animates items one by one as you reach each specific section
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://lunarui.dev/components/react/feature-blocks/sparkles
 ---
 
 <Tabs defaultValue="preview" className="w-full relative">
@@ -26,7 +23,7 @@ links:
   </TabsContent>
 </Tabs>
 
-## Installation
+### Installation
 
 ```bash
 npm install framer-motion @motionone/utils
@@ -81,3 +78,11 @@ export const TimelineContent = ({
   )
 }
 ```
+
+### Props
+
+| Prop         | Type                               | Default | Description                                           |
+| ------------ | ---------------------------------- | ------- | ----------------------------------------------------- |
+| children     | React.ReactNode                    |         | The content to be displayed within the timeline.      |
+| animationNum | number                             |         | The number of the animation sequence.                 |
+| timelineRef  | `React.RefObject<HTMLDivElement> ` |         | A reference to the timeline element for manipulation. |

@@ -1,5 +1,5 @@
 // https://codepen.io/sebastian-piskaty/pen/xxaZYOL
-import React, { useRef, useState, MouseEvent } from 'react'
+import React from 'react'
 
 import Image from 'next/image'
 import { SpotLightItem, Spotlight } from '@/lab/components/main-spotlight'

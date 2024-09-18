@@ -201,6 +201,9 @@ importers:
       mdast-util-toc:
         specifier: ^7.1.0
         version: 7.1.0
+      motion-number:
+        specifier: ^0.1.7
+        version: 0.1.7(framer-motion@11.0.23(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next:
         specifier: 14.1.2
         version: 14.1.2(@opentelemetry/api@1.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -4181,6 +4184,13 @@ packages:
   mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
     hasBin: true
+
+  motion-number@0.1.7:
+    resolution: {integrity: sha512-WOqZSqimX/OTNoFsz6Hk67r1omeUmtC2jH2x6Zy7/gNVnh98AOTrkINygXLR2xoef8k7iVDoKwk4PUcrxI+bog==}
+    peerDependencies:
+      framer-motion: ^11.3.19
+      react: ^18.0.0
+      react-dom: ^18.0.0
 
   motion@10.18.0:
     resolution: {integrity: sha512-MVAZZmwM/cp77BrNe1TxTMldxRPjwBNHheU5aPToqT4rJdZxLiADk58H+a0al5jKLxkB0OdgNq6DiVn11cjvIQ==}
@@ -8431,7 +8441,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.17.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.17.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.0(eslint@8.56.0))(eslint@8.56.0))(eslint@8.56.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.17.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.17.0(eslint@8.56.0)(typescript@5.3.3))(eslint-plugin-import@2.29.0)(eslint@8.56.0))(eslint@8.56.0)
       hasown: 2.0.0
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -10194,6 +10204,12 @@ snapshots:
   mkdirp@0.5.6:
     dependencies:
       minimist: 1.2.8
+
+  motion-number@0.1.7(framer-motion@11.0.23(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      framer-motion: 11.0.23(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   motion@10.18.0:
     dependencies:

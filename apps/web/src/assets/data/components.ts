@@ -1726,4 +1726,70 @@ export const COMPONENTS = [
     slug: 'drag-animation',
     type: 'drag',
   },
+  {
+    name: 'number',
+    componentArray: [
+      {
+        componentName: 'motionnumber',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/motion-number/motion-number')
+        ),
+      },
+      {
+        componentName: 'motionnumberbefore',
+        componentSrc: React.lazy(
+          () =>
+            import('@/registry/components/motion-number/motion-number-before')
+        ),
+      },
+      {
+        componentName: 'motionnumberafter',
+        componentSrc: React.lazy(
+          () =>
+            import('@/registry/components/motion-number/motion-number-after')
+        ),
+      },
+      {
+        componentName: 'motionnumberlast',
+        componentSrc: React.lazy(
+          () => import('@/registry/components/motion-number/motion-number-last')
+        ),
+      },
+      {
+        componentName: 'motionnumberstart',
+        componentSrc: React.lazy(
+          () =>
+            import('@/registry/components/motion-number/motion-number-start')
+        ),
+      },
+    ],
+    filesArray: [
+      {
+        fileName: 'motionnumber',
+        fileSrc: './src/registry/components/motion-number/motion-number.tsx',
+      },
+      {
+        fileName: 'motionnumberbefore',
+        fileSrc:
+          './src/registry/components/motion-number/motion-number-before.tsx',
+      },
+      {
+        fileName: 'motionnumberafter',
+        fileSrc:
+          './src/registry/components/motion-number/motion-number-after.tsx',
+      },
+      {
+        fileName: 'motionnumberlast',
+        fileSrc:
+          './src/registry/components/motion-number/motion-number-last.tsx',
+      },
+      {
+        fileName: 'motionnumberstart',
+        fileSrc:
+          './src/registry/components/motion-number/motion-number-start.tsx',
+      },
+    ],
+    slug: 'suffle-number',
+    type: 'number',
+  },
 ]

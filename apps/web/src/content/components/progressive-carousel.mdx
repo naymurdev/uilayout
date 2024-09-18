@@ -2,9 +2,6 @@
 title: Progressive Carousel
 description: An animated progressive carousel built with Framer Motion, offering smooth and dynamic transitions between items.
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
 ---
 
 <Tabs defaultValue="preview" className="w-full relative">
@@ -26,131 +23,256 @@ links:
   </TabsContent>
 </Tabs>
 
-#### Installation
+### Installation
 
 ```bash
 npm install framer-motion
 ```
 
 ```tsx title="progress-slider.tsx"
-'use client'
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  ReactNode,
+  FC,
+} from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { cn } from '@/lib/utils'
 
-import { useState, useRef, useEffect } from 'react'
-import Image, { StaticImageData } from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
-import { FaBandcamp } from 'react-icons/fa6'
-
-interface Item {
-  img: StaticImageData
-  desc: string
-  title: string
-  buttonIcon: StaticImageData
+// Define the type for the context value
+interface ProgressSliderContextType {
+  active: string
+  progress: number
+  handleButtonClick: (value: string) => void
+  vertical: boolean
 }
 
-export default function ProgressSlider({ items }: { items: Item[] }) {
-  const duration: number = 5000
-  const itemsRef = useRef<HTMLDivElement>(null)
-  const frame = useRef<number>(0)
-  const firstFrameTime = useRef(performance.now())
-  const [active, setActive] = useState<number>(0)
+// Define the type for the component props
+interface ProgressSliderProps {
+  children: ReactNode
+  duration?: number
+  fastDuration?: number
+  vertical?: boolean
+  activeSlider: string
+  className?: string
+}
+
+interface SliderContentProps {
+  children: ReactNode
+  className?: string
+}
+
+interface SliderWrapperProps {
+  children: ReactNode
+  value: string
+  className?: string
+}
+
+interface ProgressBarProps {
+  children: ReactNode
+  className?: string
+}
+
+interface SliderBtnProps {
+  children: ReactNode
+  value: string
+  className?: string
+  progressBarClass?: string
+}
+
+// Create the context with an undefined initial value
+const ProgressSliderContext = createContext<
+  ProgressSliderContextType | undefined
+>(undefined)
+
+export const useProgressSliderContext = (): ProgressSliderContextType => {
+  const context = useContext(ProgressSliderContext)
+  if (!context) {
+    throw new Error(
+      'useProgressSliderContext must be used within a ProgressSlider'
+    )
+  }
+  return context
+}
+
+export const ProgressSlider: FC<ProgressSliderProps> = ({
+  children,
+  duration = 5000,
+  fastDuration = 400,
+  vertical = false,
+  activeSlider,
+  className,
+}) => {
+  const [active, setActive] = useState<string>(activeSlider)
   const [progress, setProgress] = useState<number>(0)
+  const [isFastForward, setIsFastForward] = useState<boolean>(false)
+  const frame = useRef<number>(0)
+  const firstFrameTime = useRef<number>(performance.now())
+  const targetValue = useRef<string | null>(null)
+  const [sliderValues, setSliderValues] = useState<string[]>([])
 
   useEffect(() => {
-    firstFrameTime.current = performance.now()
-    frame.current = requestAnimationFrame(animate)
+    const getChildren = React.Children.toArray(children).find(
+      (child) => (child as React.ReactElement).type === SliderContent
+    ) as React.ReactElement | undefined
+
+    if (getChildren) {
+      const values = React.Children.toArray(getChildren.props.children).map(
+        (child) => (child as React.ReactElement).props.value as string
+      )
+      setSliderValues(values)
+    }
+  }, [children])
+
+  useEffect(() => {
+    if (sliderValues.length > 0) {
+      firstFrameTime.current = performance.now()
+      frame.current = requestAnimationFrame(animate)
+    }
     return () => {
       cancelAnimationFrame(frame.current)
     }
-  }, [active])
+  }, [sliderValues, active, isFastForward])
 
   const animate = (now: number) => {
-    let timeFraction = (now - firstFrameTime.current) / duration
+    const currentDuration = isFastForward ? fastDuration : duration
+    const elapsedTime = now - firstFrameTime.current
+    const timeFraction = elapsedTime / currentDuration
+
     if (timeFraction <= 1) {
-      setProgress(timeFraction * 100)
+      setProgress(
+        isFastForward
+          ? progress + (100 - progress) * timeFraction
+          : timeFraction * 100
+      )
       frame.current = requestAnimationFrame(animate)
     } else {
-      timeFraction = 1
+      if (isFastForward) {
+        setIsFastForward(false)
+        if (targetValue.current !== null) {
+          setActive(targetValue.current)
+          targetValue.current = null
+        }
+      } else {
+        // Move to the next slide
+        const currentIndex = sliderValues.indexOf(active)
+        const nextIndex = (currentIndex + 1) % sliderValues.length
+        setActive(sliderValues[nextIndex])
+      }
       setProgress(0)
-      setActive((active + 1) % items.length)
+      firstFrameTime.current = performance.now()
     }
   }
 
-  const heightFix = () => {
-    if (itemsRef.current && itemsRef.current.parentElement)
-      itemsRef.current.parentElement.style.height = `${itemsRef.current.clientHeight}px`
+  const handleButtonClick = (value: string) => {
+    if (value !== active) {
+      const elapsedTime = performance.now() - firstFrameTime.current
+      const currentProgress = (elapsedTime / duration) * 100
+      setProgress(currentProgress)
+      targetValue.current = value
+      setIsFastForward(true)
+      firstFrameTime.current = performance.now()
+    }
   }
 
-  useEffect(() => {
-    heightFix()
-  }, [])
+  return (
+    <ProgressSliderContext.Provider
+      value={{ active, progress, handleButtonClick, vertical }}
+    >
+      <div className={cn('relative', className)}>{children}</div>
+    </ProgressSliderContext.Provider>
+  )
+}
+
+export const SliderContent: FC<SliderContentProps> = ({
+  children,
+  className,
+}) => {
+  return <div className={cn('', className)}>{children}</div>
+}
+
+export const SliderWrapper: FC<SliderWrapperProps> = ({
+  children,
+  value,
+  className,
+}) => {
+  const { active } = useProgressSliderContext()
 
   return (
-    <div className="w-full max-w-5xl mx-auto text-center relative">
-      <div className="transition-all duration-150 delay-300 mb-2 ease-in-out">
-        <div className="relative h-full " ref={itemsRef}>
-          {items.map((item, index) => (
-            <AnimatePresence mode="popLayout">
-              {active === index && (
-                <motion.figure
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="flex gap-2 h-full "
-                >
-                  <Image
-                    className="rounded-xl h-[650px] object-cover"
-                    src={item.img}
-                    width={1900}
-                    height={1080}
-                    alt={item.desc}
-                  />
-                </motion.figure>
-              )}
-            </AnimatePresence>
-          ))}
-        </div>
+    <AnimatePresence mode="popLayout">
+      {active === value && (
+        <motion.div
+          key={value}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className={cn('', className)}
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
+
+export const SliderBtnGroup: FC<ProgressBarProps> = ({
+  children,
+  className,
+}) => {
+  return <div className={cn('', className)}>{children}</div>
+}
+
+export const SliderBtn: FC<SliderBtnProps> = ({
+  children,
+  value,
+  className,
+  progressBarClass,
+}) => {
+  const { active, progress, handleButtonClick, vertical } =
+    useProgressSliderContext()
+
+  return (
+    <button
+      className={cn(
+        `relative ${active === value ? 'opacity-100' : 'opacity-50'}`,
+        className
+      )}
+      onClick={() => handleButtonClick(value)}
+    >
+      {children}
+      <div
+        className="absolute inset-0 overflow-hidden -z-10 max-h-full max-w-full "
+        role="progressbar"
+        aria-valuenow={active === value ? progress : 0}
+      >
+        <span
+          className={cn('absolute left-0 ', progressBarClass)}
+          style={{
+            [vertical ? 'height' : 'width']:
+              active === value ? `${progress}%` : '0%',
+          }}
+        />
       </div>
-      <div className="absolute bottom-0 w-full bg-white/20 backdrop-blur-md overflow-hidden  grid grid-cols-2 md:grid-cols-4  rounded-md">
-        {items.map((item, index) => (
-          <button
-            key={index}
-            className={`relative px-2 py-5 text-left ${
-              active === index
-                ? ''
-                : 'opacity-50  group-hover:opacity-100 group-focus:opacity-100 transition-opacity border-l'
-            }`}
-            onClick={() => {
-              setActive(index)
-              setProgress(0)
-            }}
-          >
-            <>
-              <h2 className="relative px-4 rounded-full w-fit bg-gray-900 mb-2">
-                {item?.title}
-              </h2>
-              <p className="text-sm font-medium text-slate-900 line-clamp-2">
-                {item.desc}
-              </p>
-              <div
-                className="block absolute top-0 left-0 h-full overflow-auto -z-10 w-full bg-white/20 backdrop-blur-md  "
-                role="progressbar"
-                aria-valuenow={active === index ? progress : 0}
-              >
-                <span
-                  className="absolute inset-0 bg-white "
-                  style={{ width: active === index ? `${progress}%` : '0%' }}
-                ></span>
-              </div>
-            </>
-          </button>
-        ))}
-      </div>
-    </div>
+    </button>
   )
 }
 ```
 
-#### Example
+### Props
+
+| Prop         | Type      | Default | Description                                                   |
+| ------------ | --------- | ------- | ------------------------------------------------------------- |
+| children     | ReactNode |         | The content to be displayed within the slider.                |
+| duration     | number    | 5000    | The duration of the slider's transition in milliseconds.      |
+| fastDuration | number    | 400     | The duration of the slider's fast transition in milliseconds. |
+| vertical     | boolean   | false   | Whether the slider is oriented vertically.                    |
+| activeSlider | string    |         | The identifier of the currently active slider.                |
+| className    | string    |         | Optional CSS class for styling the slider component.          |
+
+### Example
 
 <Tabs defaultValue="preview" className="w-full relative">
   <TabsList>

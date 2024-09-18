@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { AnimatePresence, motion, useAnimate } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Plus } from 'lucide-react'
 
 const tabs = [
@@ -27,7 +27,6 @@ const tabs = [
   },
 ]
 function index() {
-  const [scope, animate] = useAnimate()
   const [activeIndex, setActiveIndex] = useState<number | null>(0)
   const [activeItem, setActiveItem] = useState<
     | {

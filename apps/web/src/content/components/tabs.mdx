@@ -2,9 +2,6 @@
 title: Animated Tabs
 description: Animated tabs using Framer Motion with a smoothly transitioning active background that animates from one tab to another
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
 ---
 
 <Tabs defaultValue="preview" className="w-full relative">
@@ -270,6 +267,15 @@ export const TabsContent = ({ children, className, value, yValue }: any) => {
   )
 }
 ```
+
+## Props
+
+| Prop         | Type      | Default | Description                                         |
+| ------------ | --------- | ------- | --------------------------------------------------- |
+| children     | ReactNode |         | The content to be rendered inside the TabsProvider. |
+| defaultValue | string    |         | The default value for the selected tab.             |
+| wobbly       | boolean   | `true`  | Whether the tabs should have a wobbly effect.       |
+| hover        | boolean   | `false` | Whether to enable hover effects on the tabs.        |
 
 ## Example
 

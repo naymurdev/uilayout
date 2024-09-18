@@ -2,9 +2,6 @@
 title: Text Animatinon
 description: A text marquee animation with options for unidirectional and bidirectional scrolling, which changes direction based on the scroll position
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://lunarui.dev/components/react/feature-blocks/sparkles
 ---
 
 ## UniDirectional
@@ -135,3 +132,13 @@ export default function ScrollBaseAnimation({
   )
 }
 ```
+
+## Props
+
+| Prop            | Type    | Default | Description                                          |
+| --------------- | ------- | ------- | ---------------------------------------------------- |
+| children        | string  |         | The content to be animated with a parallax effect.   |
+| baseVelocity    | number  | `-5`    | The base velocity for the parallax effect.           |
+| clasname        | string  |         | Optional CSS class for styling the component.        |
+| scrollDependent | boolean | `false` | Whether the animation should depend on scroll.       |
+| delay           | number  | `0`     | Delay before the animation starts (in milliseconds). |

@@ -2,26 +2,20 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 const newComponent = [
   {
-    href: '/components/timeline-animation',
-    title: 'Timeline Animation',
+    href: '/components/motion-number',
+    title: 'Motion Number',
   },
 
   {
     href: '/components/scroll-animation',
     title: 'Scroll Animation',
   },
+
   {
-    href: '/components/text-animation',
-    title: 'Scroll Text Animation',
+    href: '/components/gradient-button',
+    title: 'Gradient Button',
   },
-  {
-    href: '/components/text-marquee',
-    title: 'Text Marquee',
-  },
-  {
-    href: '/components/blocks',
-    title: 'Blocks',
-  },
+
   {
     href: '/components/drag-items',
     title: 'Drag Items',

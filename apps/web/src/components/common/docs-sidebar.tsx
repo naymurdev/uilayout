@@ -39,6 +39,7 @@ export const basePath = [
   },
 ]
 export const SpecialComponents = [
+  { id: '/components/motion-number', name: 'Motion Number', new: true },
   { id: '/components/drag-items', name: 'Drag Items', new: true },
   { id: '/components/magnified-doc', name: 'Magnified-Doc' },
   {

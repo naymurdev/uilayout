@@ -122,7 +122,11 @@ export const docsConfig: TDocsConfig = {
         { href: '/components/dialog', title: 'Dialog', items: [] },
         { href: '/components/dialog-card', title: 'Linear Card', items: [] },
         { href: '/components/media-modal', title: 'Media Modal', items: [] },
-        { href: '/components/drawer', title: 'Responsive Drawer', items: [] },
+        {
+          href: '/components/responsive-drawer',
+          title: 'Responsive Drawer',
+          items: [],
+        },
         { href: '/components/sidebar', title: 'Responsive Sidebar', items: [] },
         {
           href: '/components/gallery-modal',

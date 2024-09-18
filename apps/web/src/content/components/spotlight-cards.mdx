@@ -2,9 +2,6 @@
 title: Sportlight Cards
 description: Spotlight cards with a mouse-sensitive spotlight effect that highlights the border of the div or section as you move your cursor
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
 ---
 
 <Tabs defaultValue="preview" className="w-full relative">
@@ -208,7 +205,17 @@ Control the border in `spotlight.tsx` file:
     >
 ```
 
-## Exmaples
+## Props
+
+| Prop                | Type      | Default | Description                                                |
+| ------------------- | --------- | ------- | ---------------------------------------------------------- |
+| children            | ReactNode |         | The content to be rendered inside the Spotlight component. |
+| className           | string    |         | Optional CSS class for styling the Spotlight component.    |
+| ProximitySpotlight  | boolean   | `true`  | Whether to enable proximity-based spotlight effect.        |
+| HoverFocusSpotlight | boolean   | `false` | Whether to enable spotlight effect on hover or focus.      |
+| CursorFlowGradient  | boolean   | `true`  | Whether to enable gradient flow based on cursor movement.  |
+
+## Examples
 
 ### Spotlight
 

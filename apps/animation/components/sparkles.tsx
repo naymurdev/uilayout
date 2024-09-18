@@ -5,6 +5,24 @@ import { useEffect, useId, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 
+interface SparklesProps {
+  className?: string
+  size?: number
+  minSize?: number | null
+  density?: number
+  speed?: number
+  minSpeed?: number | null
+  opacity?: number
+  direction?: string
+  opacitySpeed?: number
+  minOpacity?: number | null
+  color?: string
+  mousemove?: boolean
+  hover?: boolean
+  background?: string
+  options?: Record<string, any> // Adjust type as needed based on `options` structure
+}
+
 export function Sparkles({
   className,
   size = 1.2,
@@ -21,7 +39,7 @@ export function Sparkles({
   hover = false,
   background = 'transparent',
   options = {},
-}) {
+}: SparklesProps) {
   const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {

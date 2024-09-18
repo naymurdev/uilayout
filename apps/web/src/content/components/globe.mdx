@@ -2,9 +2,6 @@
 title: Animated Globe
 description: A globe component styled with customizations, created using the Cobe library for interactive, 3D globe visuals
 component: true
-links:
-  doc: https://www.radix-ui.com/docs/primitives/components/accordion
-  api: https://lunarui.dev/components/react/feature-blocks/sparkles
 ---
 
 > To Get the sparkle code Please Click That Link [here](https://www.ui-layout.com/components/sparkles)
@@ -21,10 +18,8 @@ links:
     <CodeWrapper noExpand={true}>
 
 ```tsx
-//
-
 import React from 'react'
-import Earth from '@/globe'
+import Earth from '@/components/globe'
 
 function index() {
   return (
@@ -244,6 +239,21 @@ const Earth: React.FC<EarthProps> = ({
 export default Earth
 ```
 
+## Props
+
+| Prop          | Type                     | Default                 | Description                                                |
+| ------------- | ------------------------ | ----------------------- | ---------------------------------------------------------- |
+| className     | string                   | undefined               | Optional CSS class for styling the Earth component.        |
+| theta         | number                   | 0.25                    | Controls the rotational angle of the Earth.                |
+| dark          | number                   | 1                       | Controls the darkness level of the Earth.                  |
+| scale         | number                   | 1.1                     | Controls the scaling factor of the Earth.                  |
+| diffuse       | number                   | 1.2                     | Controls the diffuse light intensity of the Earth.         |
+| mapSamples    | number                   | 40000                   | The number of samples used for the map texture.            |
+| mapBrightness | number                   | 6                       | The brightness of the map texture.                         |
+| baseColor     | [number, number, number] | [0.4, 0.6509, 1]        | The base color of the Earth as an RGB array.               |
+| markerColor   | [number, number, number] | [1, 0, 0]               | The color of the markers on the Earth as an RGB array.     |
+| glowColor     | [number, number, number] | [0.2745, 0.5765, 0.898] | The color of the glow effect on the Earth as an RGB array. |
+
 ## Example
 
 ### Light Globe
@@ -260,10 +270,8 @@ export default Earth
     <CodeWrapper noExpand={true}>
 
 ```tsx
-//
-
 import React from 'react'
-import Earth from '@/globe'
+import Earth from '@/components/globe'
 
 function index() {
   return (

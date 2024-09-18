@@ -76,6 +76,8 @@ const page = async ({ params }: PageProps) => {
   const toc = await getTableOfContents(doc.body.raw)
   const isTocValid = Object.keys(toc).length !== 0
 
+  // console.log(doc)
+
   return (
     <>
       <div
@@ -92,7 +94,7 @@ const page = async ({ params }: PageProps) => {
               : ' pt-20 pb-10 overflow-hidden'
           } `}
         >
-          <div className="space-y-2  rounded-md bg-primary-foreground p-4">
+          <div className="space-y-2  rounded-md bg-primary-foreground p-4 mb-4">
             <h1
               className={cn(
                 'scroll-m-20 flex gap-2 items-center text-3xl font-medium tracking-tight'
