@@ -193,7 +193,7 @@ function HeroSec() {
               Browse Component
               <MoveRight />
             </Link>
-            <Link href="/docs" className="sm:inline-block hidden">
+            <Link href="/get-started" className="sm:inline-block hidden">
               <Button className=" rounded-full px-4">
                 Get Started
                 <ChevronsRight />

@@ -8,6 +8,20 @@ import Image from 'next/image'
 
 const appsDesign = [
   {
+    id: 'motionNumber',
+    name: 'motion number',
+    url: '/components/motion-number',
+    imgSrc:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/motion-number_omri51.svg',
+  },
+  {
+    id: 'dragItems',
+    name: 'Drag Items',
+    url: '/components/drag-items',
+    imgSrc:
+      'https://res.cloudinary.com/dzl9yxixg/image/upload/drag-items_zoqo1z.svg',
+  },
+  {
     id: 'carousel',
     name: 'carousel',
     url: '/components/embla-carousel',

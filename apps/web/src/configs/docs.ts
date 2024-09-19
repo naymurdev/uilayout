@@ -42,6 +42,16 @@ export const docsConfig: TDocsConfig = {
       title: 'Components',
       items: [
         {
+          href: '/components/motion-number',
+          title: 'Motion Number',
+          items: [],
+        },
+        {
+          href: '/components/blur-vignette',
+          title: 'Blur Vignette',
+          items: [],
+        },
+        {
           href: '/components/timeline-animation',
           title: 'Timeline Animation',
           items: [],

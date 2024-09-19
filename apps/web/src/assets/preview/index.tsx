@@ -12,8 +12,10 @@ import tabs from '@/assets/preview/tabs.svg'
 import grid from '@/assets/preview/grid.svg'
 import faqs from '@/assets/preview/faqs.svg'
 import carousel from '@/assets/preview/carousel.svg'
+import motionNumber from '@/assets/preview/motion-number.svg'
 
 const preview = {
+  motionNumber,
   heroSec,
   Timeline,
   gallery,

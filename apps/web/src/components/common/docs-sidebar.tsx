@@ -39,14 +39,9 @@ export const basePath = [
   },
 ]
 export const SpecialComponents = [
-  { id: '/components/motion-number', name: 'Motion Number', new: true },
   { id: '/components/drag-items', name: 'Drag Items', new: true },
   { id: '/components/magnified-doc', name: 'Magnified-Doc' },
-  {
-    id: '/components/gradient-button',
-    name: 'gradient-button',
-    new: true,
-  },
+
   {
     id: '/components/gradient-border',
     name: 'gradient-border',
@@ -63,6 +58,25 @@ export const SpecialComponents = [
   { id: '/components/responsive-header', name: 'Responsive-Header' },
 ]
 export const MainComponents = [
+  {
+    id: '/components/blur-vignette',
+    name: 'Blur Vignette',
+
+    new: true,
+    component: 'creative',
+  },
+  {
+    id: '/components/motion-number',
+    name: 'Motion Number',
+    new: true,
+    component: 'creative',
+  },
+  {
+    id: '/components/gradient-button',
+    name: 'gradient-button',
+    new: true,
+    component: 'creative',
+  },
   {
     id: '/components/clip-path-image',
     name: 'Clip-Path Image',

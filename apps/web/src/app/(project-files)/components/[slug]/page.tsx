@@ -113,7 +113,7 @@ const page = async ({ params }: PageProps) => {
         {isTocValid && (
           <div className="xl:bg-primary-foreground   xl:border-x xl:relative fixed bottom-0 left-0 w-full z-10 ">
             <div className="xl:sticky xl:top-4 text-[0.8em] px-3 text-white  xl:border-none border-t border-x xl:w-full w-fit mx-auto xl:rounded-none  rounded-t-md rounded-l-md rounded-r-md  xl:backdrop-blur-none backdrop-blur-xl">
-              <div className="space-y-4 xl:sticky xl:top-4 xl:h-[calc(100vh-3.5rem)] h-fit  pt-16 ">
+              <div className="space-y-4 xl:sticky xl:top-14 xl:h-[calc(100vh-3.5rem)] h-fit py-2 px-3 pt-14 ">
                 <TableOfContents toc={toc} />
 
                 {/* <SuportMe /> */}

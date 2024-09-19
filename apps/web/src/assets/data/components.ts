@@ -1727,6 +1727,58 @@ export const COMPONENTS = [
     type: 'drag',
   },
   {
+    name: 'blur',
+    componentArray: [
+      {
+        componentName: 'blur-vignetteimg',
+        componentSrc: React.lazy(
+          () =>
+            import(
+              '@/registry/components/creative/blurvignette/blurvignetteimg'
+            )
+        ),
+      },
+      {
+        componentName: 'blur-vignettecard',
+        componentSrc: React.lazy(
+          () =>
+            import(
+              '@/registry/components/creative/blurvignette/blurvignettecard'
+            )
+        ),
+      },
+
+      {
+        componentName: 'blur-vignettevideo',
+        componentSrc: React.lazy(
+          () =>
+            import(
+              '@/registry/components/creative/blurvignette/blurvignettevideo'
+            )
+        ),
+      },
+    ],
+    filesArray: [
+      {
+        fileName: 'blur-vignetteimg',
+        fileSrc:
+          './src/registry/components/creative/blurvignette/blurvignetteimg.tsx',
+      },
+      {
+        fileName: 'blur-vignettecard',
+        fileSrc:
+          './src/registry/components/creative/blurvignette/blurvignettecard.tsx',
+      },
+      {
+        fileName: 'blur-vignettevideo',
+        fileSrc:
+          './src/registry/components/creative/blurvignette/blurvignettevideo.tsx',
+      },
+    ],
+    slug: 'blur',
+    type: 'creative-effects',
+  },
+  {
     name: 'number',
     componentArray: [
       {

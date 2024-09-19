@@ -2,23 +2,16 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 const newComponent = [
   {
+    href: '/components/blur-vignette',
+    title: 'Blur Vignette ',
+  },
+  {
     href: '/components/motion-number',
     title: 'Motion Number',
   },
-
-  {
-    href: '/components/scroll-animation',
-    title: 'Scroll Animation',
-  },
-
   {
     href: '/components/gradient-button',
     title: 'Gradient Button',
-  },
-
-  {
-    href: '/components/drag-items',
-    title: 'Drag Items',
   },
 ]
 function NewItemsLoading() {
