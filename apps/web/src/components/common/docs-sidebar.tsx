@@ -269,6 +269,7 @@ export const layouts = [
 
 function DocsSidebar() {
   const pathname = usePathname()
+
   const { addVisitedPage, getRecentPages, removeAllRecentPages } =
     useRecentPagesStore()
   const groupedComponents = MainComponents.reduce((acc, component) => {
@@ -282,13 +283,10 @@ function DocsSidebar() {
     acc[group].push(component)
     return acc
   }, {})
-  // const [hideRecentpages, setHideRecentPages] = useState<IRecentPage[]>([])
 
   const handleRemoveAllRecentData = () => {
-    // removeAllRecentPages()
     setRecentPages([])
   }
-  // console.log(groupedComponents)
   const [recentPages, setRecentPages] = useState<IRecentPage[]>([])
 
   useEffect(() => {
@@ -454,6 +452,18 @@ export const ItemsWithName = ({
       groupElement.removeEventListener('mouseleave', handleMouseLeave)
     }
   }, [items, pathname])
+
+  useEffect(() => {
+    const activeItemIndex = items.findIndex(
+      (item: { id: any }) => item.id === pathname
+    )
+    if (activeItemIndex !== -1 && itemRefs.current[activeItemIndex]) {
+      itemRefs.current[activeItemIndex]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      })
+    }
+  }, [pathname, items])
   return (
     <div ref={groupRef} key={group}>
       <button className="text-[1rem] relative flex w-full items-center justify-between pr-4 cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1">
