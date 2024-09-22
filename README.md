@@ -70,7 +70,7 @@ Visit all the [components](https://www.ui-layout.com/components).
 Visit [Labs](https://www.ui-layout.com/labs) to explore more experiments and ideas.
 
 
-## 👤 Author (Fahim Faisaal)
+## 👤 Author (Naymur)
 
-- X: [@naymur_dev]([https://twitter.com/FahimFaisaal](https://x.com/naymur_dev))
-- LinkedIn: [in/naymur-rahman]([https://www.linkedin.com/in/fahimfaisaal/](https://www.linkedin.com/in/naymur-rahman/))
+- X: [@naymur_dev](https://x.com/naymur_dev)
+- LinkedIn: [in/naymur-rahman](https://www.linkedin.com/in/naymur-rahman/)
