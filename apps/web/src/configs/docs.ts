@@ -30,11 +30,11 @@ export const docsConfig: TDocsConfig = {
     },
     {
       title: 'GitHub',
-      href: 'https://github.com/shadcn/ui',
+      href: 'https://github.com/naymurdev/uilayout',
     },
     {
       title: 'Twitter',
-      href: 'https://twitter.com/shadcn',
+      href: 'https://x.com/naymur_dev',
     },
   ],
   sidebarNav: [
