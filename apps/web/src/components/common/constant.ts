@@ -1,22 +1,24 @@
+import { Icons } from '@/assets/icons'
+import preview from '@/assets/preview'
 export const CardArr = [
   {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/w_800,h_800,c_scale/v1714374836/Group_1000002799_hsztyt.png',
+    img: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=800&auto=format&fit=crop',
     title: 'Nike Air1',
     color: '#202020',
   },
   {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/w_800,h_800,c_scale/v1714381938/nike_blue_d1v8uu.png',
+    img: 'https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?q=80&w=8000&auto=format&fit=crop',
     title: 'Nike Air2',
     color: '#23acfc',
   },
   {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/w_800,h_800,c_scale/v1714381938/nike_sky_blue_uuykzf.png',
-    title: 'Nike Air',
+    img: 'https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=2069&auto=format&fit=crop',
+    title: 'Adidas',
     color: '#a3fcff',
   },
   {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/w_800,h_800,c_scale/v1714381938/nike_brown_itibzt.png',
-    title: 'Nike Air',
+    img: 'https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?q=80&w=2090&auto=format&fit=crop',
+    title: 'Brown Leather ',
     color: '#A4636C',
   },
 ]
@@ -24,7 +26,7 @@ export const CardArr = [
 export const items = [
   {
     id: 1,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741160/photo-1714514828598-70dbbc1c13fb_teaqhw.jpg',
+    url: 'https://images.unsplash.com/photo-1490682143684-14369e18dce8?q=80&w=800&auto=format&fit=crop',
     title: 'Sunrise Splendor',
     description:
       'The first light of day illuminates the rugged peaks, casting a golden glow over the scenic landscape.',
@@ -32,7 +34,7 @@ export const items = [
   },
   {
     id: 2,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1522743358649-311c79004e9a_busrji.jpg',
+    url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop',
     title: 'Misty Mountain Pass',
     description:
       'A mysterious, fog-covered path winds through the serene and rugged mountain terrain.',
@@ -40,7 +42,7 @@ export const items = [
   },
   {
     id: 3,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1697985189201-293f0ddfc36d_mam2av.jpg',
+    url: 'https://images.unsplash.com/photo-1501889088093-90b27410d97e?q=80&w=800&auto=format&fit=crop',
     title: 'Pathway to Peaks',
     description:
       'A rugged path leads adventurers toward distant mountain peaks, promising breathtaking views and challenging terrain.',
@@ -48,7 +50,7 @@ export const items = [
   },
   {
     id: 4,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741158/photo-1714182356074-99c7c843e197_jji1oe.jpg',
+    url: 'https://images.unsplash.com/photo-1541623089466-8e777dd05d70?q=80&w=800&auto=format&fit=crop',
     title: 'Mountain Majesty',
     description:
       'The grandeur of towering peaks envelopes the landscape, presenting a dramatic scene of nature’s raw beauty.',
@@ -56,7 +58,7 @@ export const items = [
   },
   {
     id: 5,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1714402002623-86d68590c545_eyrfna.jpg',
+    url: 'https://images.unsplash.com/photo-1519031465998-192aba33f8ad?q=80&w=800&auto=format&fit=crop',
     title: 'Snow-Capped Serenity',
     description:
       'Snow blankets the high mountain peaks, offering a serene and pristine white canvas against the crisp blue sky.',
@@ -65,7 +67,7 @@ export const items = [
 
   {
     id: 7,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1712313242836-3ae9c1fd6767_ynpin3.jpg',
+    url: 'https://images.unsplash.com/photo-1469212044023-0e55b4b9745a?q=80&w=800&auto=format&fit=crop',
     title: 'Verdant Valley Vista',
     description:
       'A lush green valley nestled between mountains, bathed in the warm light of a setting sun, offering a tranquil retreat.',
@@ -73,7 +75,7 @@ export const items = [
   },
   {
     id: 8,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1714523479594-13c0bb72fcf3_n85lma.jpg',
+    url: 'https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?q=80&w=800&auto=format&fit=crop',
     title: 'Rocky Ridges',
     description:
       'The rugged ridges of the mountain form a stark contrast against the soft clouds above, embodying the spirit of adventure.',
@@ -82,7 +84,7 @@ export const items = [
 
   {
     id: 6,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1713223289172-e45b0ed96eae_cdizhk.jpg',
+    url: 'https://images.unsplash.com/photo-1589223050279-18d1f14059cf?q=80&w=800&auto=format&fit=crop',
     title: 'Floral Highlands',
     description:
       'Amidst the rugged mountainous terrain, bursts of wildflowers add a splash of color, showcasing nature’s resilience.',
@@ -90,7 +92,7 @@ export const items = [
   },
   {
     id: 9,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1714312634720-ae1f906d09d6_hoslf5.jpg',
+    url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop',
     title: 'Twilight Peaks',
     description:
       'As twilight descends, the peaks of the mountains are silhouetted against a gradient evening sky, creating a peaceful end to the day.',
@@ -98,7 +100,7 @@ export const items = [
   },
   {
     id: 10,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741160/photo-1714362444851-05da5fa55efe_z4qybo.jpg',
+    url: 'https://images.unsplash.com/photo-1510437097452-74ac66e27feb?q=80&w=800&auto=format&fit=crop',
     title: 'Eagle’s View',
     description:
       'An aerial perspective showcases the breathtaking expanse of the mountain range, revealing nature’s grand design.',
@@ -106,7 +108,7 @@ export const items = [
   },
   {
     id: 11,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1713865248397-6a3825850fc7_mh5rxg.jpg',
+    url: 'https://images.unsplash.com/photo-1526991757821-1307bf7800f6?q=80&w=800&auto=format&fit=crop',
     title: 'Alpine Twilight',
     description:
       'The last light of the day fades behind the alpine skyline, creating a striking silhouette against the twilight sky.',
@@ -114,7 +116,7 @@ export const items = [
   },
   {
     id: 12,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1710496633691-d6e95da43cf2_rajsty.jpg',
+    url: 'https://images.unsplash.com/photo-1516655855035-d5215bcb5604?q=80&w=800&auto=format&fit=cropD',
     title: 'Winter’s Mantle',
     description:
       'Snow blankets the mountain peaks, transforming the landscape into a pristine winter wonderland.',
@@ -122,7 +124,7 @@ export const items = [
   },
   {
     id: 13,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1713999212351-78f54ee46d9e_s17ojk.jpg',
+    url: 'https://images.unsplash.com/photo-1506104489822-562ca25152fe?q=80&w=2069&auto=format&fit=crop',
     title: 'Textured Terrain',
     description:
       'Close-up of the intricate textures and colors of a mountain’s surface, revealing the beauty of geological diversity.',
@@ -130,7 +132,7 @@ export const items = [
   },
   {
     id: 14,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1714144268969-f03879242066_tsmx52.jpg',
+    url: 'https://images.unsplash.com/photo-1455156218388-5e61b526818b?q=80&w=800&auto=format&fit=crop',
     title: 'Fiery Peaks',
     description:
       'The setting sun casts fiery hues over the mountain peaks, enveloping the landscape in a warm, dramatic light.',
@@ -138,7 +140,7 @@ export const items = [
   },
   {
     id: 15,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741158/photo-1714547948462-35d76260e4a3_h2kvbp.jpg',
+    url: 'https://images.unsplash.com/photo-1575946240168-30dce77b926c?q=80&w=800&auto=format&fit=crop',
     title: 'Mirror Lake',
     description:
       'A serene mountain lake reflects the surrounding peaks perfectly, creating a symmetrical natural masterpiece.',
@@ -146,10 +148,73 @@ export const items = [
   },
   {
     id: 16,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741158/photo-1714182370392-a32d43080717_ksy9fp.jpg',
+    url: 'https://images.unsplash.com/photo-1469212044023-0e55b4b9745a?q=80&w=800&auto=format&fit=crop',
     title: 'Valley Vista',
     description:
       'A panoramic view of a lush mountain valley, dotted with wildflowers and crisscrossed by meandering streams.',
     tags: ['Panorama', 'Valley', 'Lush', 'Wildflowers', 'Streams'],
+  },
+]
+
+export const apps = [
+  {
+    id: 'carousel',
+    icon: Icons.doc_icon5,
+    name: 'Carousel',
+    imgSrc: preview.carousel,
+  },
+  {
+    id: 'tabs',
+    icon: Icons.doc_icon4,
+    name: 'Tabs',
+    imgSrc: preview.tabs,
+  },
+  {
+    id: 'faqs',
+    icon: Icons.doc_star,
+    name: 'Faqs',
+    imgSrc: preview.faqs,
+  },
+  {
+    id: 'grid',
+    icon: Icons.doc_icon3,
+    name: 'Grid',
+    imgSrc: preview.grid,
+  },
+  {
+    id: 'masking',
+    icon: Icons.doc_circle,
+    name: 'Masking',
+    onClick: () =>
+      window.open(
+        'https://www.ui-layout.com/components/magnified-doc',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc: preview.image_masking,
+  },
+  {
+    id: 'mouseTrail',
+    icon: Icons.doc_rectangle,
+    name: 'MouseTrail',
+    onClick: () =>
+      window.open(
+        'https://naymur-rahman.com/',
+        '_blank',
+        'noopener,noreferrer'
+      ),
+    imgSrc: preview.image_mousetrail,
+  },
+  {
+    id: 'sticky',
+    icon: Icons.doc_icon2,
+    name: 'Sticky',
+    imgSrc: preview.sticky,
+  },
+  {
+    id: 'gallery',
+    icon: Icons.doc_triangle,
+    name: 'Gallery',
+    imgSrc: preview.gallery,
   },
 ]

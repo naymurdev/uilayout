@@ -13,9 +13,23 @@ import grid from '@/assets/preview/grid.svg'
 import faqs from '@/assets/preview/faqs.svg'
 import carousel from '@/assets/preview/carousel.svg'
 import motionNumber from '@/assets/preview/motion-number.svg'
+import dragitems from '@/assets/preview/drag-items.svg'
+import sparkles from '@/assets/preview/sparkles.svg'
+import buttons from '@/assets/preview/buttons.svg'
+import horizontascroll from '@/assets/preview/horizontal-scrolling.svg'
+import stackingcard from '@/assets/preview/stacking card.svg'
+import imagereveal from '@/assets/preview/image-reveal.svg'
+import modal from '@/assets/preview/modal.svg'
+import clippath from '@/assets/preview/clip-path.svg'
+import card from '@/assets/preview/card.svg'
+import drawer from '@/assets/preview/responsive-drawer.svg'
+import imageaccordion from '@/assets/preview/image-accordion.svg'
 
 const preview = {
   motionNumber,
+  imageaccordion,
+  drawer,
+  card,
   heroSec,
   Timeline,
   gallery,
@@ -30,5 +44,13 @@ const preview = {
   image_masking,
   image_mousetrail,
   carousel,
+  dragitems,
+  sparkles,
+  buttons,
+  stackingcard,
+  imagereveal,
+  modal,
+  horizontascroll,
+  clippath,
 }
 export default preview

@@ -55,7 +55,7 @@ export default function HorizontalScroll(): JSX.Element {
                   PASSION
                 </h2>
                 <Image
-                  src="https://res.cloudinary.com/dzl9yxixg/image/upload/v1713532202/ui-layout/team_gsu8ej.png"
+                  src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1000&auto=format"
                   className="2xl:w-[550px] w-[380px] absolute bottom-0"
                   width={500}
                   height={500}
@@ -67,7 +67,7 @@ export default function HorizontalScroll(): JSX.Element {
                   WORK
                 </h2>
                 <Image
-                  src="https://res.cloudinary.com/dzl9yxixg/image/upload/v1713532202/ui-layout/team_gsu8ej.png"
+                  src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=1000&auto=format&fit=crop"
                   className="2xl:w-[550px] w-[380px] absolute bottom-0"
                   width={500}
                   height={500}
@@ -79,7 +79,7 @@ export default function HorizontalScroll(): JSX.Element {
                   MOTIVATION
                 </h2>
                 <Image
-                  src="https://res.cloudinary.com/dzl9yxixg/image/upload/v1713532202/ui-layout/team_gsu8ej.png"
+                  src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1000&auto=format&fit=crop"
                   className="2xl:w-[550px] w-[380px] absolute bottom-0"
                   width={500}
                   height={500}
@@ -91,7 +91,7 @@ export default function HorizontalScroll(): JSX.Element {
                   INSPIRATION
                 </h2>
                 <Image
-                  src="https://res.cloudinary.com/dzl9yxixg/image/upload/v1713532202/ui-layout/team_gsu8ej.png"
+                  src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?q=80&w=1000&auto=format&fit=crop"
                   className="2xl:w-[550px] w-[380px] absolute bottom-0"
                   width={500}
                   height={500}
@@ -103,7 +103,7 @@ export default function HorizontalScroll(): JSX.Element {
                   BELIVE
                 </h2>
                 <Image
-                  src="https://res.cloudinary.com/dzl9yxixg/image/upload/v1713532202/ui-layout/team_gsu8ej.png"
+                  src="https://images.unsplash.com/photo-1549633030-89d0743bad01?q=80&w=2080&auto=format&fit=crop"
                   className="2xl:w-[550px] w-[380px] absolute bottom-0"
                   width={500}
                   height={500}

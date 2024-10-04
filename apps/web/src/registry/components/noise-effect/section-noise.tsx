@@ -28,7 +28,7 @@ const index = () => {
       </div>
       <main className="relative border rounded-lg">
         <div
-          className="absolute top-0 left-0 w-full h-full content-[''] z-10 pointer-events-none bg-[url('https://res.cloudinary.com/dzl9yxixg/image/upload/noise_yvdidf.gif')]"
+          className="absolute top-0 left-0 w-full h-full content-[''] z-10 pointer-events-none bg-[url('/noise.gif')]"
           style={{ opacity: opacity }}
         ></div>
         <section className="  font-semibold 2xl::h-[600px] sm:h-[500px] h-[450px] bg-gradient-to-t dark:to-gray-800 dark:from-gray-950 to-[#dadada] from-[#ebebeb] flex flex-col items-center justify-center dark:text-white text-black">

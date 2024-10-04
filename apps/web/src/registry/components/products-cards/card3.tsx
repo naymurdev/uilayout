@@ -8,21 +8,7 @@ import Carousel, {
 import { motion } from 'framer-motion'
 import { CheckIcon, Heart } from 'lucide-react'
 import { EmblaOptionsType } from 'embla-carousel'
-
-const arr = [
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/regis-hari-bouchard-ZjViL8qxihM-unsplash_hwrmgb.jpg',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714372227/usama-akram-kP6knT7tjn4-unsplash_xm8rmu.jpg',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/luis-felipe-lins-LG88A2XgIXY-unsplash_rdybsg.jpg',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415908/usama-akram-s-gYAbQToXk-unsplash_zdsntx.jpg',
-  },
-]
+import { CardArr } from '@/components/common/constant'
 
 function index() {
   const [isActive, setIsActive] = useState(false)
@@ -54,7 +40,7 @@ function index() {
           </motion.button>
           <Carousel options={OPTIONS} isAutoPlay={true} className="h-full">
             <SliderContainer className="gap-2 h-full">
-              {arr.map((data, index) => (
+              {CardArr.map((data, index) => (
                 <Slider key={index} className="w-full h-full">
                   <Image
                     src={data?.img}

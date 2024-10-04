@@ -9,21 +9,21 @@ const tabs = [
     description:
       'UI components can improve UX by providing familiar, consistent interactions that make it easy for users to navigate and interact with an application.',
     imageUrl:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/design_elbeas.png',
+      'https://images.unsplash.com/photo-1490682143684-14369e18dce8?q=80&w=800&auto=format&fit=crop',
   },
   {
     title: 'Common UI component design challenges?',
     description:
       'Some common challenges include maintaining consistency across different devices and screen sizes, ensuring compatibility with various browsers and assistive technologies, and balancing flexibility with ease of use.',
     imageUrl:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/share_xxzjjp.png',
+      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop',
   },
   {
     title: 'Ensuring UI component responsiveness?',
     description:
       '     Developers can ensure the responsiveness of UI components by using techniques such as fluid layouts, flexible grids, and media queries to adapt the components to different screen sizes and orientations.',
     imageUrl:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/collboration_frpdk8.png',
+      'https://images.unsplash.com/photo-1501889088093-90b27410d97e?q=80&w=800&auto=format&fit=crop',
   },
 ]
 function HomeAccordion() {

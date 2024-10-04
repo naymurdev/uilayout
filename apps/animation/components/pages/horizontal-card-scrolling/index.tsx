@@ -9,77 +9,76 @@ import {
 
 import { useEffect, useRef, useState } from 'react'
 import { throttle } from '../../../lib/utils'
+import Image from 'next/image'
+
 export const items = [
   {
     id: 1,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741160/photo-1714514828598-70dbbc1c13fb_teaqhw.jpg',
+    url: 'https://images.unsplash.com/photo-1490682143684-14369e18dce8?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 2,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1522743358649-311c79004e9a_busrji.jpg',
+    url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 3,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1697985189201-293f0ddfc36d_mam2av.jpg',
+    url: 'https://images.unsplash.com/photo-1501889088093-90b27410d97e?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 4,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741158/photo-1714182356074-99c7c843e197_jji1oe.jpg',
+    url: 'https://images.unsplash.com/photo-1541623089466-8e777dd05d70?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 5,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1714402002623-86d68590c545_eyrfna.jpg',
+    url: 'https://images.unsplash.com/photo-1519031465998-192aba33f8ad?q=80&w=800&auto=format&fit=crop',
   },
 
   {
     id: 7,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1712313242836-3ae9c1fd6767_ynpin3.jpg',
+    url: 'https://images.unsplash.com/photo-1469212044023-0e55b4b9745a?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 8,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1714523479594-13c0bb72fcf3_n85lma.jpg',
+    url: 'https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?q=80&w=800&auto=format&fit=crop',
   },
 
   {
     id: 6,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1713223289172-e45b0ed96eae_cdizhk.jpg',
+    url: 'https://images.unsplash.com/photo-1589223050279-18d1f14059cf?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 9,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741157/photo-1714312634720-ae1f906d09d6_hoslf5.jpg',
+    url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop',
   },
   {
     id: 10,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741160/photo-1714362444851-05da5fa55efe_z4qybo.jpg',
+    url: 'https://images.unsplash.com/photo-1510437097452-74ac66e27feb?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 11,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1713865248397-6a3825850fc7_mh5rxg.jpg',
+    url: 'https://images.unsplash.com/photo-1526991757821-1307bf7800f6?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 12,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1710496633691-d6e95da43cf2_rajsty.jpg',
+    url: 'https://images.unsplash.com/photo-1516655855035-d5215bcb5604?q=80&w=800&auto=format&fit=cropD',
   },
   {
     id: 13,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1713999212351-78f54ee46d9e_s17ojk.jpg',
+    url: 'https://images.unsplash.com/photo-1506104489822-562ca25152fe?q=80&w=2069&auto=format&fit=crop',
   },
   {
     id: 14,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741159/photo-1714144268969-f03879242066_tsmx52.jpg',
+    url: 'https://images.unsplash.com/photo-1455156218388-5e61b526818b?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 15,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741158/photo-1714547948462-35d76260e4a3_h2kvbp.jpg',
-    tags: ['Lake', 'Reflection', 'Serene', 'Symmetry', 'Natural'],
+    url: 'https://images.unsplash.com/photo-1575946240168-30dce77b926c?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 16,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714741158/photo-1714182370392-a32d43080717_ksy9fp.jpg',
+    url: 'https://images.unsplash.com/photo-1469212044023-0e55b4b9745a?q=80&w=800&auto=format&fit=crop',
   },
 ]
-
-import Image from 'next/image'
 
 // * based on: https://gist.github.com/coleturner/34396fb826c12fbd88d6591173d178c2
 function useElementViewportPosition(ref: React.RefObject<HTMLElement>) {

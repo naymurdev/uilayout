@@ -39,7 +39,7 @@ function Card() {
           </motion.button>
           <Image
             src={
-              'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/luis-felipe-lins-LG88A2XgIXY-unsplash_rdybsg.jpg'
+              'https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?q=80&w=2090&auto=format&fit=crop'
             }
             alt="shoes"
             width={1000}
@@ -48,9 +48,7 @@ function Card() {
           />
         </div>
         <article className="text-black pt-2 ">
-          <h1 className="font-semibold text-2xl text-black">
-            Air Jordan 1 Mid SE
-          </h1>
+          <h1 className="font-semibold text-2xl text-black">Brown Leather</h1>
           <p className="text-xs">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
             porro quos quae autem vel praesentium.

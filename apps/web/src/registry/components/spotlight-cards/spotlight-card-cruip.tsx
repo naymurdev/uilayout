@@ -5,9 +5,7 @@ export const metadata = {
 }
 
 import Image from 'next/image'
-import Card01 from '@/public/card-01.png'
-import Card02 from '@/public/card-02.png'
-import Card03 from '@/public/card-03.png'
+
 import Spotlight, { SpotlightCard } from '@/lab/components/spotlight'
 
 export default function SpotlightPage() {

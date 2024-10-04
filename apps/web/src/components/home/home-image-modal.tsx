@@ -6,7 +6,7 @@ export default function Dialog() {
       <div className=" h-full">
         <MediaModal
           imgSrc={
-            'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714558602/two_cosolk.jpg'
+            'https://images.unsplash.com/photo-1706547343914-2b14529049ed?q=80&w=1200&auto=format&fit=crop'
           }
         />
       </div>

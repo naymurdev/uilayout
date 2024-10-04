@@ -32,11 +32,11 @@ export const basePath = [
   //   name: 'Templates',
   //   icon: <LayoutTemplate />,
   // },
-  {
-    id: '/labs',
-    name: 'Labs',
-    icon: <Microscope />,
-  },
+  // {
+  //   id: '/labs',
+  //   name: 'Labs',
+  //   icon: <Microscope />,
+  // },
 ]
 export const SpecialComponents = [
   { id: '/components/drag-items', name: 'Drag Items', new: true },

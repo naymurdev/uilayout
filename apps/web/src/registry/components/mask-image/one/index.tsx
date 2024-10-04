@@ -35,21 +35,21 @@ function index() {
       <section className="grid grid-cols-3 gap-8 dark:bg-black bg-white border rounded-lg p-5">
         <figure style={{ clipPath: 'url(#clip-squiggle)' }}>
           <img
-            src="https://res.cloudinary.com/dzl9yxixg/image/upload/johan-lindberg-6bJ5Oo-2QoI-unsplash_ben0cj.jpg"
+            src="https://images.unsplash.com/photo-1727889490721-4f27ef9b6673?q=80&w=870&auto=format&fit=crop"
             alt="Description"
             className="transition-all duration-300 aspect-[4/6] min-h-full align-bottom object-cover hover:scale-105 w-full"
           />
         </figure>
         <figure style={{ clipPath: 'url(#clip-rect)' }}>
           <img
-            src="https://res.cloudinary.com/dzl9yxixg/image/upload/taitopia-render-rA13-oNSfh4-unsplash_midanj.jpg"
+            src="https://images.unsplash.com/photo-1593871978398-00a20e5a032b?q=80&w=876&auto=format&fit=crop"
             alt="Description"
             className="transition-all duration-300 aspect-[4/6] min-h-full align-bottom object-cover hover:scale-105 w-full"
           />
         </figure>
         <figure style={{ clipPath: 'url(#clip-another)' }}>
           <img
-            src="https://res.cloudinary.com/dzl9yxixg/image/upload/cyril-blackbird-35ZdEWfAWsU-unsplash_tzvot7.jpg"
+            src="https://images.unsplash.com/photo-1695239510467-f1e93d649c2b?q=80&w=874&auto=format&fit=crop"
             alt="Description"
             className="transition-all duration-300 aspect-[4/6] min-h-full align-bottom object-cover hover:scale-105 w-full"
           />

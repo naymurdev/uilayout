@@ -9,23 +9,17 @@ const items = [
     img: preview?.galleryNew,
     title: 'Accordion',
     desc: 'Beautiful Accordion using framer motion and tailwindcss',
-    buttonIcon:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/luis-felipe-lins-LG88A2XgIXY-unsplash_rdybsg.jpg',
   },
   {
     img: preview?.globe,
     title: 'Globe',
     desc: 'Next-Gen Globe for Dark Theme website',
-    buttonIcon:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/luis-felipe-lins-LG88A2XgIXY-unsplash_rdybsg.jpg',
   },
   {
     img: preview?.mousetrail,
 
     title: 'Mouse Trail',
     desc: 'An Interactive Image Mouse Trail Effect',
-    buttonIcon:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/luis-felipe-lins-LG88A2XgIXY-unsplash_rdybsg.jpg',
   },
 ]
 export default function HomeProgressSlider() {

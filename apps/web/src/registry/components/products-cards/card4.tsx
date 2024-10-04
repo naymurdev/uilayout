@@ -32,7 +32,7 @@ function Card2() {
           </motion.button>
           <Image
             src={
-              'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714372227/usama-akram-kP6knT7tjn4-unsplash_xm8rmu.jpg'
+              'https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?q=80&w=2090&auto=format&fit=crop'
             }
             alt="shoes"
             width={1000}
@@ -43,7 +43,7 @@ function Card2() {
         <article className="text-black space-y-2 p-2 pb-3">
           <div className="flex justify-between">
             <h1 className="font-semibold text-xl text-base-dark">
-              Nike Air Max
+              Brown Leather
             </h1>
             <span className="font-medium text-xl text-base-dark">$394</span>
           </div>

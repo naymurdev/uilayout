@@ -5,144 +5,130 @@ import Header from '@/components/common/header'
 import Link from 'next/link'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import Image from 'next/image'
-
+import preview from '@/assets/preview'
 const appsDesign = [
   {
     id: 'motionNumber',
     name: 'motion number',
     url: '/components/motion-number',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/motion-number_omri51.svg',
+    imgSrc: preview.motionNumber,
   },
   {
     id: 'dragItems',
     name: 'Drag Items',
     url: '/components/drag-items',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/drag-items_zoqo1z.svg',
+    imgSrc: preview.dragitems,
   },
   {
     id: 'carousel',
     name: 'carousel',
     url: '/components/embla-carousel',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/carousel_ymyqq4.svg',
+    imgSrc: preview.carousel,
   },
   {
     id: 'tabs',
     url: '/components/tabs',
     name: 'tabs',
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/tabs_rkezcb.svg',
+    imgSrc: preview.tabs,
   },
   {
     id: 'sparkles',
     url: '/components/sparkles',
     name: 'Sparkles',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/sparkles_ko7fz4.svg',
+    imgSrc: preview.sparkles,
   },
   {
     id: 'accordion',
     url: '/components/accordion',
     name: 'accordion',
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/faqs_qubbig.svg',
+    imgSrc: preview.faqs,
   },
   {
     id: 'grid',
     url: '/components/grid',
     name: 'grid',
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/grid_rbis5c.svg',
+    imgSrc: preview.grid,
   },
   {
     id: 'buttons',
     url: '/components/buttons',
     name: 'buttons',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/button_sujawm.svg',
+    imgSrc: preview.buttons,
   },
   {
     id: 'horizontal-scrolling',
     url: '/components/horizontal-scroll',
     name: 'scrolling',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/horizontal-scrolling_g9vv9m.svg',
+    imgSrc: preview.horizontascroll,
   },
   {
     id: 'masking',
     url: '/components/video-masking',
     name: 'video-masking',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/image_masking_kbdo7a.svg',
+    imgSrc: preview.image_masking,
+  },
+  {
+    id: 'clip-path',
+    url: '/components/clip-path-image',
+    name: 'Clip-Path',
+    imgSrc: preview.clippath,
   },
   {
     id: 'mouseTrail',
     url: '/components/image-mousetrail',
     name: 'image-mousetrail',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/image_mousetrail_jt45al.svg',
+    imgSrc: preview.mousetrail,
   },
   {
     id: 'sticky',
     url: '/components/sticky-scroll',
     name: 'sticky-scroll',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/sticky_xao8zr.svg',
+    imgSrc: preview.sticky,
   },
+
   {
     id: 'image-accordion',
     url: '/components/image-accordions',
     name: 'image-accordion',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/gallerynew_x3apwx.svg',
+    imgSrc: preview.imageaccordion,
   },
   {
     id: 'globe',
     url: '/components/globe',
     name: 'Globe',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/globe_j7nu5e.svg',
+    imgSrc: preview.globe,
   },
 
   {
     id: 'modal',
     url: '/components/linear-modal',
     name: 'Modal',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/modal_zecs4l.svg',
+    imgSrc: preview.modal,
   },
   {
     id: 'image-reveal',
     url: '/components/image-reveal',
     name: 'Image Reveal',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/image-reveal_rsfjbi.svg',
+    imgSrc: preview.imagereveal,
   },
   {
     id: 'drawer',
     url: '/components/drawer',
     name: 'Drawer',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/responsive-drawer_qd1xcx.svg',
+    imgSrc: preview.responsive_drawer,
   },
-  {
-    id: 'clip-path',
-    url: '/components/clip-path-image',
-    name: 'Clip-Path',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/image-masking_m5oigd.svg',
-  },
+
   {
     id: 'hover-card',
     url: '/components/hover-cards',
     name: 'Card',
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/card_q3rete.svg',
+    imgSrc: preview.card,
   },
   {
     id: 'stacking-card',
     url: '/components/stacking-card',
     name: 'Stacking Card',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/stacking_card_fcbeow.svg',
+    imgSrc: preview.stackingcard,
   },
 ]
 

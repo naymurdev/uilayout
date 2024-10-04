@@ -15,25 +15,25 @@ const initialTabs = [
     name: 'Design',
     label: 'design',
     icon: Info,
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/design_elbeas.png',
+    img: 'https://images.unsplash.com/photo-1506097425191-7ad538b29cef?q=80&w=1000&auto=format&fit=crop',
   },
   {
     name: 'Collaborate',
     label: 'collaborate ',
     icon: Info,
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/collboration_frpdk8.png',
+    img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop',
   },
   {
     name: 'Share',
     label: 'share',
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/share_xxzjjp.png',
+    img: 'https://images.unsplash.com/photo-1665470909901-162912ec16f7?q=80&w=1000&auto=format&fit=crop',
     icon: Info,
   },
   {
     name: 'Pubslish',
     label: 'publish',
     icon: Info,
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714807584/publish_eah6oa.png',
+    img: 'https://images.unsplash.com/photo-1694022861804-840f61d1c452?q=80&w=1000&auto=format&fit=crop',
   },
 ]
 const effectArr = [

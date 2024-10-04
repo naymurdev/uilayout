@@ -5,32 +5,10 @@ import { Bookmark, ShoppingCart } from 'lucide-react'
 
 import { CardArr } from '@/components/common/constant'
 import { motion } from 'framer-motion'
-const arr = [
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415908/usama-akram-s-gYAbQToXk-unsplash_zdsntx.jpg',
-    title: 'Nike Air1',
-    color: '#202020',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714372227/usama-akram-kP6knT7tjn4-unsplash_xm8rmu.jpg',
-    title: 'Nike Air2',
-    color: '#bffd6e',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/luis-felipe-lins-LG88A2XgIXY-unsplash_rdybsg.jpg',
-    title: 'Nike Air3',
-    color: '#ff946a',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/regis-hari-bouchard-ZjViL8qxihM-unsplash_hwrmgb.jpg',
-    title: 'Nike Air4',
-    color: '#07973e',
-  },
-]
 
 function Card() {
-  const [selectedImage, setSelectedImage] = useState(arr[1].img)
-  const [selectedColor, setSelectedColor] = useState(arr[1].color)
+  const [selectedImage, setSelectedImage] = useState(CardArr[1].img)
+  const [selectedColor, setSelectedColor] = useState(CardArr[1].color)
   const handleColorButtonClick = (img: string, color: string) => {
     setSelectedImage(img)
     setSelectedColor(color)
@@ -64,7 +42,7 @@ function Card() {
               </>
             )}
           </motion.button>
-          {arr.map((data, index) => (
+          {CardArr.map((data, index) => (
             <Image
               src={data?.img}
               alt="shoes"
@@ -88,7 +66,7 @@ function Card() {
           <div className="flex justify-between">
             <h1 className="font-semibold text-xl text-black">Nike Air Max</h1>
             <div className="flex gap-2 items-center">
-              {arr.map((data, index) => (
+              {CardArr.map((data, index) => (
                 <button
                   key={index}
                   onClick={() => handleColorButtonClick(data.img, data.color)}

@@ -7,24 +7,24 @@ import { CardArr } from '@/components/common/constant'
 import { motion } from 'framer-motion'
 const arr = [
   {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415908/usama-akram-s-gYAbQToXk-unsplash_zdsntx.jpg',
+    img: 'https://images.unsplash.com/photo-1579199265916-436a773ce30b?q=80&w=800&auto=format&fit=crop',
     title: 'Nike Air1',
-    color: '#202020',
+    color: '#f48438',
   },
   {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714372227/usama-akram-kP6knT7tjn4-unsplash_xm8rmu.jpg',
-    title: 'Nike Air2',
+    img: 'https://images.unsplash.com/photo-1719759674376-a001dc166cb6?q=80&w=800&auto=format&fit=crop',
+    title: 'Adidas Running',
     color: '#bffd6e',
   },
   {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/luis-felipe-lins-LG88A2XgIXY-unsplash_rdybsg.jpg',
+    img: 'https://images.unsplash.com/photo-1508147840258-7d4e11798d4d?q=80&w=800&auto=format&fit=crop',
     title: 'Nike Air3',
     color: '#ff946a',
   },
   {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714415909/regis-hari-bouchard-ZjViL8qxihM-unsplash_hwrmgb.jpg',
+    img: 'https://images.unsplash.com/photo-1511426463457-0571e247d816?q=80&w=804&auto=format&fit=crop',
     title: 'Nike Air4',
-    color: '#07973e',
+    color: '#077597',
   },
 ]
 

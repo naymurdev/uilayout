@@ -18,7 +18,7 @@ function HomeSlider() {
               <div className="dark:bg-black bg-white  lg:h-[350px] md:h-[300px] h-[260px] w-full">
                 <Image
                   src={
-                    'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715160660/taitopia-render-sko8Tvd7O1A-unsplash_rkwtfs.jpg'
+                    'https://images.unsplash.com/photo-1706547343914-2b14529049ed?q=80&w=800&auto=format&fit=crop'
                   }
                   width={1400}
                   height={800}
@@ -31,7 +31,7 @@ function HomeSlider() {
               <div className="dark:bg-black bg-white  lg:h-[350px] md:h-[300px] h-[260px] w-full">
                 <Image
                   src={
-                    'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715160658/taitopia-render-rA13-oNSfh4-unsplash_midanj.jpg'
+                    'https://images.unsplash.com/photo-1721544799602-708feb19db98?q=80&w=832&auto=format&fit=crop'
                   }
                   width={1200}
                   height={800}
@@ -44,7 +44,7 @@ function HomeSlider() {
               <div className="dark:bg-black bg-white   lg:h-[350px] md:h-[300px] h-[260px] w-full">
                 <Image
                   src={
-                    'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715160657/cyril-blackbird-35ZdEWfAWsU-unsplash_tzvot7.jpg'
+                    'https://images.unsplash.com/photo-1713019511375-4db954c8c694?q=80&w=800&auto=format&fit=crop'
                   }
                   width={1200}
                   height={800}
@@ -58,7 +58,7 @@ function HomeSlider() {
               <div className="dark:bg-black bg-white   lg:h-[350px] md:h-[300px] h-[260px] w-full">
                 <Image
                   src={
-                    'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715160660/taitopia-render-ueM-K_zuSlI-unsplash_kkrnky.jpg'
+                    'https://images.unsplash.com/photo-1659940316181-d34bf23ae835?q=80&w=8080&auto=format&fit=crop'
                   }
                   width={1200}
                   height={800}
@@ -71,7 +71,7 @@ function HomeSlider() {
               <div className="dark:bg-black bg-white  lg:h-[350px] md:h-[300px] h-[260px] w-full">
                 <Image
                   src={
-                    'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715160660/taitopia-render-umiOsSjP8YI-unsplash_e6adl2.jpg'
+                    'https://images.unsplash.com/photo-1709633694594-30f42ddbf669?q=80&w=800&auto=format&fit=crop'
                   }
                   width={1200}
                   height={800}
@@ -84,7 +84,7 @@ function HomeSlider() {
               <div className="dark:bg-black bg-white   lg:h-[350px] md:h-[300px] h-[260px] w-full">
                 <Image
                   src={
-                    'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715160659/ayush-kumar-Z5i77NdR2Fc-unsplash_ab4xth.jpg'
+                    'https://images.unsplash.com/photo-1696429175928-793a1cdef1d3?q=80&w=800&auto=format&fit=crop'
                   }
                   width={1200}
                   height={800}

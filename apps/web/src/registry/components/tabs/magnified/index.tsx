@@ -20,115 +20,13 @@ import React, { useState } from 'react'
 import { useRef } from 'react'
 import { Icons } from '@/assets/icons'
 import preview from '@/assets/preview'
+import { apps } from '@/components/common/constant'
+
 const Component = React.forwardRef((props, ref) => (
   <Image {...props} ref={ref} alt="App" />
 ))
 
 const MotionComponent = motion(Component)
-
-const apps = [
-  {
-    id: 'carousel',
-    icon: Icons.doc_icon5,
-    name: 'Carousel',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/embla-carousel',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/carousel_ymyqq4.svg',
-  },
-  {
-    id: 'tabs',
-    icon: Icons.doc_icon4,
-    name: 'Tabs',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/tabs',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/tabs_hgujxo.svg',
-  },
-  {
-    id: 'faqs',
-    icon: Icons.doc_star,
-    name: 'Faqs',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/faqs',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/faqs_qubbig.svg',
-  },
-  {
-    id: 'grid',
-    icon: Icons.doc_icon3,
-    name: 'Grid',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/grid',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/grid_rbis5c.svg',
-  },
-  {
-    id: 'masking',
-    icon: Icons.doc_circle,
-    name: 'Masking',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/image-masking',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/image_masking_kbdo7a.svg',
-  },
-  {
-    id: 'mouseTrail',
-    icon: Icons.doc_rectangle,
-    name: 'MouseTrail',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/image-mousetrail',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/image_mousetrail_jt45al.svg',
-  },
-  {
-    id: 'sticky',
-    icon: Icons.doc_icon2,
-    name: 'Sticky',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/sticky-scroll',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/sticky_xao8zr.svg',
-  },
-  {
-    id: 'accordion',
-    icon: Icons.doc_triangle,
-    name: 'Accordion',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/image-accordions',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/gallerynew_x3apwx.svg',
-  },
-]
 
 function MagnifiedDocOneFile() {
   const mouseX = useMotionValue(Infinity)

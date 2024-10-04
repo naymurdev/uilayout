@@ -4,28 +4,6 @@ import Image from 'next/image'
 import { Heart } from 'lucide-react'
 import { CardArr } from '@/components/common/constant'
 import { motion } from 'framer-motion'
-const arr = [
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714374836/Group_1000002799_hsztyt.png',
-    title: 'Nike Air1',
-    color: '#202020',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714381938/nike_blue_d1v8uu.png',
-    title: 'Nike Air2',
-    color: '#23acfc',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714381938/nike_sky_blue_uuykzf.png',
-    title: 'Nike Air',
-    color: '#a3fcff',
-  },
-  {
-    img: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714381938/nike_brown_itibzt.png',
-    title: 'Nike Air',
-    color: '#A4636C',
-  },
-]
 
 function Card1() {
   const [selectedImage, setSelectedImage] = useState(CardArr[0].img)

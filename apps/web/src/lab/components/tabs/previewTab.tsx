@@ -86,7 +86,7 @@ function Tab() {
             <div className="w-full">
               <Image
                 src={
-                  'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/design_elbeas.png'
+                  'https://images.unsplash.com/photo-1506097425191-7ad538b29cef?q=80&w=1000&auto=format&fit=crop'
                 }
                 width={1000}
                 height={1000}
@@ -99,7 +99,7 @@ function Tab() {
             <div className="w-full">
               <Image
                 src={
-                  'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/collboration_frpdk8.png'
+                  'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop'
                 }
                 width={1000}
                 height={1000}
@@ -112,7 +112,7 @@ function Tab() {
             <div className="w-full">
               <Image
                 src={
-                  'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714806148/share_xxzjjp.png'
+                  'https://images.unsplash.com/photo-1665470909901-162912ec16f7?q=80&w=1000&auto=format&fit=crop'
                 }
                 width={1000}
                 height={1000}
@@ -125,7 +125,7 @@ function Tab() {
             <div className="w-full">
               <Image
                 src={
-                  'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714807584/publish_eah6oa.png'
+                  'https://images.unsplash.com/photo-1694022861804-840f61d1c452?q=80&w=1000&auto=format&fit=crop'
                 }
                 width={1000}
                 height={1000}

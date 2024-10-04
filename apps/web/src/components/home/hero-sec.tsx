@@ -19,6 +19,8 @@ import HomeImageMasking from './home-image-masking'
 import HomeSlider from './home-carousel'
 import { AnimatePresence } from 'framer-motion'
 import NewItemsLoading from './new-items-loading'
+import HomeClipPath from './home-clippath'
+import HomeMotionNumber from './home-motion-number'
 const homeComponents = [
   {
     id: 0,
@@ -118,6 +120,20 @@ const homeComponents = [
 
     componentSrc: <HomeSlider />,
     className: ' col-span-12',
+  },
+  {
+    id: 15,
+    link: '/components/clip-path-image',
+
+    componentSrc: <HomeClipPath />,
+    className: ' col-span-8',
+  },
+  {
+    id: 16,
+    link: '/components/clip-path-image',
+
+    componentSrc: <HomeMotionNumber />,
+    className: ' col-span-4',
   },
 ]
 

@@ -1,9 +1,6 @@
-//@ts-nocheck
-
+// @ts-nocheck
 'use client'
 
-import { Icons } from '@/assets/icons'
-import preview from '@/assets/preview'
 import {
   Tooltip,
   TooltipContent,
@@ -22,80 +19,13 @@ import {
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { useRef } from 'react'
+import { apps } from '../common/constant'
 
 const Component = React.forwardRef((props, ref) => (
   <Image {...props} ref={ref} alt="App" />
 ))
 
 const MotionComponent = motion(Component)
-
-const apps = [
-  {
-    id: 'carousel',
-    icon: Icons.doc_icon5,
-    name: 'Carousel',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/carousel_ymyqq4.svg',
-  },
-  {
-    id: 'tabs',
-    icon: Icons.doc_icon4,
-    name: 'Tabs',
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/tabs_hgujxo.svg',
-  },
-  {
-    id: 'faqs',
-    icon: Icons.doc_star,
-    name: 'Faqs',
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/faqs_qubbig.svg',
-  },
-  {
-    id: 'grid',
-    icon: Icons.doc_icon3,
-    name: 'Grid',
-    imgSrc: 'https://res.cloudinary.com/dzl9yxixg/image/upload/grid_rbis5c.svg',
-  },
-  {
-    id: 'masking',
-    icon: Icons.doc_circle,
-    name: 'Masking',
-    onClick: () =>
-      window.open(
-        'https://www.ui-layout.com/components/magnified-doc',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/image_masking_kbdo7a.svg',
-  },
-  {
-    id: 'mouseTrail',
-    icon: Icons.doc_rectangle,
-    name: 'MouseTrail',
-    onClick: () =>
-      window.open(
-        'https://naymur-rahman.com/',
-        '_blank',
-        'noopener,noreferrer'
-      ),
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/image_mousetrail_jt45al.svg',
-  },
-  {
-    id: 'sticky',
-    icon: Icons.doc_icon2,
-    name: 'Sticky',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/sticky_xao8zr.svg',
-  },
-  {
-    id: 'gallery',
-    icon: Icons.doc_triangle,
-    name: 'Gallery',
-    imgSrc:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/gallerynew_x3apwx.svg',
-  },
-]
 
 function HomeMagnifiedDocOneFile() {
   const mouseX = useMotionValue(Infinity)

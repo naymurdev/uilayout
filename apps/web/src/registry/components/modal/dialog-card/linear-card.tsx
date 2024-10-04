@@ -1,3 +1,4 @@
+import preview from '@/assets/preview'
 import {
   Dialog,
   DialogTrigger,
@@ -14,7 +15,7 @@ import { Plus } from 'lucide-react'
 const items = [
   {
     id: 1,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/gallerynew_x3apwx.svg',
+    url: preview.galleryNew,
     title: 'Accordion',
     description:
       'Immerse yourself in our cutting-edge interactive gallery, designed to showcase a diverse array of visual content with unparalleled clarity and style. This feature allows users to effortlessly navigate through high-resolution images, from awe-inspiring landscapes to intimate portraits and abstract art. With smooth transitions, intuitive controls, and responsive design, our gallery adapts to any device, ensuring a seamless browsing experience. Dive deeper into each piece with expandable information panels, offering insights into the artist, technique, and story behind each image. ',
@@ -22,14 +23,14 @@ const items = [
   },
   {
     id: 2,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/sparkles_ko7fz4.svg',
+    url: preview.globe,
     title: 'Globe Section',
     description: `Embark on a virtual journey around the world with our state-of-the-art 3D globe feature. This interactive marvel allows users to explore geographical data, global trends, and worldwide connections with unprecedented ease and detail. Spin the globe with a flick of your mouse, zoom into street-level views, or soar high for a continental perspective. Our globe section integrates real-time data feeds, showcasing everything from climate patterns and population densities to economic indicators and cultural hotspots. Customizable layers let you focus on specific data sets, while intuitive tooltips provide in-depth information at every turn. `,
     tags: ['Misty', 'Path', 'Mysterious', 'Serene', 'Rugged'],
   },
   {
     id: 3,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/image_mousetrail_jt45al.svg',
+    url: preview.mousetrail,
     title: 'Image Mouse Trail',
     description: `Transform your browsing experience with our mesmerizing Image Mouse Trail feature. As you move your cursor across the screen, watch in wonder as a trail of carefully curated images follows in its wake, creating a dynamic and engaging visual spectacle. This innovative feature goes beyond mere aesthetics; it's an interactive showcase of your content, products, or artwork. Each image in the trail can be clickable, leading to detailed views or related content, turning casual mouse movements into opportunities for discovery.`,
     tags: ['Pathway', 'Adventure', 'Peaks', 'Challenging', 'Breathtaking'],
