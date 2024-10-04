@@ -15,7 +15,7 @@ function index() {
         <figure className="w-full h-62 rounded-md  overflow-hidden">
           <Image
             src={
-              'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715161797/pexels-pixabay-259637_lpt4le.jpg'
+              'https://images.unsplash.com/photo-1565759732117-a48f0bedbbfd?q=80&w=1000&auto=format&fit=crop'
             }
             alt="shoes"
             width={600}

@@ -16,7 +16,7 @@ function StripeCard() {
           ></div>
           <Image
             src={
-              'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715685361/distrokings_vihqpy.jpg'
+              'https://images.unsplash.com/photo-1723551642244-9bbec50da0ad?q=80&w=800&auto=format&fit=crop'
             }
             alt="shoes"
             width={600}

@@ -4,7 +4,7 @@ import React from 'react'
 const items = [
   {
     id: '1',
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/adrian_ibdgmu.png',
+    url: '/adrian.png',
     title: 'Adrian Paul',
     description: 'COO & Co-Founder',
     tags: ['Floral', 'Highlands', 'Wildflowers', 'Colorful', 'Resilience'],
@@ -12,14 +12,14 @@ const items = [
 
   {
     id: '2',
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/person-portrait_pwxyyj.jpg',
+    url: '/flualy.jpg',
     title: 'Flualy Cual',
     description: 'Founder & CEO',
     tags: ['Twilight', 'Peaks', 'Silhouette', 'Evening Sky', 'Peaceful'],
   },
   {
     id: '3',
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/naymr_bmv5ac.png',
+    url: '/naymur.png',
     title: 'Naymur Rahman',
     description: 'CTO & Co-Founder',
     tags: ['Rocky', 'Ridges', 'Contrast', 'Adventure', 'Clouds'],

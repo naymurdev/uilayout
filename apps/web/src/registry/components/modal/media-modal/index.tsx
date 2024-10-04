@@ -6,12 +6,12 @@ export default function Dialog() {
       <div className="grid grid-cols-2 gap-2 h-full">
         <MediaModal
           imgSrc={
-            'https://res.cloudinary.com/dzl9yxixg/image/upload/v1714558602/two_cosolk.jpg'
+            'https://images.unsplash.com/photo-1726824766931-4bd8b59af37c?q=80&w=1000&auto=format&fit=cropD'
           }
         />
         <MediaModal
           videoSrc={
-            'https://res.cloudinary.com/dzl9yxixg/video/upload/v1715679908/nature_w14mmq.mp4'
+            'https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4'
           }
         />
       </div>

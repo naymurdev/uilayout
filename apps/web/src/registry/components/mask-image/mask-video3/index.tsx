@@ -19,7 +19,7 @@ function index() {
             className="w-full relative h-full object-cover  aspect-square "
           >
             <source
-              src="https://res.cloudinary.com/dzl9yxixg/video/upload/5039487-hd_1366_720_25fps_fagjxp.mp4"
+              src="https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4"
               type="video/mp4"
             />
           </video>

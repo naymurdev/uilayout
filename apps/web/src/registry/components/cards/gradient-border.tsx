@@ -10,7 +10,7 @@ function index() {
           <>
             <Image
               src={
-                'https://res.cloudinary.com/dzl9yxixg/image/upload/chat_se21ao.png'
+                'https://images.unsplash.com/photo-1726824766931-4bd8b59af37c?q=80&w=800&auto=format&fit=crop'
               }
               alt="grid"
               width={600}

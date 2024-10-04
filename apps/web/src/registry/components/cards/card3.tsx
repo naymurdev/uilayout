@@ -8,7 +8,7 @@ function index() {
         <div className="w-full rounded-md h-full overflow-hidden">
           <Image
             src={
-              'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715685361/distrokings_vihqpy.jpg'
+              'https://images.unsplash.com/photo-1726824766931-4bd8b59af37c?q=80&w=800&auto=format&fit=crop'
             }
             alt={'image'}
             height={600}

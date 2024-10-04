@@ -14,9 +14,7 @@ function index() {
       <div className="w-[400px] relative mt-4 h-[430px] group mx-auto dark:bg-black  bg-white dark:border-0 border rounded-md dark:text-white text-black flex flex-col">
         <div className="w-full  rounded-t-md h-[350px] group-hover:h-[410px] overflow-hidden transition-all duration-300">
           <Image
-            src={
-              'https://res.cloudinary.com/dzl9yxixg/image/upload/person-portrait_pwxyyj.jpg'
-            }
+            src={'/naymur.png'}
             alt="shoes"
             width={600}
             height={600}

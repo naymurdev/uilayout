@@ -26,14 +26,14 @@ function index() {
             <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out">
               <Image
                 className="group-hover:opacity-0 transition-opacity duration-500  object-cover"
-                src="https://res.cloudinary.com/dzl9yxixg/image/upload/simplechartt_sidydt_6468b0.png"
+                src="/simplechartt.webp"
                 width={350}
                 height={240}
                 alt="Card image 01"
               />
               <Image
                 className="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity  object-cover duration-300"
-                src="https://res.cloudinary.com/dzl9yxixg/image/upload/chartt_ulxwcj_9939d9.png"
+                src="/chartt.webp"
                 width={350}
                 height={240}
                 alt="Card image 01 displaying on hover"
@@ -62,14 +62,14 @@ function index() {
             <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out">
               <Image
                 className="group-hover:opacity-0 transition-opacity duration-500"
-                src="https://res.cloudinary.com/dzl9yxixg/image/upload/fullverificationtwo_fpi9eo.png"
+                src="/fullverificationtwo_fpi9eo.webp"
                 width={350}
                 height={240}
                 alt="Card image 01"
               />
               <Image
                 className="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                src="https://res.cloudinary.com/dzl9yxixg/image/upload/verification_iwnfmj.png"
+                src="/verification_iwnfmj.webp"
                 width={350}
                 height={240}
                 alt="Card image 01 displaying on hover"
@@ -98,14 +98,14 @@ function index() {
             <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out">
               <Image
                 className="group-hover:opacity-0 transition-opacity duration-500"
-                src="https://res.cloudinary.com/dzl9yxixg/image/upload/chat_zinhdw.png"
+                src="/chat_zinhdw.webp"
                 width={350}
                 height={240}
                 alt="Card image 01"
               />
               <Image
                 className="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                src="https://res.cloudinary.com/dzl9yxixg/image/upload/hide_chat_egk7h4.png"
+                src="/hide_chat_egk7h4.webp"
                 width={350}
                 height={240}
                 alt="Card image 01 displaying on hover"
