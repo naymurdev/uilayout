@@ -10,8 +10,7 @@ function index() {
             alt=""
             className="w-full h-full object-cover  aspect-square"
             style={{
-              maskImage:
-                "url('https://res.cloudinary.com/dzl9yxixg/image/upload/1801287_ir8xqm.svg')",
+              maskImage: "url('/cat.svg')",
               maskSize: 'contain',
               maskRepeat: 'no-repeat',
               maskPosition: 'center',
@@ -25,8 +24,7 @@ function index() {
             alt=""
             className="w-full h-full object-cover  aspect-square "
             style={{
-              maskImage:
-                "url('https://res.cloudinary.com/dzl9yxixg/image/upload/2103623_qi6mi8.svg')",
+              maskImage: "url('/panda.svg')",
               maskSize: 'contain',
               maskRepeat: 'no-repeat',
               maskPosition: 'center',

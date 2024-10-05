@@ -10,8 +10,7 @@ function index() {
             alt=""
             className="w-full h-full object-cover  aspect-square"
             style={{
-              maskImage:
-                "url('https://res.cloudinary.com/dzl9yxixg/image/upload/1991881_vrcp2n.svg')",
+              maskImage: "url('/splash-center.svg')",
               maskSize: 'contain',
               maskRepeat: 'no-repeat',
               maskPosition: 'center',

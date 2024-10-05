@@ -9,8 +9,7 @@ function index() {
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1523612192437-66de9804ac3c?q=80&w=2070&auto=format&fit=crop')",
-            maskImage:
-              "url('https://res.cloudinary.com/dzl9yxixg/image/upload/Vector_161_p0by1i.svg')",
+            maskImage: "url('/splash-center.svg')",
             maskSize: 'contain',
             maskRepeat: 'no-repeat',
             maskPosition: 'center',

@@ -6,7 +6,7 @@ function index() {
   return (
     <>
       <section className="grid md:grid-cols-3 gap-6 max-md:max-w-xs mx-auto">
-        <div className="group  bg-gradient-to-t from-[#242424] to-[#020202] hover:from-[#182135] hover:to-[#080808] relative before:absolute before:inset-0 before:bg-[url('https://res.cloudinary.com/dzl9yxixg/image/upload/noise_feat8r.png')] before:bg-[length:352px_382px] rounded-2xl border ">
+        <div className="group  bg-gradient-to-t from-[#242424] to-[#020202] hover:from-[#182135] hover:to-[#080808] relative before:absolute before:inset-0 before:bg-[url('/noise.gif')] before:opacity-5 before:bg-[length:352px_382px] rounded-2xl border ">
           <div className="relative">
             <div className="px-6 py-5">
               <div className="group-hover:bg-blue-400 bg-white transition-all duration-500 ease-in-out w-fit px-3 rounded-full text-sm py-1 text-black group-hover:text-white mb-1">
@@ -42,7 +42,7 @@ function index() {
             </div>
           </div>
         </div>
-        <div className="group  bg-gradient-to-t from-[#050a0a] to-[#051818] hover:from-[#05070a] hover:to-[#0b1a3b] relative before:absolute before:inset-0 before:bg-[url('https://res.cloudinary.com/dzl9yxixg/image/upload/noise_feat8r.png')] before:bg-[length:352px_382px] rounded-2xl border ">
+        <div className="group  bg-gradient-to-t from-[#050a0a] to-[#051818] hover:from-[#05070a] hover:to-[#0b1a3b] relative before:absolute before:inset-0 before:bg-[url('/noise.gif')] before:opacity-5 before:bg-[length:352px_382px] rounded-2xl border ">
           <div className="relative">
             <div className="px-6 py-5">
               <div className="bg-green-400 group-hover:bg-blue-600  transition-all duration-500 ease-in-out w-fit px-3 rounded-full text-sm py-1 text-white mb-1">
@@ -78,7 +78,7 @@ function index() {
             </div>
           </div>
         </div>
-        <div className="group  bg-gradient-to-t from-[#171c35] to-[#000000] hover:from-[#2b131e] hover:to-[#141414] relative before:absolute before:inset-0 before:bg-[url('https://res.cloudinary.com/dzl9yxixg/image/upload/noise_feat8r.png')] before:bg-[length:352px_382px] rounded-2xl border ">
+        <div className="group  bg-gradient-to-t from-[#171c35] to-[#000000] hover:from-[#2b131e] hover:to-[#141414] relative before:absolute before:inset-0 bbefore:bg-[url('/noise.gif')] before:opacity-5 before:bg-[length:352px_382px] rounded-2xl border ">
           <div className="relative">
             <div className="px-6 py-5">
               <div className="bg-blue-400 group-hover:bg-red-500 transition-all duration-500 ease-in-out w-fit px-3 rounded-full text-sm py-1 text-white mb-1">

@@ -10,8 +10,7 @@ function index() {
             muted
             loop
             style={{
-              maskImage:
-                "url('https://res.cloudinary.com/dzl9yxixg/image/upload/Vector_162_1_aj3hiz.svg')",
+              maskImage: "url('/hexagon.svg')",
               maskSize: 'contain',
               maskRepeat: 'no-repeat',
               maskPosition: 'center',
