@@ -104,9 +104,7 @@ export default function index() {
       <div className="flex justify-center">
         <figure className="h-96 w-96 relative">
           <Image
-            src={
-              'https://res.cloudinary.com/dzl9yxixg/image/upload/v1716475840/myself_k7b42e.png'
-            }
+            src={'/myself2.webp'}
             width={600}
             height={600}
             className="h-full w-full object-cover rounded-lg"
