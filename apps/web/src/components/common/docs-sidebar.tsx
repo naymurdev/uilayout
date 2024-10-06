@@ -165,8 +165,8 @@ export const MainComponents = [
     component: 'modal/drawer',
   },
   {
-    id: '/components/dialog-card',
-    name: 'Dialog Card',
+    id: '/components/linear-card',
+    name: 'Linear Card',
     component: 'modal/drawer',
   },
   {

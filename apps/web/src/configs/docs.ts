@@ -130,7 +130,7 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         { href: '/components/dialog', title: 'Dialog', items: [] },
-        { href: '/components/dialog-card', title: 'Linear Card', items: [] },
+        { href: '/components/linear-card', title: 'Linear Card', items: [] },
         { href: '/components/media-modal', title: 'Media Modal', items: [] },
         {
           href: '/components/responsive-drawer',
