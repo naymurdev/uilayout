@@ -2,28 +2,30 @@
 import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useMediaQuery } from '@/hooks/use-media-query'
-
 const tabs = [
   {
     title: 'How do UI components improve UX?',
+    id: 'improve',
     description:
       'UI components can improve UX by providing familiar, consistent interactions that make it easy for users to navigate and interact with an application.',
     imageUrl:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715662552/mobilew_dsqfkw.jpg',
+      'https://images.unsplash.com/photo-1709949908058-a08659bfa922?q=80&w=1200&auto=format',
   },
   {
     title: 'Important of UI component.',
+    id: 'important',
     description:
       'Some common challenges include maintaining consistency across different devices and screen sizes, ensuring compatibility with various browsers and assistive technologies, and balancing flexibility with ease of use.',
     imageUrl:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715662556/2149880598_j6lyue.jpg',
+      'https://images.unsplash.com/photo-1548192746-dd526f154ed9?q=80&w=1200&auto=format',
   },
   {
     title: 'Is UI and UX Same?',
+    id: 'same',
     description:
       '     Developers can ensure the responsiveness of UI components by using techniques such as fluid layouts, flexible grids, and media queries to adapt the components to different screen sizes and orientations.',
     imageUrl:
-      'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715662554/10631468_4491464_n68c8v.jpg',
+      'https://images.unsplash.com/photo-1693581176773-a5f2362209e6?q=80&w=1200&auto=format',
   },
 ]
 function index() {

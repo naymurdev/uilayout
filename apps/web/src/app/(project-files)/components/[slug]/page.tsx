@@ -74,6 +74,8 @@ const page = async ({ params }: PageProps) => {
     notFound()
   }
   const toc = await getTableOfContents(doc.body.raw)
+  console.log(toc, doc.body.raw)
+
   const isTocValid = Object.keys(toc).length !== 0
 
   // console.log(doc)
