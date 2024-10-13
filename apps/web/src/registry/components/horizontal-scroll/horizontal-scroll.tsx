@@ -7,6 +7,7 @@ import {
   useTransform,
 } from 'framer-motion'
 
+// * based on: https://gist.github.com/coleturner/34396fb826c12fbd88d6591173d178c2
 import { useEffect, useRef, useState } from 'react'
 import { throttle } from '../../../lib/utils'
 

@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --scrollbar-color: rgba(0, 0, 0, 0.3);
-}
-
-:root.dark {
-  --scrollbar-color: rgba(255, 255, 255, 0.3);
-}
-html {
-  -webkit-tap-highlight-color: transparent;
-  scrollbar-gutter: stable;
-  scrollbar-color: var(--scrollbar-color) transparent;
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
-}
 body {
   overflow-x: hidden;
 }
@@ -25,8 +11,17 @@ body {
   --text-mouse-y: '0px';
   --gradient-text-center: 'rgb(226,226,226)';
   --gradient-text-edge: 'rgba(0,9,12,0.1)';
+  --scrollbar-color: rgba(0, 0, 0, 0.3);
 }
-
+:root.dark {
+  --scrollbar-color: rgba(255, 255, 255, 0.3);
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-gutter: stable;
+  scrollbar-color: var(--scrollbar-color) transparent;
+  scrollbar-width: thin;
+}
 @layer utilities {
   .animated-text {
     background: radial-gradient(
