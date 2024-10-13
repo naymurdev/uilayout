@@ -1,20 +1,13 @@
 import React from 'react'
-import Image from 'next/image'
 import { Sparkles } from '@/components/sparkles'
 
 function index() {
   return (
     <>
-      <main className=" h-screen  w-full  overflow-hidden bg-black text-white ">
-        <section className="container mx-auto relative h-[90vh] mt-4 border border-white/10 w-full overflow-hidden rounded-2xl">
-          <Image
-            src="https://res.cloudinary.com/dzl9yxixg/image/upload/bg-image_inxjdx.png"
-            width={1000}
-            height={1000}
-            className="w-full h-full absolute top-0 left-0"
-            alt="bg-image"
-          />
-          <article className="grid gap-4 text-center relative z-10 pt-10">
+      <main className=" h-screen relative w-full  overflow-hidden bg-black text-white ">
+        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#7a7a7a2c_1px,transparent_1px),linear-gradient(to_bottom,#7a7a7a2c_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+        <section className=" relative h-[90vh] mt-4 w-full overflow-hidden rounded-2xl">
+          <article className="grid container mx-auto gap-4 text-center relative z-10 pt-10">
             <span className="inline-block xl:text-base text-sm border p-1 px-3 w-fit mx-auto rounded-full border-[#3273ff] bg-[#0f1c35]">
               Early Access
             </span>

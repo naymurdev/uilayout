@@ -19,7 +19,6 @@ import {
 } from 'lucide-react'
 import { SearchDialog } from './search-bar'
 import MobileHeader from './moibile-header'
-import GitHubButton from '@/registry/components/github-repo-btn'
 
 function Header() {
   const { setTheme } = useTheme()
