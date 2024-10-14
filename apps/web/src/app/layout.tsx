@@ -85,7 +85,7 @@ export default function RootLayout({
         <script
           defer
           src="https://cloud.umami.is/script.js"
-          data-website-id="eb45dc48-3c35-4288-99ea-8577ee6cb842"
+          data-website-id="f6725988-1a81-4c0d-ba04-aa02d4bc5640"
         ></script>
       ) : null}
       <body className={poppins.className}>
