@@ -6,7 +6,7 @@ export default function Dialog() {
       <div className="grid grid-cols-2 gap-2 h-full">
         <MediaModal
           imgSrc={
-            'https://images.unsplash.com/photo-1726824766931-4bd8b59af37c?q=80&w=1000&auto=format&fit=cropD'
+            'https://images.unsplash.com/photo-1726824766931-4bd8b59af37c?q=80&w=1000&auto=format&fit=crop'
           }
         />
         <MediaModal

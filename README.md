@@ -69,7 +69,6 @@ Visit all the [components](https://www.ui-layout.com/components).
 
 Visit [Labs](https://www.ui-layout.com/labs) to explore more experiments and ideas.
 
-
 ## 👤 Author (Naymur)
 
 - X: [@naymur_dev](https://x.com/naymur_dev)
