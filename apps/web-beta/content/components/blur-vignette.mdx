@@ -1,0 +1,158 @@
+export const metadata = {
+  title: 'Blur Vignette Effect',
+  description:
+    'Apple Vision Pro like Blur Effect, we can use it in images, video, card etc. lets make something great with this component',
+};
+
+> Read Docs to know more [Blur Vignette](https://expensive.toys/blog/blur-vignette)
+
+## Video
+
+<ComponentCodePreview name='blur-vignette-video' />
+
+## Card
+
+<ComponentCodePreview name='blur-vignette-img' isFitheight />
+
+## Image
+
+<ComponentCodePreview name='blur-vignette-card' isFitheight />
+
+## Usage
+
+```tsx blur-vignette.tsx
+import React, { createContext, useContext } from 'react';
+import { cn } from '@/lib/utils';
+interface BlurVignetteContextProps {
+  radius?: string;
+  inset?: string;
+  transitionLength?: string;
+  blur?: string;
+}
+
+const BlurVignetteContext = createContext<BlurVignetteContextProps>({
+  radius: '24px',
+  inset: '20px',
+  transitionLength: '44px',
+  blur: '6px',
+});
+
+export const useBlurVignetteContext = () => useContext(BlurVignetteContext);
+
+interface BlurVignetteProps {
+  classname?: string;
+  children: React.ReactNode;
+  radius?: string;
+  inset?: string;
+  transitionLength?: string;
+  blur?: string;
+  blurclassname?: string;
+}
+
+export const BlurVignette: React.FC<BlurVignetteProps> = ({
+  classname,
+  children,
+  radius = '24px',
+  inset = '20px',
+  transitionLength = '44px',
+  blur = '6px',
+}) => {
+  return (
+    <BlurVignetteContext.Provider
+      value={{ radius, inset, transitionLength, blur }}
+    >
+      <div
+        className={cn('relative aspect-square overflow-hidden', classname)}
+        style={{ borderRadius: radius }}
+      >
+        {children}
+      </div>
+    </BlurVignetteContext.Provider>
+  );
+};
+interface BlurVignetteArticleProps {
+  children?: React.ReactNode;
+  classname?: string;
+}
+
+export const BlurVignetteArticle: React.FC<BlurVignetteArticleProps> = ({
+  children,
+  classname,
+}) => {
+  const { radius, inset, transitionLength, blur } = useBlurVignetteContext();
+
+  return (
+    <div
+      className={cn(
+        'blur-vignette bottom-0 left-0 w-full h-full z-[1]',
+        classname
+      )}
+      style={
+        {
+          '--radius': radius,
+          '--inset': inset,
+          '--transition-length': transitionLength,
+          '--blur': blur,
+        } as React.CSSProperties
+      }
+    >
+      {children}
+    </div>
+  );
+};
+```
+
+```css globals.css
+@layer utilities {
+  .blur-vignette {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    -webkit-backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur));
+    --r: max(var(--transition-length), calc(var(--radius) - var(--inset)));
+    --corner-size: calc(var(--r) + var(--inset)) calc(var(--r) + var(--inset));
+    --corner-gradient: transparent 0px,
+      transparent calc(var(--r) - var(--transition-length)), black var(--r);
+    --fill-gradient: black, black var(--inset),
+      transparent calc(var(--inset) + var(--transition-length)),
+      transparent calc(100% - var(--transition-length) - var(--inset)),
+      black calc(100% - var(--inset));
+    --fill-narrow-size: calc(100% - (var(--inset) + var(--r)) * 2);
+    --fill-farther-position: calc(var(--inset) + var(--r));
+    -webkit-mask-image: linear-gradient(to right, var(--fill-gradient)),
+      linear-gradient(to bottom, var(--fill-gradient)),
+      radial-gradient(at bottom right, var(--corner-gradient)),
+      radial-gradient(at bottom left, var(--corner-gradient)),
+      radial-gradient(at top left, var(--corner-gradient)),
+      radial-gradient(at top right, var(--corner-gradient));
+    -webkit-mask-size:
+      100% var(--fill-narrow-size),
+      var(--fill-narrow-size) 100%,
+      var(--corner-size),
+      var(--corner-size),
+      var(--corner-size),
+      var(--corner-size);
+    -webkit-mask-position:
+      0 var(--fill-farther-position),
+      var(--fill-farther-position) 0,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%;
+    -webkit-mask-repeat: no-repeat;
+  }
+}
+```
+
+## Props
+
+| Prop               | Type              | Default | Description                                                  |
+| ------------------ | ----------------- | ------- | ------------------------------------------------------------ |
+| `classname`        | `string`          |         | Optional CSS class for styling the main vignette container.  |
+| `children`         | `React.ReactNode` |         | The content to display inside the vignette effect.           |
+| `radius`           | `string`          | `24px`  | The radius for the vignette effect.                          |
+| `inset`            | `string`          | `20px`  | The inset value for the vignette effect.                     |
+| `transitionLength` | `string`          | `44px`  | The length of the transition effect applied to the vignette. |
+| `blur`             | `string`          | `6px`   | The blur amount for the vignette effect.                     |
+| `blurclassname`    | `string`          |         | Optional CSS class for styling the blur effect container.    |

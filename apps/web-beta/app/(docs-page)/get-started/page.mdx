@@ -1,0 +1,65 @@
+export const metadata = {
+  title: 'Get Started',
+};
+
+<div className='mt-20'>
+  <h4 className='text-4xl font-semibold'>Introdcution</h4>
+</div>
+
+Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
+
+UI-LAYOUT is a collection of reusable components, each with a bunch of examples in different styles that can be used in various positions.
+**I wondered how users would enjoy the journey of scrolling through a website if they didn't feel there was something special about it.**
+
+##### Installation
+
+You must install `tailwindcss`. As most of our components use `framer-motion` install it too.
+
+```bash
+npm install framer-motion clsx tailwind-merge
+```
+
+Must Add it in the `utils.ts`:
+
+```tsx utils.tsx
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+use this hooks for mediaQueries:
+
+```tsx use-media-query.tsx
+import { useEffect, useState } from 'react';
+
+export function useMediaQuery(query: string) {
+  const [value, setValue] = useState(false);
+
+  useEffect(() => {
+    function onChange(event: MediaQueryListEvent) {
+      setValue(event.matches);
+    }
+
+    const result = matchMedia(query);
+    result.addEventListener('change', onChange);
+    setValue(result.matches);
+
+    return () => result.removeEventListener('change', onChange);
+  }, [query]);
+
+  return value;
+}
+```
+
+##### Motivation
+
+The main reason for **creating this component was to help myself.** I've been creating web pages for the last couple of years and love building websites that are reactive and user-friendly. Some components are really reusable for different websites, and I have to search through files to find the code and it's really annoying. So, I thought, what if I create something where all of my animations or components will be in one place?
+
+I gained hope and belief after seeing component libraries like https://ui.shadcn.com and https://ui.aceternity.com I want to give them credit for encouraging me to create free components library like this.
+
+I want to thank https://magicui.design and https://x.com/jakubkrehel for what they have done. When I first completed some components, I realized that I needed to make text animations. Then I discovered **MagicUI** already have done it, and they had a bunch of components that I wanted to create myself. So, thanks again! 🔥
+
+<div className='mb-4'></div>

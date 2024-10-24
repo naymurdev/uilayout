@@ -1,0 +1,364 @@
+export const metadata = {
+  title: 'Animated Tabs ',
+  description:
+    'Animated tabs using Framer Motion with a smoothly transitioning active background that animates from one tab to another',
+};
+
+<ComponentCodePreview name='maintabs' hasReTrigger isFitheight isNotCopy isTab>
+
+```tsx
+import React, { useState } from 'react';
+
+import Image from 'next/image';
+import { TabsBtn, TabsContent, TabsProvider } from '@/components/core/tab';
+
+function Tab() {
+  return (
+    <div className='border bg-white/10 dark:bg-black/40 backdrop-blur-sm rounded-md p-4  relative'>
+      <TabsProvider defaultValue={'design'}>
+        <div className='flex justify-center mt-2'>
+          <div className='flex items-center w-fit dark:bg-[#1d2025] bg-gray-200 p-1 dark:text-white text-black rounded-md border'>
+            <TabsBtn value='design'>
+              <span className='relative z-[2] uppercase'>design</span>
+            </TabsBtn>
+            <TabsBtn value='collaborate'>
+              <span className='relative z-[2] uppercase'>collaborate</span>
+            </TabsBtn>
+            <TabsBtn value='share'>
+              <span className='relative z-[2] uppercase'>share</span>
+            </TabsBtn>
+            <TabsBtn value='publish'>
+              <span className='relative z-[2] uppercase'>publish</span>
+            </TabsBtn>
+          </div>
+        </div>
+
+        <TabsContent value='design'>
+          <div className='w-full'>
+            <Image
+              src={
+                'https://images.unsplash.com/photo-1506097425191-7ad538b29cef?q=80&w=1000&auto=format&fit=crop'
+              }
+              width={1000}
+              height={1000}
+              alt='preview_img'
+              className='w-[850px] object-cover h-full mx-auto rounded-md'
+            />
+          </div>
+        </TabsContent>
+        <TabsContent value='collaborate'>
+          <div className='w-full'>
+            <Image
+              src={
+                'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop'
+              }
+              width={1000}
+              height={1000}
+              alt='preview_img'
+              className='w-[850px] object-cover h-full mx-auto rounded-md'
+            />
+          </div>
+        </TabsContent>
+        <TabsContent value='share'>
+          <div className='w-full'>
+            <Image
+              src={
+                'https://images.unsplash.com/photo-1665470909901-162912ec16f7?q=80&w=1000&auto=format&fit=crop'
+              }
+              width={1000}
+              height={1000}
+              alt='preview_img'
+              className='w-[850px] object-cover h-full mx-auto rounded-md'
+            />
+          </div>
+        </TabsContent>
+        <TabsContent value='publish'>
+          <div className='w-full'>
+            <Image
+              src={
+                'https://images.unsplash.com/photo-1694022861804-840f61d1c452?q=80&w=1000&auto=format&fit=crop'
+              }
+              width={1000}
+              height={1000}
+              alt='preview_img'
+              className='w-[850px] object-cover h-full mx-auto rounded-md'
+            />
+          </div>
+        </TabsContent>
+      </TabsProvider>
+    </div>
+  );
+}
+
+export default Tab;
+```
+
+</ComponentCodePreview>
+
+## Installation
+
+```bash
+npm install framer-motion
+```
+
+```tsx tab.tsx
+// @ts-nocheck
+'use client';
+
+import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  isValidElement,
+} from 'react';
+interface TabContextType {
+  activeTab: string;
+  setActiveTab: (value: string) => void;
+  wobbly: boolean;
+  hover: boolean;
+  defaultValue: string;
+  prevIndex: number;
+  setPrevIndex: (value: number) => void;
+  tabsOrder: string[];
+}
+const TabContext = createContext<TabContextType | undefined>(undefined);
+
+export const useTabs = () => {
+  const context = useContext(TabContext);
+  if (!context) {
+    throw new Error('useTabs must be used within a TabsProvider');
+  }
+  return context;
+};
+
+interface TabsProviderProps {
+  children: ReactNode;
+  defaultValue: string;
+  wobbly?: boolean;
+  hover?: boolean;
+}
+
+export const TabsProvider = ({
+  children,
+  defaultValue,
+  wobbly = true,
+  hover = false,
+}: TabsProviderProps) => {
+  const [activeTab, setActiveTab] = useState(defaultValue);
+  const [prevIndex, setPrevIndex] = useState(0);
+  const [tabsOrder, setTabsOrder] = useState<string[]>([]);
+  useEffect(() => {
+    const order: string[] = [];
+    children?.map((child) => {
+      if (isValidElement(child)) {
+        if (child.type === TabsContent) {
+          order.push(child.props.value);
+        }
+      }
+    });
+    setTabsOrder(order);
+  }, [children]);
+
+  return (
+    <TabContext.Provider
+      value={{
+        activeTab,
+        setActiveTab,
+        wobbly,
+        hover,
+        defaultValue,
+        setPrevIndex,
+        prevIndex,
+        tabsOrder,
+      }}
+    >
+      {children}
+    </TabContext.Provider>
+  );
+};
+
+export const TabsBtn = ({ children, className, value }: any) => {
+  const {
+    activeTab,
+    setPrevIndex,
+    setActiveTab,
+    defaultValue,
+    hover,
+    wobbly,
+    tabsOrder,
+  } = useTabs();
+
+  const handleClick = () => {
+    setPrevIndex(tabsOrder.indexOf(activeTab));
+    setActiveTab(value);
+  };
+
+  return (
+    <>
+      <>
+        <motion.div
+          className={cn(
+            `cursor-pointer sm:p-2 p-1 sm:px-4 px-2 rounded-md relative `,
+            className
+          )}
+          onFocus={() => {
+            hover && handleClick();
+          }}
+          onMouseEnter={() => {
+            hover && handleClick();
+          }}
+          onClick={handleClick}
+        >
+          {children}
+
+          {activeTab === value && (
+            <AnimatePresence mode='wait'>
+              <motion.div
+                transition={{
+                  layout: {
+                    duration: 0.2,
+                    ease: 'easeInOut',
+                    delay: 0.2,
+                  },
+                }}
+                layoutId={defaultValue}
+                className='absolute w-full h-full left-0 top-0 dark:bg-base-dark bg-white rounded-md  z-[1]'
+              />
+            </AnimatePresence>
+          )}
+
+          {wobbly ? (
+            <>
+              {activeTab === value && (
+                <AnimatePresence mode='wait'>
+                  <motion.div
+                    transition={{
+                      layout: {
+                        duration: 0.4,
+                        ease: 'easeInOut',
+                        delay: 0.04,
+                      },
+                    }}
+                    layoutId={defaultValue}
+                    className='absolute w-full h-full left-0 top-0 dark:bg-base-dark bg-white rounded-md  z-[1] tab-shadow'
+                  />
+                </AnimatePresence>
+              )}
+              {activeTab === value && (
+                <AnimatePresence mode='wait'>
+                  <motion.div
+                    transition={{
+                      layout: {
+                        duration: 0.4,
+                        ease: 'easeOut',
+                        delay: 0.2,
+                      },
+                    }}
+                    layoutId={`${defaultValue}b`}
+                    className='absolute w-full h-full left-0 top-0 dark:bg-base-dark bg-white rounded-md  z-[1] tab-shadow'
+                  />
+                </AnimatePresence>
+              )}
+            </>
+          ) : (
+            <></>
+          )}
+        </motion.div>
+      </>
+    </>
+  );
+};
+
+export const TabsContent = ({ children, className, value, yValue }: any) => {
+  const { activeTab, tabsOrder, prevIndex } = useTabs();
+  const isForward = tabsOrder.indexOf(activeTab) > prevIndex;
+  return (
+    <>
+      <AnimatePresence mode='popLayout'>
+        {activeTab === value && (
+          <motion.div
+            initial={{ opacity: 0, y: yValue ? (isForward ? 10 : -10) : 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: yValue ? (isForward ? -50 : 50) : 0 }}
+            transition={{
+              duration: 0.3,
+              ease: 'easeInOut',
+              delay: 0.5,
+            }}
+            className={cn(' p-2 px-4 rounded-md relative', className)}
+          >
+            {activeTab === value ? children : null}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+```
+
+```tsx base
+<TabsProvider defaultValue={'login'} wobbly={true}>
+  <div className='flex justify-center mt-2'>
+    <div className='flex items-center w-fit dark:bg-[#1a1c20] bg-gray-200 p-1 dark:text-white text-black rounded-md border'>
+      <TabsBtn value='login'>
+        <span className='relative z-[2] uppercase'>Login</span>
+      </TabsBtn>
+      <TabsBtn value='register'>
+        <span className='relative z-[2] uppercase'>Register</span>
+      </TabsBtn>
+    </div>
+  </div>
+
+  <TabsContent value='login'>
+    <div className='p-2 border'></div>
+  </TabsContent>
+  <TabsContent value='register'>
+    <div className='p-2 border'></div>
+  </TabsContent>
+</TabsProvider>
+```
+
+```tsx useMediaQuery.tsx
+import { useEffect, useState } from 'react';
+
+export function useMediaQuery(query: string) {
+  const [value, setValue] = useState(false);
+
+  useEffect(() => {
+    function onChange(event: MediaQueryListEvent) {
+      setValue(event.matches);
+    }
+
+    const result = matchMedia(query);
+    result.addEventListener('change', onChange);
+    setValue(result.matches);
+
+    return () => result.removeEventListener('change', onChange);
+  }, [query]);
+
+  return value;
+}
+```
+
+## Props
+
+| Prop         | Type      | Default | Description                                         |
+| ------------ | --------- | ------- | --------------------------------------------------- |
+| children     | ReactNode |         | The content to be rendered inside the TabsProvider. |
+| defaultValue | string    |         | The default value for the selected tab.             |
+| wobbly       | boolean   | `true`  | Whether the tabs should have a wobbly effect.       |
+| hover        | boolean   | `false` | Whether to enable hover effects on the tabs.        |
+
+## Example
+
+### Creative Tab
+
+<ComponentCodePreview name='creative-tab' hasReTrigger isFitheight />
+
+### Register Tab
+
+<ComponentCodePreview name='register-tab' hasReTrigger isFitheight />

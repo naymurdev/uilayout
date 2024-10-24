@@ -1,0 +1,1142 @@
+{
+  "dataArray": [
+    {
+      "name": "Default",
+      "componentArray": [
+        {
+          "componentName": "drag-items",
+          "filesrc": "components/drag/drag-items.tsx",
+          "iframeSrc": "live-components/drag-items",
+          "parentlink": "drag-items",
+          "parentName": "Drag Items",
+          "isNew": true
+        },
+        {
+          "componentName": "card-globe",
+          "iframelink": "card-globe",
+          "parentlink": "globe",
+          "parentName": "Globe"
+        },
+        {
+          "componentName": "card-globe2",
+          "iframelink": "card-globe2",
+          "parentlink": "globe",
+          "parentName": "Globe"
+        },
+        {
+          "componentName": "sparkles-globe",
+          "iframelink": "sparkles-globe",
+          "parentlink": "globe",
+          "parentName": "Globe"
+        },
+        {
+          "componentName": "animated-logo-footer",
+          "filesrc": "components/footers/footer1.tsx",
+          "iframeSrc": "live-components/animated-logo-footer",
+          "parentlink": "footers",
+          "parentName": "Footers"
+        },
+        {
+          "componentName": "hover-footer",
+          "iframeSrc": "live-components/hover-footer",
+          "filesrc": "components/footers/hover-footer.tsx",
+          "filesArray": [
+            {
+              "name": "index.tsx",
+              "filesrc": "registry/components/footers/hover-footer.tsx"
+            },
+            {
+              "name": "cursor-follow-text.tsx",
+              "filesrc": "components/core/cursor-follow-text.tsx"
+            }
+          ],
+          "parentlink": "footers",
+          "parentName": "Footers"
+        },
+        {
+          "componentName": "button-background-shine",
+          "filesrc": "components/button/btn-bg-shine.tsx",
+          "iframeSrc": "live-components/button-background-shine",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-background-spotlight",
+          "filesrc": "components/button/btn-bg-spotlight.tsx",
+          "iframeSrc": "live-components/button-background-spotlight",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-active",
+          "filesrc": "components/button/btn-hover-active.tsx",
+          "iframeSrc": "live-components/button-hover-active",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-2",
+          "filesrc": "components/button/btn-hover2.tsx",
+          "iframeSrc": "live-components/button-hover-2",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-3",
+          "filesrc": "components/button/btn-hover3.tsx",
+          "iframeSrc": "live-components/button-hover-3",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-4",
+          "filesrc": "components/button/btn-hover4.tsx",
+          "iframeSrc": "live-components/button-hover-4",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-5",
+          "filesrc": "components/button/btn-hover5.tsx",
+          "iframeSrc": "live-components/button-hover-5",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-6",
+          "filesrc": "components/button/btn-hover6.tsx",
+          "iframeSrc": "live-components/button-hover-6",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-7",
+          "filesrc": "components/button/btn-hover7.tsx",
+          "iframeSrc": "live-components/button-hover-7",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-8",
+          "filesrc": "components/button/btn-hover8.tsx",
+          "iframeSrc": "live-components/button-hover-8",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-9",
+          "filesrc": "components/button/btn-hover9.tsx",
+          "iframeSrc": "live-components/button-hover-9",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-10",
+          "filesrc": "components/button/btn-hover10.tsx",
+          "iframeSrc": "live-components/button-hover-10",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-11",
+          "filesrc": "components/button/btn-hover11.tsx",
+          "iframeSrc": "live-components/button-hover-11",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-12",
+          "filesrc": "components/button/btn-hover12.tsx",
+          "iframeSrc": "live-components/btn-hover12",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-13",
+          "filesrc": "components/button/btn-hover13.tsx",
+          "iframeSrc": "live-components/button-hover-13",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-hover-14",
+          "filesrc": "components/button/btn-hover14.tsx",
+          "iframeSrc": "live-components/button-hover-14",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "button-rotating-gradient",
+          "filesrc": "components/button/btn-rotating-bgGradient.tsx",
+          "iframeSrc": "live-components/btn-rotating-bgGradient",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "creative-button-1",
+          "filesrc": "components/button/creative-btn1.tsx",
+          "iframeSrc": "live-components/creative-button-1",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "creative-button-2",
+          "filesrc": "components/button/creative-btn2.tsx",
+          "iframeSrc": "live-components/creative-button-2",
+          "parentlink": "buttons",
+          "parentName": "Buttons"
+        },
+        {
+          "componentName": "noise-effect",
+          "filesrc": "components/noise-effect/section-noise.tsx",
+          "iframeSrc": "live-components/noise-effect",
+          "parentlink": "noise",
+          "parentName": "Noise"
+        }
+      ],
+      "type": "default "
+    },
+    {
+      "name": "Accordion",
+      "componentArray": [
+        {
+          "componentName": "grid-layout-accordion",
+          "filesrc": "components/accordion/gridlayout.tsx",
+          "iframeSrc": "live-components/grid-layout-accordion",
+          "parentlink": "accordion",
+          "parentName": "Accordion"
+        },
+        {
+          "componentName": "single-layout-accordion",
+          "filesrc": "components/accordion/singlelayout.tsx",
+          "iframeSrc": "live-components/grid-layout-accordion",
+          "parentlink": "accordion",
+          "parentName": "Accordion"
+        },
+        {
+          "componentName": "multi-layout-accordion",
+          "filesrc": "components/accordion/multilayout.tsx",
+          "iframeSrc": "live-components/grid-layout-accordion",
+          "parentlink": "accordion",
+          "parentName": "Accordion"
+        },
+        {
+          "componentName": "faq-accordion",
+          "filesrc": "components/accordion/faq.tsx",
+          "iframeSrc": "live-components/faq-accordion",
+          "parentlink": "faqs",
+          "parentName": "FAQs"
+        },
+        {
+          "componentName": "image-hover-accordion",
+          "filesrc": "components/accordion/image-hover.tsx",
+          "iframeSrc": "live-components/image-hover-accordion",
+          "parentlink": "image-accordions",
+          "parentName": "Image Accordions"
+        },
+        {
+          "componentName": "tailwind-image-accordion",
+          "filesrc": "components/accordion/tailwind-image-accordion.tsx",
+          "iframeSrc": "live-components/tailwind-image-accordion",
+          "parentlink": "image-accordions",
+          "parentName": "Image Accordions"
+        }
+      ],
+      "type": "accordion "
+    },
+    {
+      "name": "Sparkles",
+      "componentArray": [
+        {
+          "componentName": "sparkles-globe",
+          "iframelink": "sparkles-globe",
+          "parentlink": "sparkles",
+          "parentName": "Sparkles"
+        },
+        {
+          "componentName": "sparkles-section",
+          "iframelink": "sparkles-section",
+          "parentlink": "sparkles",
+          "parentName": "Sparkles"
+        },
+        {
+          "componentName": "sparkles-branding",
+          "iframelink": "sparkles-branding",
+          "parentlink": "sparkles",
+          "parentName": "Sparkles"
+        },
+        {
+          "componentName": "sparkles-title",
+          "iframelink": "sparkles-title",
+          "parentlink": "sparkles-title",
+          "parentName": "Sparkles Title"
+        },
+        {
+          "componentName": "sparkles-title2",
+          "iframelink": "sparkles-title2",
+          "parentlink": "sparkles-title",
+          "parentName": "Sparkles Title"
+        },
+        {
+          "componentName": "sparkles-title2",
+          "iframelink": "sparkles-title2",
+          "parentlink": "sparkles-title",
+          "parentName": "Sparkles Title"
+        },
+        {
+          "componentName": "sparkles-title3",
+          "iframelink": "sparkles-title3",
+          "parentlink": "sparkles-title",
+          "parentName": "Sparkles Title"
+        },
+        {
+          "componentName": "sparkles-title4",
+          "iframelink": "sparkles-title4",
+          "parentlink": "sparkles-title",
+          "parentName": "Sparkles Title"
+        }
+      ],
+      "type": "sparkles "
+    },
+    {
+      "name": "Carousel ",
+      "componentArray": [
+        {
+          "componentName": "default-slider",
+          "filesrc": "components/carousel/default-slider.tsx",
+          "iframeSrc": "live-components/default-slider",
+          "parentlink": "carousel",
+          "parentName": "Carousel"
+        },
+        {
+          "componentName": "align-slider",
+          "filesrc": "components/carousel/align-slider.tsx",
+          "iframeSrc": "live-components/align-slider",
+          "parentlink": "carousel",
+          "parentName": "Carousel"
+        },
+        {
+          "componentName": "classname-slider",
+          "filesrc": "components/carousel/classname-slider.tsx",
+          "iframeSrc": "live-components/classname-slider",
+          "parentlink": "carousel",
+          "parentName": "Carousel"
+        },
+        {
+          "componentName": "number-slider",
+          "filesrc": "components/carousel/number-slider.tsx",
+          "iframeSrc": "live-components/number-slider",
+          "parentlink": "carousel",
+          "parentName": "Carousel"
+        },
+        {
+          "componentName": "scale-slider",
+          "filesrc": "components/carousel/scale-slider.tsx",
+          "iframeSrc": "live-components/scale-slider",
+          "parentlink": "carousel",
+          "parentName": "Carousel"
+        },
+        {
+          "componentName": "thumbnail-slider",
+          "filesrc": "components/carousel/thumnail-slider.tsx",
+          "iframeSrc": "live-components/thumbnail-slider",
+          "parentlink": "carousel",
+          "parentName": "Carousel"
+        },
+        {
+          "componentName": "autostart-slider",
+          "filesrc": "components/carousel/autostart-slider.tsx",
+          "iframeSrc": "live-components/autostart-slider",
+          "parentlink": "carousel",
+          "parentName": "Carousel"
+        },
+        {
+          "componentName": "horizontal-progressive-carousel",
+          "filesrc": "components/carousel/horizontal-progressive.tsx",
+          "iframeSrc": "live-components/horizontal-progressive-carousel",
+          "parentlink": "progressive-carousel",
+          "parentName": "Progressive ",
+          "isNew": true
+        },
+        {
+          "componentName": "vertical-progressive-carousel",
+          "filesrc": "components/carousel/verticle-progressive.tsx",
+          "iframeSrc": "live-components/vertical-progressive-carousel",
+          "parentlink": "progressive-carousel",
+          "parentName": "Progressive ",
+          "isNew": true
+        },
+        {
+          "componentName": "framer-carousel-2",
+          "filesrc": "components/carousel/framer-carousel2.tsx",
+          "iframeSrc": "live-components/framer-carousel-2",
+          "parentlink": "framer-carousel",
+          "parentName": "Framer Carousel"
+        },
+        {
+          "componentName": "framer-carousel-1",
+          "filesrc": "components/carousel/framer-carousel1.tsx",
+          "iframeSrc": "live-components/framer-carousel-1",
+          "parentlink": "framer-carousel",
+          "parentName": "Framer Carousel"
+        }
+      ],
+      "type": "carousel "
+    },
+    {
+      "name": "Creative",
+      "componentArray": [
+        {
+          "componentName": "image-reveal",
+          "filesrc": "components/image-reveal/image-reveal.tsx",
+          "iframeSrc": "live-components/image-reveal",
+          "parentlink": "image-reveal",
+          "parentName": "Image Reveal"
+        },
+        {
+          "componentName": "image-reveal2",
+          "filesrc": "components/image-reveal/index.tsx",
+          "iframeSrc": "live-components/image-reveal2",
+          "parentlink": "image-reveal",
+          "parentName": "Image Reveal"
+        },
+        {
+          "componentName": "github-button",
+          "filesrc": "components/github-repo-btn/index.tsx",
+          "iframeSrc": "live-components/github-button",
+          "parentlink": "github-button",
+          "parentName": "Github Button"
+        },
+        {
+          "componentName": "blur-vignette-video",
+          "filesrc": "components/blurvignette/blurvignettevideo.tsx",
+          "iframeSrc": "live-components/blur-vignette-video",
+          "parentlink": "blur-vignette",
+          "parentName": "Blur Vignette"
+        },
+        {
+          "componentName": "blur-vignette-img",
+          "filesrc": "components/blurvignette/blurvignetteimg.tsx",
+          "iframeSrc": "live-components/blur-vignette-img",
+          "parentlink": "blur-vignette",
+          "parentName": "Blur Vignette"
+        },
+        {
+          "componentName": "blur-vignette-card",
+          "filesrc": "components/blurvignette/blurvignettecard.tsx",
+          "iframeSrc": "live-components/blur-vignette-card",
+          "parentlink": "blur-vignette",
+          "parentName": "Blur Vignette"
+        },
+        {
+          "componentName": "animated-beam-default",
+          "filesrc": "components/animated-beam/default.tsx",
+          "iframeSrc": "live-components/animated-beam-default",
+          "parentlink": "animated-beam",
+          "parentName": "Animated Beam"
+        },
+        {
+          "componentName": "animated-beam-bidirectional",
+          "filesrc": "components/animated-beam/bidirectional.tsx",
+          "iframeSrc": "live-components/animated-beam-bidirectional",
+          "parentlink": "animated-beam",
+          "parentName": "Animated Beam"
+        },
+        {
+          "componentName": "animated-beam-unidirectional",
+          "filesrc": "components/animated-beam/unidirectional.tsx",
+          "iframeSrc": "live-components/animated-beam-unidirectional",
+          "parentlink": "animated-beam",
+          "parentName": "Animated Beam"
+        },
+        {
+          "componentName": "animated-beam-multiple-input",
+          "filesrc": "components/animated-beam/multiple-input.tsx",
+          "iframeSrc": "live-components/animated-beam-multiple-input",
+          "parentlink": "animated-beam",
+          "parentName": "Animated Beam"
+        },
+        {
+          "componentName": "animated-beam-multiple-output",
+          "filesrc": "components/animated-beam/multiple-output.tsx",
+          "iframeSrc": "live-components/animated-beam-multiple-output",
+          "parentlink": "animated-beam",
+          "parentName": "Animated Beam"
+        },
+        {
+          "componentName": "bg-blocks-one",
+          "filesrc": "components/bg-blocks/blocksone.tsx",
+          "iframeSrc": "live-components/bg-blocks-one",
+          "parentlink": "blocks",
+          "parentName": "Blocks"
+        },
+        {
+          "componentName": "motion-number",
+          "filesrc": "components/motion-number/motion-number.tsx",
+          "iframeSrc": "live-components/motion-number",
+          "parentlink": "motion-number",
+          "parentName": "Motion Number"
+        },
+        {
+          "componentName": "motion-number-after",
+          "filesrc": "components/motion-number/motion-number-after.tsx",
+          "iframeSrc": "live-components/motion-number-after",
+          "parentlink": "motion-number",
+          "parentName": "Motion Number"
+        },
+        {
+          "componentName": "motion-number-before",
+          "filesrc": "components/motion-number/motion-number-before.tsx",
+          "iframeSrc": "live-components/motion-number-before",
+          "parentlink": "motion-number",
+          "parentName": "Motion Number"
+        },
+        {
+          "componentName": "motion-number-last",
+          "filesrc": "components/motion-number/motion-number-last.tsx",
+          "iframeSrc": "live-components/motion-number-last",
+          "parentlink": "motion-number",
+          "parentName": "Motion Number"
+        },
+        {
+          "componentName": "motion-number-first",
+          "filesrc": "components/motion-number/motion-number-start.tsx",
+          "iframeSrc": "live-components/motion-number-first",
+          "parentlink": "motion-number",
+          "parentName": "Motion Number"
+        },
+        {
+          "componentName": "image-mousetrail-default",
+          "filesrc": "components/mousetrail/default-mousetrail.tsx",
+          "iframeSrc": "live-components/image-mousetrail-default",
+          "parentlink": "image-mousetrail",
+          "parentName": "Image Mousetrail"
+        },
+        {
+          "componentName": "image-mousetrail-small",
+          "filesrc": "components/mousetrail/small-images.tsx",
+          "iframeSrc": "live-components/image-mousetrail-small",
+          "parentlink": "image-mousetrail",
+          "parentName": "Image Mousetrail"
+        },
+        {
+          "componentName": "image-mousetrail-disappear",
+          "filesrc": "components/mousetrail/disappear-images.tsx",
+          "iframeSrc": "live-components/image-mousetrail-disappear",
+          "parentlink": "image-mousetrail",
+          "parentName": "Image Mousetrail"
+        },
+        {
+          "componentName": "image-mousetrail-without-component",
+          "filesrc": "components/mousetrail/without-component-mousetrail.tsx",
+          "iframeSrc": "live-components/image-mousetrail-without-component",
+          "parentlink": "image-mousetrail",
+          "parentName": "Image Mousetrail"
+        }
+      ],
+      "type": "creative"
+    },
+
+    {
+      "name": "Modal/Drawer",
+      "componentArray": [
+        {
+          "componentName": "responsive-drawer",
+          "filesrc": "components/drawer/value-drawer.tsx",
+          "iframeSrc": "live-components/responsive-drawer",
+          "parentlink": "responsive-drawer",
+          "parentName": "Responsive Drawer"
+        },
+        {
+          "componentName": "responsive-header",
+          "filesrc": "components/drawer/header-drawer.tsx",
+          "iframeSrc": "live-components/responsive-header",
+          "parentlink": "responsive-header",
+          "parentName": "Responsive Header"
+        },
+        {
+          "componentName": "sidebar-drawer",
+          "filesrc": "components/drawer/sidebar-drawer.tsx",
+          "iframeSrc": "live-components/sidebar-drawer",
+          "parentlink": "responsive-sidebar",
+          "parentName": "Responsive Sidebar"
+        },
+        {
+          "componentName": "left-sidebar-drawer",
+          "filesrc": "components/drawer/left-sidebar-drawer.tsx",
+          "iframeSrc": "live-components/left-sidebar-drawer",
+          "parentlink": "responsive-sidebar",
+          "parentName": "Responsive Sidebar"
+        },
+
+        {
+          "componentName": "nested-drawer",
+          "filesrc": "components/drawer/nested-value-drawer.tsx",
+          "iframeSrc": "live-components/nested-drawer",
+          "parentlink": "nested-drawer",
+          "parentName": "Nested Drawer"
+        },
+        {
+          "componentName": "dialog",
+          "filesrc": "components/modal/dialog-default.tsx",
+          "iframeSrc": "live-components/dialog",
+          "parentlink": "dialog",
+          "parentName": "Dialog"
+        },
+        {
+          "componentName": "media-modal",
+          "filesrc": "components/modal/media-modal-default.tsx",
+          "iframeSrc": "live-components/media-modal",
+          "parentlink": "media-modal",
+          "parentName": "Media Modal"
+        },
+        {
+          "componentName": "imagemodalsl",
+          "filesrc": "components/modal/image-modals.tsx",
+          "iframeSrc": "live-components/imagemodalsl",
+          "parentlink": "media-modal",
+          "parentName": "Media Modal"
+        },
+        {
+          "componentName": "dialog-card-linear",
+          "filesrc": "components/modal/dialog-card/linear-card.tsx",
+          "iframeSrc": "live-components/dialog-card-linear",
+          "parentlink": "linear-card",
+          "parentName": "Linear Card"
+        },
+        {
+          "componentName": "gallery-modal-accordion",
+          "filesrc": "components/modal/gallery-modal/accordion-modal.tsx",
+          "iframeSrc": "live-components/gallery-modal-accordion",
+          "parentlink": "gallery-modal",
+          "parentName": "Gallery Modal"
+        },
+        {
+          "componentName": "gallery-modal-slider",
+          "filesrc": "components/modal/gallery-modal/modal-slider.tsx",
+          "iframeSrc": "live-components/gallery-modal-slider",
+          "parentlink": "gallery-modal",
+          "parentName": "Gallery Modal"
+        },
+        {
+          "componentName": "gallery-modal-unsplash",
+          "filesrc": "components/modal/gallery-modal/unsplash-modal.tsx",
+          "iframeSrc": "live-components/gallery-modal-unsplash",
+          "parentlink": "gallery-modal",
+          "parentName": "Gallery Modal"
+        }
+      ],
+      "type": "modal/drawer"
+    },
+    {
+      "name": "Animation",
+      "componentArray": [
+        {
+          "componentName": "scroll-element",
+          "filesrc": "components/scroll-animation/scroll-element.tsx",
+          "iframeSrc": "live-components/scroll-element",
+          "parentlink": "scroll-animation",
+          "parentName": "Scroll Animation"
+        },
+        {
+          "componentName": "repeat-scroll-element",
+          "filesrc": "components/scroll-animation/repeat-scroll.tsx",
+          "iframeSrc": "live-components/repeat-scroll-element",
+          "parentlink": "scroll-animation",
+          "parentName": "Scroll Animation"
+        },
+        {
+          "componentName": "text-scroll-element",
+          "filesrc": "components/scroll-animation/text-scroll.tsx",
+          "iframeSrc": "live-components/text-scroll-element",
+          "parentlink": "scroll-animation",
+          "parentName": "Scroll Animation"
+        },
+        {
+          "componentName": "timeline-animation",
+          "filesrc": "components/scroll-animation/timeline-animation.tsx",
+          "iframeSrc": "live-components/timeline-animation",
+          "parentlink": "timeline-animation",
+          "parentName": "Timeline Animation"
+        }
+      ],
+      "type": "animation"
+    },
+    {
+      "name": "Text Animation",
+      "componentArray": [
+        {
+          "componentName": "text-scroll-animation",
+          "filesrc": "components/text-animation/scroll-text-animation.tsx",
+          "iframeSrc": "live-components/text-scroll-animation",
+          "parentlink": "scroll-text",
+          "parentName": "Scroll Text"
+        },
+        {
+          "componentName": "scroll-text-marquee",
+          "filesrc": "components/text-animation/text-marque/animationone.tsx",
+          "iframeSrc": "live-components/scroll-text-marquee",
+          "parentlink": "text-marquee",
+          "parentName": "Text Marquee"
+        },
+        {
+          "componentName": "scroll-text-marquee2",
+          "filesrc": "components/text-animation/text-marque/animationtwo.tsx",
+          "iframeSrc": "live-components/scroll-text-marquee2",
+          "parentlink": "text-marquee",
+          "parentName": "Text Marquee"
+        },
+        {
+          "componentName": "randomized-text-unveil",
+          "filesrc": "components/text-animation/text-randomized/index.tsx",
+          "iframeSrc": "live-components/randomized-text-unveil",
+          "parentlink": "randomized-text-effect",
+          "parentName": "Randomized Text"
+        }
+      ],
+      "type": "text animation"
+    },
+    {
+      "name": "Scroll",
+      "componentArray": [
+        {
+          "componentName": "horizontalscroll",
+          "iframelink": "horizontal-scrolling-section",
+          "parentlink": "horizontal-scroll",
+          "parentName": "Horizontal Scroll"
+        },
+        {
+          "componentName": "stacking-card",
+          "iframelink": "stacking-card",
+          "parentlink": "stacking-card",
+          "parentName": "stacking-card"
+        },
+        {
+          "componentName": "css-card-stacking",
+          "iframelink": "css-stacking-details-card",
+          "parentlink": "stacking-card",
+          "parentName": "stacking-card"
+        },
+        {
+          "componentName": "css-image-stacking",
+          "iframelink": "css-stacking-card",
+          "parentlink": "stacking-card",
+          "parentName": "stacking-card"
+        },
+        {
+          "componentName": "smooth-scroll",
+          "iframelink": "smooth-scroll",
+          "parentlink": "smooth-scroll",
+          "parentName": "Smooth Scroll"
+        },
+        {
+          "componentName": "sticky-scroll-section",
+          "iframelink": "sticky-scroll-section",
+          "parentlink": "sticky-scroll",
+          "parentName": "Sticky Scroll"
+        },
+        {
+          "componentName": "sticky-gallery",
+          "iframelink": "sticky-gallery",
+          "parentlink": "sticky-scroll",
+          "parentName": "Sticky Scroll"
+        },
+        {
+          "componentName": "sticky-hero-section",
+          "iframelink": "sticky-hero-section",
+          "parentlink": "sticky-scroll",
+          "parentName": "Sticky Scroll"
+        },
+
+        {
+          "componentName": "framerhorizontalscroll",
+          "filesrc": "components/scroll-animation/framer-horizontal-scroll.tsx",
+          "iframeSrc": "live-components/framerhorizontalscroll",
+          "filesArray": [
+            {
+              "name": "index.tsx",
+              "filesrc": "registry/components/scroll-animation/framer-horizontal-scroll.tsx"
+            }
+          ],
+          "parentlink": "horizontal-scroll",
+          "parentName": "Horizontal Scroll"
+        }
+      ],
+      "type": "scroll"
+    },
+    {
+      "name": "Grid",
+      "componentArray": [
+        {
+          "componentName": "boxgrid",
+          "filesrc": "components/grid/box-grid.tsx",
+          "iframeSrc": "live-components/boxgrid",
+          "parentlink": "grid",
+          "parentName": "Grid"
+        },
+        {
+          "componentName": "conditionGrid",
+          "filesrc": "components/grid/condition-grid.tsx",
+          "iframeSrc": "live-components/conditionGrid",
+          "parentlink": "grid",
+          "parentName": "Grid"
+        },
+        {
+          "componentName": "normalGrid",
+          "filesrc": "components/grid/normal-grid.tsx",
+          "iframeSrc": "live-components/normalGrid",
+          "parentlink": "grid",
+          "parentName": "Grid"
+        },
+        {
+          "componentName": "unsplashGrid",
+          "filesrc": "components/grid/unsplash-grid.tsx",
+          "iframeSrc": "live-components/unsplashGrid",
+          "parentlink": "masonary-grid",
+          "parentName": "Masonary Grid"
+        }
+      ],
+      "type": "grid"
+    },
+    {
+      "name": "Marquee",
+      "componentArray": [
+        {
+          "componentName": "infintyband",
+          "filesrc": "components/marquee/infinity-band-scroll.tsx",
+          "iframeSrc": "live-components/infintyband",
+          "parentlink": "infinity-brand",
+          "parentName": "Infinity Brand"
+        },
+        {
+          "componentName": "default-marquee",
+          "filesrc": "components/marquee/default-marquee.tsx",
+          "iframeSrc": "live-components/default-marquee",
+          "parentlink": "marquee",
+          "parentName": "Marquee"
+        },
+        {
+          "componentName": "verticle-marquee",
+          "filesrc": "components/marquee/verticle-marquee.tsx",
+          "iframeSrc": "live-components/verticl-emarquee",
+          "parentlink": "marquee",
+          "parentName": "Marquee"
+        },
+        {
+          "componentName": "logos-marquee",
+          "filesrc": "components/marquee/verticle-marquee.tsx",
+          "iframeSrc": "live-components/logos-marquee",
+          "parentlink": "marquee",
+          "parentName": "Marquee"
+        },
+        {
+          "componentName": "3d-marquee",
+          "filesrc": "components/marquee/3d-marquee.tsx",
+          "iframeSrc": "live-components/3d-marquee",
+          "parentlink": "marquee",
+          "parentName": "Marquee"
+        }
+      ],
+      "type": "marquee"
+    },
+    {
+      "name": "Clip-Path",
+      "componentArray": [
+        {
+          "componentName": "creative-clippath",
+          "filesrc": "components/clip-path/clip-path-creative.tsx",
+          "iframeSrc": "live-components/creative-clippath",
+          "parentlink": "clip-path",
+          "parentName": "Clip Path"
+        },
+        {
+          "componentName": "corporate-clippath",
+          "filesrc": "components/clip-path/clip-path-corporate.tsx",
+          "iframeSrc": "live-components/corporate-clippath",
+          "parentlink": "clip-path",
+          "parentName": "Clip Path"
+        },
+        {
+          "componentName": "symbolic-clippath",
+          "filesrc": "components/clip-path/clip-path-symbolic.tsx",
+          "iframeSrc": "live-components/symbolic-clippath",
+          "parentlink": "clip-path",
+          "parentName": "Clip Path"
+        },
+        {
+          "componentName": "creative-mask-clippath",
+          "filesrc": "components/clip-path/clip-path-creative-mask.tsx",
+          "iframeSrc": "live-components/creative-mask-clippath",
+          "parentlink": "clip-path",
+          "parentName": "Clip Path"
+        },
+        {
+          "componentName": "watersplash-clippath",
+          "filesrc": "components/clip-path/clip-path-water-splash.tsx",
+          "iframeSrc": "live-components/watersplash-clippath",
+          "parentlink": "clip-path",
+          "parentName": "Clip Path"
+        },
+        {
+          "componentName": "creative-imagemasking",
+          "filesrc": "components/clip-path/creative-image-masking.tsx",
+          "iframeSrc": "live-components/creative-imagemasking",
+          "parentlink": "image-masking",
+          "parentName": "Image Masking"
+        },
+        {
+          "componentName": "animal-imagemasking",
+          "filesrc": "components/clip-path/animal-image-masking.tsx",
+          "iframeSrc": "live-components/animal-imagemasking",
+          "parentlink": "image-masking",
+          "parentName": "Image Masking"
+        },
+        {
+          "componentName": "watersplash-imagemasking",
+          "filesrc": "components/clip-path/water-splash-image-masking.tsx",
+          "iframeSrc": "live-components/watersplash-imagemasking",
+          "parentlink": "image-masking",
+          "parentName": "Image Masking"
+        },
+        {
+          "componentName": "center-imagemasking",
+          "filesrc": "components/clip-path/center-image-masking.tsx",
+          "iframeSrc": "live-components/center-imagemasking",
+          "parentlink": "image-masking",
+          "parentName": "Image Masking"
+        },
+        {
+          "componentName": "fixedbg-imagemasking",
+          "filesrc": "components/clip-path/fixed-bg-image-masking.tsx",
+          "iframeSrc": "live-components/fixedbg-imagemasking",
+          "parentlink": "image-masking",
+          "parentName": "Image Masking"
+        },
+        {
+          "componentName": "creative-videomasking",
+          "filesrc": "components/clip-path/creative-video-masking.tsx",
+          "iframeSrc": "live-components/creative-videomasking",
+          "parentlink": "video-masking",
+          "parentName": "Video Masking"
+        },
+        {
+          "componentName": "splashwater-videomasking",
+          "filesrc": "components/clip-path/splash-water-video-masking.tsx",
+          "iframeSrc": "live-components/splashwater-videomasking",
+          "parentlink": "video-masking",
+          "parentName": "Video Masking"
+        },
+        {
+          "componentName": "textoverlay-videomasking",
+          "filesrc": "components/clip-path/text-overlay-video-masking.tsx",
+          "iframeSrc": "live-components/textoverlay-videomasking",
+          "parentlink": "video-masking",
+          "parentName": "Video Masking"
+        },
+        {
+          "componentName": "hexagon-videomasking",
+          "filesrc": "components/clip-path/hexagon-video-masking.tsx",
+          "iframeSrc": "live-components/hexagon-videomasking",
+          "parentlink": "video-masking",
+          "parentName": "Video Masking"
+        },
+        {
+          "componentName": "hexagon2-videomasking",
+          "filesrc": "components/clip-path/hexagon2-video-masking.tsx",
+          "iframeSrc": "live-components/hexagon2-videomasking",
+          "parentlink": "video-masking",
+          "parentName": "Video Masking"
+        }
+      ],
+      "type": "clip-path"
+    },
+    {
+      "name": "Card",
+      "componentArray": [
+        {
+          "componentName": "gradient-border",
+          "filesrc": "components/card/gradient-border.tsx",
+          "iframeSrc": "live-components/gradient-border",
+          "parentlink": "gradient-border",
+          "parentName": "Gradient Border"
+        },
+        {
+          "componentName": "stripecard",
+          "filesrc": "components/card/stripe-card.tsx",
+          "iframeSrc": "live-components/stripecard",
+          "parentlink": "hover-cards",
+          "parentName": "Hover Cards"
+        },
+        {
+          "componentName": "stripecard2",
+          "filesrc": "components/card/stripe-card2.tsx",
+          "iframeSrc": "live-components/stripecard2",
+          "parentlink": "hover-cards",
+          "parentName": "Hover Cards"
+        },
+        {
+          "componentName": "hovercard4",
+          "filesrc": "components/card/hover-card4.tsx",
+          "iframeSrc": "live-components/hovercard4",
+          "parentlink": "hover-cards",
+          "parentName": "Hover Cards"
+        },
+        {
+          "componentName": "hovercard3",
+          "filesrc": "components/card/hover-card3.tsx",
+          "iframeSrc": "live-components/hovercard3",
+          "parentlink": "hover-cards",
+          "parentName": "Hover Cards"
+        },
+        {
+          "componentName": "hovercard2",
+          "filesrc": "components/card/hover-card2.tsx",
+          "iframeSrc": "live-components/hovercard2",
+          "parentlink": "hover-cards",
+          "parentName": "Hover Cards"
+        },
+        {
+          "componentName": "hovercard1",
+          "filesrc": "components/card/hover-card1.tsx",
+          "iframeSrc": "live-components/hovercard1",
+          "parentlink": "hover-cards",
+          "parentName": "Hover Cards"
+        },
+        {
+          "componentName": "cuip-card",
+          "filesrc": "components/card/cuip-card.tsx",
+          "iframeSrc": "live-components/cuip-card",
+          "parentlink": "hover-cards",
+          "parentName": "Hover Cards"
+        },
+        {
+          "componentName": "productcard1",
+          "filesrc": "components/card/product-card1.tsx",
+          "iframeSrc": "live-components/productcard1",
+          "parentlink": "product-cards",
+          "parentName": "Product Cards"
+        },
+        {
+          "componentName": "productcard2",
+          "filesrc": "components/card/product-card2.tsx",
+          "iframeSrc": "live-components/productcard2",
+          "parentlink": "product-cards",
+          "parentName": "Product Cards"
+        },
+        {
+          "componentName": "productcard3",
+          "filesrc": "components/card/product-card3.tsx",
+          "iframeSrc": "live-components/productcard3",
+          "parentlink": "product-cards",
+          "parentName": "Product Cards"
+        },
+        {
+          "componentName": "productcard4",
+          "filesrc": "components/card/product-card4.tsx",
+          "iframeSrc": "live-components/productcard4",
+          "parentlink": "product-cards",
+          "parentName": "Product Cards"
+        },
+        {
+          "componentName": "productcard5",
+          "filesrc": "components/card/product-card5.tsx",
+          "iframeSrc": "live-components/productcard5",
+          "parentlink": "product-cards",
+          "parentName": "Product Cards"
+        },
+        {
+          "componentName": "productcard6",
+          "filesrc": "components/card/product-card6.tsx",
+          "iframeSrc": "live-components/productcard6",
+          "parentlink": "product-cards",
+          "parentName": "Product Cards"
+        },
+
+        {
+          "componentName": "spotlight-card1",
+          "filesrc": "components/spotlight-cards/spotlight-card1.tsx",
+          "iframeSrc": "live-components/spotlight-card1",
+          "parentlink": "spotlight-cards",
+          "parentName": "Spotlight Cards"
+        },
+        {
+          "componentName": "spotlight-card2",
+          "filesrc": "components/spotlight-cards/spotlight-card2.tsx",
+          "iframeSrc": "live-components/spotlight-card2",
+          "parentlink": "spotlight-cards",
+          "parentName": "Spotlight Cards"
+        },
+        {
+          "componentName": "spotlight-card3",
+          "filesrc": "components/spotlight-cards/spotlight-card3.tsx",
+          "iframeSrc": "live-components/spotlight-card3",
+          "parentlink": "spotlight-cards",
+          "parentName": "Spotlight Cards"
+        },
+        {
+          "componentName": "spotlight-card4",
+          "filesrc": "components/spotlight-cards/spotlight-card4.tsx",
+          "iframeSrc": "live-components/spotlight-card4",
+          "parentlink": "spotlight-cards",
+          "parentName": "Spotlight Cards"
+        }
+      ],
+      "type": "card"
+    },
+    {
+      "name": "Tabs",
+      "componentArray": [
+        {
+          "componentName": "maintabs",
+          "filesrc": "components/tabs/preview-tab.tsx",
+          "iframeSrc": "live-components/maintabs",
+          "parentlink": "tabs",
+          "parentName": "Tabs"
+        },
+        {
+          "componentName": "creative-tab",
+          "filesrc": "components/tabs/home-tab.tsx",
+          "iframeSrc": "live-components/creative-tab",
+          "parentlink": "tabs",
+          "parentName": "Tabs"
+        },
+        {
+          "componentName": "register-tab",
+          "filesrc": "components/tabs/register-tab.tsx",
+          "iframeSrc": "live-components/register-tab",
+          "parentlink": "tabs",
+          "parentName": "Tabs"
+        },
+        {
+          "componentName": "magnified-tab",
+          "filesrc": "components/tabs/magnified-tabs.tsx",
+          "iframeSrc": "live-components/magnified-tab",
+          "parentlink": "magnified-doc",
+          "parentName": "Magnified Doc"
+        },
+        {
+          "componentName": "image-tab1",
+          "filesrc": "components/tabs/img-tabs1.tsx",
+          "iframeSrc": "live-components/image-tab1",
+          "parentlink": "image-tabs",
+          "parentName": "Image Tabs"
+        },
+        {
+          "componentName": "image-tab2",
+          "filesrc": "components/tabs/img-tabs2.tsx",
+          "iframeSrc": "live-components/image-tab2",
+          "parentlink": "image-tabs",
+          "parentName": "Image Tabs"
+        },
+        {
+          "componentName": "image-tab3",
+          "filesrc": "components/tabs/img-tabs3.tsx",
+          "iframeSrc": "live-components/image-tab3",
+          "parentlink": "image-tabs",
+          "parentName": "Image Tabs"
+        }
+      ],
+      "type": "tab"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --scrollbar-color: rgba(0, 0, 0, 0.3);
+}
+
+:root.dark {
+  --scrollbar-color: rgba(255, 255, 255, 0.3);
+}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --codebg: #f1f1f1f0;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --ch-0: light;
+    --ch-1: #6e7781;
+    --ch-2: #0550ae;
+    --ch-3: #953800;
+    --ch-4: #24292f;
+    --ch-5: #8250df;
+    --ch-6: #116329;
+    --ch-7: #cf222e;
+    --ch-8: #0a3069;
+    --ch-9: #82071e;
+    --ch-10: #f6f8fa;
+    --ch-11: #ffebe9;
+    --ch-12: #dafbe1;
+    --ch-13: #ffd8b5;
+    --ch-14: #eaeef2;
+    --ch-15: #57606a;
+    --ch-16: #ffffff;
+    --ch-17: #eaeef280;
+    --ch-18: #fdff0033;
+    --ch-19: #1a85ff;
+    --ch-20: #add6ff;
+    --ch-21: #0969da;
+    --ch-22: #f8fafc;
+    --ch-23: #d1d5db;
+    --ch-24: #8c959f;
+    --ch-25: #afb8c133;
+    --ch-26: #ffffffe6;
+  }
+
+  .dark {
+    --background: 228 86% 5%;
+    --foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --radius: 0.5rem;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --codebg: #04080cdc;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --ch-0: dark;
+    --ch-1: #a1a1aa;
+    --ch-2: #7dd3fc;
+    --ch-3: #fb923c;
+    --ch-4: #cbd5e1;
+    --ch-5: #d8b4fe;
+    --ch-6: #86efac;
+    --ch-7: #f87171;
+    --ch-8: #93c5fd;
+    --ch-9: #fca5a5;
+    --ch-10: #eff6ff;
+    --ch-11: #450a0a;
+    --ch-12: #052e16;
+    --ch-13: #451a03;
+    --ch-14: #111827;
+    --ch-15: #a1a1aa;
+    --ch-16: #0a0a0a;
+    --ch-17: #6b72801a;
+    --ch-18: #ffffff0b;
+    --ch-19: #3b82f6;
+    --ch-20: #155e75;
+    --ch-21: #2563eb;
+    --ch-22: #171717;
+    --ch-23: #404040;
+    --ch-24: #6b7280;
+    --ch-25: #6b728066;
+    --ch-26: #171717e6;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+@layer utilities {
+  .blur-vignette {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    -webkit-backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur));
+    --r: max(var(--transition-length), calc(var(--radius) - var(--inset)));
+    --corner-size: calc(var(--r) + var(--inset)) calc(var(--r) + var(--inset));
+    --corner-gradient: transparent 0px,
+      transparent calc(var(--r) - var(--transition-length)), black var(--r);
+    --fill-gradient: black, black var(--inset),
+      transparent calc(var(--inset) + var(--transition-length)),
+      transparent calc(100% - var(--transition-length) - var(--inset)),
+      black calc(100% - var(--inset));
+    --fill-narrow-size: calc(100% - (var(--inset) + var(--r)) * 2);
+    --fill-farther-position: calc(var(--inset) + var(--r));
+    -webkit-mask-image: linear-gradient(to right, var(--fill-gradient)),
+      linear-gradient(to bottom, var(--fill-gradient)),
+      radial-gradient(at bottom right, var(--corner-gradient)),
+      radial-gradient(at bottom left, var(--corner-gradient)),
+      radial-gradient(at top left, var(--corner-gradient)),
+      radial-gradient(at top right, var(--corner-gradient));
+    -webkit-mask-size:
+      100% var(--fill-narrow-size),
+      var(--fill-narrow-size) 100%,
+      var(--corner-size),
+      var(--corner-size),
+      var(--corner-size),
+      var(--corner-size);
+    -webkit-mask-position:
+      0 var(--fill-farther-position),
+      var(--fill-farther-position) 0,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%;
+    -webkit-mask-repeat: no-repeat;
+  }
+  .animated-text {
+    background: radial-gradient(
+      circle at var(--text-mouse-x) var(--text-mouse-y),
+      var(--gradient-text-center) 0%,
+      var(--gradient-text-edge) 40%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-gutter: stable;
+  scrollbar-color: var(--scrollbar-color) transparent;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  font-size: 1em;
+}
+/* pre > * {
+} */
+/* fix radix dropdown-menu layout shift */
+html body[data-scroll-locked] {
+  margin-right: 0 !important;
+}
+tbody {
+  width: 100%;
+}
+
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}

@@ -1,0 +1,49 @@
+export const metadata = {
+  title: 'Footer',
+  description:
+    'An animated footer with scrolling and mousemove effects, enhancing visual engagement with user interactions',
+};
+
+## Animated Logo
+
+<ComponentCodePreview name='animated-logo-footer' hasReTrigger responsive>
+
+##### Installation
+
+```bash
+npm install framer-motion
+```
+
+</ComponentCodePreview>
+
+## Hover Footer
+
+<ComponentCodePreview name='hover-footer' responsive  isTab>
+
+<TabCodePreview name='hover-footer' >
+
+```css globals.css
+@layer utilities {
+  .animated-text {
+    background: radial-gradient(
+      circle at var(--text-mouse-x) var(--text-mouse-y),
+      var(--gradient-text-center) 0%,
+      var(--gradient-text-edge) 40%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+```
+
+</TabCodePreview>
+
+##### Installation
+
+```bash
+npm install framer-motion
+```
+
+</ComponentCodePreview>

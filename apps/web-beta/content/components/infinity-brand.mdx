@@ -1,0 +1,25 @@
+export const metadata = {
+  title: 'CSS Infinity Brand',
+  description: 'Tailwindcss Infinity Brand Scroll Effect',
+};
+
+<ComponentCodePreview name='infintyband' hasReTrigger isFitheight />
+Add the following animations to your `tailwind.config.js` file:
+
+```jsx
+tailwind.config = {
+  theme: {
+    extend: {
+      animation: {
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+      },
+    },
+  },
+};
+```

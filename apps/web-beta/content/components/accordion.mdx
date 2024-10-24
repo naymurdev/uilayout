@@ -1,0 +1,216 @@
+export const metadata = {
+  title: 'Accordion',
+  description:
+    'Visually highlights selected items by sliding a background into view when hovered over or clicked. This smooth transition helps users focus on the active item, making it ideal for interactive lists, menus, or navigations where clear selection feedback is important.',
+};
+
+<ComponentCodePreview name='grid-layout-accordion' hasReTrigger responsive>
+
+</ComponentCodePreview>
+
+## Installation
+
+```bash
+npm install framer-motion
+```
+
+```tsx accordion.tsx
+// @ts-nocheck
+import React, { ReactNode } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+const AccordionContext = React.createContext({});
+const useAccordion = () => React.useContext(AccordionContext);
+
+export function AccordionContainer({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={cn('grid grid-cols-2 gap-1', className)}>{children}</div>
+  );
+}
+export function AccordionWrapper({ children }) {
+  return <div>{children}</div>;
+}
+
+export function Accordion({
+  children,
+  multiple,
+  defaultValue,
+}: {
+  children: ReactNode;
+  multiple?: boolean;
+  defaultValue?: string | undefined | string[];
+}) {
+  const [activeIndex, setActiveIndex] = React.useState(
+    multiple ? (defaultValue ? [defaultValue] : []) : [defaultValue]
+  );
+
+  function onChangeIndex(value) {
+    setActiveIndex((currentActiveIndex) => {
+      if (!multiple) {
+        return value === currentActiveIndex ? null : value;
+      }
+
+      if (currentActiveIndex.includes(value)) {
+        return currentActiveIndex.filter((i) => i !== value);
+      }
+
+      return [...currentActiveIndex, value];
+    });
+  }
+
+  return React.Children.map(children, (child) => {
+    const value = child.props.value;
+    const isActive = multiple
+      ? Array.isArray(activeIndex) && activeIndex.includes(value)
+      : Array.isArray(activeIndex)
+        ? activeIndex[0].includes(value)
+        : activeIndex === value;
+
+    return (
+      <AccordionContext.Provider value={{ isActive, value, onChangeIndex }}>
+        <>{child}</>
+      </AccordionContext.Provider>
+    );
+  });
+}
+
+export function AccordionItem({ children, value }) {
+  const { isActive } = useAccordion();
+
+  return (
+    <div
+      className={`rounded-lg overflow-hidden mb-2  ${
+        isActive
+          ? 'active border-2 dark:border-[#656fe2]  border-[#F2F2F2] dark:bg-[#E0ECFB] bg-[#F2F2F2]'
+          : 'bg-transparent border-2 dark:hover:border-[#656fe2]'
+      }
+    `}
+      value={value}
+    >
+      {children}
+    </div>
+  );
+}
+
+export function AccordionHeader({
+  children,
+  icon,
+}: {
+  children: ReactNode;
+  icon?: any;
+}) {
+  const { isActive, value, onChangeIndex } = useAccordion();
+
+  return (
+    <motion.div
+      className={`p-4 cursor-pointer transition-all font-semibold    dark:text-white text-black dark:hover:bg-[#1e2a78] hover:bg-[#F2F2F2] dark:hover:text-white hover:text-black flex justify-between items-center ${
+        isActive
+          ? 'active  dark:bg-[#1e2a78] bg-[#F2F2F2] '
+          : 'dark:bg-[#11112b] bg-white'
+      }
+      `}
+      onClick={() => onChangeIndex(value)}
+    >
+      {children}
+      {icon ? (
+        <div
+          className={`${
+            isActive ? 'rotate-45 ' : 'rotate-0 '
+          } transition-transform`}
+        >
+          {icon}
+        </div>
+      ) : (
+        <>
+          <ChevronDown
+            className={`${
+              isActive ? 'rotate-180 ' : 'rotate-0 '
+            } transition-transform`}
+          />
+        </>
+      )}
+    </motion.div>
+  );
+}
+
+export function AccordionPanel({ children }) {
+  const { isActive } = useAccordion();
+
+  return (
+    <AnimatePresence initial={true}>
+      {isActive && (
+        <motion.div
+          initial={{ height: 0, overflow: 'hidden' }}
+          animate={{ height: 'auto', overflow: 'hidden' }}
+          exit={{ height: 0 }}
+          transition={{ type: 'spring', duration: 0.3, bounce: 0 }}
+          className={`dark:bg-white bg-[#F2F2F2]
+          `}
+        >
+          <motion.article
+            initial={{ clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' }}
+            animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
+            exit={{
+              clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+            }}
+            transition={{
+              type: 'spring',
+              duration: 0.4,
+              bounce: 0,
+            }}
+            className={`p-3 bg-transparent text-black `}
+          >
+            {children}
+          </motion.article>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+```
+
+## Structure
+
+```tsx
+<Accordion defaultValue={['item-1']} multiple>
+  <AccordionItem value='item-1'>
+    <AccordionHeader icon={<Plus />}></AccordionHeader>
+    <AccordionPanel></AccordionPanel>
+  </AccordionItem>
+  <AccordionItem value='item-2'>
+    <AccordionHeader icon={<Plus />}></AccordionHeader>
+    <AccordionPanel></AccordionPanel>
+  </AccordionItem>
+  <AccordionItem value='item-3'>
+    <AccordionHeader icon={<Plus />}></AccordionHeader>
+    <AccordionPanel></AccordionPanel>
+  </AccordionItem>
+</Accordion>
+```
+
+## Props
+
+| Prop         | Type        | Default   | Description                                                               |
+| ------------ | ----------- | --------- | ------------------------------------------------------------------------- |
+| defaultValue | string      | string[]  | undefined                                                                 |
+| multiple     | boolean     | false     | Whether the accordion allows multiple items to be active at the same time |
+| children     | ReactNode[] | undefined | The accordion items, including their headers and panels                   |
+| className    | string      | ''        | Optional CSS class for styling the accordion wrapper                      |
+
+## Example
+
+### Single Layout
+
+<ComponentCodePreview name='single-layout-accordion' />
+
+### Multi Layout
+
+<ComponentCodePreview name='multi-layout-accordion' />

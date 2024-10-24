@@ -1,0 +1,34 @@
+export const metadata = {
+  title: 'Sportlight Cards',
+  description:
+    'A gradient border with rounded corners applied to any div or text, enhancing content with a colorful, stylish edge',
+};
+
+<ComponentCodePreview name='gradient-border' hasReTrigger />
+
+## Usage
+
+```css global.css
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
+```
+
+```ts tailwind.config.ts
+tailwind.config = {
+  theme: {
+    extend: {
+      animation: {
+        border: 'border 4s linear infinite',
+      },
+      keyframes: {
+        border: {
+          to: { '--border-angle': '360deg' },
+        },
+      },
+    },
+  },
+};
+```
