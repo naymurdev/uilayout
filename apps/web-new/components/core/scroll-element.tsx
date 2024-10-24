@@ -5,44 +5,37 @@ import {
   motion,
   HTMLMotionProps,
   SVGMotionProps,
-  ForwardRefComponent,
-  Variant,
-  useAnimation,
+  TargetAndTransition,
 } from 'framer-motion';
 import React from 'react';
+
 type Direction = 'up' | 'down' | 'left' | 'right';
 
-const generateVariants = (
-  direction: Direction
-): { hidden: Variant; visible: Variant } => {
+const generateVariants = (direction: Direction) => {
   const axis = direction === 'left' || direction === 'right' ? 'x' : 'y';
   const value = direction === 'right' || direction === 'down' ? 100 : -100;
 
-  return {
-    hidden: { filter: 'blur(10px)', opacity: 0, [axis]: value },
-    visible: {
-      filter: 'blur(0px)',
-      opacity: 1,
-      [axis]: 0,
-      transition: {
-        duration: 0.5,
-        ease: 'easeOut',
-      },
+  const hidden: TargetAndTransition = {
+    opacity: 0,
+    filter: 'blur(10px)',
+  };
+  hidden[axis] = value;
+
+  const visible: TargetAndTransition = {
+    opacity: 1,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
     },
   };
+  visible[axis] = 0;
+
+  return {
+    hidden,
+    visible,
+  };
 };
-// const  n = {
-//   hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
-//   visible: {
-//     filter: 'blur(0px)',
-//     opacity: 1,
-//     y: 0,
-//     duration: 2,
-//     transition: {
-//       delay: 0, // Adjust delay here
-//     },
-//   },
-// }
 
 const defaultViewport = { amount: 0.3, margin: '0px 0px -200px 0px' };
 type MotionComponentProps = HTMLMotionProps<any> & SVGMotionProps<any>;
@@ -51,8 +44,8 @@ interface ScrollElementProps extends Omit<MotionComponentProps, 'children'> {
   children: React.ReactNode;
   className?: string;
   variants?: {
-    hidden?: any;
-    visible?: any;
+    hidden: TargetAndTransition;
+    visible: TargetAndTransition;
   };
   viewport?: {
     amount?: number;
@@ -68,18 +61,19 @@ function ScrollElement({
   className,
   variants,
   viewport = defaultViewport,
-  delay = 0, // Default delay is 0
+  delay = 0,
   direction = 'down',
   ...rest
 }: ScrollElementProps) {
   const baseVariants = variants || generateVariants(direction);
+
   const modifiedVariants = {
     hidden: baseVariants.hidden,
     visible: {
       ...baseVariants.visible,
       transition: {
-        ...baseVariants.visible.transition,
-        delay, // Apply custom delay here
+        ...(baseVariants.visible?.transition || {}),
+        delay,
       },
     },
   };
@@ -97,4 +91,5 @@ function ScrollElement({
     </motion.div>
   );
 }
+
 export default ScrollElement;
