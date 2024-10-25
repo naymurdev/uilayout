@@ -1,6 +1,6 @@
 'use client';
 import { useTheme } from 'next-themes';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import {
@@ -17,6 +17,7 @@ import {
   MoonIcon,
   Sun,
   SunIcon,
+  X,
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
@@ -77,13 +78,27 @@ const components: { title: string; href: string; description: string }[] = [
 function HomeHeader() {
   const { setTheme } = useTheme();
   const { addVisitedPage, getRecentPages } = useRecentPagesStore();
-
+  const [removeAlert, setRemoveAlert] = useState(false);
   const recentPages = getRecentPages();
 
   return (
     <>
-      <header className=' dark:bg-base-dark/20 bg-white/40 w-full fixed z-20 top-0 left-0 border-b-[1px] border-border py-3 backdrop-blur-lg'>
-        <div className=' xl:container px-4 sm:px-6 lg:px-8 relative mx-auto flex justify-between items-center'>
+      <header className=' dark:bg-base-dark/20 bg-white/40 w-full fixed z-20 top-0 left-0 border-b-[1px] border-border  backdrop-blur-lg'>
+        {!removeAlert && (
+          <div className='w-full p-1  text-center bg-primary text-background text-sm flex items-center justify-center gap-2'>
+            <span>
+              ✨Just updated the UI layout! Please clear your local storage for
+              the best experience.
+            </span>
+            <button
+              className='bg-primary-foreground text-primary p-1 rounded-md'
+              onClick={() => setRemoveAlert(true)}
+            >
+              <X />
+            </button>
+          </div>
+        )}
+        <div className=' xl:container px-4 sm:px-6 lg:px-8 relative mx-auto flex justify-between items-center py-3'>
           <MobileHeader classname='xl:hidden block' />
           <Link href='/'>
             {/* <Image src="/logo.png" alt="logo" width={35} height={35} /> */}

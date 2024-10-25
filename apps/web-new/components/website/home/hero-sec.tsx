@@ -205,19 +205,19 @@ function HeroSec() {
             tailwindcss, framer-motion, gsap etc
           </p>
           <div className='flex gap-2 justify-center items-center'>
-            <a
+            <Link
               href='/components'
               className='flex items-center gap-2 w-fit  text-white bg-gradient-to-l from-[#6175f8]  to-[#334cec] border sm:px-4 px-2 rounded-sm py-2 '
             >
               Browse Component
               <MoveRight />
-            </a>
-            <a href='/get-started' className='sm:inline-block hidden'>
+            </Link>
+            <Link href='/get-started' className='sm:inline-block hidden'>
               <Button className=' rounded-full px-4'>
                 Get Started
                 <ChevronsRight />
               </Button>
-            </a>
+            </Link>
           </div>
         </article>
 
