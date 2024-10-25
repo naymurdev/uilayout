@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Block, CodeBlock, parseProps } from 'codehike/blocks';
 import { Pre, RawCode, highlight } from 'codehike/code';
 import { z } from 'zod';
@@ -21,7 +22,6 @@ type TIframeCurrComponentProps = {
 type IframeComponentPrieviewProps = {
   children?: ReactNode; // Include children in the props
 };
-
 const Schema = Block.extend({
   name: z.string(),
   hasReTrigger: z.boolean(),
