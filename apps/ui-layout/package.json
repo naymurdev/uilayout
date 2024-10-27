@@ -15,7 +15,7 @@
     "@mdx-js/react": "^3.0.1",
     "@motionone/utils": "^10.18.0",
     "@next/mdx": "^14.2.4",
-    "@number-flow/react": "^0.2.0",
+    "@number-flow/react": "^0.2.5",
     "@prisma/client": "^5.19.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
     "@radix-ui/react-dialog": "^1.1.1",

@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic';
 import { cn } from '@/lib/utils';
 
 // Dynamically import MotionNumber with SSR disabled
-const MotionNumber = dynamic(() => import('motion-number'), { ssr: false });
+// const MotionNumber = dynamic(() => import('motion-number'), { ssr: false });
+import NumberFlow, { useCanAnimate } from '@number-flow/react';
 interface NumberFormat extends Intl.NumberFormatOptions {}
 interface MotionNumberProps {
   value: number;
@@ -56,7 +57,7 @@ const NumberShuffle: React.FC<NumberShuffleProps> = ({
   const renderOption = (option, defaultContent = null) => {
     if (option && typeof option === 'object') {
       return (
-        <MotionNumber
+        <NumberFlow
           value={option.value}
           format={option.format || {}}
           className={option.className || ''}
@@ -64,7 +65,7 @@ const NumberShuffle: React.FC<NumberShuffleProps> = ({
           transition={option.transition || {}}
         >
           {option.content}
-        </MotionNumber>
+        </NumberFlow>
       );
     }
     return defaultContent;
@@ -73,7 +74,7 @@ const NumberShuffle: React.FC<NumberShuffleProps> = ({
   return (
     <div className='w-fit grid place-content-center mx-auto space-y-4 py-10'>
       <div>
-        <MotionNumber
+        <NumberFlow
           value={currentValue}
           format={format}
           className={cn('text-6xl dark:text-white text-black', clasname)}

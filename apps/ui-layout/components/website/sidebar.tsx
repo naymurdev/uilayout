@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ScrollArea } from '@/components/website/ui/scroll-area';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Component, Rocket, X } from 'lucide-react';
+import { Atom, Component, Rocket, X } from 'lucide-react';
 import { IRecentPage, useRecentPagesStore } from '@/hooks/useZustStore';
 import docsData from '@/configs/docs.json' assert { type: 'json' };
 import { useTheme } from 'next-themes';
@@ -26,6 +26,11 @@ export const basePath = [
     href: '/components',
     name: 'Components',
     icon: <Component />,
+  },
+  {
+    href: '/labs',
+    name: 'Labs',
+    icon: <Atom />,
   },
 ];
 

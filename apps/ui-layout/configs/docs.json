@@ -471,37 +471,47 @@
           "parentName": "Blocks"
         },
         {
+          "componentName": "motion-number-input",
+          "filesrc": "components/number-flow/motion-number-input.tsx",
+          "iframeSrc": "live-components/motion-number-input",
+
+          "parentlink": "motion-number",
+          "parentName": "Motion Number"
+        },
+        {
+          "componentName": "number-flow-trading",
+          "filesrc": "components/number-flow/number-flow-trading.tsx",
+          "iframeSrc": "live-components/motion-number-trading",
+          "filesArray": [
+            {
+              "name": "index.tsx",
+              "filesrc": "registry/components/number-flow/number-flow-trading.tsx"
+            }
+          ],
+          "parentlink": "motion-number",
+          "parentName": "Motion Number"
+        },
+        {
+          "componentName": "motion-number-slider",
+          "filesrc": "components/number-flow/motion-number-slider.tsx",
+          "filesArray": [
+            {
+              "name": "index.tsx",
+              "filesrc": "registry/components/number-flow/motion-number-slider.tsx"
+            },
+            {
+              "name": "slider.tsx",
+              "filesrc": "components/website/ui/slider.tsx"
+            }
+          ],
+          "iframeSrc": "live-components/motion-number-slider",
+          "parentlink": "motion-number",
+          "parentName": "Motion Number"
+        },
+        {
           "componentName": "motion-number",
-          "filesrc": "components/motion-number/motion-number.tsx",
+          "filesrc": "components/number-flow/motion-number.tsx",
           "iframeSrc": "live-components/motion-number",
-          "parentlink": "motion-number",
-          "parentName": "Motion Number"
-        },
-        {
-          "componentName": "motion-number-after",
-          "filesrc": "components/motion-number/motion-number-after.tsx",
-          "iframeSrc": "live-components/motion-number-after",
-          "parentlink": "motion-number",
-          "parentName": "Motion Number"
-        },
-        {
-          "componentName": "motion-number-before",
-          "filesrc": "components/motion-number/motion-number-before.tsx",
-          "iframeSrc": "live-components/motion-number-before",
-          "parentlink": "motion-number",
-          "parentName": "Motion Number"
-        },
-        {
-          "componentName": "motion-number-last",
-          "filesrc": "components/motion-number/motion-number-last.tsx",
-          "iframeSrc": "live-components/motion-number-last",
-          "parentlink": "motion-number",
-          "parentName": "Motion Number"
-        },
-        {
-          "componentName": "motion-number-first",
-          "filesrc": "components/motion-number/motion-number-start.tsx",
-          "iframeSrc": "live-components/motion-number-first",
           "parentlink": "motion-number",
           "parentName": "Motion Number"
         },

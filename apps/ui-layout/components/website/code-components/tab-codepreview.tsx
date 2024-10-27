@@ -91,7 +91,7 @@ export default function TabCodePreview({ children }: CodePreviewProps) {
   return (
     <>
       <Tabs
-        defaultValue={`${updatedCodes[0].props.componentname}-${updatedCodes[0].props.filename}`}
+        defaultValue={`${updatedCodes[0]?.props.componentname}-${updatedCodes[0]?.props.filename}`}
         className='w-full relative mt-1 mb-4'
       >
         <TabsList className='mb-0  bg-muted px-0.5'>

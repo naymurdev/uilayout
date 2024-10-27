@@ -826,49 +826,68 @@ export const AllComponents = [
   },
   {
     parentlink: 'motion-number',
-    componentName: 'motion-number',
-    tags: ['animation', 'number-animation', 'counter', 'motion-effect'],
+    componentName: 'motion-number-input',
+    tags: [
+      'animation',
+      'number-animation',
+      'input',
+      'input animation',
+      'motion number input',
+      'number-flow',
+      'number flow',
+    ],
     componentSrc: React.lazy(
-      () => import('@/registry/components/motion-number/motion-number')
+      () => import('@/registry/components/number-flow/motion-number-input')
+    ),
+    iframeSrc: 'live-components/motion-input',
+  },
+  {
+    parentlink: 'motion-number',
+    componentName: 'motion-number-trading',
+    tags: [
+      'animation',
+      'number-increment',
+      'counter',
+      'trading',
+      'motion number trading',
+      'post-effect',
+    ],
+    componentSrc: React.lazy(
+      () => import('@/registry/components/number-flow/number-flow-trading')
+    ),
+    iframeSrc: 'live-components/motion-number-trading',
+  },
+  {
+    parentlink: 'motion-number',
+    componentName: 'motion-number-slider',
+    tags: [
+      'animation',
+      'shadcn slider',
+      'animated slider tag',
+      'motion number slider',
+      'number-sequence',
+    ],
+    componentSrc: React.lazy(
+      () => import('@/registry/components/number-flow/motion-number-slider')
+    ),
+    iframeSrc: 'live-components/motion-number-slider',
+  },
+  {
+    parentlink: 'motion-number',
+    componentName: 'motion-number',
+    tags: [
+      'animation',
+      'shadcn slider',
+      'animated slider tag',
+      'motion number slider',
+      'number-sequence',
+    ],
+    componentSrc: React.lazy(
+      () => import('@/registry/components/number-flow/motion-number')
     ),
     iframeSrc: 'live-components/motion-number',
   },
-  {
-    parentlink: 'motion-number',
-    componentName: 'motion-number-after',
-    tags: ['animation', 'number-increment', 'counter', 'post-effect'],
-    componentSrc: React.lazy(
-      () => import('@/registry/components/motion-number/motion-number-after')
-    ),
-    iframeSrc: 'live-components/motion-number-after',
-  },
-  {
-    parentlink: 'motion-number',
-    componentName: 'motion-number-before',
-    tags: ['animation', 'pre-effect', 'counter', 'number-sequence'],
-    componentSrc: React.lazy(
-      () => import('@/registry/components/motion-number/motion-number-before')
-    ),
-    iframeSrc: 'live-components/motion-number-before',
-  },
-  {
-    parentlink: 'motion-number',
-    componentName: 'motion-number-last',
-    tags: ['animation', 'number-end', 'counter', 'final-step'],
-    componentSrc: React.lazy(
-      () => import('@/registry/components/motion-number/motion-number-last')
-    ),
-    iframeSrc: 'live-components/motion-number-last',
-  },
-  {
-    parentlink: 'motion-number',
-    componentName: 'motion-number-first',
-    tags: ['animation', 'start', 'initial-number', 'motion-counter'],
-    componentSrc: React.lazy(
-      () => import('@/registry/components/motion-number/motion-number-start')
-    ),
-    iframeSrc: 'live-components/motion-number-first',
-  },
+
   {
     parentlink: 'image-mousetrail',
     componentName: 'image-mousetrail-default',
