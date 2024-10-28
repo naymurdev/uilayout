@@ -40,6 +40,20 @@ export const MainComponents = [
     component: 'creative',
   },
   {
+    href: '/components/animated-slider',
+    name: 'Slider',
+
+    new: true,
+    component: 'Input',
+  },
+  {
+    href: '/components/phone-input',
+    name: 'Phone Input',
+    new: true,
+    component: 'Input',
+  },
+
+  {
     href: '/components/clip-path',
     name: 'Clip-Path ',
     new: true,

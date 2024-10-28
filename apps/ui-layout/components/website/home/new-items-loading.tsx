@@ -14,6 +14,10 @@ const newComponent = [
     href: '/components/image-ripple-effect',
     title: 'Image Ripple Effect',
   },
+  {
+    href: '/components/animated-slider',
+    title: 'Range Slider',
+  },
 ];
 
 function NewItemsLoading() {

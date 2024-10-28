@@ -264,6 +264,40 @@
       "type": "accordion "
     },
     {
+      "name": "Form",
+      "componentArray": [
+        {
+          "componentName": "phone-input",
+          "filesrc": "components/form/phone-number/index.tsx",
+          "iframeSrc": "live-components/phone-input",
+          "parentlink": "phone-input",
+          "parentName": "Phone Input"
+        },
+        {
+          "componentName": "dual-range-slider",
+          "filesrc": "components/form/slider/dual-range-slider.tsx",
+          "iframeSrc": "live-components/dual-range-slider",
+          "parentlink": "slider",
+          "parentName": "Slider"
+        },
+        {
+          "componentName": "static-range-slider",
+          "filesrc": "components/form/slider/static-range-slider.tsx",
+          "iframeSrc": "live-components/static-range-slider",
+          "parentlink": "slider",
+          "parentName": "Slider"
+        },
+        {
+          "componentName": "position-range-slider",
+          "filesrc": "components/form/slider/position-range-slider.tsx",
+          "iframeSrc": "live-components/position-range-slider",
+          "parentlink": "slider",
+          "parentName": "Slider"
+        }
+      ],
+      "type": "form "
+    },
+    {
       "name": "Sparkles",
       "componentArray": [
         {
@@ -520,7 +554,7 @@
             },
             {
               "name": "slider.tsx",
-              "filesrc": "components/website/ui/slider.tsx"
+              "filesrc": "components/core/slider.tsx"
             }
           ],
           "iframeSrc": "live-components/motion-number-slider",
