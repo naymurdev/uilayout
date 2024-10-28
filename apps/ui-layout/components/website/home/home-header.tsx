@@ -167,13 +167,7 @@ function HomeHeader() {
             </div>
 
             <SearchDialog />
-            {/* <a
-              target="_blank"
-              href="https://github.com/naymurdev/uilayout"
-              className="border w-10  place-content-center rounded-md sm:hidden grid bg-primary text-primary-foreground"
-            >
-              <Github />
-            </a> */}
+
             <GitHubButton />
             <a
               target='_blank'

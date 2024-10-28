@@ -54,7 +54,7 @@ function Header() {
           <MobileHeader classname='lg:hidden block' />
 
           <div className='flex gap-2 '>
-            <SearchDialog />
+            <SearchDialog classname='sm:w-52 md:w-72' />
             <button
               className={`sm:flex hidden flex-shrink-0 items-center space-x-2 group  px-2 rounded-md bg-primary text-primary-foreground border`}
               onClick={() =>

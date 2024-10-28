@@ -10,10 +10,14 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",
+    "@johnn-e/react-mesh-gradient": "^1.1.1",
     "@react-spring/web": "^9.7.3",
+    "@react-three/drei": "^9.115.0",
+    "@react-three/fiber": "^8.17.10",
     "@repo/ui": "workspace:*",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.4.0",
+    "@types/three": "^0.169.0",
     "clsx": "^2.1.0",
     "cobe": "^0.6.3",
     "framer-motion": "^11.0.23",
@@ -21,10 +25,12 @@
     "lucide-react": "^0.344.0",
     "motion": "^10.18.0",
     "next": "^14.0.4",
+    "nice-color-palettes": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.1.0",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.1",
+    "three": "^0.169.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.4",

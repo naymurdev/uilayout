@@ -6,14 +6,14 @@ const newComponent = [
     href: '/labs',
     title: 'LABS',
   },
-  // {
-  //   href: '/components/motion-number',
-  //   title: 'Motion Number',
-  // },
-  // {
-  //   href: '/components/gradient-button',
-  //   title: 'Gradient Button',
-  // },
+  {
+    href: '/components/bg-mesh-gradient',
+    title: 'BG Mesh Gradient',
+  },
+  {
+    href: '/components/image-ripple-effect',
+    title: 'Image Ripple Effect',
+  },
 ];
 
 function NewItemsLoading() {

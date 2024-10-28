@@ -15,6 +15,7 @@ import {
   TabsTrigger,
 } from '@/components/website/ui/tabs';
 import IframeTabCodePreview from './components/website/code-components/iframe-tab-codepreview';
+import { HoverContainer, Link } from './components/website/constant';
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
@@ -38,6 +39,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     }: React.ComponentProps<typeof TabsContent>) => (
       <TabsContent className={cn('', className)} {...props} />
     ),
+    HoverContainer: HoverContainer,
     IframeTabCodePreview: IframeTabCodePreview,
     TabCodePreview: TabCodePreview,
     DrawerCodePreview: DrawerCodePreview,
@@ -68,9 +70,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </div>
     ),
-    a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
-      <a className={cn('font-medium ', className)} {...props} />
-    ),
+    a: Link,
     code: ({
       className,
       ...props

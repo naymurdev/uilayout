@@ -1,0 +1,144 @@
+export const metadata = {
+  title: 'BG Mesh Gradient',
+  description: 'Animated Background Mesh Gradient like Stripe',
+};
+
+> Read Docs to know more [react-mesh-gradient](https://www.npmjs.com/package/@johnn-e/react-mesh-gradient)
+> and you can also read this article [gradient.js](https://medium.com/design-bootcamp/moving-mesh-gradient-background-with-stripe-mesh-gradient-webgl-package-6dc1c69c4fa2)
+
+<IframeComponentPrieview name='mesh-gradient' hasReTrigger responsive >
+
+<IframeTabCodePreview>
+
+```tsx !!tabs index.ts
+// @ts-nocheck
+'use client';
+import { useState } from 'react';
+import { MeshGradientRenderer } from '@johnn-e/react-mesh-gradient';
+import colors from 'nice-color-palettes';
+
+function index() {
+  const [speed, setSpeed] = useState(0.01);
+  const [isWireframe, setIsWireframe] = useState(false);
+  const [isDarkBackground, setIsDarkBackground] = useState(false);
+  const [color, setColor] = useState(Math.floor(Math.random() * 100));
+
+  console.log(color);
+
+  return (
+    <div className='bg-white'>
+      <div
+        id='text-container'
+        className='absolute top-0 right-0 bg-black/50 backdrop-blur-md p-4 text-white rounded'
+      >
+        <div id='controls'>
+          <div id='speed-slider'>
+            <label htmlFor='speed'>Speed: </label>
+            <br />
+            <input
+              id='speed'
+              type='range'
+              name='speed'
+              min='0'
+              max='1'
+              step='0.001'
+              value={speed}
+              onChange={(e) => setSpeed(e.target.valueAsNumber)}
+            />
+            <label htmlFor='speed'> = {speed}</label>
+          </div>
+          <div id='wireframe-toggle'>
+            <label htmlFor='wireframe'>Wireframe: </label>
+            <input
+              id='wireframe'
+              name='wireframe'
+              type='checkbox'
+              checked={isWireframe}
+              onChange={(e) => setIsWireframe(e.target.checked)}
+            />
+          </div>
+          <div id='background-color'>
+            <label htmlFor='dark'>Dark Background (Wireframe only): </label>
+            <input
+              id='dark'
+              name='dark'
+              type='checkbox'
+              checked={isDarkBackground}
+              onChange={(e) => setIsDarkBackground(e.target.checked)}
+            />
+          </div>
+          <button
+            className='bg-white text-black p-3 w-full mt-2 rounded-md'
+            name='color'
+            onClick={() => setColor(Math.floor(Math.random() * 100))}
+          >
+            Random Colors
+          </button>
+        </div>
+      </div>
+      <MeshGradientRenderer
+        className='w-full h-full'
+        colors={colors[color]}
+        speed={speed}
+        wireframe={isWireframe}
+        backgroundColor={isDarkBackground ? '#000000' : '#1f1c1c'}
+      />
+    </div>
+  );
+}
+
+export default index;
+```
+
+</IframeTabCodePreview>
+</IframeComponentPrieview>
+
+## Custom Color
+
+<IframeComponentPrieview name='mesh-gradient2' hasReTrigger responsive >
+
+<IframeTabCodePreview>
+
+```tsx !!tabs index.ts
+// @ts-nocheck
+'use client';
+import { useState } from 'react';
+import { MeshGradientRenderer } from '@johnn-e/react-mesh-gradient';
+
+function App() {
+  const palettes = [
+    ['#F9B409', '#F9D16A', '#2A687A', '#72A25E', '#C3B49E'],
+    ['#C3E4FF', '#6EC3F4', '#EAE2FF', '#B9BEFF', '#B3B8F9'],
+    ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900'],
+    ['#FE4365', '#FC9D9A', '#F9CDAD', '#C8C8A9', '#83AF9B'],
+  ];
+
+  const [colorIndex, setColorIndex] = useState(0);
+
+  return (
+    <div className='bg-white'>
+      <MeshGradientRenderer
+        className='w-full h-full'
+        colors={palettes[colorIndex]}
+        onGradientClick={() =>
+          setColorIndex(colorIndex === palettes.length - 1 ? 0 : colorIndex + 1)
+        }
+        speed={0.01}
+        wireframe={true}
+        backgroundColor={'#000000'}
+      />
+    </div>
+  );
+}
+
+export default App;
+```
+
+</IframeTabCodePreview>
+</IframeComponentPrieview>
+
+## Installation
+
+```bash
+npm install @johnn-e/react-mesh-gradient nice-color-palettes
+```

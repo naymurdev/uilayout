@@ -26,6 +26,8 @@ type ComponentPreviewProps = {
   code: string;
   responsive?: boolean;
   isFitheight?: boolean;
+  hideDeviceOpt?: boolean;
+  previewComp?: boolean;
   isNotCopy?: boolean;
   iframeComponent?: string;
 };
@@ -38,7 +40,9 @@ export default function ComponentPreview({
   responsive,
   isFitheight,
   isNotCopy,
+  hideDeviceOpt,
   iframeComponent,
+  previewComp,
 }: ComponentPreviewProps) {
   const [reTriggerKey, setReTriggerKey] = useState<number>(0);
   const [hasCheckIcon, setHasCheckIcon] = useState(false);
@@ -77,75 +81,80 @@ export default function ComponentPreview({
 
   return (
     <>
-      <div className='absolute right-1 top-0 z-[10] flex h-12 items-center gap-2'>
+      <div className='absolute right-1 top-0 z-[10] flex h-12 items-center gap-2 not-prose'>
         {responsive && (
-          <div className='flex items-center gap-2 rounded-lg border bg-background p-1'>
-            <TooltipProvider>
-              <Tooltip delayDuration={200}>
-                <TooltipTrigger
-                  className={`rounded-md p-1 ${
-                    mode === 'desktop'
-                      ? 'bg-primary text-primary-foreground'
-                      : ''
-                  }`}
-                  onClick={() => {
-                    setMode('desktop');
-                    setWidth('100%');
-                  }}
-                >
-                  <Monitor className='h-5 w-5' />
-                </TooltipTrigger>
-                <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border p-2 rounded-md -translate-y-1'>
-                  <p className='capitalize'>Desktop</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+          <>
+            {!hideDeviceOpt && (
+              <div className='flex items-center gap-2 rounded-lg border bg-background p-1'>
+                <TooltipProvider>
+                  <Tooltip delayDuration={200}>
+                    <TooltipTrigger
+                      className={`rounded-md p-1 ${
+                        mode === 'desktop'
+                          ? 'bg-primary text-primary-foreground'
+                          : ''
+                      }`}
+                      onClick={() => {
+                        setMode('desktop');
+                        setWidth('100%');
+                      }}
+                    >
+                      <Monitor className='h-5 w-5' />
+                    </TooltipTrigger>
+                    <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border px-2 py-1 rounded-md -translate-y-1'>
+                      <p className='capitalize'>Desktop</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
 
-            <TooltipProvider>
-              <Tooltip delayDuration={200}>
-                <TooltipTrigger
-                  className={`rounded-md p-1 ${
-                    mode === 'tablet'
-                      ? 'bg-primary text-primary-foreground'
-                      : ''
-                  }`}
-                  onClick={() => {
-                    setMode('tablet');
+                <TooltipProvider>
+                  <Tooltip delayDuration={200}>
+                    <TooltipTrigger
+                      className={`rounded-md p-1 ${
+                        mode === 'tablet'
+                          ? 'bg-primary text-primary-foreground'
+                          : ''
+                      }`}
+                      onClick={() => {
+                        setMode('tablet');
 
-                    setWidth('50%');
-                  }}
-                >
-                  <Tablet className='h-5 w-5' />
-                </TooltipTrigger>
-                <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border p-2 rounded-md -translate-y-1'>
-                  <p className='capitalize'>Tab</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+                        setWidth('50%');
+                      }}
+                    >
+                      <Tablet className='h-5 w-5' />
+                    </TooltipTrigger>
+                    <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border px-2 py-1 rounded-md -translate-y-1'>
+                      <p className='capitalize'>Tab</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
 
-            <TooltipProvider>
-              <Tooltip delayDuration={200}>
-                <TooltipTrigger
-                  className={`rounded-md p-1 ${
-                    mode === 'mobile'
-                      ? 'bg-primary text-primary-foreground'
-                      : ''
-                  }`}
-                  onClick={() => {
-                    setMode('mobile');
+                <TooltipProvider>
+                  <Tooltip delayDuration={200}>
+                    <TooltipTrigger
+                      className={`rounded-md p-1 ${
+                        mode === 'mobile'
+                          ? 'bg-primary text-primary-foreground'
+                          : ''
+                      }`}
+                      onClick={() => {
+                        setMode('mobile');
 
-                    setWidth('32%');
-                  }}
-                >
-                  <Smartphone className='h-4 w-4' />
-                </TooltipTrigger>
-                <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border p-2 rounded-md -translate-y-1'>
-                  <p className='capitalize'>Mobile</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
+                        setWidth('32%');
+                      }}
+                    >
+                      <Smartphone className='h-4 w-4' />
+                    </TooltipTrigger>
+                    <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border px-2 py-1 rounded-md -translate-y-1'>
+                      <p className='capitalize'>Mobile</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
+            )}
+          </>
         )}
+
         {!isNotCopy && (
           <button
             className='relative grid cursor-pointer place-content-center rounded-lg border bg-background p-2 px-2.5'
@@ -167,20 +176,38 @@ export default function ComponentPreview({
             </div>
           </button>
         )}
+
         {hasReTrigger && (
           <TooltipProvider>
             <Tooltip delayDuration={200}>
               <TooltipTrigger
-                className='relative grid group cursor-pointer place-content-center rounded-lg border bg-background p-2 px-2'
+                className='relative grid  group cursor-pointer place-content-center rounded-lg border bg-background p-2 px-2'
                 onClick={handleReTrigger}
               >
                 <RotateCw className='h-5 w-5 group-hover:rotate-180 transition-transform' />
               </TooltipTrigger>
-              <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border p-2 rounded-md -translate-y-1'>
-                <p className='capitalize'>Reload</p>
+              <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border rounded-md px-2 py-1 -translate-y-1'>
+                <p className='capitalize '>Reload</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
+        )}
+        {previewComp && (
+          <>
+            {iframeComponent ? (
+              <>
+                <a
+                  href={`${process.env.NEXT_PUBLIC_ANIMATION_URL}/${iframeComponent}`}
+                  target='_blank'
+                  className='relative  flex cursor-pointer underline items-center  gap-1 rounded-lg border bg-foreground text-background p-1 px-2.5'
+                >
+                  Open <ExternalLink size={20} />
+                </a>
+              </>
+            ) : (
+              <></>
+            )}
+          </>
         )}
       </div>
 

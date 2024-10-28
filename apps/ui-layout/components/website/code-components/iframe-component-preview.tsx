@@ -1,5 +1,4 @@
 import { Block, CodeBlock, parseProps } from 'codehike/blocks';
-import { Pre, RawCode, highlight } from 'codehike/code';
 import { z } from 'zod';
 import {
   Tabs,
@@ -27,14 +26,21 @@ const Schema = Block.extend({
   hasReTrigger: z.boolean(),
   responsive: z.boolean().optional(),
   isFitheight: z.boolean().optional(),
+  previewComp: z.boolean().optional(),
+  hideDeviceOpt: z.boolean().optional(),
 });
 export default async function IframeComponentPrieview(
   props: unknown & IframeComponentPrieviewProps
 ) {
-  const { name, hasReTrigger, responsive, children, isFitheight } = parseProps(
-    props,
-    Schema
-  );
+  const {
+    name,
+    hasReTrigger,
+    responsive,
+    children,
+    isFitheight,
+    hideDeviceOpt,
+    previewComp,
+  } = parseProps(props, Schema);
 
   const currComponent: TIframeCurrComponentProps | null =
     docs.dataArray.reduce<TIframeCurrComponentProps | null>(
@@ -50,9 +56,10 @@ export default async function IframeComponentPrieview(
       },
       null
     );
+  console.log('component', currComponent);
 
   if (!currComponent) {
-    return <div>Component not found</div>;
+    return <div>Components not found</div>;
   }
 
   return (
@@ -82,10 +89,12 @@ export default async function IframeComponentPrieview(
           value={`${name}preview`}
         >
           <ComponentPreview
+            previewComp={previewComp}
+            hideDeviceOpt={hideDeviceOpt}
             hasReTrigger={hasReTrigger}
             iframeComponent={currComponent.iframelink}
             code={''}
-            responsive={responsive}
+            responsive={responsive || false}
             isNotCopy={true}
             isFitheight={isFitheight}
           />

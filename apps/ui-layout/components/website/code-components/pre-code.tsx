@@ -11,7 +11,7 @@ import { CopyButton } from './copy-button';
 import { cn } from '@/lib/utils';
 import ts from 'typescript';
 import { ScrollArea } from '../ui/scroll-area';
-import { callout, wordWrap, mark, lineNumbers } from '../constant';
+import { callout, wordWrap, mark, lineNumbers, hover } from '../constant';
 import { CopyNpmCommandButton } from './copy-npm-button';
 
 export async function PreCode({
@@ -64,7 +64,7 @@ export async function PreCode({
           <div className='not-prose p-4 px-2 max-h-[550px] overflow-x-hidden   rounded-md text-sm  bg-codebg   border'>
             <Pre
               code={tshighlighted}
-              handlers={[callout, wordWrap, mark]}
+              handlers={[callout, wordWrap, mark, hover]}
               className={cn('m-0', classname)}
             />
           </div>
@@ -129,7 +129,7 @@ export async function PreCode({
               <div className='not-prose py-2 max-h-[550px]  overflow-x-hidden  rounded-md text-sm   bg-codebg border'>
                 <Pre
                   code={tshighlighted}
-                  handlers={[callout, wordWrap, mark, lineNumbers]}
+                  handlers={[callout, wordWrap, mark, lineNumbers, hover]}
                   className={cn(' m-0', classname)}
                 />
               </div>
@@ -141,7 +141,7 @@ export async function PreCode({
               <div className='not-prose py-2 max-h-[550px] overflow-x-hidden  rounded-md text-sm  bg-codebg border'>
                 <Pre
                   code={jshighlighted}
-                  handlers={[callout, wordWrap, mark, lineNumbers]}
+                  handlers={[callout, wordWrap, mark, lineNumbers, hover]}
                   className={cn('m-0', classname)}
                 />
               </div>

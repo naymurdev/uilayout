@@ -15,6 +15,23 @@ export const COMPONENTS = [
     ),
   },
   {
+    componentName: 'MessGradient',
+    componentUrl: 'mess-gradient',
+    componentSrc: React.lazy(() => import('@/components/pages/mess-gradient')),
+  },
+  {
+    componentName: 'MessGradient2',
+    componentUrl: 'mess-gradient2',
+    componentSrc: React.lazy(
+      () => import('@/components/pages/mess-gradient-custom-color')
+    ),
+  },
+  {
+    componentName: 'imgRippleEffect',
+    componentUrl: 'img-ripple-effect',
+    componentSrc: React.lazy(() => import('@/components/pages/ripple-shader')),
+  },
+  {
     componentName: 'smoothScroll',
     componentUrl: 'smooth-scroll',
     componentSrc: React.lazy(() => import('@/components/pages/smooth-scroll')),

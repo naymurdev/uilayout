@@ -58,6 +58,7 @@ const ComponentSection = () => {
   const [isOpenStyle, setIsOpenStyle] = useState(false);
   const [heightPercentage, setHeightPercentage] = useState(65);
   const [widthPercentage, setWidthPercentage] = useState(70);
+  const [scalePercentage, seScalePercentage] = useState(1);
   const [comWidthPercentage, setComWidthPercentage] = useState(95);
   const [fontSizePercentage, setFontSizePercentage] = useState(100);
   const [compPadding, setCompPadding] = useState(4);
@@ -89,7 +90,11 @@ const ComponentSection = () => {
           {currentComponentData && (
             <div className={`h-screen w-full grid place-items-center `}>
               <div
-                className={`mx-auto border relative rounded-lg bg-background  ${currentComponentData?.iframe ? '   ' : 'flex justify-center items-center  p-10 '}`}
+                className={`mx-auto border relative rounded-lg bg-background  ${
+                  currentComponentData?.iframe
+                    ? '   '
+                    : 'flex justify-center items-center  p-10 '
+                }`}
                 style={{
                   width: `${widthPercentage}%`,
                   height: `${heightPercentage}%`,
@@ -110,12 +115,19 @@ const ComponentSection = () => {
                   </>
                 ) : (
                   <div
-                    className={`${currentComponentData?.center ? 'w-fit' : ' w-full '}`}
+                    className={`${
+                      currentComponentData?.center ? 'w-fit' : ' w-full '
+                    }`}
                   >
                     <div
                       style={{
-                        width: `${currentComponentData?.center ? 100 : comWidthPercentage}%`,
+                        width: `${
+                          currentComponentData?.center
+                            ? 100
+                            : comWidthPercentage
+                        }%`,
                         padding: `${compPadding}px`,
+                        scale: scalePercentage,
                       }}
                       className='mx-auto'
                     >
@@ -137,13 +149,13 @@ const ComponentSection = () => {
             <div className='w-fit border relative flex justify-between gap-2  p-2 mx-auto  dark:bg-black bg-white rounded-md'>
               {isOpenStyle && (
                 <div
-                  className={` grid gap-2 grid-cols-3 absolute bottom-0  left-0 w-full p-4 dark:bg-black bg-white border rounded-md ${
+                  className={` grid gap-3 grid-cols-3 absolute bottom-0  left-0 w-full p-2 dark:bg-black bg-white border rounded-md ${
                     isOpenStyle ? ' h-fit pb-20 opacity-1 ' : ' h-0 opacity-0'
                   }`}
                   onClick={(event) => event.stopPropagation()} // Stop propagation when clicking inside stylediv
                 >
-                  <div className='w-full'>
-                    <h1 className='pb-1'>Width</h1>
+                  <div className='border p-2 bg-primary-foreground rounded-md'>
+                    <h1 className='pb-1 text-sm'>Width</h1>
                     <Slider
                       value={[widthPercentage]}
                       onValueChange={([widthPercentage]) =>
@@ -155,11 +167,13 @@ const ComponentSection = () => {
                       step={1}
                     />
                   </div>
-                  <div className='w-full'>
-                    <h1 className='pb-1'>Height</h1>
+                  <div className='border p-2 bg-primary-foreground rounded-md'>
+                    <h1 className='pb-1 text-sm'>Height</h1>
                     <Slider
                       max={100}
                       step={1}
+                      tooltip={false}
+                      numclass='-right-[10%] text-sm'
                       value={[heightPercentage]}
                       onValueChange={([heightPercentage]) =>
                         heightPercentage != null &&
@@ -167,8 +181,8 @@ const ComponentSection = () => {
                       }
                     />
                   </div>
-                  <div className='w-full'>
-                    <h1 className='pb-1'>Font Size</h1>
+                  <div className='border p-2 bg-primary-foreground rounded-md'>
+                    <h1 className='pb-1 text-sm'>Font Size</h1>
                     <Slider
                       value={[fontSizePercentage]}
                       onValueChange={([fontSizePercentage]) =>
@@ -176,33 +190,52 @@ const ComponentSection = () => {
                         setFontSizePercentage(fontSizePercentage)
                       }
                       max={150}
+                      tooltip={false}
+                      numclass='-right-[10%] text-sm'
                       step={1}
                     />
                   </div>
 
                   {/* Width Input */}
-                  <div>
-                    <h1 className='pb-1'>Comp Width</h1>
+                  <div className='border p-2 bg-primary-foreground rounded-md'>
+                    <h1 className='pb-1 text-[0.8em] '>Comp. Width</h1>
                     <Slider
                       value={[comWidthPercentage]}
                       onValueChange={([comWidthPercentage]) =>
                         comWidthPercentage != null &&
                         setComWidthPercentage(comWidthPercentage)
                       }
+                      tooltip={false}
+                      numclass='-right-[10%] text-sm'
                       max={150}
                       step={1}
                     />
                   </div>
-                  <div>
-                    <h1 className='pb-1'>Pading</h1>
+                  <div className='border p-2 bg-primary-foreground rounded-md'>
+                    <h1 className='pb-1 text-sm'>Pading</h1>
                     <Slider
                       value={[compPadding]}
                       onValueChange={([compPadding]) =>
-                        comWidthPercentage != null &&
-                        setCompPadding(compPadding)
+                        compPadding != null && setCompPadding(compPadding)
                       }
+                      tooltip={false}
+                      numclass='-right-[10%] text-sm'
                       max={150}
                       step={1}
+                    />
+                  </div>
+                  <div className='border p-2 bg-primary-foreground rounded-md'>
+                    <h1 className='pb-1 text-sm'>Scale </h1>
+                    <Slider
+                      value={[scalePercentage]}
+                      onValueChange={([scalePercentage]) =>
+                        scalePercentage != null &&
+                        seScalePercentage(scalePercentage)
+                      }
+                      tooltip={false}
+                      numclass='-right-[10%] text-sm'
+                      max={3}
+                      step={0.1}
                     />
                   </div>
                 </div>

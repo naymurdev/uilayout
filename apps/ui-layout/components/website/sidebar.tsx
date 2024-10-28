@@ -161,6 +161,13 @@ function DocsSidebar() {
                       >
                         {link.name}
                       </Link>
+
+                      {link?.updated && (
+                        <span className='2xl:text-xs text-[0.74em] bg-green-500 text-white px-1 rounded'>
+                          Updated
+                        </span>
+                      )}
+
                       {link?.new && (
                         <span className='2xl:text-xs text-[0.74em] bg-blue-500 text-white px-1 rounded'>
                           New
@@ -234,6 +241,11 @@ export const ItemsWithName = ({
               >
                 {link.name}
               </Link>
+              {link?.updated && (
+                <span className='2xl:text-xs text-[0.74em] bg-green-500 text-white px-1 rounded'>
+                  Updated
+                </span>
+              )}
               {link?.new && (
                 <span className='2xl:text-xs text-[0.74em] bg-blue-500 text-white px-1 rounded'>
                   New

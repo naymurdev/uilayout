@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const SpecialComponents = [
-  { href: '/components/drag-items', name: 'Drag Items', new: true },
+  { href: '/components/drag-items', name: 'Drag Items' },
 
   { href: '/components/buttons', name: 'Buttons' },
 
@@ -13,6 +13,12 @@ export const SpecialComponents = [
   },
   { href: '/components/footers', name: 'Footers' },
   { href: '/components/responsive-header', name: 'Responsive-Header' },
+  { href: '/components/bg-mesh-gradient', name: 'BG Mesh-Gradient', new: true },
+  {
+    href: '/components/image-ripple-effect',
+    name: 'Img Ripple Effect',
+    new: true,
+  },
 ];
 export const MainComponents = [
   {
@@ -25,13 +31,12 @@ export const MainComponents = [
   {
     href: '/components/motion-number',
     name: 'Motion Number',
-    new: true,
+    updated: true,
     component: 'creative',
   },
   {
     href: '/components/github-button',
     name: 'github-button',
-    new: true,
     component: 'creative',
   },
   {
@@ -877,10 +882,13 @@ export const AllComponents = [
     componentName: 'motion-number',
     tags: [
       'animation',
-      'shadcn slider',
-      'animated slider tag',
-      'motion number slider',
-      'number-sequence',
+      'upvotes',
+      'motion number',
+      'motion-number',
+      'like dislikes',
+      'like-dislikes',
+      'upvotes',
+      'downvotes',
     ],
     componentSrc: React.lazy(
       () => import('@/registry/components/number-flow/motion-number')

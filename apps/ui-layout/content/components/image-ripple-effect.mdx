@@ -1,0 +1,480 @@
+export const metadata = {
+  title: 'Image Ripple Effect',
+  description: 'Animated Image Ripple Effect Using React-Three-FIber',
+};
+
+> Thanks to [Akash](https://github.com/Akash1000x/Ripple-Shader)
+
+<IframeComponentPrieview name='img-ripple-effect' hasReTrigger responsive hideDeviceOpt previewComp>
+
+<IframeTabCodePreview>
+
+```tsx !!tabs index.ts
+'use client';
+import dynamic from 'next/dynamic';
+const Scene = dynamic(() => import('./scene'), {
+  loading: () => (
+    <div
+      role='status'
+      className='flex w-full h-screen justify-center items-center'
+    >
+      <svg
+        aria-hidden='true'
+        className='w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600'
+        viewBox='0 0 100 101'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z'
+          fill='currentColor'
+        />
+        <path
+          d='M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z'
+          fill='currentFill'
+        />
+      </svg>
+      <span className='sr-only'>Loading...</span>
+    </div>
+  ),
+});
+
+export default function Home() {
+  return (
+    <>
+      <Scene />
+    </>
+  );
+}
+```
+
+```tsx !!tabs scene.ts
+import { Canvas } from '@react-three/fiber';
+import { OrthographicCamera } from '@react-three/drei';
+import Model from './model';
+import useDimension from './hooks/useDimension';
+
+export default function Scene() {
+  const device = useDimension();
+
+  if (!device.width || !device.height) {
+    return null;
+  }
+
+  const frustumSize = device.height;
+  const aspect = device.width / device.height;
+
+  return (
+    <div className='h-screen w-full relative bg-gray-950 text-white'>
+      <Canvas>
+        <OrthographicCamera
+          makeDefault
+          args={[
+            (frustumSize * aspect) / -2,
+            (frustumSize * aspect) / 2,
+            frustumSize / 2,
+            frustumSize / -2,
+            -1000,
+            1000,
+          ]}
+          position={[0, 0, 2]}
+        />
+        <Model />
+      </Canvas>
+      <article className='absolute w-full bottom-14  text-center'>
+        <h1 className='2xl:text-8xl text-7xl tracking-tighter uppercase'>
+          Independent
+        </h1>
+        <p className='2xl:text-2xl text-xl'>
+          Live for yourself, not for society.
+        </p>
+      </article>
+    </div>
+  );
+}
+```
+
+```tsx !!tabs model.ts
+// @ts-nocheck
+import React, { useRef, useEffect, useState } from 'react';
+import { useFrame, useThree } from '@react-three/fiber';
+import { useFBO, useTexture } from '@react-three/drei';
+import * as THREE from 'three';
+import useMouse from './hooks/useMouse';
+import useDimension from './hooks/useDimension';
+import { vertex, fragment } from './shaders';
+
+export default function Model() {
+  const { viewport } = useThree();
+  const texture = useTexture('/brush.png');
+  const meshRefs = useRef([]);
+  const [meshes, setMeshes] = useState([]);
+  const mouse = useMouse();
+  const device = useDimension();
+  const [prevMouse, setPrevMouse] = useState({ x: 0, y: 0 });
+  const [currentWave, setCurrentWave] = useState(0);
+  const { gl, camera } = useThree();
+
+  const scene = new THREE.Scene();
+  const max = 100;
+
+  const uniforms = useRef({
+    uDisplacement: { value: null },
+    uTexture: { value: null },
+    winResolution: {
+      value: new THREE.Vector2(0, 0),
+    },
+  });
+
+  const fboBase = useFBO(device.width, device.height);
+  const fboTexture = useFBO(device.width, device.height);
+
+  const { scene: imageScene, camera: imageCamera } = Images(viewport);
+
+  useEffect(() => {
+    const generatedMeshes = Array.from({ length: max }).map((_, i) => (
+      <mesh
+        key={i}
+        position={[0, 0, 0]}
+        ref={(el) => (meshRefs.current[i] = el)}
+        rotation={[0, 0, Math.random()]}
+        visible={false}
+      >
+        <planeGeometry args={[60, 60, 1, 1]} />
+        <meshBasicMaterial transparent={true} map={texture} />
+      </mesh>
+    ));
+    setMeshes(generatedMeshes);
+  }, [texture]);
+
+  function setNewWave(x, y, currentWave) {
+    const mesh = meshRefs.current[currentWave];
+    if (mesh) {
+      mesh.position.x = x;
+      mesh.position.y = y;
+      mesh.visible = true;
+      mesh.material.opacity = 1;
+      mesh.scale.x = 1.75;
+      mesh.scale.y = 1.75;
+    }
+  }
+
+  function trackMousePos(x, y) {
+    if (Math.abs(x - prevMouse.x) > 0.1 || Math.abs(y - prevMouse.y) > 0.1) {
+      setCurrentWave((currentWave + 1) % max);
+      setNewWave(x, y, currentWave);
+    }
+    setPrevMouse({ x: x, y: y });
+  }
+
+  useFrame(({ gl, scene: finalScene }) => {
+    const x = mouse.x - device.width / 2;
+    const y = -mouse.y + device.height / 2;
+    trackMousePos(x, y);
+    meshRefs.current.forEach((mesh) => {
+      if (mesh.visible) {
+        mesh.rotation.z += 0.025;
+        mesh.material.opacity *= 0.95;
+        mesh.scale.x = 0.98 * mesh.scale.x + 0.155;
+        mesh.scale.y = 0.98 * mesh.scale.y + 0.155;
+      }
+    });
+
+    if (device.width > 0 && device.height > 0) {
+      // uniforms.current.uTexture.value = imageTexture;
+
+      // Render to base texture with meshes
+      gl.setRenderTarget(fboBase);
+      gl.clear();
+      meshRefs.current.forEach((mesh) => {
+        if (mesh.visible) {
+          scene.add(mesh);
+        }
+      });
+      gl.render(scene, camera);
+      meshRefs.current.forEach((mesh) => {
+        if (mesh.visible) {
+          scene.remove(mesh);
+        }
+      });
+      uniforms.current.uTexture.value = fboTexture.texture;
+
+      gl.setRenderTarget(fboTexture);
+      gl.render(imageScene, imageCamera);
+      uniforms.current.uDisplacement.value = fboBase.texture;
+
+      gl.setRenderTarget(null);
+      gl.render(finalScene, camera);
+      // Render the scene with updated displacement
+      // gl.setRenderTarget(fboTexture);
+      // gl.clear();
+      // gl.render(scene, camera);
+      // uniforms.current.uTexture.value = fboTexture.texture;
+      // gl.setRenderTarget(null);
+
+      uniforms.current.winResolution.value = new THREE.Vector2(
+        device.width,
+        device.height
+      ).multiplyScalar(device.pixelRatio);
+    }
+  }, 1);
+
+  function Images(viewport) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(
+      viewport.width / -2,
+      viewport.width / 2,
+      viewport.height / 2,
+      viewport.height / -2,
+      -1000,
+      1000
+    );
+    camera.position.z = 2;
+    scene.add(camera);
+    const geometry = new THREE.PlaneGeometry(1, 1);
+    const group = new THREE.Group();
+    const texture1 = useTexture('/picture1.jpeg');
+    const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+    const image1 = new THREE.Mesh(geometry, material1);
+    image1.position.x = -0.25 * viewport.width;
+    image1.position.y = 0;
+    image1.position.z = 1;
+    image1.scale.x = viewport.width / 5;
+    image1.scale.y = viewport.width / 4;
+    group.add(image1);
+
+    const texture2 = useTexture('/picture2.jpeg');
+    const material2 = new THREE.MeshBasicMaterial({ map: texture2 });
+    const image2 = new THREE.Mesh(geometry, material2);
+    image2.position.x = 0;
+    image2.position.y = 0;
+    image2.position.z = 1;
+    image2.scale.x = viewport.width / 5;
+    image2.scale.y = viewport.width / 4;
+    group.add(image2);
+
+    const texture3 = useTexture('/picture3.jpeg');
+    const material3 = new THREE.MeshBasicMaterial({ map: texture3 });
+    const image3 = new THREE.Mesh(geometry, material3);
+    image3.position.x = 0.25 * viewport.width;
+    image3.position.y = 0;
+    image3.position.z = 1;
+    image3.scale.x = viewport.width / 5;
+    image3.scale.y = viewport.width / 4;
+    group.add(image3);
+
+    scene.add(group);
+    return { scene, camera };
+  }
+
+  return (
+    <group>
+      {meshes}
+      {/* <Images /> */}
+      <mesh>
+        <planeGeometry args={[device.width, device.height, 1, 1]} />
+        <shaderMaterial
+          // args={[device.width, device.height, 1]}
+          vertexShader={vertex}
+          fragmentShader={fragment}
+          transparent={true}
+          uniforms={uniforms.current}
+        ></shaderMaterial>
+      </mesh>
+    </group>
+  );
+}
+```
+
+```tsx !!tabs shaders.ts
+export const fragment = `
+uniform sampler2D uTexture;
+uniform sampler2D uDisplacement;
+uniform vec4 winResolution;
+varying vec2 vUv;
+float PI = 3.141592653589793238;
+
+void main() {
+  vec2 vUvScreen = gl_FragCoord.xy / winResolution.xy;
+
+  vec4 displacement = texture2D(uDisplacement, vUvScreen);
+  float theta = displacement.r*2.0*PI;
+
+  vec2 dir = vec2(sin(theta),cos(theta));
+  vec2 uv = vUvScreen + dir*displacement.r*0.075;
+  vec4 color = texture2D(uTexture,uv);
+
+  gl_FragColor = color;
+}
+`;
+
+export const vertex = `
+varying vec2 vUv;
+
+void main() {
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+}
+`;
+```
+
+```tsx !!tabs useDimension.ts
+import * as React from 'react';
+
+export default function useDimension() {
+  const [dimension, setDimension] = React.useState({
+    width: 0,
+    height: 0,
+    pixelRatio: 1,
+  });
+
+  React.useEffect(() => {
+    // Check if the code is running on the client side
+    if (typeof window !== 'undefined') {
+      const resize = () => {
+        setDimension({
+          width: window.innerWidth,
+          height: window.innerHeight,
+          pixelRatio: window.devicePixelRatio,
+        });
+      };
+
+      resize();
+
+      window.addEventListener('resize', resize);
+
+      return () => window.removeEventListener('resize', resize);
+    }
+  }, []);
+
+  return dimension;
+}
+```
+
+```tsx !!tabs useMouse.ts
+import * as React from 'react';
+export default function useMouse() {
+  const [mouse, setMouse] = React.useState({ x: 0, y: 0, pixelRatio: 0 });
+
+  const mouseMove = (e: { clientX: any; clientY: any }) => {
+    const { clientX, clientY } = e;
+    setMouse({
+      x: clientX,
+      y: clientY,
+      pixelRatio: Math.min(window.devicePixelRatio, 2),
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('mousemove', mouseMove);
+    return () => {
+      window.removeEventListener('mousemove', mouseMove);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return mouse;
+}
+```
+
+</IframeTabCodePreview>
+</IframeComponentPrieview>
+
+## Installation
+
+```bash
+npm install three @types/three @react-three/fiber @react-three/drei
+```
+
+## Usages
+
+Change `texture` from here
+
+```jsx
+const texture = useTexture('/brush.png');
+```
+
+<HoverContainer>
+
+change [image](hover:one) and control the [position](hover:two) of image
+
+```jsx
+// !hover one
+const texture1 = useTexture('/picture3.jpeg');
+const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+const image1 = new THREE.Mesh(geometry, material1);
+// !hover two
+image1.position.x = -0.0 * viewport.width;
+// !hover two
+image1.position.y = 40;
+// !hover two
+image1.position.z = 1;
+// !hover two
+image1.scale.x = viewport.width / 4;
+// !hover two
+image1.scale.y = viewport.width / 3.2;
+```
+
+</HoverContainer>
+
+you can add multiple images
+
+```jsx
+function Images(viewport) {
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(
+    viewport.width / -2,
+    viewport.width / 2,
+    viewport.height / 2,
+    viewport.height / -2,
+    -1000,
+    1000
+  );
+  camera.position.z = 2;
+  scene.add(camera);
+  const geometry = new THREE.PlaneGeometry(1, 1);
+  const group = new THREE.Group();
+  // !mark[//images/picture1.jpeg/] red
+  // !mark red
+  const texture1 = useTexture('/images/picture1.jpeg');
+  const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+  const image1 = new THREE.Mesh(geometry, material1);
+  image1.position.x = -0.25 * viewport.width;
+  image1.position.y = 0;
+  image1.position.z = 1;
+  image1.scale.x = viewport.width / 5;
+  image1.scale.y = viewport.width / 4;
+  group.add(image1);
+  // !mark[//images/picture2.jpeg/] green
+  // !mark
+  const texture2 = useTexture('/images/picture2.jpeg');
+  const material2 = new THREE.MeshBasicMaterial({ map: texture2 });
+  const image2 = new THREE.Mesh(geometry, material2);
+  image2.position.x = 0;
+  image2.position.y = 0;
+  image2.position.z = 1;
+  image2.scale.x = viewport.width / 5;
+  image2.scale.y = viewport.width / 4;
+  group.add(image2);
+  // !mark[//images/picture3.jpeg/] gold
+  // !mark gold
+  const texture3 = useTexture('/images/picture3.jpeg');
+  const material3 = new THREE.MeshBasicMaterial({ map: texture3 });
+  const image3 = new THREE.Mesh(geometry, material3);
+  image3.position.x = 0.25 * viewport.width;
+  image3.position.y = 0;
+  image3.position.z = 1;
+  image3.scale.x = viewport.width / 5;
+  image3.scale.y = viewport.width / 4;
+  group.add(image3);
+
+  scene.add(group);
+  return { scene, camera };
+}
+```
+
+## Assets
+
+<a href='/brush.png' download='brush.png'>
+  <span>Download </span>
+</a>
