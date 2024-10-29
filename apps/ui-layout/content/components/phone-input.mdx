@@ -14,13 +14,9 @@ npm install @hookform/resolvers/zod react-hook-form react-phone-number-input
 
 ```tsx phone-input.tsx
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
-
 import * as React from 'react';
-
 import * as RPNInput from 'react-phone-number-input';
-
 import flags from 'react-phone-number-input/flags';
-
 import { Button } from '@/components/website/ui/button';
 import {
   Command,
@@ -77,7 +73,10 @@ PhoneInput.displayName = 'PhoneInput';
 const InputComponent = React.forwardRef<HTMLInputElement, any>(
   ({ className, ...props }, ref) => (
     <input
-      className={cn('rounded-e-lg rounded-s-none', className)}
+      className={cn(
+        'rounded-e-lg rounded-s-none px-2 bg-background outline-none ',
+        className
+      )}
       {...props}
       ref={ref}
     />

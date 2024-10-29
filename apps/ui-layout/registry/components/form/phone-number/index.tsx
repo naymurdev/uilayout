@@ -1,3 +1,4 @@
+'use client';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PhoneInput } from '@/components/core/phone-input';
@@ -8,12 +9,14 @@ import { z } from 'zod';
 const FormSchema = z.object({
   phone: z
     .string()
-    .refine(isValidPhoneNumber, { message: 'Invalid phone number' }),
+    .min(1, 'Phone number is required')
+    .refine((value) => value && isValidPhoneNumber(value), {
+      message: 'Invalid phone number',
+    }),
 });
-
 type FormData = z.infer<typeof FormSchema>;
 
-export default function Hero() {
+export default function index() {
   const {
     control,
     handleSubmit,

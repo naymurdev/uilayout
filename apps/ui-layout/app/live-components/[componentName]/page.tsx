@@ -30,7 +30,7 @@ export default function SectionPage({
   }, null as any);
   // console.log(component);
 
-  console.log(componentName);
+  console.log(component, !component?.iframeSrc);
 
   if (!component) {
     notFound();
@@ -45,7 +45,9 @@ export default function SectionPage({
 
   return (
     <section
-      className={`${isFramerScrolling ? '' : 'flex justify-center items-center '} min-h-screen rounded-md  dark:bg-[#000000] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:20px_20px]`}
+      className={`${
+        isFramerScrolling ? '' : 'flex justify-center items-center '
+      } min-h-screen rounded-md  dark:bg-[#000000] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:20px_20px]`}
     >
       <div className='px-4 w-full'>
         {ComponentPreview ? (

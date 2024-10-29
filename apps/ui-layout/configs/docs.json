@@ -269,7 +269,6 @@
         {
           "componentName": "phone-input",
           "filesrc": "components/form/phone-number/index.tsx",
-          "iframeSrc": "live-components/phone-input",
           "parentlink": "phone-input",
           "parentName": "Phone Input"
         },
@@ -277,22 +276,36 @@
           "componentName": "dual-range-slider",
           "filesrc": "components/form/slider/dual-range-slider.tsx",
           "iframeSrc": "live-components/dual-range-slider",
-          "parentlink": "slider",
-          "parentName": "Slider"
+          "parentlink": "range-slider",
+          "parentName": "Range Slider"
         },
         {
           "componentName": "static-range-slider",
           "filesrc": "components/form/slider/static-range-slider.tsx",
           "iframeSrc": "live-components/static-range-slider",
-          "parentlink": "slider",
+          "parentlink": "range-slider",
           "parentName": "Slider"
         },
         {
           "componentName": "position-range-slider",
           "filesrc": "components/form/slider/position-range-slider.tsx",
           "iframeSrc": "live-components/position-range-slider",
-          "parentlink": "slider",
-          "parentName": "Slider"
+          "parentlink": "range-slider",
+          "parentName": "Range Slider"
+        },
+        {
+          "componentName": "showhide-pass",
+          "filesrc": "components/form/password/showhide-pass.tsx",
+          "iframeSrc": "live-components/showhide-pass",
+          "parentlink": "password",
+          "parentName": "password"
+        },
+        {
+          "componentName": "pass-strengthindicator",
+          "filesrc": "components/form/password/pass-strength-indicator.tsx",
+          "iframeSrc": "live-components/pass-strengthindicator",
+          "parentlink": "password",
+          "parentName": "password"
         }
       ],
       "type": "form "

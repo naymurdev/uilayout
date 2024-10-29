@@ -40,17 +40,23 @@ export const MainComponents = [
     component: 'creative',
   },
   {
-    href: '/components/animated-slider',
-    name: 'Slider',
+    href: '/components/range-slider',
+    name: 'Range Slider',
 
     new: true,
-    component: 'Input',
+    component: 'Form',
   },
   {
     href: '/components/phone-input',
     name: 'Phone Input',
     new: true,
-    component: 'Input',
+    component: 'Form',
+  },
+  {
+    href: '/components/password',
+    name: 'Password',
+    new: true,
+    component: 'Form',
   },
 
   {
