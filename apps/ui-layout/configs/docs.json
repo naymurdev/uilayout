@@ -306,6 +306,56 @@
           "iframeSrc": "live-components/pass-strengthindicator",
           "parentlink": "password",
           "parentName": "password"
+        },
+        {
+          "componentName": "pass-strengthindicator2",
+          "filesrc": "components/form/password/pass-strength-indicator2.tsx",
+          "iframeSrc": "live-components/pass-strengthindicator2",
+          "parentlink": "password",
+          "parentName": "password"
+        },
+        {
+          "componentName": "pass-strengthindicator3",
+          "filesrc": "components/form/password/pass-strength-indicator3.tsx",
+          "iframeSrc": "live-components/pass-strengthindicator3",
+          "parentlink": "password",
+          "parentName": "password"
+        },
+        {
+          "componentName": "pass-strengthindicator4",
+          "filesrc": "components/form/password/pass-strength-indicator4.tsx",
+          "iframeSrc": "live-components/pass-strengthindicator4",
+          "parentlink": "password",
+          "parentName": "password"
+        },
+        {
+          "componentName": "datetime-input",
+          "filesrc": "components/form/datetime-input-com.tsx",
+          "filesArray": [
+            {
+              "name": "index.tsx",
+              "filesrc": "registry/components/form/datetime-input-com.tsx"
+            },
+            {
+              "name": "calendar.tsx",
+              "filesrc": "components/website/ui/calendar.tsx"
+            },
+            {
+              "name": "popover.tsx",
+              "filesrc": "components/website/ui/popover.tsx"
+            },
+            {
+              "name": "button.tsx",
+              "filesrc": "components/website/ui/button.tsx"
+            },
+            {
+              "name": "scroll-area.tsx",
+              "filesrc": "components/website/ui/scroll-area.tsx"
+            }
+          ],
+          "iframeSrc": "live-components/datetime-input",
+          "parentlink": "password",
+          "parentName": "password"
         }
       ],
       "type": "form "

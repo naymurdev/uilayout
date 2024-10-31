@@ -3,10 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 const newComponent = [
   {
-    href: '/labs',
-    title: 'LABS',
-  },
-  {
     href: '/components/bg-mesh-gradient',
     title: 'BG Mesh Gradient',
   },
@@ -16,7 +12,7 @@ const newComponent = [
   },
   {
     href: '/components/animated-slider',
-    title: 'Range Slider',
+    title: 'Forms',
   },
 ];
 

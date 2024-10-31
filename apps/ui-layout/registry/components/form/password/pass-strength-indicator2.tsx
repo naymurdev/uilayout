@@ -61,7 +61,7 @@ const PasswordInput = () => {
   console.log(calculateStrength);
 
   return (
-    <div className='w-96 mx-auto'>
+    <div className='w-96 mx-auto '>
       <form className='space-y-2'>
         <label htmlFor='password' className='block text-sm font-medium'>
           Password
@@ -81,31 +81,43 @@ const PasswordInput = () => {
             type='button'
             onClick={() => setIsVisible((prev) => !prev)}
             aria-label={isVisible ? 'Hide password' : 'Show password'}
-            className='absolute inset-y-0 right-0 flex items-center justify-center w-9 text-muted-foreground/80 '
+            className='absolute inset-y-0 right-0 outline-none flex items-center justify-center w-9 text-muted-foreground/80 hover:text-foreground  '
           >
             {isVisible ? <EyeOff size={16} /> : <Eye size={16} />}
           </button>
         </div>
       </form>
-
-      <div
-        className='mt-3 mb-4 h-1 rounded-full bg-border overflow-hidden'
-        role='progressbar'
-        aria-valuenow={calculateStrength.score}
-        aria-valuemin={0}
-        aria-valuemax={4}
-      >
-        <div
-          className={`h-full ${
-            STRENGTH_CONFIG.colors[calculateStrength.score]
-          } transition-all duration-500`}
-          style={{ width: `${(calculateStrength.score / 5) * 100}%` }}
-        />
+      <div className='flex gap-2 w-full justify-between mt-2'>
+        <span
+          className={`${
+            calculateStrength.score >= 1 ? 'bg-green-200' : 'bg-border'
+          }  p-1 rounded-full w-full`}
+        ></span>
+        <span
+          className={`${
+            calculateStrength.score >= 2 ? 'bg-green-300' : 'bg-border'
+          }  p-1 rounded-full w-full`}
+        ></span>
+        <span
+          className={`${
+            calculateStrength.score >= 3 ? 'bg-green-400' : 'bg-border'
+          }  p-1 rounded-full w-full`}
+        ></span>
+        <span
+          className={`${
+            calculateStrength.score >= 4 ? 'bg-green-500' : 'bg-border'
+          }  p-1 rounded-full w-full`}
+        ></span>
+        <span
+          className={`${
+            calculateStrength.score >= 5 ? 'bg-green-600' : 'bg-border'
+          }  p-1 rounded-full w-full`}
+        ></span>
       </div>
 
       <p
         id='password-strength'
-        className='mb-2 text-sm font-medium flex justify-between'
+        className='my-2 text-sm font-medium flex justify-between'
       >
         <span>Must contain:</span>
         <span>

@@ -53,6 +53,12 @@ export const MainComponents = [
     component: 'Form',
   },
   {
+    href: '/components/datetime-picker',
+    name: 'Datetime Picker',
+    new: true,
+    component: 'Form',
+  },
+  {
     href: '/components/password',
     name: 'Password',
     new: true,
@@ -259,6 +265,155 @@ export const MainComponents = [
 ];
 
 export const AllComponents = [
+  {
+    parentlink: 'datetime-picker',
+    componentName: 'Datetime Picker',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/datetime-input-com')
+    ),
+    iframeSrc: 'live-components/datetime-picker',
+    tags: [
+      'date picker',
+      'time picker',
+      'date time picker',
+      'date-time picker',
+      'DateTime Picker',
+    ],
+  },
+  {
+    parentlink: 'range-slider',
+    componentName: 'Range Slider',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/slider/dual-range-slider')
+    ),
+    iframeSrc: 'live-components/dual-range-slider',
+    tags: [
+      'input slider',
+      'dual range slider',
+      'Dual-Range-Slider',
+      'animated motion number slider',
+      'motion input slider',
+    ],
+  },
+  {
+    parentlink: 'range-slider',
+    componentName: 'Range Slider',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/slider/static-range-slider')
+    ),
+    iframeSrc: 'live-components/static-range-slider',
+    tags: [
+      'input slider',
+      'static range slider',
+      'Static-Range-Slider',
+      'Basic Range-Slider',
+      'Default Range-Slider',
+      'animated motion number slider',
+      'motion input slider',
+    ],
+  },
+  {
+    parentlink: 'range-slider',
+    componentName: 'Range Slider',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/slider/position-range-slider')
+    ),
+    iframeSrc: 'live-components/position-range-slider',
+    tags: [
+      'input slider',
+      'position range slider',
+      'Position-Range-Slider',
+      'Position Range-Slider',
+      'animated motion number slider',
+      'motion input slider',
+    ],
+  },
+  {
+    parentlink: 'password',
+    componentName: 'Passoword',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/password/showhide-pass')
+    ),
+    iframeSrc: 'live-components/showhide-pass',
+    tags: [
+      'password',
+      'pass',
+      'password hide show icon',
+      'showhide pass',
+      'show/hide pass',
+      'Show/Hide Pass',
+      'Pass Show/Hide ',
+    ],
+  },
+  {
+    parentlink: 'password',
+    componentName: 'Passoword',
+    componentSrc: React.lazy(
+      () =>
+        import('@/registry/components/form/password/pass-strength-indicator')
+    ),
+    iframeSrc: 'live-components/pass-strengthindicator',
+    tags: [
+      'password',
+      'pass',
+      'Pass Strength Indicator',
+      'pass-strength-indicator',
+      'Progress Password Input',
+      'ProgressPasswordInput',
+    ],
+  },
+  {
+    parentlink: 'password',
+    componentName: 'Passoword',
+    componentSrc: React.lazy(
+      () =>
+        import('@/registry/components/form/password/pass-strength-indicator2')
+    ),
+    iframeSrc: 'live-components/pass-strengthindicator2',
+    tags: [
+      'password',
+      'pass',
+      'Pass Strength Indicator2',
+      'pass-strength-indicator2',
+      'Progress Password2',
+      'ProgressPasswordInput2',
+    ],
+  },
+  {
+    parentlink: 'password',
+    componentName: 'Passoword',
+    componentSrc: React.lazy(
+      () =>
+        import('@/registry/components/form/password/pass-strength-indicator3')
+    ),
+    iframeSrc: 'live-components/pass-strengthindicator3',
+    tags: [
+      'password',
+      'pass',
+      'Pass Strength Indicator2',
+      'pass-strength-indicator2',
+      'Divide Progress Password ',
+      'Progress Divide Password2 ',
+      'DivideProgressPasswordInput2',
+    ],
+  },
+  {
+    parentlink: 'password',
+    componentName: 'Passoword',
+    componentSrc: React.lazy(
+      () =>
+        import('@/registry/components/form/password/pass-strength-indicator4')
+    ),
+    iframeSrc: 'live-components/pass-strengthindicator4',
+    tags: [
+      'password',
+      'pass',
+      'Password Status Indicator',
+      'Pass Status Indicator',
+      'Status Password ',
+      'StatusPasswordInput',
+    ],
+  },
   {
     parentlink: 'drag-items',
     componentName: 'drag-items',
