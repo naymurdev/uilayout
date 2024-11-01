@@ -46,6 +46,19 @@ export const MainComponents = [
     new: true,
     component: 'Form',
   },
+
+  {
+    href: '/components/password',
+    name: 'Password',
+    new: true,
+    component: 'Form',
+  },
+  {
+    href: '/components/tags-input',
+    name: 'UTube Tags',
+    new: true,
+    component: 'Form',
+  },
   {
     href: '/components/phone-input',
     name: 'Phone Input',
@@ -59,12 +72,17 @@ export const MainComponents = [
     component: 'Form',
   },
   {
-    href: '/components/password',
-    name: 'Password',
+    href: '/components/multi-selector',
+    name: 'Multi Selector',
     new: true,
     component: 'Form',
   },
-
+  {
+    href: '/components/file-upload',
+    name: 'File Upload',
+    new: true,
+    component: 'Form',
+  },
   {
     href: '/components/clip-path',
     name: 'Clip-Path ',
@@ -266,10 +284,112 @@ export const MainComponents = [
 
 export const AllComponents = [
   {
+    parentlink: 'file-upload',
+    componentName: 'Chatbox Dropzone',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/file-upload/chat-form')
+    ),
+    iframeSrc: 'live-components/file-upload',
+    tags: [
+      'DropZone input',
+      'File Upload Input ',
+      'file-upload',
+      'file upload preview',
+      'chat box upload file',
+    ],
+  },
+  {
+    parentlink: 'file-upload',
+    componentName: 'Img Preview dropzone',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/file-upload/img-preview')
+    ),
+    iframeSrc: 'live-components/file-upload',
+    tags: [
+      'DropZone input',
+      'File Upload Input ',
+      'file-upload',
+      'file upload preview',
+    ],
+  },
+  {
+    parentlink: 'file-upload',
+    componentName: 'file-upload',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/file-upload')
+    ),
+    iframeSrc: 'live-components/file-upload',
+    tags: ['DropZone input', 'File Upload Input ', 'file-upload'],
+  },
+  {
+    parentlink: 'multi-selector',
+    componentName: 'Multi Selector Input',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/multiple-selector')
+    ),
+    iframeSrc: 'live-components/multi-selector',
+    tags: [
+      'Multi Selector Input',
+      'Selector Input Tag',
+      'Multiple Selector Input',
+    ],
+  },
+  {
+    parentlink: 'tags-input',
+    componentName: 'Tags Edit False',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/tags-input')
+    ),
+    iframeSrc: 'live-components/tagsedit-false',
+    tags: [
+      'Tags Input',
+      'Tags Edit False',
+      'Youtube Tags',
+      'Github Like Tags',
+      'github tags',
+    ],
+  },
+  {
+    parentlink: 'tags-input',
+    componentName: 'Tags Input',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/tags-input')
+    ),
+    iframeSrc: 'live-components/tags-input',
+    tags: ['Tags Input', 'Youtube Tags', 'Github Like Tags', 'github tags'],
+  },
+  {
+    parentlink: 'datetime-picker',
+    componentName: 'Time Picker',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/datetime-picker/time-picker')
+    ),
+    iframeSrc: 'live-components/time-picker',
+    tags: ['time picker', 'time-picker', 'Time Picker'],
+  },
+  {
+    parentlink: 'datetime-picker',
+    componentName: 'Time Picker',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/datetime-picker/time-picker')
+    ),
+    iframeSrc: 'live-components/time-picker',
+    tags: ['time picker', 'time-picker', 'Time Picker'],
+  },
+  {
+    parentlink: 'datetime-picker',
+    componentName: 'Date Picker',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/datetime-picker/date-picker')
+    ),
+    iframeSrc: 'live-components/datetime-picker',
+    tags: ['date picker', 'date-picker', 'Date Picker'],
+  },
+  {
     parentlink: 'datetime-picker',
     componentName: 'Datetime Picker',
     componentSrc: React.lazy(
-      () => import('@/registry/components/form/datetime-input-com')
+      () => import('@/registry/components/form/datetime-picker')
     ),
     iframeSrc: 'live-components/datetime-picker',
     tags: [
@@ -330,7 +450,7 @@ export const AllComponents = [
   },
   {
     parentlink: 'password',
-    componentName: 'Passoword',
+    componentName: 'Show/Hide Pass',
     componentSrc: React.lazy(
       () => import('@/registry/components/form/password/showhide-pass')
     ),
@@ -347,7 +467,7 @@ export const AllComponents = [
   },
   {
     parentlink: 'password',
-    componentName: 'Passoword',
+    componentName: 'Strong Password Indicator',
     componentSrc: React.lazy(
       () =>
         import('@/registry/components/form/password/pass-strength-indicator')
@@ -364,7 +484,7 @@ export const AllComponents = [
   },
   {
     parentlink: 'password',
-    componentName: 'Passoword',
+    componentName: 'Strong Password Indicator2',
     componentSrc: React.lazy(
       () =>
         import('@/registry/components/form/password/pass-strength-indicator2')
@@ -381,7 +501,7 @@ export const AllComponents = [
   },
   {
     parentlink: 'password',
-    componentName: 'Passoword',
+    componentName: 'Hover Indicator',
     componentSrc: React.lazy(
       () =>
         import('@/registry/components/form/password/pass-strength-indicator3')
@@ -390,6 +510,8 @@ export const AllComponents = [
     tags: [
       'password',
       'pass',
+      'Strong Pass Hover Indicator',
+      'Hover Indicator',
       'Pass Strength Indicator2',
       'pass-strength-indicator2',
       'Divide Progress Password ',
@@ -399,7 +521,7 @@ export const AllComponents = [
   },
   {
     parentlink: 'password',
-    componentName: 'Passoword',
+    componentName: 'Inline Pass Indicator',
     componentSrc: React.lazy(
       () =>
         import('@/registry/components/form/password/pass-strength-indicator4')
@@ -408,10 +530,27 @@ export const AllComponents = [
     tags: [
       'password',
       'pass',
+      'Inline Pass Indicator',
       'Password Status Indicator',
       'Pass Status Indicator',
       'Status Password ',
       'StatusPasswordInput',
+    ],
+  },
+  {
+    parentlink: 'password',
+    componentName: 'Confirm Pass With Indicator',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/password/confirm-pass-check')
+    ),
+    iframeSrc: 'live-components/confirm-pass-check',
+    tags: [
+      'password',
+      'pass',
+      'Confirm pass',
+      'Confirm Pass With Indicator',
+      'Confirm Password Check',
+      'Confirm Password',
     ],
   },
   {

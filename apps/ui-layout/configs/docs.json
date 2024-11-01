@@ -318,6 +318,16 @@
           "componentName": "pass-strengthindicator3",
           "filesrc": "components/form/password/pass-strength-indicator3.tsx",
           "iframeSrc": "live-components/pass-strengthindicator3",
+          "filesArray": [
+            {
+              "name": "index.tsx",
+              "filesrc": "registry/components/form/password/pass-strength-indicator3.tsx"
+            },
+            {
+              "name": "hover-card.tsx",
+              "filesrc": "components/website/ui/hover-card.tsx"
+            }
+          ],
           "parentlink": "password",
           "parentName": "password"
         },
@@ -325,37 +335,117 @@
           "componentName": "pass-strengthindicator4",
           "filesrc": "components/form/password/pass-strength-indicator4.tsx",
           "iframeSrc": "live-components/pass-strengthindicator4",
+          "filesArray": [
+            {
+              "name": "index.tsx",
+              "filesrc": "registry/components/form/password/pass-strength-indicator4.tsx"
+            },
+            {
+              "name": "hover-card.tsx",
+              "filesrc": "components/website/ui/hover-card.tsx"
+            }
+          ],
           "parentlink": "password",
           "parentName": "password"
         },
         {
-          "componentName": "datetime-input",
-          "filesrc": "components/form/datetime-input-com.tsx",
+          "componentName": "confirm-pass-check",
+          "filesrc": "components/form/password/confirm-pass-check.tsx",
+          "iframeSrc": "live-components/confirm-pass-check",
           "filesArray": [
             {
               "name": "index.tsx",
-              "filesrc": "registry/components/form/datetime-input-com.tsx"
+              "filesrc": "registry/components/form/password/confirm-pass-check.tsx"
             },
             {
-              "name": "calendar.tsx",
-              "filesrc": "components/website/ui/calendar.tsx"
+              "name": "hover-card.tsx",
+              "filesrc": "components/website/ui/hover-card.tsx"
+            }
+          ],
+          "parentlink": "password",
+          "parentName": "password"
+        },
+        {
+          "componentName": "datetime-picker",
+          "filesrc": "components/form/datetime-picker/index.tsx",
+          "iframeSrc": "live-components/datetime-picker",
+          "parentlink": "password",
+          "parentName": "password"
+        },
+        {
+          "componentName": "time-picker",
+          "filesrc": "components/form/datetime-picker/time-picker.tsx",
+
+          "iframeSrc": "live-components/time-picker",
+          "parentlink": "password",
+          "parentName": "password"
+        },
+        {
+          "componentName": "date-picker",
+          "filesrc": "components/form/datetime-picker/date-picker.tsx",
+          "iframeSrc": "live-components/date-picker",
+          "parentlink": "password",
+          "parentName": "password"
+        },
+        {
+          "componentName": "tags-input",
+          "filesrc": "components/form/tags-input/index.tsx",
+          "iframeSrc": "live-components/tags-input",
+          "parentlink": "tags-input",
+          "parentName": "Tags Input"
+        },
+        {
+          "componentName": "tagsedit-false",
+          "filesrc": "components/form/tags-input/tagsedit-false.tsx",
+          "iframeSrc": "live-components/tagsedit-false",
+          "parentlink": "tags-input",
+          "parentName": "Tags Input"
+        },
+        {
+          "componentName": "multi-selector",
+          "filesrc": "components/form/multiple-selector.tsx",
+          "iframeSrc": "live-components/multi-selector",
+          "filesArray": [
+            {
+              "name": "index.tsx",
+              "filesrc": "registry/components/form/multiple-selector.tsx"
             },
             {
               "name": "popover.tsx",
               "filesrc": "components/website/ui/popover.tsx"
             },
             {
-              "name": "button.tsx",
-              "filesrc": "components/website/ui/button.tsx"
+              "name": "command.tsx",
+              "filesrc": "components/website/ui/command.tsx"
             },
             {
-              "name": "scroll-area.tsx",
-              "filesrc": "components/website/ui/scroll-area.tsx"
+              "name": "button.tsx",
+              "filesrc": "components/website/ui/button.tsx"
             }
           ],
-          "iframeSrc": "live-components/datetime-input",
-          "parentlink": "password",
-          "parentName": "password"
+          "parentlink": "multi-selector",
+          "parentName": "Multi Selector"
+        },
+        {
+          "componentName": "file-upload",
+          "filesrc": "components/form/file-upload/index.tsx",
+          "iframeSrc": "live-components/file-upload",
+          "parentlink": "file-upload",
+          "parentName": "File Upload"
+        },
+        {
+          "componentName": "imgpreview-dropzone",
+          "filesrc": "components/form/file-upload/img-preview.tsx",
+          "iframeSrc": "live-components/imgpreview-dropzone",
+          "parentlink": "file-upload",
+          "parentName": "File Upload"
+        },
+        {
+          "componentName": "chat-form-dropzone",
+          "filesrc": "components/form/file-upload/chat-form.tsx",
+          "iframeSrc": "live-components/chat-form-dropzone",
+          "parentlink": "file-upload",
+          "parentName": "File Upload"
         }
       ],
       "type": "form "

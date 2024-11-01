@@ -57,7 +57,33 @@ export const getDateTimeLocal = (timestamp?: Date): string => {
  * @param datetime - {Date | string}
  * @returns A string representation of the date and time
  */
-export const formatDateTime = (datetime: Date | string) => {
+const formatTimeOnly = (datetime: Date | string) => {
+  return new Date(datetime).toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  });
+};
+
+const formatDateOnly = (datetime: Date | string) => {
+  return new Date(datetime).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+};
+
+const formatDateTime = (
+  datetime: Date | string,
+  showCalendar: boolean,
+  showTimePicker: boolean
+) => {
+  if (!showCalendar && showTimePicker) {
+    return formatTimeOnly(datetime);
+  }
+  if (showCalendar && !showTimePicker) {
+    return formatDateOnly(datetime);
+  }
   return new Date(datetime).toLocaleTimeString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -85,6 +111,8 @@ const DEFAULT_SIZE = 96;
 interface SmartDatetimeInputProps {
   value?: Date;
   onValueChange: (date: Date) => void;
+  showCalendar?: boolean;
+  showTimePicker?: boolean;
 }
 
 interface SmartDatetimeInputContextProps extends SmartDatetimeInputProps {
@@ -104,7 +132,6 @@ const useSmartDateInput = () => {
   }
   return context;
 };
-
 export const SmartDatetimeInput = React.forwardRef<
   HTMLInputElement,
   Omit<
@@ -112,42 +139,60 @@ export const SmartDatetimeInput = React.forwardRef<
     'type' | 'ref' | 'value' | 'defaultValue' | 'onBlur'
   > &
     SmartDatetimeInputProps
->(({ className, value, onValueChange, placeholder, disabled }, ref) => {
-  // ? refactor to be only used with controlled input
-  /*  const [dateTime, setDateTime] = React.useState<Date | undefined>(
-    value ?? undefined
-  ); */
+>(
+  (
+    {
+      className,
+      value,
+      onValueChange,
+      placeholder,
+      disabled,
+      showCalendar = true,
+      showTimePicker = true,
+    },
+    ref
+  ) => {
+    const [Time, setTime] = React.useState<string>('');
 
-  const [Time, setTime] = React.useState<string>('');
+    const onTimeChange = React.useCallback((time: string) => {
+      setTime(time);
+    }, []);
 
-  const onTimeChange = React.useCallback((time: string) => {
-    setTime(time);
-  }, []);
+    // If neither calendar nor timepicker is specified, show both
+    const shouldShowBoth = showCalendar === showTimePicker;
 
-  return (
-    <SmartDatetimeInputContext.Provider
-      value={{ value, onValueChange, Time, onTimeChange }}
-    >
-      <div className='flex items-center justify-center  bg-background'>
-        <div
-          className={cn(
-            'flex gap-1 w-full p-1 items-center justify-between rounded-md border transition-all',
-            'focus-within:outline-0 focus:outline-0 focus:ring-0',
-            'placeholder:text-muted-foreground focus-visible:outline-0 ',
-            className
-          )}
-        >
-          <DateTimeLocalInput />
-          <NaturalLanguageInput
-            placeholder={placeholder}
-            disabled={disabled}
-            ref={ref}
-          />
+    return (
+      <SmartDatetimeInputContext.Provider
+        value={{
+          value,
+          onValueChange,
+          Time,
+          onTimeChange,
+          showCalendar: shouldShowBoth ? true : showCalendar,
+          showTimePicker: shouldShowBoth ? true : showTimePicker,
+        }}
+      >
+        <div className='flex items-center justify-center bg-background'>
+          <div
+            className={cn(
+              'flex gap-1 w-full p-1 items-center justify-between rounded-md border transition-all',
+              'focus-within:outline-0 focus:outline-0 focus:ring-0',
+              'placeholder:text-muted-foreground focus-visible:outline-0 ',
+              className
+            )}
+          >
+            <DateTimeLocalInput />
+            <NaturalLanguageInput
+              placeholder={placeholder}
+              disabled={disabled}
+              ref={ref}
+            />
+          </div>
         </div>
-      </div>
-    </SmartDatetimeInputContext.Provider>
-  );
-});
+      </SmartDatetimeInputContext.Provider>
+    );
+  }
+);
 
 SmartDatetimeInput.displayName = 'DatetimeInput';
 
@@ -162,20 +207,17 @@ const TimePicker = () => {
     (time: string, hour: number, partStamp: number) => {
       onTimeChange(time);
 
-      const newVal = parseDateTime(value ?? new Date());
+      let newVal = value ? new Date(value) : new Date();
 
-      if (!newVal) return;
-
+      // If no value exists, use current date but only set the time
       newVal.setHours(
         hour,
         partStamp === 0 ? parseInt('00') : timestamp * partStamp
       );
 
-      // ? refactor needed check if we want to use the new date
-
       onValueChange(newVal);
     },
-    [value]
+    [value, onValueChange, onTimeChange]
   );
 
   const handleKeydown = React.useCallback(
@@ -328,7 +370,7 @@ const TimePicker = () => {
 
   return (
     <div className='space-y-2 pr-3 py-3 relative '>
-      <h3 className='text-sm font-medium '>Time</h3>
+      <h3 className='text-sm font-medium text-center'>Time</h3>
       <ScrollArea
         onKeyDown={handleKeydown}
         className='h-[90%] w-full focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-0 py-0.5'
@@ -393,7 +435,18 @@ const TimePicker = () => {
     </div>
   );
 };
-
+const getDefaultPlaceholder = (
+  showCalendar: boolean,
+  showTimePicker: boolean
+) => {
+  if (!showCalendar && showTimePicker) {
+    return 'e.g. "5pm" or "in 2 hours"';
+  }
+  if (showCalendar && !showTimePicker) {
+    return 'e.g. "tomorrow" or "next monday"';
+  }
+  return 'e.g. "tomorrow at 5pm" or "in 2 hours"';
+};
 const NaturalLanguageInput = React.forwardRef<
   HTMLInputElement,
   {
@@ -401,72 +454,90 @@ const NaturalLanguageInput = React.forwardRef<
     disabled?: boolean;
   }
 >(({ placeholder, ...props }, ref) => {
-  const { value, onValueChange, Time, onTimeChange } = useSmartDateInput();
+  const {
+    value,
+    onValueChange,
+    Time,
+    onTimeChange,
+    showCalendar,
+    showTimePicker,
+  } = useSmartDateInput();
 
-  const _placeholder = placeholder ?? 'e.g. "tomorrow at 5pm" or "in 2 hours"';
+  const _placeholder =
+    placeholder ?? getDefaultPlaceholder(showCalendar, showTimePicker);
 
   const [inputValue, setInputValue] = React.useState<string>('');
 
   React.useEffect(() => {
-    const hour = new Date().getHours();
-    const timeVal = `${
-      hour >= 12 ? hour % 12 : hour
-    }:${new Date().getMinutes()} ${hour >= 12 ? 'PM' : 'AM'}`;
-    setInputValue(value ? formatDateTime(value) : '');
-    onTimeChange(value ? Time : timeVal);
-  }, [value, Time]);
+    if (!value) {
+      setInputValue('');
+      return;
+    }
+
+    const formattedValue = formatDateTime(value, showCalendar, showTimePicker);
+    setInputValue(formattedValue);
+
+    // Only update time if time picker is shown
+    if (showTimePicker) {
+      const hour = value.getHours();
+      const timeVal = `${hour >= 12 ? hour % 12 || 12 : hour || 12}:${String(
+        value.getMinutes()
+      ).padStart(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}`;
+      onTimeChange(timeVal);
+    }
+  }, [value, showCalendar, showTimePicker]);
 
   const handleParse = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      // parse the date string when the input field loses focus
       const parsedDateTime = parseDateTime(e.currentTarget.value);
       if (parsedDateTime) {
-        const PM_AM = parsedDateTime.getHours() >= 12 ? 'PM' : 'AM';
-        //fix the time format for this value
-
-        const PM_AM_hour = parsedDateTime.getHours();
-
-        const hour =
-          PM_AM_hour > 12
-            ? PM_AM_hour % 12
-            : PM_AM_hour === 0 || PM_AM_hour === 12
-              ? 12
-              : PM_AM_hour;
+        // If only showing time picker, preserve the current date
+        if (!showCalendar && showTimePicker && value) {
+          parsedDateTime.setFullYear(
+            value.getFullYear(),
+            value.getMonth(),
+            value.getDate()
+          );
+        }
+        // If only showing calendar, preserve the current time
+        if (showCalendar && !showTimePicker && value) {
+          parsedDateTime.setHours(0, 0, 0, 0);
+        }
+        // console.log(parsedDateTime);
 
         onValueChange(parsedDateTime);
-        setInputValue(formatDateTime(parsedDateTime));
-        onTimeChange(`${hour}:${parsedDateTime.getMinutes()} ${PM_AM}`);
+        setInputValue(
+          formatDateTime(parsedDateTime, showCalendar, showTimePicker)
+        );
+
+        if (showTimePicker) {
+          const PM_AM = parsedDateTime.getHours() >= 12 ? 'PM' : 'AM';
+          const PM_AM_hour = parsedDateTime.getHours();
+          const hour =
+            PM_AM_hour > 12
+              ? PM_AM_hour % 12
+              : PM_AM_hour === 0 || PM_AM_hour === 12
+                ? 12
+                : PM_AM_hour;
+          onTimeChange(
+            `${hour}:${String(parsedDateTime.getMinutes()).padStart(
+              2,
+              '0'
+            )} ${PM_AM}`
+          );
+        }
       }
     },
-    [value]
+    [value, showCalendar, showTimePicker]
   );
 
   const handleKeydown = React.useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
-      switch (e.key) {
-        case 'Enter':
-          const parsedDateTime = parseDateTime(e.currentTarget.value);
-          if (parsedDateTime) {
-            const PM_AM = parsedDateTime.getHours() >= 12 ? 'PM' : 'AM';
-            //fix the time format for this value
-
-            const PM_AM_hour = parsedDateTime.getHours();
-
-            const hour =
-              PM_AM_hour > 12
-                ? PM_AM_hour % 12
-                : PM_AM_hour === 0 || PM_AM_hour === 12
-                  ? 12
-                  : PM_AM_hour;
-
-            onValueChange(parsedDateTime);
-            setInputValue(formatDateTime(parsedDateTime));
-            onTimeChange(`${hour}:${parsedDateTime.getMinutes()} ${PM_AM}`);
-          }
-          break;
+      if (e.key === 'Enter') {
+        handleParse(e as any);
       }
     },
-    [value]
+    [handleParse]
   );
 
   return (
@@ -495,7 +566,8 @@ const DateTimeLocalInput = ({
   className,
   ...props
 }: DateTimeLocalInputProps) => {
-  const { value, onValueChange, Time } = useSmartDateInput();
+  const { value, onValueChange, Time, showCalendar, showTimePicker } =
+    useSmartDateInput();
 
   const formateSelectedDate = React.useCallback(
     (
@@ -504,17 +576,24 @@ const DateTimeLocalInput = ({
       m: ActiveModifiers,
       e: React.MouseEvent
     ) => {
-      const parsedDateTime = parseDateTime(selectedDate);
+      const parsedDateTime = new Date(selectedDate);
 
-      if (parsedDateTime) {
+      if (!showTimePicker) {
+        // If only calendar is shown, set time to start of day
+        parsedDateTime.setHours(0, 0, 0, 0);
+      } else if (value) {
+        // If time picker is shown, preserve existing time
         parsedDateTime.setHours(
-          parseInt(Time.split(':')[0]),
-          parseInt(Time.split(':')[1])
+          value.getHours(),
+          value.getMinutes(),
+          value.getSeconds(),
+          value.getMilliseconds()
         );
-        onValueChange(parsedDateTime);
       }
+
+      onValueChange(parsedDateTime);
     },
-    [value, Time]
+    [value, showTimePicker, onValueChange]
   );
 
   return (
@@ -529,21 +608,23 @@ const DateTimeLocalInput = ({
           )}
         >
           <CalendarIcon className='size-4' />
-          <span className='sr-only'>calender</span>
+          <span className='sr-only'>calendar</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className='w-auto p-0 bg-background' sideOffset={8}>
         <div className='flex gap-1'>
-          <Calendar
-            {...props}
-            id={'calendar'}
-            className={cn('peer flex justify-end', inputBase, className)}
-            mode='single'
-            selected={value}
-            onSelect={formateSelectedDate}
-            initialFocus
-          />
-          <TimePicker />
+          {showCalendar && (
+            <Calendar
+              {...props}
+              id={'calendar'}
+              className={cn('peer flex justify-end', inputBase, className)}
+              mode='single'
+              selected={value}
+              onSelect={formateSelectedDate}
+              initialFocus
+            />
+          )}
+          {showTimePicker && <TimePicker />}
         </div>
       </PopoverContent>
     </Popover>

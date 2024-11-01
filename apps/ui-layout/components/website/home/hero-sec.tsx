@@ -201,7 +201,7 @@ function HeroSec() {
             </span>
           </h1>
           <p className='mx-auto lg:w-[500px] sm:w-[80%] text-center sm:text-lg text-sm'>
-            100+ Free beautifull interactive react/nextjs component based on
+            50+ Free beautifull interactive react/nextjs component based on
             tailwindcss, framer-motion, gsap etc
           </p>
           <div className='flex gap-2 justify-center items-center'>

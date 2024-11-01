@@ -13,9 +13,11 @@ export default function Component() {
 
   return (
     <div className='p-4 max-w-md mx-auto'>
-      <h1 className='text-2xl font-bold mb-4'>Smart DateTime Input Example</h1>
+      <h1 className='text-2xl font-bold mb-4'>Date Input Example</h1>
       <SmartDatetimeInput
         value={selectedDate}
+        showCalendar={true}
+        showTimePicker={false}
         onValueChange={handleDateChange}
         placeholder='Enter a date and time'
       />

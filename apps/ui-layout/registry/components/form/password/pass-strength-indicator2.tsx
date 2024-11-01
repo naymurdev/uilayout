@@ -58,7 +58,7 @@ const PasswordInput = () => {
     };
   }, [password]);
 
-  console.log(calculateStrength);
+  // console.log(calculateStrength);
 
   return (
     <div className='w-96 mx-auto '>
