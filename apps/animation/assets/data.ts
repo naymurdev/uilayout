@@ -32,6 +32,13 @@ export const COMPONENTS = [
     componentSrc: React.lazy(() => import('@/components/pages/ripple-shader')),
   },
   {
+    componentName: 'imgRippleEffect2',
+    componentUrl: 'img-ripple-effect2',
+    componentSrc: React.lazy(
+      () => import('@/components/pages/ripple-shader/example1')
+    ),
+  },
+  {
     componentName: 'smoothScroll',
     componentUrl: 'smooth-scroll',
     componentSrc: React.lazy(() => import('@/components/pages/smooth-scroll')),

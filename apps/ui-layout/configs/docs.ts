@@ -19,6 +19,11 @@ export const SpecialComponents = [
     name: 'Img Ripple Effect',
     new: true,
   },
+  {
+    href: '/components/buy-me-coffee',
+    name: 'Buy Me A Coffee',
+    new: true,
+  },
 ];
 export const MainComponents = [
   {
@@ -283,6 +288,21 @@ export const MainComponents = [
 ];
 
 export const AllComponents = [
+  {
+    parentlink: 'buy-me-coffee',
+    componentName: 'Buy Me A Coffee',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/buy-me-acoffee')
+    ),
+    iframeSrc: 'live-components/buy-me-coffee',
+    tags: [
+      'Sponser',
+      'Buy me a coffee',
+      'co-fi',
+      'Buy-me-a-coffee',
+      'supports',
+    ],
+  },
   {
     parentlink: 'file-upload',
     componentName: 'Chatbox Dropzone',

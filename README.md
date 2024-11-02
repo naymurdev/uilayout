@@ -1,4 +1,12 @@
-# Ui-Layout
+<br />
+<p align="center">
+  <a href="https://github.com/naymurdev/uilayout">
+    <img src="uilayoutlogo.png" alt="uilayout" width="150" />
+  </a>
+  <h1 align="center">
+    UI-Layout
+</h1>
+<p>
 
 UI LAYOUT is an open-source component library that makes easier for developers and designers to build websites. It's focused on creative designs. I love to create comopnent that really matter or need your site and I belive in future I'll bring more as i kept bringing more just support me
 
@@ -50,6 +58,10 @@ export function useMediaQuery(query: string) {
   return value
 }
 ```
+
+## Be A Sponsor
+
+<p><a href="https://buymeacoffee.com/naymurdev"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="naymur-uilayout" /></a></p>
 
 ## Most Used Components
 

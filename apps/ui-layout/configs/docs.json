@@ -211,6 +211,13 @@
           "iframeSrc": "live-components/noise-effect",
           "parentlink": "noise",
           "parentName": "Noise"
+        },
+        {
+          "componentName": "buyme-acoffee",
+          "filesrc": "components/buy-me-acoffee.tsx",
+          "iframeSrc": "live-components/buyme-acoffee",
+          "parentlink": "buyme-acoffe",
+          "parentName": "Buy Me a Coffe"
         }
       ],
       "type": "default "

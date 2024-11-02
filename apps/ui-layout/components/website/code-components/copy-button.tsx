@@ -26,7 +26,7 @@ export function CopyButton({
     <>
       <div
         className={cn(
-          'absolute right-2 top-2 cursor-pointer dark:bg-gray-950 backdrop-blur-2xl bg-white rounded-md border',
+          'absolute right-2 top-2 cursor-pointer   dark:bg-gray-950 backdrop-blur-2xl bg-white rounded-md border',
           classname
         )}
         onClick={onCopy}

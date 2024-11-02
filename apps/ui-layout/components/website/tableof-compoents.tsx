@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import BuyMeCoffee from '@/registry/components/buy-me-acoffee';
 
 interface TocItem {
   title: string;
@@ -81,7 +82,11 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
                           <li key={item.url}>
                             <a
                               href={item.url}
-                              className={`${activeId === item.url.slice(1) ? ' font-semibold  text-primary py-1' : ''} no-underline rounded-sm px-1 hover:text-primary text-muted-foreground `}
+                              className={`${
+                                activeId === item.url.slice(1)
+                                  ? ' font-semibold  text-primary py-1'
+                                  : ''
+                              } no-underline rounded-sm px-1 hover:text-primary text-muted-foreground `}
                             >
                               {item.title}
                             </a>
@@ -91,7 +96,11 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
                                   <li key={subItem.url}>
                                     <a
                                       href={subItem.url}
-                                      className={`${activeId === subItem.url.slice(1) ? ' font-semibold text-primary' : ' '} no-underline  hover:text-primary text-muted-foreground`}
+                                      className={`${
+                                        activeId === subItem.url.slice(1)
+                                          ? ' font-semibold text-primary'
+                                          : ' '
+                                      } no-underline  hover:text-primary text-muted-foreground`}
                                     >
                                       {subItem.title}
                                     </a>
@@ -105,6 +114,7 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
                     })}
                   </ul>
                 </div>
+                <BuyMeCoffee classname='mt-10 w-full' />
               </div>
             </aside>
           )}
@@ -130,7 +140,11 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
                         <li key={item.url}>
                           <a
                             href={item.url}
-                            className={`${activeId === item.url.slice(1) ? ' font-semibold  text-primary py-1' : ''} no-underline rounded-sm px-1 hover:text-primary text-muted-foreground `}
+                            className={`${
+                              activeId === item.url.slice(1)
+                                ? ' font-semibold  text-primary py-1'
+                                : ''
+                            } no-underline rounded-sm px-1 hover:text-primary text-muted-foreground `}
                           >
                             {item.title}
                           </a>
@@ -140,7 +154,11 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
                                 <li key={subItem.url}>
                                   <a
                                     href={subItem.url}
-                                    className={`${activeId === subItem.url.slice(1) ? ' font-semibold text-primary' : ' '} no-underline  hover:text-primary text-muted-foreground`}
+                                    className={`${
+                                      activeId === subItem.url.slice(1)
+                                        ? ' font-semibold text-primary'
+                                        : ' '
+                                    } no-underline  hover:text-primary text-muted-foreground`}
                                   >
                                     {subItem.title}
                                   </a>
