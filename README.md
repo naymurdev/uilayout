@@ -1,11 +1,8 @@
 <br />
 <p align="center">
   <a href="https://github.com/naymurdev/uilayout">
-    <img src="uilayoutlogo.png" alt="uilayout" width="350" />
+    <img src="uilayoutlogo.png" alt="uilayout" width="450" />
   </a>
-  <h1 align="center">
-    UI-Layout
-</h1>
 <p>
 
 UI LAYOUT is an open-source component library that makes easier for developers and designers to build websites. It's focused on creative designs. I love to create comopnent that really matter or need your site and I belive in future I'll bring more as i kept bringing more just support me
