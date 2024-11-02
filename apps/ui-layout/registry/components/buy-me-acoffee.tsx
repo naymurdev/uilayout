@@ -14,7 +14,7 @@ function BuyMeCoffee({ classname }: { classname?: string }) {
       >
         <svg
           width='424'
-          className='absolute top-0 left-0 w-full h-full scale-[2] translate-x-6 group-hover:scale-50 group-hover:opacity-0 duration-300 '
+          className='absolute top-0 left-0 w-full h-full scale-[2] translate-x-6 group-hover:scale-50 group-hover:opacity-0 duration-300 group-hover:delay-0 delay-200'
           height='424'
           viewBox='0 0 424 424'
           fill='none'
@@ -573,7 +573,7 @@ function BuyMeCoffee({ classname }: { classname?: string }) {
         <svg
           width='65'
           height='13'
-          className='absolute top-3.5 opacity-0 group-hover:opacity-100 delay-100 transition-all duration-300 w-full flex justify-center group-hover:scale-[2]'
+          className='absolute top-[1.15rem] opacity-0 group-hover:opacity-100 delay-100 transition-all duration-300 w-full flex justify-center group-hover:scale-[2]'
           viewBox='0 0 65 13'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'

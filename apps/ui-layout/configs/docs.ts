@@ -294,7 +294,7 @@ export const AllComponents = [
     componentSrc: React.lazy(
       () => import('@/registry/components/buy-me-acoffee')
     ),
-    iframeSrc: 'live-components/buy-me-coffee',
+    iframeSrc: 'live-components/buyme-acoffee',
     tags: [
       'Sponser',
       'Buy me a coffee',
