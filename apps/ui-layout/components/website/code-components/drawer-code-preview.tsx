@@ -6,19 +6,14 @@ import {
   TabsTrigger,
 } from '@/components/website/ui/tabs';
 import docs from '@/configs/docs.json';
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from '@/components/website/ui/dialog';
+
 import { Pre, RawCode, highlight } from 'codehike/code';
 
 import {
   DrawerContent,
   ResponsiveDrawer,
 } from '@/components/core/drawer/vaul-main';
-import ComponentPreview from './component-preview';
-import { extractCodeFromFilePath } from '@/lib/code';
+
 import React from 'react';
 import { Code, Eye, Maximize2 } from 'lucide-react';
 import prettier from 'prettier';
@@ -29,6 +24,7 @@ import ComponentBlocks from './component-block';
 import { callout, wordWrap } from '../constant';
 import { cn } from '@/lib/utils';
 import ts from 'typescript';
+import { AllComponents } from '@/configs/docs';
 
 type ComponentCodePreview = {
   component: React.ReactElement;
@@ -81,7 +77,7 @@ export default async function DrawerCodePreview({
 
   // const isDesktop = useMediaQuery('(min-width: 768px)');
   // if (isDesktop) {
-  // console.log(parsedCodeblock.codeblock);
+  // console.log(parsedCodeblock);
   const getcode = JSON.parse(Codes[0]?.props.codeblock);
   const result = ts.transpileModule(getcode, {
     compilerOptions: {
@@ -119,7 +115,10 @@ export default async function DrawerCodePreview({
   // Highlight the code
   const tshighlighted = await highlight(tsCode, 'github-from-css');
   const jshighlighted = await highlight(jsCodeblock, 'github-from-css');
-
+  // console.log(component);
+  // const currentComponentData = AllComponents.find(
+  //   (com) => com.iframeSrc === parsedCodeblock.
+  // );
   return (
     <>
       <div

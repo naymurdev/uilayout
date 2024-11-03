@@ -19,6 +19,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@radix-ui/react-tooltip';
+import { AllComponents } from '@/configs/docs';
 type ComponentPreviewProps = {
   component?: TCurrComponentProps;
   hasReTrigger?: boolean;
@@ -31,7 +32,7 @@ type ComponentPreviewProps = {
   isNotCopy?: boolean;
   iframeComponent?: string;
 };
-
+type DynamicComponentType = React.ComponentType<any>;
 export default function ComponentPreview({
   component,
   hasReTrigger = false,
@@ -64,19 +65,22 @@ export default function ComponentPreview({
     }, 1000);
   };
   // console.log(component);
+  const currentComponentData = AllComponents.find(
+    (com) => com.iframeSrc === component?.iframeSrc
+  );
 
   // Memoize the ComponentPreview to prevent re-rendering
-  const MemoizedComponentPreview = useMemo(() => {
-    return component?.filesrc
-      ? dynamic(() => import(`../../../registry/${component.filesrc}`), {
-          loading: () => (
-            <div className='h-[400px] grid place-content-center'>
-              Loading preview...
-            </div>
-          ),
-        })
-      : null;
-  }, [component?.filesrc]);
+  // const MemoizedComponentPreview = useMemo(() => {
+  //   return component?.filesrc
+  //     ? dynamic(() => import(`../../../registry/${component.filesrc}`), {
+  //         loading: () => (
+  //           <div className='h-[400px] grid place-content-center'>
+  //             Loading preview...
+  //           </div>
+  //         ),
+  //       })
+  //     : null;
+  // }, [component?.filesrc]);
   // console.log(iframeComponent);
 
   return (
@@ -274,11 +278,19 @@ export default function ComponentPreview({
               className='h-full  mx-auto p-5 not-prose'
               style={{ width: responsive ? width : '100%' }}
             >
-              {MemoizedComponentPreview ? (
-                <MemoizedComponentPreview key={reTriggerKey} />
-              ) : (
-                <div>Component not found</div>
-              )}
+              <div
+                className='h-full mx-auto p-5 not-prose'
+                style={{ width: responsive ? width : '100%' }}
+              >
+                {currentComponentData ? (
+                  React.createElement(
+                    currentComponentData.componentSrc as DynamicComponentType,
+                    { key: reTriggerKey }
+                  )
+                ) : (
+                  <>Component Not Found</>
+                )}
+              </div>
             </div>
           </div>
         </>

@@ -1,275 +1,279 @@
-'use client'
+'use client';
 
-import { Drawer } from 'vaul'
+import { Drawer } from 'vaul';
 
 export default function MyDrawer() {
   return (
-    <Drawer.Root shouldScaleBackground>
-      <Drawer.Trigger asChild>
-        <button>Open Drawer</button>
-      </Drawer.Trigger>
-      <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-        <Drawer.Content className="bg-gray-100 flex flex-col rounded-t-[10px] h-full mt-24 max-h-[96%] fixed bottom-0 left-0 right-0">
-          <div className="p-4 bg-white rounded-t-[10px] flex-1">
-            <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8" />
-            <div className="max-w-md mx-auto">
-              <Drawer.Title className="font-medium mb-4">
-                Drawer for React.
-              </Drawer.Title>
-              <p className="text-gray-600 mb-2">
-                This component can be used as a Dialog replacement on mobile and
-                tablet devices.
-              </p>
-              <p className="text-gray-600 mb-2">
-                It comes unstyled and has gesture-driven animations.
-              </p>
-              <p className="text-gray-600 mb-6">
-                It uses{' '}
-                <a
-                  href="https://www.radix-ui.com/docs/primitives/components/dialog"
-                  className="underline"
-                  target="_blank"
-                >
-                  Radix&rsquo;s Dialog primitive
-                </a>{' '}
-                under the hood and is inspired by{' '}
-                <a
-                  href="https://twitter.com/devongovett/status/1674470185783402496"
-                  className="underline"
-                  target="_blank"
-                >
-                  this tweet.
-                </a>
-              </p>
-              <Drawer.NestedRoot>
-                <Drawer.Trigger className="rounded-md mb-6 w-full bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
-                  Open Second Drawer
-                </Drawer.Trigger>
-                <Drawer.Portal>
-                  <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-                  <Drawer.Content className="bg-gray-100 flex flex-col rounded-t-[10px] h-full mt-24 max-h-[94%] fixed bottom-0 left-0 right-0">
-                    <div className="p-4 bg-white rounded-t-[10px] flex-1">
-                      <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8" />
-                      <div className="max-w-md mx-auto">
-                        <Drawer.Title className="font-medium mb-4">
-                          This drawer is nested.
-                        </Drawer.Title>
-                        <p className="text-gray-600 mb-2">
-                          Place a{' '}
-                          <span className="font-mono text-[15px] font-semibold">
-                            `Drawer.NestedRoot`
-                          </span>{' '}
-                          inside another drawer and it will be nested
-                          automatically for you.
-                        </p>
-                        <p className="text-gray-600 mb-2">
-                          You can view more examples{' '}
-                          <a
-                            href="https://github.com/emilkowalski/vaul#examples"
-                            className="underline"
-                            target="_blank"
-                          >
-                            here
-                          </a>
-                          .
-                          <Drawer.NestedRoot>
-                            <Drawer.Trigger className="rounded-md mb-6 w-full bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
-                              Open third Drawer
-                            </Drawer.Trigger>
-                            <Drawer.Portal>
-                              <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-                              <Drawer.Content className="bg-gray-100 flex flex-col rounded-t-[10px] h-full mt-24 max-h-[94%] fixed bottom-0 left-0 right-0">
-                                <div className="p-4 bg-white rounded-t-[10px] flex-1">
-                                  <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8" />
-                                  <div className="max-w-md mx-auto">
-                                    <Drawer.Title className="font-medium mb-4">
-                                      This drawer is nested.
-                                    </Drawer.Title>
-                                    <p className="text-gray-600 mb-2">
-                                      Place a{' '}
-                                      <span className="font-mono text-[15px] font-semibold">
-                                        `Drawer.NestedRoot`
-                                      </span>{' '}
-                                      inside another drawer and it will be
-                                      nested automatically for you.
-                                    </p>
-                                    <p className="text-gray-600 mb-2">
-                                      You can view more examples{' '}
+    <div className='flex justify-center'>
+      <Drawer.Root shouldScaleBackground>
+        <Drawer.Trigger asChild>
+          <button className='inline-flex h-12 w-fit mx-auto animate-background-shine items-center justify-center rounded-md  border-2 dark:border-[#656fe2] border-[#c0c6fc] dark:bg-[linear-gradient(110deg,#1e2a78,45%,#3749be,55%,#1e2a78)] bg-[linear-gradient(110deg,#3d5af1,45%,#5471ff,55%,#3d5af1)] bg-[length:200%_100%] dark:hover:border-white px-6 font-medium text-white dark:text-white transition-colors focus:outline-none focus:ring-2 dark:focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50'>
+            Open Drawer
+          </button>
+        </Drawer.Trigger>
+        <Drawer.Portal>
+          <Drawer.Overlay className='fixed inset-0 bg-black/40' />
+          <Drawer.Content className='bg-gray-100 flex flex-col rounded-t-[10px] h-full mt-24 max-h-[96%] fixed bottom-0 left-0 right-0'>
+            <div className='p-4 bg-white rounded-t-[10px] flex-1'>
+              <div className='mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8' />
+              <div className='max-w-md mx-auto'>
+                <Drawer.Title className='font-medium mb-4'>
+                  Drawer for React.
+                </Drawer.Title>
+                <p className='text-gray-600 mb-2'>
+                  This component can be used as a Dialog replacement on mobile
+                  and tablet devices.
+                </p>
+                <p className='text-gray-600 mb-2'>
+                  It comes unstyled and has gesture-driven animations.
+                </p>
+                <p className='text-gray-600 mb-6'>
+                  It uses{' '}
+                  <a
+                    href='https://www.radix-ui.com/docs/primitives/components/dialog'
+                    className='underline'
+                    target='_blank'
+                  >
+                    Radix&rsquo;s Dialog primitive
+                  </a>{' '}
+                  under the hood and is inspired by{' '}
+                  <a
+                    href='https://twitter.com/devongovett/status/1674470185783402496'
+                    className='underline'
+                    target='_blank'
+                  >
+                    this tweet.
+                  </a>
+                </p>
+                <Drawer.NestedRoot>
+                  <Drawer.Trigger className='rounded-md mb-6 w-full bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600'>
+                    Open Second Drawer
+                  </Drawer.Trigger>
+                  <Drawer.Portal>
+                    <Drawer.Overlay className='fixed inset-0 bg-black/40' />
+                    <Drawer.Content className='bg-gray-100 flex flex-col rounded-t-[10px] h-full mt-24 max-h-[94%] fixed bottom-0 left-0 right-0'>
+                      <div className='p-4 bg-white rounded-t-[10px] flex-1'>
+                        <div className='mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8' />
+                        <div className='max-w-md mx-auto'>
+                          <Drawer.Title className='font-medium mb-4'>
+                            This drawer is nested.
+                          </Drawer.Title>
+                          <p className='text-gray-600 mb-2'>
+                            Place a{' '}
+                            <span className='font-mono text-[15px] font-semibold'>
+                              `Drawer.NestedRoot`
+                            </span>{' '}
+                            inside another drawer and it will be nested
+                            automatically for you.
+                          </p>
+                          <p className='text-gray-600 mb-2'>
+                            You can view more examples{' '}
+                            <a
+                              href='https://github.com/emilkowalski/vaul#examples'
+                              className='underline'
+                              target='_blank'
+                            >
+                              here
+                            </a>
+                            .
+                            <Drawer.NestedRoot>
+                              <Drawer.Trigger className='rounded-md mb-6 w-full bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600'>
+                                Open third Drawer
+                              </Drawer.Trigger>
+                              <Drawer.Portal>
+                                <Drawer.Overlay className='fixed inset-0 bg-black/40' />
+                                <Drawer.Content className='bg-gray-100 flex flex-col rounded-t-[10px] h-full mt-24 max-h-[94%] fixed bottom-0 left-0 right-0'>
+                                  <div className='p-4 bg-white rounded-t-[10px] flex-1'>
+                                    <div className='mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8' />
+                                    <div className='max-w-md mx-auto'>
+                                      <Drawer.Title className='font-medium mb-4'>
+                                        This drawer is nested.
+                                      </Drawer.Title>
+                                      <p className='text-gray-600 mb-2'>
+                                        Place a{' '}
+                                        <span className='font-mono text-[15px] font-semibold'>
+                                          `Drawer.NestedRoot`
+                                        </span>{' '}
+                                        inside another drawer and it will be
+                                        nested automatically for you.
+                                      </p>
+                                      <p className='text-gray-600 mb-2'>
+                                        You can view more examples{' '}
+                                        <a
+                                          href='https://github.com/emilkowalski/vaul#examples'
+                                          className='underline'
+                                          target='_blank'
+                                        >
+                                          here
+                                        </a>
+                                        .
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className='p-4 bg-gray-100 border-t border-gray-200 mt-auto'>
+                                    <div className='flex gap-6 justify-end max-w-md mx-auto'>
                                       <a
-                                        href="https://github.com/emilkowalski/vaul#examples"
-                                        className="underline"
-                                        target="_blank"
+                                        className='text-xs text-gray-600 flex items-center gap-0.25'
+                                        href='https://github.com/emilkowalski/vaul'
+                                        target='_blank'
                                       >
-                                        here
+                                        GitHub
+                                        <svg
+                                          fill='none'
+                                          height='16'
+                                          stroke='currentColor'
+                                          strokeLinecap='round'
+                                          strokeLinejoin='round'
+                                          strokeWidth='2'
+                                          viewBox='0 0 24 24'
+                                          width='16'
+                                          aria-hidden='true'
+                                          className='w-3 h-3 ml-1'
+                                        >
+                                          <path d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'></path>
+                                          <path d='M15 3h6v6'></path>
+                                          <path d='M10 14L21 3'></path>
+                                        </svg>
                                       </a>
-                                      .
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className="p-4 bg-gray-100 border-t border-gray-200 mt-auto">
-                                  <div className="flex gap-6 justify-end max-w-md mx-auto">
-                                    <a
-                                      className="text-xs text-gray-600 flex items-center gap-0.25"
-                                      href="https://github.com/emilkowalski/vaul"
-                                      target="_blank"
-                                    >
-                                      GitHub
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        width="16"
-                                        aria-hidden="true"
-                                        className="w-3 h-3 ml-1"
+                                      <a
+                                        className='text-xs text-gray-600 flex items-center gap-0.25'
+                                        href='https://twitter.com/emilkowalski_'
+                                        target='_blank'
                                       >
-                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                                        <path d="M15 3h6v6"></path>
-                                        <path d="M10 14L21 3"></path>
-                                      </svg>
-                                    </a>
-                                    <a
-                                      className="text-xs text-gray-600 flex items-center gap-0.25"
-                                      href="https://twitter.com/emilkowalski_"
-                                      target="_blank"
-                                    >
-                                      Twitter
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        width="16"
-                                        aria-hidden="true"
-                                        className="w-3 h-3 ml-1"
-                                      >
-                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                                        <path d="M15 3h6v6"></path>
-                                        <path d="M10 14L21 3"></path>
-                                      </svg>
-                                    </a>
+                                        Twitter
+                                        <svg
+                                          fill='none'
+                                          height='16'
+                                          stroke='currentColor'
+                                          strokeLinecap='round'
+                                          strokeLinejoin='round'
+                                          strokeWidth='2'
+                                          viewBox='0 0 24 24'
+                                          width='16'
+                                          aria-hidden='true'
+                                          className='w-3 h-3 ml-1'
+                                        >
+                                          <path d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'></path>
+                                          <path d='M15 3h6v6'></path>
+                                          <path d='M10 14L21 3'></path>
+                                        </svg>
+                                      </a>
+                                    </div>
                                   </div>
-                                </div>
-                              </Drawer.Content>
-                            </Drawer.Portal>
-                          </Drawer.NestedRoot>
-                        </p>
+                                </Drawer.Content>
+                              </Drawer.Portal>
+                            </Drawer.NestedRoot>
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="p-4 bg-gray-100 border-t border-gray-200 mt-auto">
-                      <div className="flex gap-6 justify-end max-w-md mx-auto">
-                        <a
-                          className="text-xs text-gray-600 flex items-center gap-0.25"
-                          href="https://github.com/emilkowalski/vaul"
-                          target="_blank"
-                        >
-                          GitHub
-                          <svg
-                            fill="none"
-                            height="16"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            width="16"
-                            aria-hidden="true"
-                            className="w-3 h-3 ml-1"
+                      <div className='p-4 bg-gray-100 border-t border-gray-200 mt-auto'>
+                        <div className='flex gap-6 justify-end max-w-md mx-auto'>
+                          <a
+                            className='text-xs text-gray-600 flex items-center gap-0.25'
+                            href='https://github.com/emilkowalski/vaul'
+                            target='_blank'
                           >
-                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                            <path d="M15 3h6v6"></path>
-                            <path d="M10 14L21 3"></path>
-                          </svg>
-                        </a>
-                        <a
-                          className="text-xs text-gray-600 flex items-center gap-0.25"
-                          href="https://twitter.com/emilkowalski_"
-                          target="_blank"
-                        >
-                          Twitter
-                          <svg
-                            fill="none"
-                            height="16"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            width="16"
-                            aria-hidden="true"
-                            className="w-3 h-3 ml-1"
+                            GitHub
+                            <svg
+                              fill='none'
+                              height='16'
+                              stroke='currentColor'
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth='2'
+                              viewBox='0 0 24 24'
+                              width='16'
+                              aria-hidden='true'
+                              className='w-3 h-3 ml-1'
+                            >
+                              <path d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'></path>
+                              <path d='M15 3h6v6'></path>
+                              <path d='M10 14L21 3'></path>
+                            </svg>
+                          </a>
+                          <a
+                            className='text-xs text-gray-600 flex items-center gap-0.25'
+                            href='https://twitter.com/emilkowalski_'
+                            target='_blank'
                           >
-                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                            <path d="M15 3h6v6"></path>
-                            <path d="M10 14L21 3"></path>
-                          </svg>
-                        </a>
+                            Twitter
+                            <svg
+                              fill='none'
+                              height='16'
+                              stroke='currentColor'
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth='2'
+                              viewBox='0 0 24 24'
+                              width='16'
+                              aria-hidden='true'
+                              className='w-3 h-3 ml-1'
+                            >
+                              <path d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'></path>
+                              <path d='M15 3h6v6'></path>
+                              <path d='M10 14L21 3'></path>
+                            </svg>
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </Drawer.Content>
-                </Drawer.Portal>
-              </Drawer.NestedRoot>
+                    </Drawer.Content>
+                  </Drawer.Portal>
+                </Drawer.NestedRoot>
+              </div>
             </div>
-          </div>
-          <div className="p-4 bg-gray-100 border-t border-gray-200 mt-auto">
-            <div className="flex gap-6 justify-end max-w-md mx-auto">
-              <a
-                className="text-xs text-gray-600 flex items-center gap-0.25"
-                href="https://github.com/emilkowalski/vaul"
-                target="_blank"
-              >
-                GitHub
-                <svg
-                  fill="none"
-                  height="16"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  aria-hidden="true"
-                  className="w-3 h-3 ml-1"
+            <div className='p-4 bg-gray-100 border-t border-gray-200 mt-auto'>
+              <div className='flex gap-6 justify-end max-w-md mx-auto'>
+                <a
+                  className='text-xs text-gray-600 flex items-center gap-0.25'
+                  href='https://github.com/emilkowalski/vaul'
+                  target='_blank'
                 >
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                </svg>
-              </a>
-              <a
-                className="text-xs text-gray-600 flex items-center gap-0.25"
-                href="https://twitter.com/emilkowalski_"
-                target="_blank"
-              >
-                Twitter
-                <svg
-                  fill="none"
-                  height="16"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  aria-hidden="true"
-                  className="w-3 h-3 ml-1"
+                  GitHub
+                  <svg
+                    fill='none'
+                    height='16'
+                    stroke='currentColor'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    viewBox='0 0 24 24'
+                    width='16'
+                    aria-hidden='true'
+                    className='w-3 h-3 ml-1'
+                  >
+                    <path d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'></path>
+                    <path d='M15 3h6v6'></path>
+                    <path d='M10 14L21 3'></path>
+                  </svg>
+                </a>
+                <a
+                  className='text-xs text-gray-600 flex items-center gap-0.25'
+                  href='https://twitter.com/emilkowalski_'
+                  target='_blank'
                 >
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                </svg>
-              </a>
+                  Twitter
+                  <svg
+                    fill='none'
+                    height='16'
+                    stroke='currentColor'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    viewBox='0 0 24 24'
+                    width='16'
+                    aria-hidden='true'
+                    className='w-3 h-3 ml-1'
+                  >
+                    <path d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'></path>
+                    <path d='M15 3h6v6'></path>
+                    <path d='M10 14L21 3'></path>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-        </Drawer.Content>
-      </Drawer.Portal>
-    </Drawer.Root>
-  )
+          </Drawer.Content>
+        </Drawer.Portal>
+      </Drawer.Root>
+    </div>
+  );
 }

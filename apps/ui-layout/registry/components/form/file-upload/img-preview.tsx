@@ -42,7 +42,7 @@ const FileUploadDropzone = () => {
 
   const dropzone = {
     accept: {
-      'image/*': ['.jpg', '.jpeg', '.png'],
+      'image/*': ['.jpg', '.jpeg', '.png', '.gif'],
     },
     multiple: true,
     maxFiles: 4,

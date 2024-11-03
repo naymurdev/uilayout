@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ScrollArea } from '@/components/website/ui/scroll-area';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Atom, Component, Rocket, X } from 'lucide-react';
+import { Atom, ChevronsDown, Component, Rocket, X } from 'lucide-react';
 import { IRecentPage, useRecentPagesStore } from '@/hooks/useZustStore';
 import docsData from '@/configs/docs.json' assert { type: 'json' };
 import { useTheme } from 'next-themes';
@@ -201,7 +201,12 @@ export const ItemsWithName = ({
   pathname,
   addVisitedPage,
 }: any) => {
+  const [expandedItems, setExpandedItems] = useState<boolean>(true);
+
   const groupRef = useRef<HTMLDivElement>(null);
+  const showExpandButton = items.length > 2;
+  const itemsToShow =
+    expandedItems || !showExpandButton ? items : items.slice(0, 2);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   useEffect(() => {
@@ -220,11 +225,26 @@ export const ItemsWithName = ({
   return (
     <>
       <div ref={groupRef} key={group}>
-        <button className='xl:text-[1rem] text-[0.9rem] relative flex w-full items-center justify-between pr-4 cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1'>
+        <button className='text-[1rem] relative flex w-full items-center justify-between pr-4 cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1'>
           {group}
+          {showExpandButton && (
+            <div
+              onClick={() => setExpandedItems(!expandedItems)}
+              className='h-7 w-7 rounded-md dark:bg-gray-900 bg-gray-100 grid place-content-center absolute top-0 right-3'
+            >
+              <ChevronsDown
+                className={`h-5 w-5 transition-all ${
+                  !expandedItems && showExpandButton ? 'rotate-180' : 'rotate-0'
+                }`}
+              />
+            </div>
+          )}
         </button>
         <ul className='relative '>
-          {items.map((link: any, index: number) => (
+          {!expandedItems && showExpandButton && (
+            <div className='absolute w-full bottom-0 left-0 h-7 bg-gradient-to-t dark:from-base-dark from-white from-20%' />
+          )}
+          {itemsToShow.map((link: any, index: number) => (
             <li
               key={link.href}
               // @ts-ignore

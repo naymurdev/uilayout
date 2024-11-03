@@ -108,38 +108,68 @@ const ComponentSection = () => {
                       className='h-full w-full mx-auto'
                       style={{
                         width: `${comWidthPercentage}%`,
+                        scale: scalePercentage,
                         padding: `${compPadding}px`,
                       }}
                       loading='lazy'
                     />
                   </>
                 ) : (
-                  <div
-                    className={`${
-                      currentComponentData?.center ? 'w-fit' : ' w-full '
-                    }`}
-                  >
-                    <div
-                      style={{
-                        width: `${
-                          currentComponentData?.center
-                            ? 100
-                            : comWidthPercentage
-                        }%`,
-                        padding: `${compPadding}px`,
-                        scale: scalePercentage,
-                      }}
-                      className='mx-auto'
-                    >
-                      <Suspense
-                        fallback={
-                          <div className='flex justify-center'>Loading...</div>
+                  <>
+                    {currentComponentData?.componentSrc ? (
+                      <>
+                        <div
+                          className={`${
+                            currentComponentData?.center ? 'w-fit' : ' w-full '
+                          }`}
+                        >
+                          <div
+                            style={{
+                              width: `${
+                                currentComponentData?.center
+                                  ? 100
+                                  : comWidthPercentage
+                              }%`,
+                              padding: `${compPadding}px`,
+                              scale: scalePercentage,
+                            }}
+                            className='mx-auto'
+                          >
+                            {currentComponentData ? (
+                              <>
+                                <Suspense
+                                  fallback={
+                                    <div className='flex justify-center'>
+                                      Loading...
+                                    </div>
+                                  }
+                                >
+                                  <currentComponentData.componentSrc />
+                                </Suspense>
+                              </>
+                            ) : (
+                              <>Component Not Found!</>
+                            )}
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        {
+                          <iframe
+                            src={`${process.env.NEXT_PUBLIC_ANIMATION_URL}/${currentComponentData?.iframelink}`}
+                            className='h-full w-full mx-auto'
+                            style={{
+                              width: `${comWidthPercentage}%`,
+                              padding: `${compPadding}px`,
+                              scale: scalePercentage,
+                            }}
+                            loading='lazy'
+                          />
                         }
-                      >
-                        <currentComponentData.componentSrc />
-                      </Suspense>
-                    </div>
-                  </div>
+                      </>
+                    )}
+                  </>
                 )}
               </div>
             </div>

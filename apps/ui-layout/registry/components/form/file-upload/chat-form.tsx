@@ -34,7 +34,7 @@ const FileUploadDropzone = () => {
         value={files}
         orientation='vertical'
         onValueChange={setFiles}
-        className='w-fit pr-2'
+        className='w-fit pr-3'
         dropzoneOptions={dropzone}
       >
         {files?.length === 0 ? (

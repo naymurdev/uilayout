@@ -235,14 +235,14 @@
         {
           "componentName": "single-layout-accordion",
           "filesrc": "components/accordion/singlelayout.tsx",
-          "iframeSrc": "live-components/grid-layout-accordion",
+          "iframeSrc": "live-components/single-layout-accordion",
           "parentlink": "accordion",
           "parentName": "Accordion"
         },
         {
           "componentName": "multi-layout-accordion",
           "filesrc": "components/accordion/multilayout.tsx",
-          "iframeSrc": "live-components/grid-layout-accordion",
+          "iframeSrc": "live-components/multi-layout-accordion",
           "parentlink": "accordion",
           "parentName": "Accordion"
         },
@@ -276,6 +276,7 @@
         {
           "componentName": "phone-input",
           "filesrc": "components/form/phone-number/index.tsx",
+          "iframeSrc": "live-components/phone-input",
           "parentlink": "phone-input",
           "parentName": "Phone Input"
         },
@@ -816,7 +817,7 @@
         {
           "componentName": "imagemodalsl",
           "filesrc": "components/modal/image-modals.tsx",
-          "iframeSrc": "live-components/imagemodalsl",
+          "iframeSrc": "live-components/imagemodals",
           "parentlink": "media-modal",
           "parentName": "Media Modal"
         },

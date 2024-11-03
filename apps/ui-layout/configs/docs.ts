@@ -286,8 +286,134 @@ export const MainComponents = [
     component: 'marquee',
   },
 ];
+interface IAllComponents {
+  parentlink: string;
+  componentName: string;
+  componentSrc?: React.LazyExoticComponent<React.ComponentType<any>>;
+  iframeSrc?: string;
+  tags?: string[];
+  iframe?: boolean;
+  center?: boolean;
+  iframelink?: string;
+}
 
-export const AllComponents = [
+export const AllComponents: IAllComponents[] = [
+  {
+    parentlink: 'bg-mesh-gradient',
+    componentName: 'Mesh Gradient Playground',
+    iframelink: 'mess-gradient',
+    tags: [
+      'mesh-gradient',
+      'threejs mesh graddient',
+      'React3 Fiber mesh Gradient',
+    ],
+  },
+  {
+    parentlink: 'bg-mesh-gradient',
+    componentName: 'Mesh Gradient',
+    iframelink: 'mess-gradient2',
+    tags: [
+      'mesh-gradient',
+      'threejs mess graddient',
+      'React3 Fiber Mess Gradient',
+    ],
+  },
+  {
+    parentlink: 'img-ripple-effect',
+    componentName: 'Img Ripple Effect',
+    iframelink: 'img-ripple-effect',
+    tags: [
+      'img-ripple-effect',
+      'threejs ripple effect',
+      'React three Fiber Ripple Effect',
+    ],
+  },
+  {
+    parentlink: 'img-ripple-effect',
+    componentName: 'Single Image Ripple Effect',
+    iframelink: 'img-ripple-effect2',
+    tags: [
+      'single img-ripple-effect',
+      'img-ripple-effect',
+      'threejs ripple effect',
+      'React three Fiber Ripple Effect',
+    ],
+  },
+  {
+    parentlink: 'card-globe',
+    componentName: 'Dark Globe Card',
+    iframelink: 'card-globe',
+    tags: ['3D Globe', '3D Globe Card'],
+  },
+  {
+    parentlink: 'card-globe2',
+    componentName: 'White Globe Card',
+    iframelink: 'card-globe2',
+    tags: ['White 3D Globe', 'White 3D Globe Card'],
+  },
+  {
+    parentlink: 'horizontal-scroll',
+    componentName: 'Horizontal Scroll',
+    iframelink: 'horizontal-scrolling-section',
+    tags: ['White 3D Globe', 'White 3D Globe Card'],
+  },
+  {
+    parentlink: 'stacking-card',
+    componentName: 'Stacking Card',
+    iframelink: 'stacking-card',
+    tags: ['Card Stack', 'Interactive Cards'],
+  },
+  {
+    parentlink: 'stacking-card',
+    componentName: 'CSS Stacking Details Card',
+    iframelink: 'css-stacking-details-card',
+    tags: ['CSS Stacking', 'Details Card'],
+  },
+  {
+    parentlink: 'stacking-card',
+    componentName: 'CSS Stacking Card',
+    iframelink: 'css-stacking-card',
+    tags: ['CSS Image Stack', 'Stacking Card'],
+  },
+  {
+    parentlink: 'smooth-scroll',
+    componentName: 'Smooth Scroll',
+    iframelink: 'smooth-scroll',
+    tags: ['Smooth Scrolling', 'Lenis Smooth Scroll', 'Scroll Animation'],
+  },
+  {
+    parentlink: 'sticky-scroll',
+    componentName: 'Sticky Scroll Section',
+    iframelink: 'sticky-scroll-section',
+    tags: ['Sticky Scroll', 'Section'],
+  },
+  {
+    parentlink: 'sticky-scroll',
+    componentName: 'Sticky Gallery',
+    iframelink: 'sticky-gallery',
+    tags: ['Sticky Gallery', 'Gallery Scroll'],
+  },
+  {
+    parentlink: 'sticky-scroll',
+    componentName: 'Sticky Hero Section',
+    iframelink: 'sticky-hero-section',
+    tags: ['Sticky Hero', 'Hero Section'],
+  },
+  {
+    parentlink: 'sparkles-globe',
+    componentName: 'Globe With Sparkles',
+    iframelink: 'sparkles-globe',
+    tags: ['Sparkles', '3D Globe Sparkles', 'Globe Hero Section'],
+  },
+  {
+    parentlink: 'phone-input',
+    componentName: 'Phone Input',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/phone-number')
+    ),
+    iframeSrc: 'live-components/phone-input',
+    tags: ['phone-input', 'Phone Input', 'Input'],
+  },
   {
     parentlink: 'buy-me-coffee',
     componentName: 'Buy Me A Coffee',
@@ -309,13 +435,15 @@ export const AllComponents = [
     componentSrc: React.lazy(
       () => import('@/registry/components/form/file-upload/chat-form')
     ),
-    iframeSrc: 'live-components/file-upload',
+    iframeSrc: 'live-components/chat-form-dropzone',
     tags: [
       'DropZone input',
       'File Upload Input ',
       'file-upload',
       'file upload preview',
       'chat box upload file',
+      'Chat Box',
+      'Chat-Box',
     ],
   },
   {
@@ -324,12 +452,13 @@ export const AllComponents = [
     componentSrc: React.lazy(
       () => import('@/registry/components/form/file-upload/img-preview')
     ),
-    iframeSrc: 'live-components/file-upload',
+    iframeSrc: 'live-components/imgpreview-dropzone',
     tags: [
       'DropZone input',
       'File Upload Input ',
       'file-upload',
       'file upload preview',
+      'Img preview',
     ],
   },
   {
@@ -387,22 +516,14 @@ export const AllComponents = [
     iframeSrc: 'live-components/time-picker',
     tags: ['time picker', 'time-picker', 'Time Picker'],
   },
-  {
-    parentlink: 'datetime-picker',
-    componentName: 'Time Picker',
-    componentSrc: React.lazy(
-      () => import('@/registry/components/form/datetime-picker/time-picker')
-    ),
-    iframeSrc: 'live-components/time-picker',
-    tags: ['time picker', 'time-picker', 'Time Picker'],
-  },
+
   {
     parentlink: 'datetime-picker',
     componentName: 'Date Picker',
     componentSrc: React.lazy(
       () => import('@/registry/components/form/datetime-picker/date-picker')
     ),
-    iframeSrc: 'live-components/datetime-picker',
+    iframeSrc: 'live-components/date-picker',
     tags: ['date picker', 'date-picker', 'Date Picker'],
   },
   {
@@ -796,7 +917,7 @@ export const AllComponents = [
     componentSrc: React.lazy(
       () => import('@/registry/components/accordion/singlelayout')
     ),
-    iframeSrc: 'live-components/grid-layout-accordion',
+    iframeSrc: 'live-components/single-layout-accordion',
     tags: ['accordion', 'layout', 'single', 'expandable', 'collapsible'],
   },
   {
@@ -805,7 +926,7 @@ export const AllComponents = [
     componentSrc: React.lazy(
       () => import('@/registry/components/accordion/multilayout')
     ),
-    iframeSrc: 'live-components/grid-layout-accordion',
+    iframeSrc: 'live-components/multi-layout-accordion',
     tags: ['accordion', 'layout', 'multi', 'expandable', 'collapsible'],
   },
   {
@@ -912,7 +1033,6 @@ export const AllComponents = [
       () => import('@/registry/components/carousel/horizontal-progressive')
     ),
     iframeSrc: 'live-components/horizontal-progressive-carousel',
-    isNew: true,
     tags: ['carousel', 'horizontal', 'progressive-carousel', 'scroll-carousel'],
   },
   {
@@ -922,7 +1042,6 @@ export const AllComponents = [
       () => import('@/registry/components/carousel/verticle-progressive')
     ),
     iframeSrc: 'live-components/vertical-progressive-carousel',
-    isNew: true,
     tags: ['carousel', 'vertical', 'progressive-carousel', 'vertical-scroll'],
   },
   {
@@ -1178,7 +1297,7 @@ export const AllComponents = [
     componentSrc: React.lazy(
       () => import('@/registry/components/number-flow/motion-number-input')
     ),
-    iframeSrc: 'live-components/motion-input',
+    iframeSrc: 'live-components/motion-number-input',
   },
   {
     parentlink: 'motion-number',
@@ -1258,6 +1377,19 @@ export const AllComponents = [
     iframeSrc: 'live-components/image-mousetrail-disappear',
   },
   {
+    parentlink: 'image-mousetrail',
+    componentName: 'without-image-mousetrail-disappear',
+    tags: [
+      'Without Component Mousetrail',
+      'Image Mouse Trail Without Componnents',
+    ],
+    componentSrc: React.lazy(
+      () =>
+        import('@/registry/components/mousetrail/without-component-mousetrail')
+    ),
+    iframeSrc: 'live-components/image-mousetrail-without-component',
+  },
+  {
     parentlink: 'responsive-drawer',
     componentName: 'responsive-drawer',
     tags: ['drawer', 'navigation', 'responsive', 'menu'],
@@ -1288,6 +1420,16 @@ export const AllComponents = [
     iframe: true,
   },
   {
+    parentlink: 'responsive-sidebar',
+    componentName: 'Left Sidebar Drawer',
+    tags: ['Left Sidebar', 'navigation', 'Left Drawer', 'Responsive Drawer'],
+    componentSrc: React.lazy(
+      () => import('@/registry/components/drawer/left-sidebar-drawer')
+    ),
+    iframeSrc: 'live-components/left-sidebar-drawer',
+    iframe: true,
+  },
+  {
     parentlink: 'dialog',
     componentName: 'dialog',
     tags: ['dialog', 'popup', 'modal', 'UI-component'],
@@ -1305,6 +1447,16 @@ export const AllComponents = [
       () => import('@/registry/components/modal/media-modal-default')
     ),
     iframeSrc: 'live-components/media-modal',
+    iframe: true,
+  },
+  {
+    parentlink: 'media-modal',
+    componentName: 'Image-modal',
+    tags: ['image modal', 'modal', 'popup', 'UI'],
+    componentSrc: React.lazy(
+      () => import('@/registry/components/modal/image-modals')
+    ),
+    iframeSrc: 'live-components/imagemodals',
     iframe: true,
   },
   {
@@ -1431,13 +1583,7 @@ export const AllComponents = [
         )
     ),
     iframeSrc: 'live-components/framerhorizontalscroll',
-    filesArray: [
-      {
-        name: 'index.tsx',
-        filesrc:
-          'registry/components/scroll-animation/framer-horizontal-scroll.tsx',
-      },
-    ],
+
     tags: ['horizontal', 'scroll', 'framer'],
   },
   {
@@ -1448,6 +1594,42 @@ export const AllComponents = [
     ),
     iframeSrc: 'live-components/infintyband',
     tags: ['infinity', 'brand', 'marquee'],
+  },
+  {
+    parentlink: 'grid',
+    componentName: 'Default Grid',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/grid/normal-grid')
+    ),
+    iframeSrc: 'live-components/normalGrid',
+    tags: ['grid', 'Normal Grid', 'normal grid', 'normalgrid'],
+  },
+  {
+    parentlink: 'grid',
+    componentName: 'Box Grid',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/grid/box-grid')
+    ),
+    iframeSrc: 'live-components/boxgrid',
+    tags: ['grid', 'box grid', 'Box Grid'],
+  },
+  {
+    parentlink: 'grid',
+    componentName: 'Condition Grid',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/grid/condition-grid')
+    ),
+    iframeSrc: 'live-components/conditionGrid',
+    tags: ['grid', 'condition grid', 'Contidion Grid'],
+  },
+  {
+    parentlink: 'grid',
+    componentName: 'Unsplash Grid',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/grid/unsplash-grid')
+    ),
+    iframeSrc: 'live-components/unsplashGrid',
+    tags: ['grid', 'unsplash grid', 'Unsplash Grid'],
   },
   {
     parentlink: 'marquee',
@@ -1522,6 +1704,24 @@ export const AllComponents = [
     tags: ['clip-path', 'creative', 'mask'],
   },
   {
+    parentlink: 'watersplash-clippath',
+    componentName: 'Water Splash Clippath',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/clip-path-water-splash')
+    ),
+    iframeSrc: 'live-components/watersplash-clippath',
+    tags: ['clip-path ', 'Water Splash Clip-Path', 'creative', 'mask'],
+  },
+  {
+    parentlink: 'clip-path',
+    componentName: 'creative-mask-clippath',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/clip-path-creative-mask')
+    ),
+    iframeSrc: 'live-components/creative-mask-clippath',
+    tags: ['clip-path', 'creative', 'mask'],
+  },
+  {
     parentlink: 'image-masking',
     componentName: 'creative-imagemasking',
     componentSrc: React.lazy(
@@ -1529,6 +1729,63 @@ export const AllComponents = [
     ),
     iframeSrc: 'live-components/creative-imagemasking',
     tags: ['image-masking', 'creative', 'masking'],
+  },
+  {
+    parentlink: 'image-masking',
+    componentName: 'Animal image Masking',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/animal-image-masking')
+    ),
+    iframeSrc: 'live-components/animal-imagemasking',
+    tags: [
+      'animal-image-masking',
+      'Animal Image Masking ',
+      'creative',
+      'masking',
+    ],
+  },
+  {
+    parentlink: 'image-masking',
+    componentName: 'Center image Masking',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/center-image-masking')
+    ),
+    iframeSrc: 'live-components/center-imagemasking',
+    tags: [
+      'center-image-masking',
+      'background Image Masking ',
+      'creative',
+      'masking',
+    ],
+  },
+  {
+    parentlink: 'image-masking',
+    componentName: 'Fixed BG Image Masking',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/fixed-bg-image-masking')
+    ),
+    iframeSrc: 'live-components/fixedbg-imagemasking',
+    tags: [
+      'fixedbg-image-masking',
+      'Fixed BG Image Masking ',
+      'creative',
+      'masking',
+    ],
+  },
+  {
+    parentlink: 'image-masking',
+    componentName: 'Water Splash Image Masking',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/water-splash-image-masking')
+    ),
+    iframeSrc: 'live-components/watersplash-imagemasking',
+    tags: [
+      'Watersplash-image-masking',
+      'Water Splash Image Masking ',
+      'BG Image Masking ',
+      'creative',
+      'masking',
+    ],
   },
   {
     parentlink: 'video-masking',
@@ -1547,6 +1804,33 @@ export const AllComponents = [
     ),
     iframeSrc: 'live-components/splashwater-videomasking',
     tags: ['video', 'splash', 'masking'],
+  },
+  {
+    parentlink: 'video-masking',
+    componentName: 'Hexagon Video Masking',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/hexagon-video-masking')
+    ),
+    iframeSrc: 'live-components/hexagon-videomasking',
+    tags: ['hexagon video masking', ' hexagon masking', 'creative'],
+  },
+  {
+    parentlink: 'video-masking',
+    componentName: 'Hexagon Video Masking2',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/hexagon2-video-masking')
+    ),
+    iframeSrc: 'live-components/hexagon2-videomasking',
+    tags: ['hexagon video masking2', ' hexagon masking2', 'creative'],
+  },
+  {
+    parentlink: 'video-masking',
+    componentName: 'Textoverlay Videomasking',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/clip-path/text-overlay-video-masking')
+    ),
+    iframeSrc: 'live-components/textoverlay-videomasking',
+    tags: ['text overlay video', 'text-overlay video masking', 'masking'],
   },
   {
     parentlink: 'gradient-border',
