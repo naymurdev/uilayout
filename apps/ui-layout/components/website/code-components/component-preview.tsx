@@ -161,7 +161,7 @@ export default function ComponentPreview({
 
         {!isNotCopy && (
           <button
-            className='relative grid cursor-pointer place-content-center rounded-lg border bg-background p-2 px-2.5'
+            className='relative grid cursor-pointer -translate-y-[0.05rem] place-content-center rounded-lg border-2 bg-background dark:hover:shadow-[0px_1px_10px_5px_#3f7ef3] hover:shadow-[0px_1px_10px_5px_#9abaf7] dark:hover:border-blue-500 hover:border-blue-300 p-2 px-2.5'
             onClick={onCopy}
           >
             <div

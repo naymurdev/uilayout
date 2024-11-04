@@ -64,14 +64,20 @@ export async function PreCoded({
       <Tabs defaultValue={'typescript'}>
         <TabsList
           className={cn(
-            'absolute  right-20 top-6 z-[1] h-9 p-0.5 border dark:border-background ',
+            'absolute  right-[5.5rem] top-6 z-[1] h-9 p-0.5  border-2 dark:border-background ',
             tabclassname
           )}
         >
-          <TabsTrigger value={'typescript'} className='h-8 text-foreground'>
+          <TabsTrigger
+            value={'typescript'}
+            className='h-7 rounded text-foreground'
+          >
             Ts
           </TabsTrigger>
-          <TabsTrigger value={'javascript'} className=' h-8  text-foreground'>
+          <TabsTrigger
+            value={'javascript'}
+            className='rounded h-7  text-foreground'
+          >
             Js{' '}
           </TabsTrigger>
         </TabsList>
@@ -79,7 +85,10 @@ export async function PreCoded({
           <div className={cn('relative p-4', classname)}>
             <CopyButton
               code={tshighlighted.code}
-              classname={cn('top-6 right-10  ', copyclass)}
+              classname={cn(
+                'top-6 right-10  dark:bg-muted bg-white',
+                copyclass
+              )}
             />
             <div className=' p-2 max-h-[500px] overflow-x-hidden  rounded-md text-sm  bg-codebg border'>
               <Pre
@@ -94,7 +103,10 @@ export async function PreCoded({
           <div className={cn('relative p-4', classname)}>
             <CopyButton
               code={jshighlighted.code}
-              classname={cn('top-6 right-10  ', copyclass)}
+              classname={cn(
+                'top-6 right-10  dark:bg-muted bg-white',
+                copyclass
+              )}
             />
             <div className='p-2 max-h-[500px] overflow-x-hidden  rounded-md text-sm bg-codebg border'>
               <Pre

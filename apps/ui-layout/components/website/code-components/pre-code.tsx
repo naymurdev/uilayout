@@ -53,12 +53,15 @@ export async function PreCode({
             <>
               <CopyNpmCommandButton
                 code={tshighlighted.code}
-                classname='top-3.5'
+                classname='top-3.5 dark:bg-muted bg-white'
               />
             </>
           ) : (
             <>
-              <CopyButton code={tshighlighted.code} classname='top-3.5' />
+              <CopyButton
+                code={tshighlighted.code}
+                classname='top-3.5 dark:bg-muted bg-white'
+              />
             </>
           )}
           <div className='not-prose p-4 px-2 max-h-[550px] overflow-x-hidden   rounded-md text-sm  bg-codebg   border'>

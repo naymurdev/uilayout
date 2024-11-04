@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import BuyMeCoffee from '@/registry/components/buy-me-acoffee';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 
 interface TocItem {
   title: string;
@@ -14,6 +15,16 @@ interface TocItem {
 interface TableOfContentsProps {
   toc: Promise<{ items: TocItem[] }>;
 }
+const draw = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i: number) => {
+    return {
+      pathLength: 1,
+      opacity: 1,
+    };
+  },
+};
+
 const matchPath = [
   '/docs/get-started',
   '/docs/components',
@@ -27,6 +38,17 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
   const pathname = usePathname();
   const isDesktop = useMediaQuery('(min-width: 1200px)');
 
+  const { scrollYProgress } = useScroll();
+
+  // Use a spring for smooth animation
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 20,
+    damping: 10,
+  });
+
+  // Transform progress for circle stroke-dashoffset animation
+  const circumference = 2 * Math.PI * 36; // radius of 36px for the circle
+  const strokeDashoffset = useTransform(progress, [0, 1], [circumference, 0]);
   // Resolving the TOC promise and setting the toc items
   useEffect(() => {
     // console.log(toc);
@@ -126,6 +148,31 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
               className='left-0 fixed border bottom-0  dark:shadow-[0px_0px_20px_10px_#141414] shadow-[0px_0px_20px_10px_#dadada] z-10 bg-primary-foreground/50 backdrop-blur-xl rounded-t-lg  p-2 w-full shrink-0 border-x overflow-hidden
             '
             >
+              {/* <svg width='40' height='40' className='rotate-[-90deg]'>
+                <circle
+                  cx='20'
+                  cy='20'
+                  r='16'
+                  strokeWidth='4'
+                  fill='transparent'
+                  className=' stroke-border'
+                />
+                <motion.circle
+                  cx='20'
+                  cy='20'
+                  r='16'
+                  strokeWidth='4'
+                  fill='transparent'
+                  className=' stroke-red-500'
+                  strokeDasharray={circumference}
+                  strokeDashoffset={strokeDashoffset}
+                />
+              </svg> */}
+              {/* <motion.div
+                className='progress-bar w-4 rounded-full  h-4  bg-red-500 origin-left '
+                style={{ scaleX }}
+              /> */}
+
               <>
                 <span className='text-sm px-1 text-primary font-semibold pb-1 inline-block'>
                   On This Page

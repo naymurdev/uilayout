@@ -71,13 +71,7 @@ export default async function DrawerCodePreview({
   if (!currComponent) {
     return <div>Component not found</div>;
   }
-  // console.log(currComponent);
 
-  // console.log('childer', children);
-
-  // const isDesktop = useMediaQuery('(min-width: 768px)');
-  // if (isDesktop) {
-  // console.log(parsedCodeblock);
   const getcode = JSON.parse(Codes[0]?.props.codeblock);
   const result = ts.transpileModule(getcode, {
     compilerOptions: {
@@ -115,10 +109,7 @@ export default async function DrawerCodePreview({
   // Highlight the code
   const tshighlighted = await highlight(tsCode, 'github-from-css');
   const jshighlighted = await highlight(jsCodeblock, 'github-from-css');
-  // console.log(component);
-  // const currentComponentData = AllComponents.find(
-  //   (com) => com.iframeSrc === parsedCodeblock.
-  // );
+
   return (
     <>
       <div
@@ -133,7 +124,7 @@ export default async function DrawerCodePreview({
         <div className='absolute top-2 right-2 flex justify-center items-center gap-2  '>
           <CopyButton
             code={parsedCodeblock.codeblock}
-            classname=' relative top-0 left-0'
+            classname=' relative top-0 left-0 dark:bg-muted bg-white'
           />
           <ResponsiveDrawer
             classname=' max-w-screen-lg p-2 '
@@ -151,7 +142,7 @@ export default async function DrawerCodePreview({
               >
                 <TabsList
                   className={cn(
-                    'absolute  right-20 top-6 z-[1] h-9 p-0.5 border dark:border-background '
+                    'absolute  right-[5.5rem] top-6 z-[1] h-9 p-0.5 border dark:border-background '
                   )}
                 >
                   <TabsTrigger
@@ -178,7 +169,7 @@ export default async function DrawerCodePreview({
                   <Pre
                     code={tshighlighted}
                     handlers={[callout, wordWrap]}
-                    className={cn(' m-0  bg-codebg max-h-[450px] ')}
+                    className={cn(' m-0  bg-codebg max-h-[450px] border ')}
                   />
                   {parsedCodeblock.children}
                 </TabsContent>
@@ -190,7 +181,7 @@ export default async function DrawerCodePreview({
                   <Pre
                     code={jshighlighted}
                     handlers={[callout, wordWrap]}
-                    className={cn(' m-0  bg-codebg max-h-[450px] ')}
+                    className={cn(' m-0  bg-codebg max-h-[450px] border')}
                   />
                   {parsedCodeblock.children}
                 </TabsContent>

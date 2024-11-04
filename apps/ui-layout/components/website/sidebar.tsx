@@ -100,7 +100,7 @@ function DocsSidebar() {
               <>
                 {recentPages.length > 0 && (
                   <div className='relative'>
-                    <h1 className='xl:text-lg text-[1.05rem]   font-semibold pb-1'>
+                    <h1 className='xl:text-lg  text-[1.05rem]   font-semibold pb-1'>
                       Recent Visited
                     </h1>
                     {/* <div className="absolute w-full bottom-0 left-0 h-7 bg-gradient-to-t dark:from-base-dark from-white from-20%" /> */}
@@ -122,7 +122,7 @@ function DocsSidebar() {
                       {recentPages.map((page) => (
                         <li
                           key={page.id}
-                          className={`font-normal xl:text-sm text-xs  flex items-center gap-1 dark:hover:text-white  py-1 pl-2  border-l transition-all  ${
+                          className={`font-normal 2xl:text-sm xl:text-[0.81em] text-xs  flex items-center  dark:hover:text-white  py-1 pl-2  border-l transition-all  ${
                             page.id === pathname
                               ? 'dark:border-white border-black text-black dark:text-white font-semibold'
                               : 'dark:text-slate-400 hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
@@ -228,16 +228,29 @@ export const ItemsWithName = ({
         <button className='text-[1rem] relative flex w-full items-center justify-between pr-4 cursor-pointer dark:font-normal dark:text-gray-100 font-normal capitalize my-1'>
           {group}
           {showExpandButton && (
-            <div
-              onClick={() => setExpandedItems(!expandedItems)}
-              className='h-7 w-7 rounded-md dark:bg-gray-900 bg-gray-100 grid place-content-center absolute top-0 right-3'
-            >
-              <ChevronsDown
-                className={`h-5 w-5 transition-all ${
-                  !expandedItems && showExpandButton ? 'rotate-180' : 'rotate-0'
-                }`}
-              />
-            </div>
+            <TooltipProvider>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger
+                  className='h-7 w-7 rounded-md dark:bg-gray-900 bg-gray-100 grid place-content-center absolute top-0 right-3'
+                  onClick={() => setExpandedItems(!expandedItems)}
+                >
+                  <div>
+                    <ChevronsDown
+                      className={`h-5 w-5 transition-all ${
+                        !expandedItems && showExpandButton
+                          ? 'rotate-180'
+                          : 'rotate-0'
+                      }`}
+                    />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent className='dark:bg-base-dark bg-gray-50 text-primary border 2xl:text-base text-sm rounded-md px-2 py-1 -translate-y-1'>
+                  <p className='capitalize '>
+                    {expandedItems ? <> Collapse</> : <>Expand</>}
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )}
         </button>
         <ul className='relative '>
@@ -249,7 +262,7 @@ export const ItemsWithName = ({
               key={link.href}
               // @ts-ignore
               ref={(el) => (itemRefs.current[index] = el)}
-              className={`2xl:text-sm xl:text-[0.81em] text-xs  flex items-center gap-1 dark:hover:text-white 2xl:py-1 py-0.5 pl-2 border-l transition-all ${
+              className={`2xl:text-sm xl:text-[0.81em] text-xs  flex items-center gap-1 dark:hover:text-white 2xl:py-1 py-1 pl-2 border-l transition-all ${
                 link.href === pathname
                   ? 'dark:border-white border-black text-black dark:text-white font-semibold'
                   : 'dark:text-slate-400 2xl:font-normal font-medium hover:border-black/60 dark:hover:border-white/50 text-slate-500 hover:text-slate-900'
