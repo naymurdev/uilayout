@@ -487,7 +487,7 @@ export const AllComponents: IAllComponents[] = [
     parentlink: 'tags-input',
     componentName: 'Tags Edit False',
     componentSrc: React.lazy(
-      () => import('@/registry/components/form/tags-input')
+      () => import('@/registry/components/form/tags-input/tagsedit-false')
     ),
     iframeSrc: 'live-components/tagsedit-false',
     tags: [
@@ -496,6 +496,7 @@ export const AllComponents: IAllComponents[] = [
       'Youtube Tags',
       'Github Like Tags',
       'github tags',
+      'input tags',
     ],
   },
   {
@@ -505,7 +506,13 @@ export const AllComponents: IAllComponents[] = [
       () => import('@/registry/components/form/tags-input')
     ),
     iframeSrc: 'live-components/tags-input',
-    tags: ['Tags Input', 'Youtube Tags', 'Github Like Tags', 'github tags'],
+    tags: [
+      'Tags Input',
+      'Youtube Tags',
+      'Github Like Tags',
+      'github tags',
+      'input tags',
+    ],
   },
   {
     parentlink: 'datetime-picker',
@@ -614,6 +621,7 @@ export const AllComponents: IAllComponents[] = [
         import('@/registry/components/form/password/pass-strength-indicator')
     ),
     iframeSrc: 'live-components/pass-strengthindicator',
+    iframe: true,
     tags: [
       'password',
       'pass',
@@ -631,6 +639,8 @@ export const AllComponents: IAllComponents[] = [
         import('@/registry/components/form/password/pass-strength-indicator2')
     ),
     iframeSrc: 'live-components/pass-strengthindicator2',
+    iframe: true,
+
     tags: [
       'password',
       'pass',
@@ -648,6 +658,8 @@ export const AllComponents: IAllComponents[] = [
         import('@/registry/components/form/password/pass-strength-indicator3')
     ),
     iframeSrc: 'live-components/pass-strengthindicator3',
+    iframe: true,
+
     tags: [
       'password',
       'pass',
@@ -668,6 +680,8 @@ export const AllComponents: IAllComponents[] = [
         import('@/registry/components/form/password/pass-strength-indicator4')
     ),
     iframeSrc: 'live-components/pass-strengthindicator4',
+    iframe: true,
+
     tags: [
       'password',
       'pass',
@@ -685,6 +699,8 @@ export const AllComponents: IAllComponents[] = [
       () => import('@/registry/components/form/password/confirm-pass-check')
     ),
     iframeSrc: 'live-components/confirm-pass-check',
+    iframe: true,
+
     tags: [
       'password',
       'pass',
