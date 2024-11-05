@@ -551,6 +551,21 @@ export const AllComponents: IAllComponents[] = [
   {
     parentlink: 'range-slider',
     componentName: 'Range Slider',
+    tags: [
+      'input slider',
+      'Default range slider',
+      'default-Range-Slider',
+      'animated motion number slider',
+      'motion input slider',
+    ],
+    componentSrc: React.lazy(
+      () => import('@/registry/components/number-flow/motion-number-slider')
+    ),
+    iframeSrc: 'live-components/motion-number-slider',
+  },
+  {
+    parentlink: 'range-slider',
+    componentName: 'Dual Range Slider',
     componentSrc: React.lazy(
       () => import('@/registry/components/form/slider/dual-range-slider')
     ),
@@ -565,7 +580,22 @@ export const AllComponents: IAllComponents[] = [
   },
   {
     parentlink: 'range-slider',
-    componentName: 'Range Slider',
+    componentName: 'Dual Range Slider',
+    componentSrc: React.lazy(
+      () => import('@/registry/components/form/slider/dual-range-slider')
+    ),
+    iframeSrc: 'live-components/dual-range-slider',
+    tags: [
+      'input slider',
+      'dual range slider',
+      'Dual-Range-Slider',
+      'animated motion number slider',
+      'motion input slider',
+    ],
+  },
+  {
+    parentlink: 'range-slider',
+    componentName: 'Static Range Slider',
     componentSrc: React.lazy(
       () => import('@/registry/components/form/slider/static-range-slider')
     ),
@@ -582,7 +612,7 @@ export const AllComponents: IAllComponents[] = [
   },
   {
     parentlink: 'range-slider',
-    componentName: 'Range Slider',
+    componentName: 'Position Range Slider',
     componentSrc: React.lazy(
       () => import('@/registry/components/form/slider/position-range-slider')
     ),
