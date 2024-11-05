@@ -580,21 +580,6 @@ export const AllComponents: IAllComponents[] = [
   },
   {
     parentlink: 'range-slider',
-    componentName: 'Dual Range Slider',
-    componentSrc: React.lazy(
-      () => import('@/registry/components/form/slider/dual-range-slider')
-    ),
-    iframeSrc: 'live-components/dual-range-slider',
-    tags: [
-      'input slider',
-      'dual range slider',
-      'Dual-Range-Slider',
-      'animated motion number slider',
-      'motion input slider',
-    ],
-  },
-  {
-    parentlink: 'range-slider',
     componentName: 'Static Range Slider',
     componentSrc: React.lazy(
       () => import('@/registry/components/form/slider/static-range-slider')
