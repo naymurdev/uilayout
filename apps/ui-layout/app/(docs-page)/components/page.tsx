@@ -21,7 +21,7 @@ const appsDesign = [
   {
     id: 'carousel',
     name: 'carousel',
-    url: '/components/embla-carousel',
+    url: '/components/carousel',
     imgSrc: preview.carousel,
   },
   {
