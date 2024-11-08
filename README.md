@@ -60,6 +60,12 @@ export function useMediaQuery(query: string) {
 
 ## Most Used Components
 
+- [Image Ripple Effect](https://ui-layout.com/components/image-ripple-effect)
+- [Buy Me Coffee](https://ui-layout.com/components/buy-me-coffee)
+- [Youtube Tags](https://ui-layout.com/components/tags-input)
+- [File Upload](https://ui-layout.com/components/file-upload)
+- [Password](https://ui-layout.com/components/password)
+- [Range Slider](https://ui-layout.com/components/range-slider)
 - [Motion Number](https://ui-layout.com/components/motion-number)
 - [Embla Carousel](https://ui-layout.com/components/embla-carousel)
 - [Sparkles](https://ui-layout.com/components/sparkles)
