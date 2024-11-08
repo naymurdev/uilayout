@@ -21,7 +21,7 @@ const appsDesign = [
   {
     id: 'carousel',
     name: 'carousel',
-    url: '/components/embla-carousel',
+    url: '/components/carousel',
     imgSrc: preview.carousel,
   },
   {
@@ -100,7 +100,7 @@ const appsDesign = [
 
   {
     id: 'modal',
-    url: '/components/linear-modal',
+    url: '/components/linear-card',
     name: 'Modal',
     imgSrc: preview.modal,
   },
@@ -112,7 +112,7 @@ const appsDesign = [
   },
   {
     id: 'drawer',
-    url: '/components/drawer',
+    url: '/components/responsive-drawer',
     name: 'Drawer',
     imgSrc: preview.responsive_drawer,
   },
