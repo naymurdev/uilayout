@@ -43,7 +43,7 @@ export default function Model() {
         rotation={[0, 0, Math.random()]}
         visible={false}
       >
-        <planeGeometry args={[60, 60, 1, 1]} />
+        <planeGeometry args={[100, 60, 1, 1]} />
         <meshBasicMaterial transparent={true} map={texture} />
       </mesh>
     ))

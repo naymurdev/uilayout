@@ -14,11 +14,7 @@ export default function Scene() {
   const aspect = device.width / device.height
 
   return (
-    <div
-      className="h-screen w-full relative bg-gray-950 text-white before:absolute before:top-0 before:left-0 before:w-full
-      before:h-full before:content-[''] before:opacity-[0.06] before:z-[100] before:pointer-events-none 
-      before:bg-[url('/noise.gif')]"
-    >
+    <div className="h-screen w-full relative bg-transparent">
       <Canvas>
         <OrthographicCamera
           makeDefault
@@ -34,14 +30,14 @@ export default function Scene() {
         />
         <Model />
       </Canvas>
-      <article className="absolute w-full bottom-14  text-center">
+      {/* <article className="absolute w-full bottom-14  text-center">
         <h1 className="2xl:text-8xl text-7xl tracking-tighter uppercase">
           Independent
         </h1>
         <p className="2xl:text-2xl text-xl">
           Live for yourself, not for society.
         </p>
-      </article>
+      </article> */}
     </div>
   )
 }

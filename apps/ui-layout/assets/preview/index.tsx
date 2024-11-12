@@ -23,13 +23,19 @@ import motionNumber from '@/assets/preview/motion-number.svg';
 import clippath from '@/assets/preview/clip-path.svg';
 import dragitems from '@/assets/preview/drag-items.svg';
 import sparkles from '@/assets/preview/sparkles.svg';
+import password from '@/assets/preview/password.svg';
+import youtubeTags from '@/assets/preview/youtube-tags.svg';
+import coffee from '@/assets/preview/coffee.svg';
+import ripple from '@/assets/preview/ripple.png';
 const preview = {
   horizontascroll,
+  ripple,
   motionNumber,
   heroSec,
   stackingcard,
   card,
   imagereveal,
+  password,
   sparkles,
   dragitems,
   modal,
@@ -48,5 +54,7 @@ const preview = {
   image_mousetrail,
   carousel,
   clippath,
+  youtubeTags,
+  coffee,
 };
 export default preview;
