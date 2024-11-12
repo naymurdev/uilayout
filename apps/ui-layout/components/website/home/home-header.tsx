@@ -87,7 +87,7 @@ function HomeHeader() {
           Added the most awaited feature: an in-built 'Code Editor' to edit
           components and copy the changes.{' '}
           <a
-            href='/components/button'
+            href='/components/buttons'
             className='underline italic bg-primary-foreground text-primary p-1 px-3 rounded-md inline-block'
           >
             Edit Components
