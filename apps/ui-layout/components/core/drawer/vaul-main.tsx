@@ -33,6 +33,7 @@ interface ResponsiveDrawerProps {
   open?: boolean;
   setOpen?: (open: boolean) => void;
   classname?: string;
+  closeBtnClass?: string;
 }
 
 export function ResponsiveDrawer({
@@ -41,6 +42,7 @@ export function ResponsiveDrawer({
   open: controlledOpen,
   setOpen: controlledSetOpen,
   classname,
+  closeBtnClass,
 }: ResponsiveDrawerProps) {
   const [internalOpen, setInternalOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -87,7 +89,10 @@ export function ResponsiveDrawer({
                 )}
               >
                 <button
-                  className='absolute top-2 right-2 bg-primary text-background p-2 border z-[1] rounded-md'
+                  className={cn(
+                    'absolute top-2 right-2 bg-primary text-background p-2 border z-[1] rounded-md',
+                    closeBtnClass
+                  )}
                   onClick={() => setOpen(false)}
                 >
                   <X />

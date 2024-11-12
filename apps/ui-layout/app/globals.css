@@ -56,6 +56,22 @@ body {
     --ch-24: #8c959f;
     --ch-25: #afb8c133;
     --ch-26: #ffffffe6;
+
+    /* Syntax Highlighting Colors (Light Mode) */
+    --token-null: #000000;
+    --token-operator: #000000;
+    --token-boolean: #000000;
+    --token-number: #000000;
+    --token-property: #fdcc59;
+    --token-tag: #f7801f;
+    --token-punctuation: #000000;
+    --token-template-string: #5bf8ee;
+    --token-script: #ffcb8b;
+    --token-selector: #c85e7c;
+    --token-attr-name: #b392f0;
+    --token-attr-value: #008422;
+    --token-function-variable: #b392f0;
+    --token-black: #000000;
   }
 
   .dark {
@@ -100,6 +116,22 @@ body {
     --ch-24: #6b7280;
     --ch-25: #6b728066;
     --ch-26: #171717e6;
+
+    /* Syntax Highlighting Colors (Dark Mode) */
+    --token-null: #ffffff;
+    --token-operator: #ffffff;
+    --token-boolean: #ffffff;
+    --token-number: #ffffff;
+    --token-property: #fdcc59;
+    --token-tag: #66befd;
+    --token-punctuation: #ffffff;
+    --token-template-string: #5bf8ee;
+    --token-script: #ffcb8b;
+    --token-selector: #c85e7c;
+    --token-attr-name: #b392f0;
+    --token-attr-value: #52b7ff;
+    --token-function-variable: #b392f0;
+    --token-black: #ffffff;
   }
 }
 
@@ -219,4 +251,60 @@ input[type='number'] {
 .hover-container:has([data-hover='two']:hover)
   [data-line]:not([data-line='two']) {
   opacity: 0.2;
+}
+
+pre.prism-code.language-tsx {
+  height: 100% !important;
+}
+
+code[class*='language-tsx'],
+pre[class*='language-tsx'] {
+  font-family: 'Fira Mono', Menlo, Monaco, 'Lucida Console', 'Courier New',
+    Courier, monospace !important;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  word-spacing: normal;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  white-space: pre !important;
+  white-space: pre-wrap !important;
+  word-break: break-all;
+  word-wrap: break-word;
+  /* background: #322931; */
+  background: transparent !important;
+  /* color: #b9b5b8 !important; */
+}
+
+pre > code[class*='language-tsx'] {
+  font-size: 1em;
+}
+
+/* Code blocks */
+pre[class*='language-tsx'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-tsx'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+}
+
+html.dark .cm-editor {
+  background-color: #000000 !important;
+}
+
+html.dark .cm-gutters {
+  background-color: #000000;
+  backdrop-filter: blur(5px);
 }

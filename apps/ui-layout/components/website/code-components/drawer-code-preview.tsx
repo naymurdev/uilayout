@@ -14,7 +14,7 @@ import {
   ResponsiveDrawer,
 } from '@/components/core/drawer/vaul-main';
 
-import React from 'react';
+import React, { lazy } from 'react';
 import { Code, Eye, Maximize2 } from 'lucide-react';
 import prettier from 'prettier';
 
@@ -24,14 +24,25 @@ import ComponentBlocks from './component-block';
 import { callout, wordWrap } from '../constant';
 import { cn } from '@/lib/utils';
 import ts from 'typescript';
-import { AllComponents } from '@/configs/docs';
+import { SafeSuspense } from '@/lib/safeSuspense';
+import { Button } from '../ui/button';
 
+const EditComponents = lazy(() => import('./drawer-components-edit'));
+const LoadingFallback = () => (
+  <div className='fixed bottom-4 right-4 z-50'>
+    <Button variant='outline' size='icon' disabled className='animate-pulse'>
+      Loading...
+    </Button>
+  </div>
+);
 type ComponentCodePreview = {
   component: React.ReactElement;
   hasReTrigger?: boolean;
   name: string;
   children: React.ReactNode; //
   responsive?: boolean;
+  componentCenter?: boolean;
+  isEdit?: boolean;
   isCard?: string;
 };
 export type TCurrComponentProps = {
@@ -49,6 +60,8 @@ export default async function DrawerCodePreview({
   children,
   isCard,
   responsive,
+  isEdit = true,
+  componentCenter = false,
 }: ComponentCodePreview) {
   // console.log(children);
 
@@ -83,7 +96,6 @@ export default async function DrawerCodePreview({
   });
 
   let jsCode = result.outputText.replace(/"use strict";\s*/, '');
-
   // Format JavaScript code using Prettier
   const formattedJsCode = await prettier.format(jsCode, {
     parser: 'babel',
@@ -126,10 +138,11 @@ export default async function DrawerCodePreview({
             code={parsedCodeblock.codeblock}
             classname=' relative top-0 left-0 dark:bg-muted bg-white'
           />
+
           <ResponsiveDrawer
             classname=' max-w-screen-lg p-2 '
             triggerContent={
-              <button className=' flex gap-1 bg-foreground rounded-lg h-8 px-2 text-black text-sm font-semibold  items-center  '>
+              <button className=' flex gap-1 bg-foreground rounded-lg h-8 px-2 dark:text-black text-white text-sm font-semibold  items-center  '>
                 Code
                 <Code className='dark:text-black text-white h-5 w-5 font-semibold' />
               </button>
@@ -188,6 +201,14 @@ export default async function DrawerCodePreview({
               </Tabs>
             </DrawerContent>
           </ResponsiveDrawer>
+          {isEdit && (
+            <SafeSuspense fallback={<LoadingFallback />}>
+              <EditComponents
+                baseCode={getcode}
+                componentCenter={componentCenter}
+              />
+            </SafeSuspense>
+          )}
         </div>
       </div>
     </>

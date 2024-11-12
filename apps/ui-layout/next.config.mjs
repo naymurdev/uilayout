@@ -127,7 +127,7 @@ function rehypeComponent() {
           );
           const source = fs.readFileSync(filePath, 'utf8');
 
-          // console.log('Files content:', filesContent);
+          // console.log('Files content:', source);
           node.children = [
             u('element', {
               tagName: 'PreCode',
@@ -161,6 +161,16 @@ const withMDX = createMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    turbo: {
+      rules: {
+        '*.html': {
+          loaders: ['raw-loader'],
+          as: '*.js',
+        },
+      },
+    },
+  },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   images: {
     remotePatterns: [

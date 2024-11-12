@@ -1,7 +1,7 @@
 'use client';
 import { ChevronsRight, MoveRight } from 'lucide-react';
 import { Button } from '@/components/website/ui/button';
-import Link from 'next/link';
+// import Link from 'next/link';
 import React, { useEffect, useMemo, useState } from 'react';
 import { SpotLightItem, Spotlight } from '@/components/core/main-spotlight';
 import HomeProgressSlider from './progress-carousel';
@@ -17,7 +17,7 @@ import HomeTab from './home-tab';
 import HomeImageMasking from './home-image-masking';
 
 import HomeSlider from './home-carousel';
-import { AnimatePresence } from 'framer-motion';
+// import { AnimatePresence } from 'framer-motion';
 import NewItemsLoading from './new-items-loading';
 import HomeClipPath from './home-clippath';
 import HomeMotionNumber from './home-motion-number';
