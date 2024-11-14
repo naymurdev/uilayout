@@ -102,7 +102,7 @@ const homeComponents = [
   },
   {
     id: 12,
-    link: '/components/dialog-card',
+    link: '/components/linear-card',
 
     componentSrc: <HomeAccordionModal />,
 
@@ -110,29 +110,26 @@ const homeComponents = [
   },
   {
     id: 13,
-    link: '/components/products-cards',
+    link: '/components/product-cards',
 
     componentSrc: <HomeProductCard />,
     className: 'lg:col-span-4 md:col-span-5 sm:col-span-6 col-span-12',
   },
   {
     id: 14,
-    link: '/components/embla-carousel',
-
     componentSrc: <HomeSlider />,
     className: ' col-span-12',
   },
   {
     id: 15,
-    link: '/components/clip-path-image',
+    link: '/components/clip-path',
 
     componentSrc: <HomeClipPath />,
     className: ' lg:col-span-8 col-span-12',
   },
   {
     id: 16,
-    link: '/components/clip-path-image',
-
+    link: '/components/motion-number',
     componentSrc: <HomeMotionNumber />,
     className: ' lg:col-span-4 col-span-12',
   },
@@ -172,7 +169,7 @@ function HeroSec() {
                 activeDivs[columnIndex]?.has(rowIndex)
                   ? 'dark:bg-[rgba(255,255,255,0.03)] bg-gray-50'
                   : ''
-              }`}
+                }`}
               style={{ height: `${blockSize}px` }}
             ></div>
           ))}
@@ -229,11 +226,9 @@ function HeroSec() {
             {homeComponents?.map((component, index) => {
               return (
                 <SpotLightItem
-                  className={`${component.className} ${
-                    component?.id && index === 6 ? ' lg:block hidden ' : ' '
-                  } ${
-                    component?.id && index === 12 ? ' sm:block hidden ' : ' '
-                  }`}
+                  className={`${component.className} ${component?.id && index === 6 ? ' lg:block hidden ' : ' '
+                    } ${component?.id && index === 12 ? ' sm:block hidden ' : ' '
+                    }`}
                   key={index}
                 >
                   <div

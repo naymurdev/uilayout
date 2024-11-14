@@ -83,7 +83,7 @@ function HomeFooter() {
                 Animated FAQs
               </Link>
               <Link
-                href='/components/clip-path-image'
+                href='/components/clip-path'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-left after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)]  hover:after:scale-x-100'
               >
@@ -171,11 +171,11 @@ function HomeFooter() {
                 Marquee
               </Link>
               <Link
-                href='/components/modal'
+                href='/components/dialog'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100'
               >
-                Animated Modal
+                Dialog
               </Link>
 
               <Link
@@ -188,7 +188,7 @@ function HomeFooter() {
             </ul>
             <ul>
               <Link
-                href='/components/products-cards'
+                href='/components/product-cards'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100'
               >
@@ -202,7 +202,7 @@ function HomeFooter() {
                 Progressive Carousel
               </Link>
               <Link
-                href='/components/drawer'
+                href='/components/responsive-drawer'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100'
               >
@@ -260,7 +260,7 @@ function HomeFooter() {
                 Animated Tabs
               </Link>
               <Link
-                href='/components/embla-carousel'
+                href='/components/carousel'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-left after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)]  hover:after:scale-x-100'
               >
