@@ -82,8 +82,8 @@ function HomeHeader() {
 
   return (
     <>
-      <header className=' dark:bg-base-dark/20 bg-white/40 w-full fixed z-20 top-0 left-0 border-b-[1px] border-border pb-3 backdrop-blur-lg'>
-        <div className=' xl:container px-4 sm:px-6 lg:px-8 relative mx-auto flex justify-between items-center'>
+      <header className=' dark:bg-base-dark/20 bg-white/40 w-full fixed z-20 top-0  left-0 '>
+        <div className=' xl:container px-4 sm:px-6 lg:px-8 relative mx-auto flex justify-between pt-2 items-center border-b-[1px] border-x rounded-b-xl border-border pb-3 backdrop-blur-lg'>
           <MobileHeader classname='xl:hidden block' />
           <Link href='/'>
             {/* <Image src="/logo.png" alt="logo" width={35} height={35} /> */}

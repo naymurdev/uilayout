@@ -34,7 +34,7 @@ function HomeFooter() {
         //   } as React.CSSProperties
         // }
         // ref={bgRef}
-        className='footer-bg relative border 2xl:h-[550px] h-fit lg:pb-24 w-[95%] mx-auto mb-8 rounded-lg overflow-hidden radial-gradient-bg
+        className='footer-bg xl:container relative border 2xl:h-[550px] h-fit lg:pb-24 w-[95%] mx-auto mb-8 rounded-lg overflow-hidden radial-gradient-bg
                    [--gradient-center:#f3f4f6] [--gradient-edge:#f3f4f6]
                    dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817]'
       >

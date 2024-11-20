@@ -21,6 +21,7 @@ import HomeSlider from './home-carousel';
 import NewItemsLoading from './new-items-loading';
 import HomeClipPath from './home-clippath';
 import HomeMotionNumber from './home-motion-number';
+import Image from 'next/image';
 const homeComponents = [
   {
     id: 0,
@@ -190,13 +191,15 @@ function HeroSec() {
   return (
     <>
       <section className='min-h-screen py-24 overflow-hidden  relative  '>
+        <div className='absolute inset-0 -z-0 h-screen w-full  dark:bg-[radial-gradient(#1b1b1b_1px,transparent_1px)] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]'></div>
+        <div className='absolute inset-0 top-0 left-0  h-screen w-full items-center px-5 py-24  bg-gradient-to-t dark:from-black from-white from-0% to-transparent to-60%'></div>
         <div className='absolute inset-0 top-0 left-0  h-screen w-full items-center px-5 py-24 dark:[background:radial-gradient(87.03%_87.03%_at_50.05%_12.97%,rgba(217,217,217,0)_40%,#010716_100%)] [background:radial-gradient(87.03%_87.03%_at_50.05%_12.97%,rgba(217,217,217,0)_40%,#ffffff_100%)]'></div>
         <article className='grid gap-4 py-20 relative z-10 sm:px-0 px-4'>
           <NewItemsLoading />
-          <h1 className='  xl:text-7xl md:text-6xl sm:text-5xl text-3xl text-center font-semibold leading-[110%]'>
+          <h1 className='  xl:text-7xl md:text-6xl sm:text-5xl text-3xl text-center font-semibold '>
             Design That Really <br />
             Need In{' '}
-            <span className='bg-gradient-to-t sm:w-ful w-4/5 from-[#a2b6fa] to-[#334cec] bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-t sm:w-ful w-4/5 from-[#a2b6fa] to-[#334cec] bg-clip-text text-transparent  '>
               Your Website
             </span>
           </h1>
@@ -218,6 +221,130 @@ function HeroSec() {
                 <ChevronsRight />
               </Button>
             </a>
+          </div>
+          <div className='flex w-fit mx-auto items-center mt-5 translate-x-8'>
+            <div className='flex'>
+              <a href='https://github.com/sitek94' target='_block'>
+                <Image
+                  src='/Maciek.jpeg'
+                  alt='Maciek'
+                  width={300}
+                  height={300}
+                  className='w-12 rounded-full h-12'
+                />
+              </a>
+              <a href='https://github.com/slydeveloper' target='_block'>
+                <Image
+                  src='/Sokolowski.jpeg'
+                  alt='Sokolowski'
+                  width={300}
+                  height={300}
+                  className='w-12 rounded-full h-12 -translate-x-4'
+                />
+              </a>
+              <a href='https://github.com/mmNalaka' target='_block'>
+                <Image
+                  src='/nalaka.png'
+                  alt='nalaka'
+                  width={300}
+                  height={300}
+                  className='w-12 rounded-full h-12 -translate-x-8'
+                />
+              </a>
+              <a href='https://github.com/rafaelzomer' target='_block'>
+                <Image
+                  src='/Rafael.jpeg'
+                  alt='Rafael'
+                  width={300}
+                  height={300}
+                  className='w-12 rounded-full h-12 -translate-x-12'
+                />
+              </a>
+              <a href='https://github.com/yeabnoah' target='_block'>
+                <Image
+                  src='/Yeabsra.jpeg'
+                  alt='Yeabsra'
+                  width={300}
+                  height={300}
+                  className='w-12 rounded-full h-12 -translate-x-16'
+                />
+              </a>
+            </div>
+            <div className='-translate-x-12'>
+              <div className='flex gap-1'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  aria-hidden='true'
+                  data-slot='icon'
+                  className='h-5 w-5 text-amber-300'
+                >
+                  <path
+                    fill-rule='evenodd'
+                    d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z'
+                    clip-rule='evenodd'
+                  ></path>
+                </svg>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  aria-hidden='true'
+                  data-slot='icon'
+                  className='h-5 w-5 text-amber-300'
+                >
+                  <path
+                    fill-rule='evenodd'
+                    d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z'
+                    clip-rule='evenodd'
+                  ></path>
+                </svg>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  aria-hidden='true'
+                  data-slot='icon'
+                  className='h-5 w-5 text-amber-300'
+                >
+                  <path
+                    fill-rule='evenodd'
+                    d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z'
+                    clip-rule='evenodd'
+                  ></path>
+                </svg>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  aria-hidden='true'
+                  data-slot='icon'
+                  className='h-5 w-5 text-amber-300'
+                >
+                  <path
+                    fill-rule='evenodd'
+                    d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z'
+                    clip-rule='evenodd'
+                  ></path>
+                </svg>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  aria-hidden='true'
+                  data-slot='icon'
+                  className='h-5 w-5 text-amber-300'
+                >
+                  <path
+                    fill-rule='evenodd'
+                    d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z'
+                    clip-rule='evenodd'
+                  ></path>
+                </svg>
+              </div>
+              <div className='text-sm font-medium'>Trusted by 1000+ users</div>
+            </div>
           </div>
         </article>
 
