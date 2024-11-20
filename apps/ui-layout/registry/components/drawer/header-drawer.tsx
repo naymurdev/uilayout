@@ -10,15 +10,15 @@ import {
 const items = [
   {
     id: 1,
-    url: 'https://images.unsplash.com/photo-1709949908058-a08659bfa922?q=80&w=1200&auto=format',
+    classname: 'bg-gradient-to-l from-red-400 to-orange-500',
   },
   {
+    classname: 'bg-gradient-to-r from-blue-300 to-blue-800',
     id: 2,
-    url: 'https://images.unsplash.com/photo-1548192746-dd526f154ed9?q=80&w=1200&auto=format',
   },
   {
+    classname: 'bg-gradient-to-tl from-amber-500 to-yellow-400',
     id: 3,
-    url: 'https://images.unsplash.com/photo-1693581176773-a5f2362209e6?q=80&w=1200&auto=format',
   },
 ];
 export default function index() {
@@ -58,7 +58,7 @@ export default function index() {
                 )}
                 <h1 className='mx-auto text-2xl'>UI-LAYOUT</h1>
               </div>
-              <div className='flex justify-between py-2'>
+              <div className='flex justify-between  py-2'>
                 <nav className='flex gap-8'>
                   <ul className='xl:text-2xl text-lg space-y-2 xl:space-y-4 font-semibold uppercase  pr-8'>
                     <li>
@@ -109,15 +109,13 @@ export default function index() {
                   </ul>
                 </nav>
 
-                <div className='grid grid-cols-3 gap-4 py-4 pr-20'>
+                <div className='grid grid-cols-3 gap-4 py-4 pr-20 w-full'>
                   <>
-                    {items.map((item, index) => (
-                      <figure className='inline-block group w-full xl:h-52 h-full relative '>
-                        <img
-                          src={item.url}
-                          className='w-full bg-base-100 object-cover shadow-xl rounded-sm h-full cursor-pointer'
-                        />
-                      </figure>
+                    {items.map((item) => (
+                      <figure
+                        key={item.id}
+                        className={`${item.classname} inline-block group w-full xl:h-52 h-full relative rounded-md `}
+                      ></figure>
                     ))}
                   </>
                 </div>
@@ -125,12 +123,6 @@ export default function index() {
             </div>
           </DrawerContent>
         </HeaderDrawer>
-        {/* <motion.button
-          onClick={() => setHeaderOpen(true)}
-          whileTap={{ scale: 0.9 }}
-        >
-          <MenuIcon />
-        </motion.button> */}
       </header>
     </>
   );

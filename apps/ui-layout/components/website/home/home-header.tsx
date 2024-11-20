@@ -83,16 +83,6 @@ function HomeHeader() {
   return (
     <>
       <header className=' dark:bg-base-dark/20 bg-white/40 w-full fixed z-20 top-0 left-0 border-b-[1px] border-border pb-3 backdrop-blur-lg'>
-        <div className='bg-primary text-center p-1 text-primary-foreground mb-2 font-medium lg:text-base sm:text-sm  text-xs'>
-          Added the most awaited feature: an in-built 'Code Editor' to edit
-          components and copy the changes.{' '}
-          <Link
-            href='/components/buttons'
-            className='underline italic bg-primary-foreground text-primary p-1 px-3 rounded-md inline-block'
-          >
-            Edit Components
-          </Link>
-        </div>
         <div className=' xl:container px-4 sm:px-6 lg:px-8 relative mx-auto flex justify-between items-center'>
           <MobileHeader classname='xl:hidden block' />
           <Link href='/'>

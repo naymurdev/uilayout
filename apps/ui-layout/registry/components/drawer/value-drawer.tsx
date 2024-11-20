@@ -9,20 +9,7 @@ import {
   DrawerContent,
   ResponsiveDrawer,
 } from '@/components/core/drawer/vaul-main';
-const items = [
-  {
-    id: 1,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715161336/eugene-golovesov-K6oxS4dwihg-unsplash_yylgnx.jpg',
-  },
-  {
-    id: 2,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715161336/eugene-golovesov-XQq_xRecUSw-unsplash_simrjg.jpg',
-  },
-  {
-    id: 3,
-    url: 'https://res.cloudinary.com/dzl9yxixg/image/upload/v1715161336/eugene-golovesov-beIRDp7-Dt0-unsplash_oop0nx.jpg',
-  },
-];
+
 export default function MyDrawer() {
   // const [open, setOpen] = useState(false)
   const [drawerOpen, setDrawerOpen] = useState(false);
