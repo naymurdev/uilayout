@@ -1,6 +1,6 @@
 [build]
-  command = "pnpm run build"
-  publish = ".next"
+  command = "npx turbo run build --filter=ui-layout"
+  publish = "apps/ui-layout/.next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
