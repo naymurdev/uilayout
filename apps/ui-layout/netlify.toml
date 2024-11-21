@@ -1,6 +1,2 @@
-[build]
-  command = "npx turbo run build --filter=ui-layout"
-  publish = "apps/ui-layout/.next"
-
-[[plugins]]
+  [[plugins]]
   package = "@netlify/plugin-nextjs"
