@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { SearchDialog } from './searchbar';
 import MobileHeader from './moibile-header';
+import ThemeSwitch from './theme-switch';
 // import MobileHeader from './moibile-header'
 
 function Header() {
@@ -101,29 +102,11 @@ function Header() {
                 <path d='M94.5068 0H112.907L72.7076 46.172L120 109H82.9692L53.9674 70.8942L20.7818 109H2.3693L45.3666 59.6147L0 0H37.9685L64.1848 34.8292L94.5068 0ZM88.0484 97.9318H98.2448L32.4288 10.4872H21.4882L88.0484 97.9318Z' />
               </svg>
             </a>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className='relative flex-shrink-0 grid w-12 place-content-center rounded-md border border-input bg-primary-foreground'>
-                  <SunIcon className='block h-[1.2rem] w-[1.2rem] transition-all dark:hidden' />
-                  <MoonIcon className='hidden h-[1.2rem] w-[1.2rem] transition-all dark:block' />
-                  <span className='sr-only'>Toggle theme</span>
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                className='bg-primary-foreground'
-                align='end'
-              >
-                <DropdownMenuItem onClick={() => setTheme('light')}>
-                  <Sun className='mr-2 h-4 w-4' /> Light
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('dark')}>
-                  <Moon className='mr-2 h-4 w-4' /> Dark
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('system')}>
-                  <MonitorSmartphone className='mr-2 h-4 w-4' /> System
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+
+            <ThemeSwitch
+              className='bg-background border w-12 rounded-md h-11 flex-shrink-0
+          '
+            />
           </div>
         </div>
       </header>

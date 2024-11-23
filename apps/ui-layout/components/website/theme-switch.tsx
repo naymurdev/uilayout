@@ -23,9 +23,9 @@ export default function ThemeSwitch({ className }: { className?: string }) {
       type='button'
     >
       {theme === 'light' ? (
-        <SunIcon className='h-4 w-4' />
+        <SunIcon className='h-5 w-5' />
       ) : (
-        <MoonIcon className='h-4 w-4' />
+        <MoonIcon className='h-5 w-5' />
       )}
       <span className='sr-only'>Toggle theme</span>
     </button>
