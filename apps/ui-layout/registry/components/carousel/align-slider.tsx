@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { imgPreview } from '@/components/website/constant';
 
 function AlignSlider() {
-  const OPTIONS: EmblaOptionsType = {};
+  const OPTIONS: EmblaOptionsType = { loop: false };
   return (
     <>
       <>
