@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tsc && next dev",
+    "dev": "tsc && next dev --port 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -70,6 +70,7 @@
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "remark-parse": "^11.0.0",
+    "sharp": "^0.33.5",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.3.0",
     "unified": "^11.0.5",

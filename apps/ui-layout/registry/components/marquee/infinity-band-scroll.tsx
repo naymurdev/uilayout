@@ -49,7 +49,7 @@ function index() {
           <li>
             <a
               target='_blank'
-              href='https://github.com/naymurdev/uilayout'
+              href='https://github.com/ui-layouts/uilayouts'
               className='border bg-primary  text-primary-foreground text-2xl  sm:grid hidden place-content-center  p-2   rounded-md'
             >
               <svg
@@ -111,7 +111,7 @@ function index() {
           <li>
             <a
               target='_blank'
-              href='https://github.com/naymurdev/uilayout'
+              href='https://github.com/ui-layouts/uilayouts'
               className='border bg-primary  text-primary-foreground text-2xl  sm:grid hidden place-content-center  p-2   rounded-md'
             >
               <svg
@@ -173,7 +173,7 @@ function index() {
           <li>
             <a
               target='_blank'
-              href='https://github.com/naymurdev/uilayout'
+              href='https://github.com/ui-layouts/uilayouts'
               className='border bg-primary  text-primary-foreground text-2xl  sm:grid hidden place-content-center  p-2   rounded-md'
             >
               <svg
@@ -240,7 +240,7 @@ function index() {
           <li>
             <a
               target='_blank'
-              href='https://github.com/naymurdev/uilayout'
+              href='https://github.com/ui-layouts/uilayouts'
               className='border bg-primary  text-primary-foreground text-2xl  sm:grid hidden place-content-center  p-2   rounded-md'
             >
               <svg
@@ -302,7 +302,7 @@ function index() {
           <li>
             <a
               target='_blank'
-              href='https://github.com/naymurdev/uilayout'
+              href='https://github.com/ui-layouts/uilayouts'
               className='border bg-primary  text-primary-foreground text-2xl  sm:grid hidden place-content-center  p-2   rounded-md'
             >
               <svg
@@ -364,7 +364,7 @@ function index() {
           <li>
             <a
               target='_blank'
-              href='https://github.com/naymurdev/uilayout'
+              href='https://github.com/ui-layouts/uilayouts'
               className='border bg-primary  text-primary-foreground text-2xl  sm:grid hidden place-content-center  p-2   rounded-md'
             >
               <svg

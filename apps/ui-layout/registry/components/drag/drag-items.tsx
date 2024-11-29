@@ -26,7 +26,7 @@ export default function index() {
       subtitle: 'If you like star the repo',
       date: '32.8.2024',
       src: 'https://images.unsplash.com/photo-1724908549265-06972c22ca37?q=80&w=2070&auto=format&fit=crop',
-      link: 'https://github.com/naymurdev/uilayout',
+      link: 'https://github.com/ui-layouts/uilayouts',
     },
     {
       id: 3,

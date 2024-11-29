@@ -81,13 +81,19 @@ export default async function RootLayout({
   return (
     <>
       <html lang='en' suppressHydrationWarning>
-        {/* {!isDev ? (
         <Script
-          async
-          src='https://analytics.umami.is/script.js'
-          data-website-id='17e8fc96-321d-43a6-94e7-d571c4c66a04'
+          src='https://www.googletagmanager.com/gtag/js?id=G-BH0GZ3L39R'
+          strategy='afterInteractive'
         />
-      ) : null} */}
+        <Script id='google-analytics' strategy='afterInteractive'>
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-BH0GZ3L39R');
+        `}
+        </Script>
+
         <body className={poppins.className}>
           <Progressbar>
             <ThemeProvider attribute='class'>

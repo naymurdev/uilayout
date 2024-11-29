@@ -28,7 +28,7 @@ export default async function ComponentLayout({
             </a>{' '}
             . The source code is available on{' '}
             <a
-              href='https://github.com/naymurdev/uilayout'
+              href='https://github.com/ui-layouts/uilayouts'
               target='_blank'
               rel='noreferrer'
               className='font-medium underline underline-offset-4'

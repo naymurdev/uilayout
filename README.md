@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://github.com/naymurdev/uilayout">
+  <a href="https://github.com/ui-layouts/uilayouts">
     <img src="uilayoutlogo.png" alt="uilayout" width="450" />
   </a>
 <p>
@@ -56,8 +56,6 @@ export function useMediaQuery(query: string) {
 }
 ```
 
-
-
 ## Most Used Components
 
 - [Image Ripple Effect](https://ui-layout.com/components/image-ripple-effect)
@@ -89,5 +87,5 @@ Visit [Labs](https://www.ui-layout.com/labs) to explore more experiments and ide
 
 ## Be A Sponsor
 
-<a href="https://buymeacoffee.com/naymurdev"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="naymur-uilayout" /></a>
+<a href="https://buymeacoffee.com/uilayouts"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="naymur-uilayout" /></a>
 <br/>

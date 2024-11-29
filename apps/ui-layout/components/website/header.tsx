@@ -59,7 +59,7 @@ function Header() {
             <button
               className={`sm:flex hidden flex-shrink-0 items-center space-x-2 group  px-2 rounded-md bg-primary text-primary-foreground border`}
               onClick={() =>
-                window.open(`https://github.com/naymurdev/uilayout`, '_blank')
+                window.open(`https://github.com/ui-layouts/uilayouts`, '_blank')
               }
             >
               <svg
@@ -80,7 +80,7 @@ function Header() {
             </button>
             <a
               target='_blank'
-              href='https://github.com/naymurdev/uilayout'
+              href='https://github.com/ui-layouts/uilayouts'
               className='border w-10 flex-shrink-0  place-content-center rounded-md sm:hidden grid bg-primary text-primary-foreground'
             >
               <Github />

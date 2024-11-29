@@ -1,3 +1,4 @@
+// @ts-nocheck
 import preview from '@/assets/preview';
 import {
   Dialog,
