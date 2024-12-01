@@ -58,7 +58,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: 'Text Scroll Animation ',
-    href: 'components/text-animation',
+    href: 'components/scroll-text',
     description: 'Visually or semantically separates content.',
   },
   {

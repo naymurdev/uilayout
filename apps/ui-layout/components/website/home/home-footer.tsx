@@ -4,26 +4,7 @@ import AnimatedText from '@/components/core/cursor-follow-text';
 import Link from 'next/link';
 
 function HomeFooter() {
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  // const bgRef = useRef<HTMLDivElement>(null)
 
-  // useEffect(() => {
-  //   const handleMouseMove = (event: MouseEvent) => {
-  //     if (bgRef.current) {
-  //       const rect = bgRef.current.getBoundingClientRect()
-  //       setMousePosition({
-  //         x: event.clientX - rect.left,
-  //         y: event.clientY - rect.top,
-  //       })
-  //     }
-  //   }
-
-  //   window.addEventListener('mousemove', handleMouseMove)
-
-  //   return () => {
-  //     window.removeEventListener('mousemove', handleMouseMove)
-  //   }
-  // }, [])
   return (
     <>
       <footer
@@ -83,7 +64,7 @@ function HomeFooter() {
                 Animated FAQs
               </Link>
               <Link
-                href='/components/clip-path-image'
+                href='/components/clip-path'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-left after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)]  hover:after:scale-x-100'
               >
@@ -171,11 +152,11 @@ function HomeFooter() {
                 Marquee
               </Link>
               <Link
-                href='/components/modal'
+                href='/components/media-modal'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100'
               >
-                Animated Modal
+                Modal
               </Link>
 
               <Link
@@ -202,18 +183,18 @@ function HomeFooter() {
                 Progressive Carousel
               </Link>
               <Link
-                href='/components/drawer'
+                href='/components/responsive-drawer'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100'
               >
                 Responsive Drawer
               </Link>
               <Link
-                href='/components/sidebar'
+                href='/components/image-reveal'
                 className='relative block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 dark:after:bg-white 
       after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100'
               >
-                Responsive Sidebar
+                Image Reveal
               </Link>
               <Link
                 href='/components/smooth-scroll'

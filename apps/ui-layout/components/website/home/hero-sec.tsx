@@ -1,7 +1,6 @@
 'use client';
 import { ChevronsRight, MoveRight } from 'lucide-react';
 import { Button } from '@/components/website/ui/button';
-// import Link from 'next/link';
 import React, { useEffect, useMemo, useState } from 'react';
 import { SpotLightItem, Spotlight } from '@/components/core/main-spotlight';
 import HomeProgressSlider from './progress-carousel';
@@ -17,7 +16,6 @@ import HomeTab from './home-tab';
 import HomeImageMasking from './home-image-masking';
 
 import HomeSlider from './home-carousel';
-// import { AnimatePresence } from 'framer-motion';
 import NewItemsLoading from './new-items-loading';
 import HomeClipPath from './home-clippath';
 import HomeMotionNumber from './home-motion-number';
@@ -103,7 +101,7 @@ const homeComponents = [
   },
   {
     id: 12,
-    link: '/components/dialog-card',
+    link: '/components/linear-card',
 
     componentSrc: <HomeAccordionModal />,
 
@@ -111,28 +109,28 @@ const homeComponents = [
   },
   {
     id: 13,
-    link: '/components/products-cards',
+    link: '/components/product-cards',
 
     componentSrc: <HomeProductCard />,
     className: 'lg:col-span-4 md:col-span-5 sm:col-span-6 col-span-12',
   },
   {
     id: 14,
-    link: '/components/embla-carousel',
+    link: '/components/carousel',
 
     componentSrc: <HomeSlider />,
     className: ' col-span-12',
   },
   {
     id: 15,
-    link: '/components/clip-path-image',
+    link: '/components/clip-path',
 
     componentSrc: <HomeClipPath />,
     className: ' lg:col-span-8 col-span-12',
   },
   {
     id: 16,
-    link: '/components/clip-path-image',
+    link: '/components/motion-number',
 
     componentSrc: <HomeMotionNumber />,
     className: ' lg:col-span-4 col-span-12',
@@ -387,15 +385,6 @@ function HeroSec() {
                         <path d='M15 3h6v6' />
                       </svg>
                     </a>
-                    {/* {component?.imgSrc ? (
-                      <>
-                        <img
-                          src={component.imgSrc}
-                          className='w-full h-full object-cover'
-                          alt=''
-                        />
-                      </>
-                    ) : ( */}
                     <>
                       {component?.iframeSrc && (
                         <iframe
