@@ -7,9 +7,9 @@ import createMDX from '@next/mdx';
 import { remarkCodeHike, recmaCodeHike } from 'codehike/mdx';
 import rehypeSlug from 'rehype-slug';
 // Import the JSON file
-import docsData from './configs/docs.json' assert { type: 'json' };
-// import dataArray from './configs/docs';
-
+const docsData = JSON.parse(
+  fs.readFileSync(path.resolve('./configs/docs.json'), 'utf8')
+);
 const { dataArray } = docsData;
 
 const chConfig = {
