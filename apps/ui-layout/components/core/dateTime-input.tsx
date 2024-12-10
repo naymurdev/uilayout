@@ -175,7 +175,7 @@ export const SmartDatetimeInput = React.forwardRef<
         <div className='flex items-center justify-center bg-background'>
           <div
             className={cn(
-              'flex gap-1 w-full p-1 items-center justify-between rounded-md border transition-all',
+              'flex gap-1 w-full p-1 items-center justify-between rounded-md border-2 transition-all',
               'focus-within:outline-0 focus:outline-0 focus:ring-0',
               'placeholder:text-muted-foreground focus-visible:outline-0 ',
               className
@@ -603,7 +603,7 @@ const DateTimeLocalInput = ({
           variant={'outline'}
           size={'icon'}
           className={cn(
-            'size-9 flex items-center justify-center font-normal',
+            'size-9 flex items-center justify-center font-normal  bg-primary-foreground',
             !value && 'text-muted-foreground'
           )}
         >

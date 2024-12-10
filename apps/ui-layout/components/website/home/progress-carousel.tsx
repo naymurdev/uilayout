@@ -81,8 +81,8 @@ export default function HomeProgressSlider() {
   };
 
   return (
-    <div className='w-full mx-auto rounded-md dark:bg-home-dark text-center relative h-full '>
-      <div className='transition-all duration-150 delay-300  ease-in-out'>
+    <div className='w-full mx-auto   rounded-t-xl text-center relative  2xl:h-[300px] h-[240px]'>
+      <div className='transition-all duration-150 delay-300  ease-in-out h-full'>
         <div className='relative h-full' ref={itemsRef}>
           {items.map((item, index) => (
             <AnimatePresence mode='popLayout' key={index}>
@@ -106,7 +106,7 @@ export default function HomeProgressSlider() {
           ))}
         </div>
       </div>
-      <div className='absolute bottom-0 w-full dark:bg-white/20 bg-black/20 backdrop-blur-md overflow-hidden grid grid-cols-3 rounded-md'>
+      <div className='absolute bottom-0 w-full dark:bg-white/20 bg-black/20 backdrop-blur-md rounded-b-xl overflow-hidden grid grid-cols-3'>
         {items.map((item, index) => (
           <button
             key={index}
@@ -118,7 +118,7 @@ export default function HomeProgressSlider() {
             onClick={() => handleButtonClick(index)}
           >
             <>
-              <h2 className='relative px-2 text-sm rounded-full w-fit dark:bg-gray-900 bg-gray-50 mb-2'>
+              <h2 className='relative px-2 2xl:text-sm text-xs rounded-full w-fit dark:bg-gray-900 bg-gray-50 mb-2'>
                 {item?.title}
               </h2>
               <p className='text-xs font-medium dark:text-slate-900 text-white line-clamp-2'>

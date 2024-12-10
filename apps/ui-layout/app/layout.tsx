@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/website/theme-provider';
 import { GeistMono } from 'geist/font/mono';
 import Progressbar from '@/lib/progressbar';
 import { siteConfig } from '@/lib/utils';
+import { Toaster } from 'sonner';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -34,6 +35,10 @@ export const metadata: Metadata = {
     'tabs',
     'image reveal',
     'sparkles',
+    'shadcn components',
+    'threejs ui-layouts',
+    'react three fiber',
+    'r3f',
   ],
   authors: [
     {
@@ -100,6 +105,7 @@ export default async function RootLayout({
               <div className='isolate min-h-screen' vaul-drawer-wrapper=''>
                 {children}
               </div>
+              <Toaster />
             </ThemeProvider>
           </Progressbar>
         </body>

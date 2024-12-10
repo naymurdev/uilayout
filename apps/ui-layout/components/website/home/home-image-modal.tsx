@@ -2,7 +2,7 @@ import { MediaModal } from '@/components/core/modal/media-modal';
 
 export default function Dialog() {
   return (
-    <div className='relative h-full'>
+    <div className='relative  lg:h-[255px] h-[304px] '>
       <div className=' h-full'>
         <MediaModal
           imgSrc={

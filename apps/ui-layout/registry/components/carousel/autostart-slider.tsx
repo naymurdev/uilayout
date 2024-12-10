@@ -17,48 +17,20 @@ function index() {
         <Carousel options={OPTIONS} isAutoPlay={true} className='w-4/5 mx-auto'>
           <SliderContainer className='gap-2'>
             <Slider className='w-full'>
-              <div className='dark:bg-black bg-white h-[400px] w-full'>
-                <Image
-                  src={imgPreview.img9}
-                  width={1400}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg w-full'
-                />
-              </div>
+              <div className='bg-red-500 rounded-xl h-[400px] w-full'></div>{' '}
+              {/* Red background with rounded corners */}
             </Slider>
             <Slider className='w-full'>
-              <div className='dark:bg-black bg-white h-[400px] w-full'>
-                <Image
-                  src={imgPreview.img10}
-                  width={1200}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg w-full'
-                />
-              </div>
+              <div className='bg-blue-500 rounded-xl h-[400px] w-full'></div>{' '}
+              {/* Blue background with rounded corners */}
             </Slider>
             <Slider className='w-full'>
-              <div className='dark:bg-black bg-white h-[400px] w-full'>
-                <Image
-                  src={imgPreview.img11}
-                  width={1200}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg w-full'
-                />
-              </div>
+              <div className='bg-green-500 rounded-xl h-[400px] w-full'></div>{' '}
+              {/* Green background with rounded corners */}
             </Slider>
             <Slider className='w-full'>
-              <div className='dark:bg-black bg-white h-[400px] w-full'>
-                <Image
-                  src={imgPreview.img12}
-                  width={1200}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg w-full'
-                />
-              </div>
+              <div className='bg-yellow-500 rounded-xl h-[400px] w-full'></div>{' '}
+              {/* Yellow background with rounded corners */}
             </Slider>
           </SliderContainer>
           <div className='flex justify-center py-4'>

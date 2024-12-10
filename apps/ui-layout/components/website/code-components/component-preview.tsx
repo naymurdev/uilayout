@@ -69,20 +69,6 @@ export default function ComponentPreview({
     (com) => com.iframeSrc === component?.iframeSrc
   );
 
-  // Memoize the ComponentPreview to prevent re-rendering
-  // const MemoizedComponentPreview = useMemo(() => {
-  //   return component?.filesrc
-  //     ? dynamic(() => import(`../../../registry/${component.filesrc}`), {
-  //         loading: () => (
-  //           <div className='h-[400px] grid place-content-center'>
-  //             Loading preview...
-  //           </div>
-  //         ),
-  //       })
-  //     : null;
-  // }, [component?.filesrc]);
-  // console.log(iframeComponent);
-
   return (
     <>
       <div className='absolute right-1 top-0 z-[10] flex h-12 items-center gap-2 not-prose'>
@@ -271,8 +257,10 @@ export default function ComponentPreview({
         <>
           <div
             className={`${
-              isFitheight ? 'h-fit' : 'xl:h-[600px] h-fit overflow-auto'
-            } w-full rounded-lg dark:bg-[#080b11] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:20px_20px] overflow-hidden pt-8 p-8`}
+              isFitheight
+                ? 'h-fit'
+                : '2xl:h-[600px] xl:h-[550px] h-fit overflow-auto'
+            } w-full rounded-lg dark:bg-[#020101] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:20px_20px] overflow-hidden pt-8 p-8`}
           >
             <div
               className='h-full  mx-auto p-5 not-prose'

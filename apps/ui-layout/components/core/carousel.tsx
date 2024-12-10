@@ -369,7 +369,7 @@ export const SliderProgress = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        '  bg-gray-500 relative rounded-md h-2 justify-end items-center w-96 max-w-[90%] overflow-hidden',
+        '  bg-gray-500 relative rounded-md h-2 justify-end items-center sm:w-96 w-[80%] max-w-[90%] overflow-hidden',
         className
       )}
     >

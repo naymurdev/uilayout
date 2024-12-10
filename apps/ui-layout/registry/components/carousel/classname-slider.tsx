@@ -14,50 +14,22 @@ function ClassName() {
     <>
       <>
         <Carousel options={OPTIONS} activeSlider>
-          <SliderContainer className='gap-2 '>
+          <SliderContainer className='gap-2'>
             <Slider className='embla__slide w-4/5'>
-              <div className='h-[28em]  pl-2'>
-                <Image
-                  src={imgPreview.img6}
-                  width={800}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg'
-                />
-              </div>
-            </Slider>
-            <Slider className='embla__slide  w-4/5'>
-              <div className='h-[28em] '>
-                <Image
-                  src={imgPreview.img5}
-                  width={800}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg'
-                />
-              </div>
-            </Slider>
-            <Slider className='embla__slide  w-4/5'>
-              <div className=' h-[28em]  '>
-                <Image
-                  src={imgPreview.img1}
-                  width={800}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg'
-                />
-              </div>
+              <div className='h-[28em] pl-2 bg-red-500 rounded-xl'></div>{' '}
+              {/* Added red background and rounded corners */}
             </Slider>
             <Slider className='embla__slide w-4/5'>
-              <div className=' h-[28em]  '>
-                <Image
-                  src={imgPreview.img2}
-                  width={800}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg'
-                />
-              </div>
+              <div className='h-[28em] bg-blue-500 rounded-xl'></div>{' '}
+              {/* Added blue background and rounded corners */}
+            </Slider>
+            <Slider className='embla__slide w-4/5'>
+              <div className='h-[28em] bg-green-500 rounded-xl'></div>{' '}
+              {/* Added green background and rounded corners */}
+            </Slider>
+            <Slider className='embla__slide w-4/5'>
+              <div className='h-[28em] bg-yellow-500 rounded-xl'></div>{' '}
+              {/* Added yellow background and rounded corners */}
             </Slider>
           </SliderContainer>
           <div className='flex justify-center py-2'>

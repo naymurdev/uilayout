@@ -44,14 +44,14 @@ function HomeMagnifiedDocOneFile() {
 
   return (
     <>
-      <div className='relative rounded-md h-full   dark:bg-home-dark bg-white  [box-shadow:inset_1px_-1px_4px_rgba(0_0_0,0.5)] '>
+      <div className='relative rounded-md sm:h-full h-[280px]'>
         <>
-          {apps.map((app, i) => {
+          {apps.slice(0, 6).map((app, i) => {
             return (
               <>
                 <AnimatePresence mode={'popLayout'}>
                   {index === i && (
-                    <motion.div className='w-full h-full'>
+                    <motion.div className='w-[80%] mx-auto h-full'>
                       <motion.figure
                         initial={{
                           opacity: 0,
@@ -71,13 +71,14 @@ function HomeMagnifiedDocOneFile() {
                           duration: 0.3,
                           delay: 0.4,
                         }}
+                        className='h-full'
                       >
                         <Image
                           src={app?.imgSrc}
                           alt='images'
                           width={1000}
                           height={1000}
-                          className='w-full h-full object-cover  rounded-lg'
+                          className='w-full h-full object-contain  rounded-lg'
                         />
                       </motion.figure>
                     </motion.div>
@@ -87,15 +88,15 @@ function HomeMagnifiedDocOneFile() {
             );
           })}
 
-          <div className='absolute bottom-0 left-0 w-full z-20'>
+          <div className='absolute bottom-0 left-0 w-full z-10'>
             <div className='w-fit mx-auto'>
               <TooltipProvider delayDuration={0}>
                 <motion.div
                   onMouseMove={(e) => mouseX.set(e.pageX)}
                   onMouseLeave={() => mouseX.set(Infinity)}
-                  className='mx-auto flex h-[57px] w-fit items-end gap-2 rounded-t-lg px-2 pb-2 dark:bg-gray-900 bg-gray-200 backdrop-blur-2xl border-t border-l border-r border-white/20 '
+                  className='mx-auto flex h-[57px] w-fit items-end gap-2 rounded-t-lg px-2 pb-2  bg-primary-foreground backdrop-blur-2xl border-t border-l border-r  '
                 >
-                  {apps.map((app, i) => {
+                  {apps.slice(0, 6).map((app, i) => {
                     return (
                       <Tooltip key={app.id}>
                         <TooltipTrigger onClick={() => handleClick(i)}>

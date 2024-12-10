@@ -31,6 +31,59 @@ const config: Config = {
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
       },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        '14': 'repeat(14, minmax(0, 1fr))',
+
+        // Complex site-specific column configuration
+      },
+      gridColumn: {
+        'span-14': 'span 14 / span 14',
+      },
+      gridColumnStart: {
+        '13': '13',
+        '14': '14',
+        '15': '15',
+      },
+      gridColumnEnd: {
+        '13': '13',
+        '14': '14',
+        '15': '15',
+      },
+      gridRowStart: {
+        '13': '13',
+        '14': '14',
+        '15': '15',
+        '16': '16',
+        '17': '17',
+        '18': '18',
+        '19': '18',
+        '20': '20',
+        '21': '21',
+        '22': '22',
+        '23': '23',
+        '24': '24',
+        '25': '25',
+        '26': '26',
+        '27': '27',
+      },
+      gridRowEnd: {
+        '13': '13',
+        '14': '14',
+        '15': '15',
+        '16': '16',
+        '17': '17',
+        '18': '18',
+        '19': '18',
+        '20': '20',
+        '21': '21',
+        '22': '22',
+        '23': '23',
+        '24': '24',
+        '25': '25',
+        '26': '26',
+        '27': '27',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
