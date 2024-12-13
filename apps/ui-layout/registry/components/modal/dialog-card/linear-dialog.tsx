@@ -1,18 +1,3 @@
-export const metadata = {
-  title: 'Linear Card',
-  description:
-    'An animated dialog component powered by Framer Motion, offering smooth transitions and interactive visual effects for modal windows',
-};
-
-<ComponentCodePreview name='dialog-card-linear' hasReTrigger responsive />
-
-## Installation
-
-```bash
-npm install framer-motion
-```
-
-```tsx linear-dialog.tsx
 'use client';
 
 import React, {
@@ -408,4 +393,3 @@ export {
   DialogDescription,
   DialogImage,
 };
-```

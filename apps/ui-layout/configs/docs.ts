@@ -1495,7 +1495,7 @@ export const AllComponents: IAllComponents[] = [
     componentName: 'dialog-card-linear',
     tags: ['card', 'linear-layout', 'UI-component', 'modal-card'],
     componentSrc: React.lazy(
-      () => import('@/registry/components/modal/dialog-card/linear-card')
+      () => import('@/registry/components/modal/dialog-card')
     ),
     iframeSrc: 'live-components/dialog-card-linear',
     iframe: true,

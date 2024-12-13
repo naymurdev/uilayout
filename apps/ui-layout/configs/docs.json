@@ -823,7 +823,7 @@
         },
         {
           "componentName": "dialog-card-linear",
-          "filesrc": "components/modal/dialog-card/linear-card.tsx",
+          "filesrc": "components/modal/dialog-card/index.tsx",
           "iframeSrc": "live-components/dialog-card-linear",
           "parentlink": "linear-card",
           "parentName": "Linear Card"
