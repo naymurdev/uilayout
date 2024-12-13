@@ -1,7 +1,6 @@
 'use client';
 import React, { FormEvent, useLayoutEffect, useRef, useState } from 'react';
 import { MoveRight } from 'lucide-react';
-// import * as Toast from '@radix-ui/react-toast'
 import { motion, useInView } from 'framer-motion';
 
 // import useNewsLetter, { ClientData } from '@/lab/hooks/useNewsLetter'

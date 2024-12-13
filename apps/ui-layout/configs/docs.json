@@ -11,25 +11,7 @@
           "parentName": "Drag Items",
           "isNew": true
         },
-        {
-          "componentName": "mesh-gradient",
-          "iframelink": "mess-gradient",
-          "parentlink": "mess-gradient",
-          "parentName": "Mess Gradient"
-        },
 
-        {
-          "componentName": "mesh-gradient2",
-          "iframelink": "mess-gradient2",
-          "parentlink": "mess-gradient",
-          "parentName": "Mess Gradient"
-        },
-        {
-          "componentName": "img-ripple-effect",
-          "iframelink": "img-ripple-effect",
-          "parentlink": "img-ripple-effect",
-          "parentName": "Img Ripple Effect"
-        },
         {
           "componentName": "card-globe",
           "iframelink": "card-globe",
@@ -221,6 +203,31 @@
         }
       ],
       "type": "default "
+    },
+    {
+      "name": "ThreeJS",
+      "componentArray": [
+        {
+          "componentName": "mesh-gradient",
+          "iframelink": "mess-gradient",
+          "parentlink": "mess-gradient",
+          "parentName": "Mess Gradient"
+        },
+
+        {
+          "componentName": "mesh-gradient2",
+          "iframelink": "mess-gradient2",
+          "parentlink": "mess-gradient",
+          "parentName": "Mess Gradient"
+        },
+        {
+          "componentName": "img-ripple-effect",
+          "iframelink": "img-ripple-effect",
+          "parentlink": "img-ripple-effect",
+          "parentName": "Img Ripple Effect"
+        }
+      ],
+      "type": "threejs"
     },
     {
       "name": "Accordion",

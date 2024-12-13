@@ -6,6 +6,7 @@ import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import Image from 'next/image';
 import preview from '@/assets/preview';
 import { cn } from '@/lib/utils';
+import Footer from '@/components/website/footer';
 const appsDesign = [
   {
     id: 'image-ripple-effect',
@@ -571,7 +572,7 @@ const appsDesign = [
 export default function Home() {
   return (
     <>
-      <div className='pt-20 pb-5'>
+      <div className='pt-24 pb-5'>
         <h1
           className={'sm:text-3xl text-2xl font-semibold tracking-tight pb-1'}
         >
@@ -589,7 +590,7 @@ export default function Home() {
                 <>
                   <Link
                     href={component?.url}
-                    className='border p-2    transition-all rounded-lg'
+                    className='border p-2    transition-all rounded-lg dark:bg-black/40 bg-primary-foreground backdrop-blur-sm'
                   >
                     <>
                       {component.imgSrc && (
@@ -626,6 +627,7 @@ export default function Home() {
             })}
           </div>
         </>
+        <Footer />
       </div>
     </>
   );

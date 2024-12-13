@@ -18,55 +18,23 @@ function index() {
       <div className='bg-background p-4'>
         <Carousel options={OPTIONS} isScale={true}>
           <SliderContainer>
-            <Slider className='sm:w-[65%] W-[90%]'>
-              <div className='2xl:h-[450px] sm:h-full h-[420px]'>
-                <Image
-                  src={imgPreview.img1}
-                  width={1400}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg w-full'
-                />
-              </div>
+            <Slider className='sm:w-[55%] w-[90%]'>
+              <div className='bg-blue-500 h-[420px] sm:h-full 2xl:h-[450px] rounded-lg'></div>
             </Slider>
-            <Slider className='sm:w-[65%] W-[90%]'>
-              <div className='2xl:h-[450px] sm:h-full h-[420px]'>
-                <Image
-                  src={imgPreview.img2}
-                  width={1200}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg w-full'
-                />
-              </div>
+            <Slider className='sm:w-[55%] w-[90%]'>
+              <div className='bg-green-500 h-[420px] sm:h-full 2xl:h-[450px] rounded-lg'></div>
             </Slider>
-            <Slider className='sm:w-[65%] W-[90%]'>
-              <div className='2xl:h-[450px] sm:h-full h-[420px]'>
-                <Image
-                  src={imgPreview.img3}
-                  width={1200}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg w-full'
-                />
-              </div>
+            <Slider className='sm:w-[55%] w-[90%]'>
+              <div className='bg-yellow-500 h-[420px] sm:h-full 2xl:h-[450px] rounded-lg'></div>
             </Slider>
-            <Slider className='sm:w-[65%] W-[90%]'>
-              <div className='2xl:h-[450px] sm:h-full h-[420px]'>
-                <Image
-                  src={imgPreview.img4}
-                  width={1200}
-                  height={800}
-                  alt='image'
-                  className='h-full object-cover rounded-lg w-full'
-                />
-              </div>
+            <Slider className='sm:w-[55%] w-[90%]'>
+              <div className='bg-red-500 h-[420px] sm:h-full 2xl:h-[450px] rounded-lg'></div>
             </Slider>
           </SliderContainer>
-          <SliderPrevButton className='absolute top-[50%] p-2 border-2 rounded-full left-4 dark:bg-black/25 dark:border-white  bg-white/25 backdrop-blur-sm text-white disabled:opacity-20'>
-            <ChevronLeft className='w-8 h-8 ' />
+          <SliderPrevButton className='absolute top-[50%] p-2 border-2 rounded-full left-4 bg-white/25 dark:bg-black/25 dark:border-white backdrop-blur-sm text-primary disabled:opacity-20'>
+            <ChevronLeft className='w-8 h-8' />
           </SliderPrevButton>
-          <SliderNextButton className='absolute right-4 p-2 border-2 rounded-full top-[50%] dark:bg-black/25 dark:border-white  bg-white/25 backdrop-blur-sm text-white disabled:opacity-20'>
+          <SliderNextButton className='absolute right-4 p-2 border-2 rounded-full top-[50%] bg-white/25 dark:bg-black/25 dark:border-white backdrop-blur-sm text-primary disabled:opacity-20'>
             <ChevronRight className='w-8 h-8' />
           </SliderNextButton>
           <div className='flex justify-center py-4'>

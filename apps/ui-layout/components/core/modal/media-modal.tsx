@@ -88,7 +88,7 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
             <>
               <motion.div
                 key={`backdrop-${uniqueId}`}
-                className='fixed inset-0 h-full w-full dark:bg-black/25 bg-white/95 backdrop-blur-sm '
+                className='fixed inset-0 h-full w-full z-50  dark:bg-black/25 bg-white/95 backdrop-blur-sm '
                 variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}
                 initial='closed'
                 animate='open'
@@ -141,7 +141,7 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
 
                   <button
                     onClick={() => setIsMediaModalOpen(false)}
-                    className='absolute right-6 top-6 p-3 text-zinc-50 cursor-pointer dark:bg-gray-900 bg-gray-400 hover:bg-gray-500 rounded-full dark:hover:bg-gray-800'
+                    className='absolute right-6 top-6 p-3 text-zinc-50 cursor-pointer dark:bg-gray-900 bg-gray-400 hover:bg-gray-500 rounded-xl dark:hover:bg-gray-800'
                     type='button'
                     aria-label='Close dialog'
                   >

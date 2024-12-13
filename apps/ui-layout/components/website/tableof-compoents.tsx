@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import BuyMeCoffee from '@/registry/components/buy-me-acoffee';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { ScrollArea } from './ui/scroll-area';
 
 interface TocItem {
   title: string;
@@ -88,55 +89,57 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
       {isDesktop ? (
         <>
           {tocItems?.length !== 0 && (
-            <aside className='hidden lg:block bg-primary-foreground w-[170px] shrink-0 border-x'>
-              <div className='sticky top-16 p-2'>
-                <div>
-                  <span className='text-sm px-1 text-primary font-semibold pb-1 inline-block'>
-                    On This Page
-                  </span>
-                  <hr />
-                  <ul className=' list-none m-0 ml-0  text-[0.8em] space-y-0.5 pt-2 pl-0'>
-                    {tocItems?.map((item) => {
-                      // console.log(item);
+            <aside className='hidden lg:block w-[170px] shrink-0 '>
+              <div className='sticky top-0 h-screen   pt-[5.2em]'>
+                <ScrollArea className='h-[98%] px-3 py-3 dark:bg-black/40  bg-zinc-100  backdrop-blur-md rounded-md border'>
+                  <div>
+                    <span className='text-sm px-1 text-primary font-semibold pb-1 inline-block'>
+                      On This Page
+                    </span>
+                    <hr />
+                    <ul className=' list-none m-0 ml-0  text-[0.8em] space-y-0.5 pt-2 pl-0'>
+                      {tocItems?.map((item) => {
+                        // console.log(item);
 
-                      return (
-                        <>
-                          <li key={item.url}>
-                            <a
-                              href={item.url}
-                              className={`${
-                                activeId === item.url.slice(1)
-                                  ? ' font-semibold  text-primary py-1'
-                                  : ''
-                              } no-underline rounded-sm px-1 hover:text-primary text-muted-foreground `}
-                            >
-                              {item.title}
-                            </a>
-                            {item.items && item.items.length > 0 && (
-                              <ul className='list-none  pl-4 space-y-0.5 pt-0.5'>
-                                {item.items.map((subItem) => (
-                                  <li key={subItem.url}>
-                                    <a
-                                      href={subItem.url}
-                                      className={`${
-                                        activeId === subItem.url.slice(1)
-                                          ? ' font-semibold text-primary'
-                                          : ' '
-                                      } no-underline  hover:text-primary text-muted-foreground`}
-                                    >
-                                      {subItem.title}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </li>
-                        </>
-                      );
-                    })}
-                  </ul>
-                </div>
-                <BuyMeCoffee classname='mt-10 w-full' />
+                        return (
+                          <>
+                            <li key={item.url}>
+                              <a
+                                href={item.url}
+                                className={`${
+                                  activeId === item.url.slice(1)
+                                    ? ' font-semibold  text-primary py-1'
+                                    : ''
+                                } no-underline rounded-sm px-1 hover:text-primary text-muted-foreground `}
+                              >
+                                {item.title}
+                              </a>
+                              {item.items && item.items.length > 0 && (
+                                <ul className='list-none  pl-4 space-y-0.5 pt-0.5'>
+                                  {item.items.map((subItem) => (
+                                    <li key={subItem.url}>
+                                      <a
+                                        href={subItem.url}
+                                        className={`${
+                                          activeId === subItem.url.slice(1)
+                                            ? ' font-semibold text-primary'
+                                            : ' '
+                                        } no-underline  hover:text-primary text-muted-foreground`}
+                                      >
+                                        {subItem.title}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          </>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                  <BuyMeCoffee classname='mt-10 w-full' />
+                </ScrollArea>
               </div>
             </aside>
           )}

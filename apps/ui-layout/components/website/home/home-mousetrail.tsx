@@ -114,12 +114,12 @@ export default function HomeMouseTrail() {
       onMouseMove={handleOnMove}
       onTouchMove={(e) => handleOnMove(e.touches[0])}
       ref={containerRef}
-      className='grid place-content-center h-full  w-full  relative overflow-hidden rounded-lg'
+      className=' h-full  w-full  relative   rounded-xl overflow-hidden grid place-content-center'
     >
       {items.map((item, index) => (
         <figure key={index}>
           <Image
-            className="object-contain border dark:bg-gray-900 bg-white z-10 w-32 h-32 scale-0 opacity:0 data-[status='active']:scale-100  data-[status='active']:opacity-100 transition-transform duration-500 data-[status='active']:ease-out-expo  absolute  -translate-y-[50%] -translate-x-[50%]"
+            className="object-contain border dark:bg-black bg-gray-50 z-10 w-32 h-32 scale-0 opacity:0 data-[status='active']:scale-100  data-[status='active']:opacity-100 transition-transform duration-500 data-[status='active']:ease-out-expo  absolute  -translate-y-[50%] -translate-x-[50%]"
             data-index={index}
             data-status='inactive'
             src={item.url}

@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Atom, ChevronsDown, Component, Rocket, X } from 'lucide-react';
 import { IRecentPage, useRecentPagesStore } from '@/hooks/useZustStore';
-import docsData from '@/configs/docs.json' assert { type: 'json' };
 import { useTheme } from 'next-themes';
 import { generateSidebarData } from './constant';
 import { MainComponents, SpecialComponents } from '@/configs/docs';
@@ -65,9 +64,9 @@ function DocsSidebar() {
   return (
     <>
       {isDesktop && (
-        <aside className='h-full border-r'>
-          <div className='sticky top-0 h-screen w-full rounded-md pt-[3.2em]'>
-            <ScrollArea className='h-full py-4'>
+        <aside className='h-full '>
+          <div className='sticky top-0 h-screen w-full  pt-[5.2em]'>
+            <ScrollArea className='h-[98%] px-3 py-3 dark:bg-black/40 bg-zinc-100   backdrop-blur-md rounded-md border'>
               <ul className='pb-1'>
                 {basePath?.map((link, index) => {
                   return (
@@ -255,7 +254,7 @@ export const ItemsWithName = ({
         </button>
         <ul className='relative '>
           {!expandedItems && showExpandButton && (
-            <div className='absolute w-full bottom-0 left-0 h-7 bg-gradient-to-t dark:from-base-dark from-white from-20%' />
+            <div className='absolute w-full bottom-0 left-0 h-7 bg-gradient-to-t dark:from-[#050507] from-zinc-100 from-20%' />
           )}
           {itemsToShow.map((link: any, index: number) => (
             <li

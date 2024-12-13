@@ -353,7 +353,7 @@ export const FileInput = forwardRef<HTMLDivElement, FileInputProps>(
           {children}
           {dropzoneState.isDragActive && (
             <div className='absolute inset-0 flex items-center justify-center bg-primary-foreground/60 backdrop-blur-sm rounded-lg'>
-              <p className='text-primary font-medium'>{dropmsg}</p>
+              <p className='text-primary font-medium'>Drop an image here.</p>
             </div>
           )}
         </div>

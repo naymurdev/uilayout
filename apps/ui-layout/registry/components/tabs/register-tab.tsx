@@ -24,7 +24,7 @@ function index() {
           <div className='dark:bg-black bg-white  mx-auto max-w-[400px]  dark:text-white text-black p-4 py-8 shadow-md rounded-md space-y-2'>
             <div className='flex justify-center'>
               <Image
-                src='/logo.png'
+                src='/apple-touch-icon.png'
                 alt='img'
                 width={80}
                 height={80}
@@ -137,7 +137,7 @@ function index() {
           <div className='dark:bg-black bg-white  mx-auto max-w-[400px]  dark:text-white text-black p-4 py-8 shadow-md rounded-md space-y-2'>
             <div className='flex justify-center'>
               <Image
-                src='/logo.png'
+                src='/apple-touch-icon.png'
                 alt='img'
                 width={80}
                 height={80}
