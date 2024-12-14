@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/naymurdev/uilayout">
-    <img src="uilayoutlogo.png" alt="uilayout" width="450" />
+    <img src="ui-layouts-logo.png" alt="uilayout" width="450" />
   </a>
 <p>
 
