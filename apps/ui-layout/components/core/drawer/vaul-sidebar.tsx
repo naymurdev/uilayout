@@ -29,18 +29,22 @@ interface DrawerSidebarProps {
   children: ReactNode;
   open?: boolean;
   setOpen?: (open: boolean) => void;
-  direction?: string;
+  direction?: 'left' | 'right';
   outsideClose?: boolean;
   className?: string;
+  triggerClassName?: string;
+  DefaultTrigger?: () => React.ReactNode; // Changed to a function that returns ReactNode
 }
 
 export function SidebarDrawer({
   children,
   open: controlledOpen,
   setOpen: controlledSetOpen,
-  direction,
-  outsideClose,
+  direction = 'left',
+  outsideClose = true,
   className,
+  triggerClassName,
+  DefaultTrigger, // Now a function prop
 }: DrawerSidebarProps) {
   const [internalOpen, setInternalOpen] = useState(false);
   const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
@@ -66,6 +70,10 @@ export function SidebarDrawer({
   return (
     <DrawerContext.Provider value={{ open, setOpen }}>
       <>
+        {DefaultTrigger && (
+          <div onClick={() => setOpen(true)}>{DefaultTrigger()}</div>
+        )}
+
         <VaulSidebar.Root
           open={open}
           direction={direction === 'right' ? 'right' : 'left'}
@@ -73,7 +81,10 @@ export function SidebarDrawer({
           dismissible={isDesktop ? false : true}
         >
           <VaulSidebar.Portal>
-            <VaulSidebar.Overlay className='fixed inset-0 dark:bg-black/40 bg-white/50 backdrop-blur-sm z-50  ' />
+            <VaulSidebar.Overlay
+              className='fixed inset-0 dark:bg-black/40 bg-white/50 backdrop-blur-sm z-50  '
+              onClick={() => setOpen(false)}
+            />
             <VaulSidebar.Content
               className={cn(
                 ` border-l z-50  ${
