@@ -20,8 +20,8 @@ import React, {
   createContext,
 } from 'react';
 interface MousePosition {
-  x: number;
-  y: number;
+  x: number | null;
+  y: number | null;
 }
 
 interface SpotlightProps {
@@ -83,12 +83,12 @@ export function SpotLightItem({ children, className }: SpotlightItemProps) {
     useSpotlight();
   const boxWrapper = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [mousePosition, setMousePosition] = React.useState({
+  const [mousePosition, setMousePosition] = React.useState<MousePosition>({
     x: null,
     y: null,
   });
   React.useEffect(() => {
-    const updateMousePosition = (ev: { clientX: any; clientY: any }) => {
+    const updateMousePosition = (ev: { clientX: any; clientY: any }:MouseEvent) => {
       setMousePosition({ x: ev.clientX, y: ev.clientY });
     };
     window.addEventListener('mousemove', updateMousePosition);
@@ -98,7 +98,7 @@ export function SpotLightItem({ children, className }: SpotlightItemProps) {
   }, []);
 
   const [overlayColor, setOverlayColor] = useState({ x: 0, y: 0 });
-  const handleMouemove = ({ currentTarget, clientX, clientY }): MouseEvent => {
+  const handleMouseMove = ({ currentTarget, clientX, clientY }:MouseEvent) => {
     let { left, top } = currentTarget.getBoundingClientRect();
 
     const x = clientX - left;
@@ -110,7 +110,7 @@ export function SpotLightItem({ children, className }: SpotlightItemProps) {
 
   return (
     <div
-      onMouseMove={handleMouemove}
+      onMouseMove={handleMouseMove}
       onMouseEnter={() => CursorFlowGradient && setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       ref={boxWrapper}
@@ -215,7 +215,7 @@ export default function index() {
   // !mark(1:10) gold
   const boxWrapper = useRef(null);
   const [overlayColor, setOverlayColor] = useState({ x: 0, y: 0 });
-  const handleMouemove = ({ currentTarget, clientX, clientY }): MouseEvent => {
+  const handleMouseMove = ({ currentTarget, clientX, clientY }:MouseEvent) => {
     let { left, top } = currentTarget.getBoundingClientRect();
 
     const x = clientX - left;
@@ -228,7 +228,7 @@ export default function index() {
     <>
       <div
         // !mark(1:2)
-        onMouseMove={handleMouemove}
+        onMouseMove={handleMouseMove}
         ref={boxWrapper}
         className={`group relative rounded-lg border-2 bg-black   overflow-hidden w-fit mx-auto`}
       >
@@ -305,7 +305,7 @@ export default function index() {
 
   // !mark(1:9)
   const [overlayColor, setOverlayColor] = useState({ x: 0, y: 0 });
-  const handleMouemove = ({ currentTarget, clientX, clientY }): MouseEvent => {
+  const handleMouseMove = ({ currentTarget, clientX, clientY }:MouseEvent) => {
     let { left, top } = currentTarget.getBoundingClientRect();
 
     const x = clientX - left;
@@ -317,7 +317,7 @@ export default function index() {
   return (
     <div className='relative bg-black p-8 rounded-md'>
       <div
-        onMouseMove={handleMouemove}
+        onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         ref={boxWrapper}
@@ -394,7 +394,7 @@ export default function index() {
   });
   // !mark(1:9)
   React.useEffect(() => {
-    const updateMousePosition = (ev: { clientX: any; clientY: any }) => {
+    const updateMousePosition = ({ clientX, clientY }:MouseEvent) => {
       setMousePosition({ x: ev.clientX, y: ev.clientY });
     };
     window.addEventListener('mousemove', updateMousePosition);
@@ -405,7 +405,7 @@ export default function index() {
 
   // !mark(1:9)
   const [overlayColor, setOverlayColor] = useState({ x: 0, y: 0 });
-  const handleMouemove = ({ currentTarget, clientX, clientY }): MouseEvent => {
+  const handleMouseMove = ({ currentTarget, clientX, clientY }:MouseEvent) => {
     let { left, top } = currentTarget.getBoundingClientRect();
 
     const x = clientX - left;
@@ -417,7 +417,7 @@ export default function index() {
   return (
     <div className='relative bg-black p-8 rounded-md'>
       <div
-        onMouseMove={handleMouemove}
+        onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         ref={boxWrapper}
